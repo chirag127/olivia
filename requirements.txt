@@ -4,4 +4,3 @@ wikipedia
 autopep8
 requests
 googletrans
-requests
