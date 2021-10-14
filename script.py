@@ -237,15 +237,47 @@ if __name__ == "__main__":
             query = query.replace("translate", "")
             query = query.replace("to", "")
 
+            if 'spanish' in query:
+                query = query.replace("spanish", "")
+                k = Translator().translate(query, dest='spanish')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'hindi' in query:
+                query = query.replace("hindi", "")
+                k = Translator().translate(query, dest='hindi')
+                translated = str(k.text)
+                sp(translated)
+            elif 'french' in query:
+                query = query.replace("french", "")
+                k = Translator().translate(query, dest='french')
+                translated = str(k.text)
+                sp(translated)
+            elif 'german' in query:
+                query = query.replace("german", "")
+                k = Translator().translate(query, dest='german')
+                translated = str(k.text)
+                sp(translated)
+            elif 'dutch' in query:
+                query = query.replace("dutch", "")
+                k = Translator().translate(query, dest='dutch')
+                translated = str(k.text)
+                sp(translated)
+
             if 'chinese' in query:
+                query = query.replace("chinese", "")
 
                 if 'traditional' in query:
+                    query = query.replace("traditional", "")
+                    query = query.replace("simplified", "")
 
                     k = Translator().translate(query, dest='chinese (traditional)')
                     translated = str(k.text)
                     sp(translated)
 
                 else:
+                    query = query.replace("traditional", "")
+                    query = query.replace("simplified", "")
                     k = Translator().translate(query, dest='chinese (simplified)')
                     translated = str(k.text)
                     sp(translated)
@@ -347,33 +379,7 @@ if __name__ == "__main__":
 
 
 """"        
-            if 'spanish' in query:
-                query = query.replace("spanish", "")
-                k = Translator().translate(query, dest='spanish')
-                translated = str(k.text)
-                sp(translated)
 
-            elif 'hindi' in query:
-                query = query.replace("hindi", "")
-                k = Translator().translate(query, dest='hindi')
-                translated = str(k.text)
-                sp(translated)
-            elif 'french' in query:
-                query = query.replace("french", "")
-                k = Translator().translate(query, dest='french')
-                translated = str(k.text)
-                sp(translated)
-            elif 'german' in query:
-                query = query.replace("german", "")
-                k = Translator().translate(query, dest='german')
-                translated = str(k.text)
-                sp(translated)
-            elif 'dutch' in query:
-                query = query.replace("dutch", "")
-                k = Translator().translate(query, dest='dutch')
-                translated = str(k.text)
-                sp(translated)
-  
 
 elif 'youtube' in query:
 
