@@ -10,17 +10,6 @@ import requests
 import json
 from googletrans import Translator
 
-"""
-pip install speechRecognition
-pip install pyttsx3
-pip install wikipedia
-pip install pipwin
-pipwin install pyaudio
-pip install -U autopep8
-pip install requests
-pip install googletrans
-pip install requests
-"""
 
 # I was getting error so i install pyaudio
 # error in that too so i googled it on the stackover flow.
