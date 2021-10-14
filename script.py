@@ -294,6 +294,12 @@ if __name__ == "__main__":
         elif 'wish me' in query:
             wishMe()
 
+        elif 'play video' in query:
+            music_dir = 'D:\\non critical\\video'
+            songs = os.listdir(music_dir)
+            print(songs)
+            os.startfile(os.path.join(music_dir, songs[0]))
+
         elif 'play music' in query:
             music_dir = 'D:\\non critical\\music'
             songs = os.listdir(music_dir)
@@ -342,25 +348,23 @@ if __name__ == "__main__":
             print("opening.....")
             query = query.replace("open ", "")
 
-            if 'website' in query:
-                query = query.replace("website ", "")
-                webbrowser.open(
-                    f"https://duckduckgo.com/?q=%21+{query}&ia=olivia")
-
-            elif 'edge' in query:
-
+            if 'edge' in query:
                 if 'youtube' in query:
-
                     webbrowser.register('edge',
                                         None,
                                         webbrowser.BackgroundBrowser("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"))
                     webbrowser.get('edge').open(
                         "https://www.youtube.com/feed/subscriptions")
 
+            else:
+                query = query.replace("website ", "")
+                webbrowser.open(
+                    f"https://duckduckgo.com/?q=%21+{query}&ia=olivia")
+
         elif 'clear' in query:
             clearConsole()
 
-        elif 'bf' in query:
+        elif 'code' in query:
             codePath = "C:\\Users\\hp\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             os.startfile(codePath)
 
@@ -372,6 +376,9 @@ if __name__ == "__main__":
 
         elif 'your god' in query:
             sp("chriag singhal is my god")
+
+        elif "who made you" in query or "who created you" in query or "who discovered you" in query:
+            speak("I was built by Chirag singhal")
 
         elif 'exit' in query:
             sp("exiting........")
