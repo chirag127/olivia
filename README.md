@@ -8,11 +8,11 @@
 
 1. Wish you According to the time of the day.
 
-1. Open any websites like Google ,Youtube ,flipkart ,Stackoverflow. Just say " open youtube website".
+1. Open any websites like Google, YouTube, FlipKart, Stack overflow. Just say "open YouTube website".
 
-1. Search websites like Google ,YouTube.
+1. Search websites like Google, YouTube.
 
-1. Give the Introduction of someone according to wikipedia
+1. Give the Introduction of someone according to Wikipedia
 
 1. Play music.
 
@@ -22,32 +22,31 @@
 
 1. Give you a joke.
 
-### Inprogress features
+### In progress features
 
 1. Send mail
-1. Turn on and off wifi
+1. Turn on and off Wi-Fi
 1. Stop music
-1. Open VS code
+1. Open VS Code
 
-> PLease tell me the features you want me to add by creating a issue.
-
+> Please tell me the features you want me to add by creating a issue.
 
 ## Installation instruction
 
 1. Install Python.
 1. To start open CMD in the directory then run the code below!
 
-```pip install -r requirments.txt```<br>
+`pip install -r requirements.txt`<br>
 
-1. run the py file in any IDE.
-### If You Get ```No Module Named PYAUDIO``` Error!
-open CMD in the directory then run the code below!
+1. Run the .py file in any IDE.
+
+### If You Get `No Module Named pyaudio` Error!
+
+Open CMD in the directory then run the code below!
+
 ```
 pip install pipwin
 pipwin install pyaudio
 ```
-- Be sure to change the application paths on script.py otherwise it wont open Google Chrome and other Apps. <br>
 
-
-
-
+- Be sure to change the application paths on script.py otherwise it won't open Google Chrome and other Apps. <br>
