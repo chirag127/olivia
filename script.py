@@ -162,14 +162,14 @@ if __name__ == "__main__":
                 webbrowser.open(
                     f"https://www.youtube.com/results?search_query={query}")
 
-            elif 'google' in query:
-                query = query.replace("google", "")
-                webbrowser.open(
-                    f"https://www.google.com/search?q={query}&sourceid=olivia")
             elif 'flipkart' in query:
                 query = query.replace("flipkart", "")
                 webbrowser.open(
                     f"https://www.flipkart.com/search?q={query}&otracker1=olivia")
+            else:
+                query = query.replace("google", "")
+                webbrowser.open(
+                    f"https://www.google.com/search?q={query}&sourceid=olivia")
 
         elif 'open' in query:
             print("opening.....")
