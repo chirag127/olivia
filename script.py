@@ -101,6 +101,123 @@ def givejoke():
     speak(joketext)
 
 
+def translatelanguage(languageptext):
+    query = takeCommand().lower()
+    if languageptext in query:
+        query = query.replace(languageptext, "")
+        k = Translator().translate(query, dest=languageptext)
+        translated = str(k.text)
+        sp(translated)
+
+
+alllanguage = ['afrikaans',
+               'albanian',
+               'amharic',
+               'arabic',
+               'armenian',
+               'azerbaijani',
+               'basque',
+               'belarusian',
+               'bengali',
+               'bosnian',
+               'bulgarian',
+               'catalan',
+               'cebuano',
+               'chichewa',
+               'corsican',
+               'croatian',
+               'czech',
+               'danish',
+               'dutch',
+               'english',
+               'esperanto',
+               'estonian',
+               'filipino',
+               'finnish',
+               'french',
+               'frisian',
+               'galician',
+               'georgian',
+               'german',
+               'greek',
+               'gujarati',
+               'haitian creole',
+               'hausa',
+               'hawaiian',
+               'hebrew',
+               'hebrew',
+               'hindi',
+               'hmong',
+               'hungarian',
+               'icelandic',
+               'igbo',
+               'indonesian',
+               'irish',
+               'italian',
+               'japanese',
+               'javanese',
+               'kannada',
+               'kazakh',
+               'khmer',
+               'korean',
+               'kurdish (kurmanji)',
+               'kyrgyz',
+               'lao',
+               'latin',
+               'latvian',
+               'lithuanian',
+               'luxembourgish',
+               'macedonian',
+               'malagasy',
+               'malay',
+               'malayalam',
+               'maltese',
+               'maori',
+               'marathi',
+               'mongolian',
+               'myanmar (burmese)',
+               'nepali',
+               'norwegian',
+               'odia',
+               'pashto',
+               'persian',
+               'polish',
+               'portuguese',
+               'punjabi',
+               'romanian',
+               'russian',
+               'samoan',
+               'scots gaelic',
+               'serbian',
+               'sesotho',
+               'shona',
+               'sindhi',
+               'sinhala',
+               'slovak',
+               'slovenian',
+               'somali',
+               'spanish',
+               'sundanese',
+               'swahili',
+               'swedish',
+               'tajik',
+               'tamil',
+               'telugu',
+               'thai',
+               'turkish',
+               'ukrainian',
+               'urdu',
+               'uyghur',
+               'uzbek',
+               'vietnamese',
+               'welsh',
+               'xhosa',
+               'yiddish',
+               'yoruba',
+               'zulu'
+               ]
+
+
 if __name__ == "__main__":
     # wishMe()
 
@@ -115,6 +232,23 @@ if __name__ == "__main__":
             results = wikipedia.summary(query, sentences=2)
             speak("According to Wikipedia")
             sp(results)
+
+        elif 'translate' in query:
+            query = query.replace("translate", "")
+            query = query.replace("to", "")
+
+            if 'chinese' in query:
+
+                if 'traditional' in query:
+
+                    k = Translator().translate(query, dest='chinese (traditional)')
+                    translated = str(k.text)
+                    sp(translated)
+
+                else:
+                    k = Translator().translate(query, dest='chinese (simplified)')
+                    translated = str(k.text)
+                    sp(translated)
 
         elif 'hello' in query:
             speak("hello")
@@ -167,6 +301,8 @@ if __name__ == "__main__":
                 webbrowser.open(
                     f"https://www.flipkart.com/search?q={query}&otracker1=olivia")
             else:
+                query = query.replace("google", "")
+
                 webbrowser.open(
                     f"https://www.google.com/search?q={query}&sourceid=olivia")
 
@@ -199,15 +335,6 @@ if __name__ == "__main__":
         elif 'joke' in query:
             givejoke()
 
-        elif 'translate' in query:
-            query = query.replace("translate ", "")
-            k = Translator().translate(query, dest='spanish')
-            # you can put any language in the destination attribute, I have used spanish
-            # Here we convert the translated result into a text format
-            translated = str(k.text)
-            print(translated)
-            speak(translated)
-
         elif 'kill me' in query:
             sp("I won't")
 
@@ -218,7 +345,37 @@ if __name__ == "__main__":
             sp("exiting........")
             exitcode()
 
-""""            elif 'youtube' in query:
+
+""""        
+            if 'spanish' in query:
+                query = query.replace("spanish", "")
+                k = Translator().translate(query, dest='spanish')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'hindi' in query:
+                query = query.replace("hindi", "")
+                k = Translator().translate(query, dest='hindi')
+                translated = str(k.text)
+                sp(translated)
+            elif 'french' in query:
+                query = query.replace("french", "")
+                k = Translator().translate(query, dest='french')
+                translated = str(k.text)
+                sp(translated)
+            elif 'german' in query:
+                query = query.replace("german", "")
+                k = Translator().translate(query, dest='german')
+                translated = str(k.text)
+                sp(translated)
+            elif 'dutch' in query:
+                query = query.replace("dutch", "")
+                k = Translator().translate(query, dest='dutch')
+                translated = str(k.text)
+                sp(translated)
+  
+
+elif 'youtube' in query:
 
             webbrowser.open("https://www.youtube.com/")
 
