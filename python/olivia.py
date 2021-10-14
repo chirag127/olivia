@@ -10,7 +10,6 @@ import requests
 import json
 from googletrans import Translator
 
-
 """
 pip install speechRecognition
 pip install pyttsx3
@@ -18,6 +17,9 @@ pip install wikipedia
 pip install pipwin
 pipwin install pyaudio
 pip install -U autopep8
+pip install requests
+pip install googletrans
+pip install requests
 """
 
 # I was getting error so i install pyaudio
@@ -111,7 +113,7 @@ def givejoke():
 
 
 if __name__ == "__main__":
-    wishMe()
+    # wishMe()
 
     while True:
         query = takeCommand().lower()
@@ -182,7 +184,18 @@ if __name__ == "__main__":
 
         elif 'open' in query:
             print("opening.....")
-            if 'youtube' in query:
+
+            if 'edge' in query:
+
+                if 'youtube' in query:
+
+                    webbrowser.register('edge',
+                                        None,
+                                        webbrowser.BackgroundBrowser("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"))
+                    webbrowser.get('edge').open(
+                        "https://www.youtube.com/feed/subscriptions")
+
+            elif 'youtube' in query:
 
                 webbrowser.open("https://www.youtube.com/")
 
