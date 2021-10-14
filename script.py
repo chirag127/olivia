@@ -142,7 +142,7 @@ if __name__ == "__main__":
             try:
                 speak("What should I say?")
                 content = takeCommand()
-                to = "whyiswhen@gmail.com"
+                to = "chriagsinghal@gmail.com"
                 sendEmail(to, content)
                 speak("Email has been sent!")
             except Exception as e:
@@ -167,14 +167,19 @@ if __name__ == "__main__":
                 webbrowser.open(
                     f"https://www.flipkart.com/search?q={query}&otracker1=olivia")
             else:
-                query = query.replace("google", "")
                 webbrowser.open(
                     f"https://www.google.com/search?q={query}&sourceid=olivia")
 
         elif 'open' in query:
             print("opening.....")
+            query = query.replace("open ", "")
 
-            if 'edge' in query:
+            if 'website' in query:
+                query = query.replace("website ", "")
+                webbrowser.open(
+                    f"https://duckduckgo.com/?q=%21+{query}&ia=olivia")
+
+            elif 'edge' in query:
 
                 if 'youtube' in query:
 
@@ -184,25 +189,12 @@ if __name__ == "__main__":
                     webbrowser.get('edge').open(
                         "https://www.youtube.com/feed/subscriptions")
 
-            elif 'youtube' in query:
-
-                webbrowser.open("https://www.youtube.com/")
-
-            elif 'google' in query:
-                webbrowser.open("https://www.google.com/")
-
-            elif 'stack overflow' in query:
-                webbrowser.open("https://www.stackoverflow.com/")
-
-            elif 'flipkart' in query:
-                webbrowser.open("https://www.flipkart.com/")
-
-            elif 'bf' in query:
-                codePath = "C:\\Users\\hp\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
-                os.startfile(codePath)
-
         elif 'clear' in query:
             clearConsole()
+
+        elif 'bf' in query:
+            codePath = "C:\\Users\\hp\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+            os.startfile(codePath)
 
         elif 'joke' in query:
             givejoke()
@@ -225,3 +217,17 @@ if __name__ == "__main__":
         elif 'exit' in query:
             sp("exiting........")
             exitcode()
+
+""""            elif 'youtube' in query:
+
+            webbrowser.open("https://www.youtube.com/")
+
+        elif 'google' in query:
+            webbrowser.open("https://www.google.com/")
+
+        elif 'stack overflow' in query:
+            webbrowser.open("https://www.stackoverflow.com/")
+
+        elif 'flipkart' in query:
+            webbrowser.open("https://www.flipkart.com/")
+"""
