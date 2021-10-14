@@ -50,3 +50,4 @@ pipwin install pyaudio
 ```
 
 - Be sure to change the application paths on script.py otherwise it won't open Google Chrome and other Apps. <br>
+
