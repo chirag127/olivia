@@ -8,7 +8,7 @@
 
 1. Wish you According to the time of the day.
 
-1. Open websites like Google ,Youtube ,flipkart ,Stackoverflow.
+1. Open any websites like Google ,Youtube ,flipkart ,Stackoverflow. Just say " open youtube website".
 
 1. Search websites like Google ,YouTube.
 
