@@ -1,6 +1,6 @@
-speechRecognition
-pyttsx3
-wikipedia
 autopep8
-requests
 googletrans
+pyttsx3
+requests
+speechRecognition
+wikipedia
