@@ -36,7 +36,7 @@
 1. Install Python.
 1. To start open CMD in the directory then run the code below!
 
-`pip install -r requirements.txt`<br>
+```pip install -r requirements.txt```<br>
 
 1. Run the .py file in any IDE.
 
