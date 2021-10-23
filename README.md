@@ -8,7 +8,7 @@
 
 1. Wish you According to the time of the day.
 
-1. Open any websites like Google, YouTube, FlipKart, Stack overflow. Just say "open YouTube website".
+1. Open any websites like Google, YouTube, FlipKart, Stack overflow. Just say "open YouTube website" or"open Narendra Modi website" .
 
 1. Search websites like Google, YouTube.
 
@@ -24,10 +24,14 @@
 
 ### In progress features
 
-1. Send mail
-1. Turn on and off Wi-Fi
-1. Stop music
+1. Send mail.
+1. Turn on and off Wi-Fi.
+1. Stop music.
 1. Open VS Code
+1. Random facts.
+1. Lock screen.
+1. Change colour.
+1. Change name.
 
 > Please tell me the features you want me to add by creating a issue.
 
