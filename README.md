@@ -22,6 +22,8 @@
 
 1. Give you a joke.
 
+1. Translate english to other languages just say " translate (what you want to translate) to (language to which you want to translate).
+
 ### In progress features
 
 1. Send mail.
