@@ -2,35 +2,35 @@
 
 ### Features
 
-Create a note.
-Empty the recycle bin.
-Give the Introduction of someone according to Wikipedia
-Give you a joke.
-Hibernate the computer.
-It can recognize your voice(speech to text)<br>
-It can speak.
-Lock the computer.
-Logout of the Computer.
-Open Atom
-Open Notepad++
-Open Sublime Text
-Open Visual Studio Code
-Open any websites like Google, YouTube, FlipKart, Stack overflow. Just say "open YouTube website" or"open Narendra Modi website".
-Open your notes.
-Play music.
-Reboot the Computer.
-Search websites like Google, YouTube.
-Send an Email to someone.
-Shutdown the Computer.
-Stop listening temporarily.
-Stop listening.
-Take a screenshot of the screen and save it in your computer.
-Tell the current time.
-Tell where a location is located.
-Translate English to Many languages just say" translate (what you want to translate) to (language to which you want to translate).
-Wish you According to the time of the day.
-Tells you your current IP address just say "my IP address".
-What is the weather like in (city name)
+1. Create a note.
+1. Empty the recycle bin.
+1. Give the Introduction of someone according to Wikipedia
+1. Give you a joke.
+1. Hibernate the computer.
+1. It can recognize your voice(speech to text)<br>
+1. It can speak.
+1. Lock the computer.
+1. Logout of the Computer.
+1. Open Atom
+1. Open Notepad++
+1. Open Sublime Text
+1. Open Visual Studio Code
+1. Open any websites like Google, YouTube, FlipKart, Stack overflow. Just say "open YouTube website" or"open Narendra Modi website".
+1. Open your notes.
+1. Play music.
+1. Reboot the Computer.
+1. Search websites like Google, YouTube.
+1. Send an Email to someone.
+1. Shutdown the Computer.
+1. Stop listening temporarily.
+1. Stop listening.
+1. Take a screenshot of the screen and save it in your computer.
+1. Tell the current time.
+1. Tell where a location is located.
+1. Translate English to Many languages just say" translate (what you want to translate) to (language to which you want to translate).
+1. Wish you According to the time of the day.
+1. Tells you your current IP address just say "my IP address".
+1. What is the weather like in (city name)
 
 ### In progress features
 
