@@ -81,7 +81,7 @@ def takescreenshot():
 
 
 myScreenshot = pyautogui.screenshot()
-myScreenshot.save(r'C:\Users\Ron\Desktop\Test\screenshot_1.png')
+myScreenshot.save(r'D:\dl\Critical\code\screenshot_1.png')
 
 
 def sendEmail(to, content):
@@ -158,117 +158,8 @@ def username():
     speak("How can i Help you, Sir")
 
 
-alllanguage = ['afrikaans',
-               'albanian',
-               'amharic',
-               'arabic',
-               'armenian',
-               'azerbaijani',
-               'basque',
-               'belarusian',
-               'bengali',
-               'bosnian',
-               'bulgarian',
-               'catalan',
-               'cebuano',
-               'chichewa',
-               'corsican',
-               'croatian',
-               'czech',
-               'danish',
-               'dutch',
-               'english',
-               'esperanto',
-               'estonian',
-               'filipino',
-               'finnish',
-               'french',
-               'frisian',
-               'galician',
-               'georgian',
-               'german',
-               'greek',
-               'gujarati',
-               'haitian creole',
-               'hausa',
-               'hawaiian',
-               'hebrew',
-               'hindi',
-               'hmong',
-               'hungarian',
-               'icelandic',
-               'igbo',
-               'indonesian',
-               'irish',
-               'italian',
-               'japanese',
-               'javanese',
-               'kannada',
-               'kazakh',
-               'khmer',
-               'korean',
-               'kurdish (kurmanji)',
-               'kyrgyz',
-               'lao',
-               'latin',
-               'latvian',
-               'lithuanian',
-               'luxembourgish',
-               'macedonian',
-               'malagasy',
-               'malay',
-               'malayalam',
-               'maltese',
-               'maori',
-               'marathi',
-               'mongolian',
-               'myanmar (burmese)',
-               'nepali',
-               'norwegian',
-               'odia',
-               'pashto',
-               'persian',
-               'polish',
-               'portuguese',
-               'punjabi',
-               'romanian',
-               'russian',
-               'samoan',
-               'scots gaelic',
-               'serbian',
-               'sesotho',
-               'shona',
-               'sindhi',
-               'sinhala',
-               'slovak',
-               'slovenian',
-               'somali',
-               'spanish',
-               'sundanese',
-               'swahili',
-               'swedish',
-               'tajik',
-               'tamil',
-               'telugu',
-               'thai',
-               'turkish',
-               'ukrainian',
-               'urdu',
-               'uyghur',
-               'uzbek',
-               'vietnamese',
-               'welsh',
-               'xhosa',
-               'yiddish',
-               'yoruba',
-               'zulu'
-               ]
-
-
 if __name__ == "__main__":
     # wishMe()
-
-    clear()
 
     while True:
         query = takeCommand().lower()
@@ -311,7 +202,7 @@ if __name__ == "__main__":
                 webbrowser.open(
                     f"https://duckduckgo.com/?q=%21+{query}&ia=olivia")
 
-        elif 'Call Me' in query:
+        elif 'call me' in query:
             speak('What is your name?')
             query = query.replace("call me", "")
             uname = query
@@ -320,6 +211,10 @@ if __name__ == "__main__":
         elif "change my name to" in query:
             query = query.replace("change my name to", "")
             uname = query
+
+        elif "screenshot" in query:
+            sp("Taking Screenshot")
+            takescreenshot()
 
         elif 'hello' in query:
             speak("hello")
