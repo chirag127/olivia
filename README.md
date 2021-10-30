@@ -34,11 +34,12 @@
 
 ### In progress features
 
-Turn on and off Wi-Fi.
-Stop music.
-Change color.
-Change name.
-What is the weather like in (city name)
+1. Turn on and off Wi-Fi.
+1. Stop music.
+1. Change color.
+1. Change name.
+1. What is the weather like in (city name)
+1. Do calculation.
 
 > Please tell me the features you want me to add by creating an issue.
 
