@@ -30,7 +30,6 @@
 1. Translate English to Many languages just say" translate (what you want to translate) to (language to which you want to translate).
 1. Wish you According to the time of the day.
 1. Tells you your current IP address just say "my IP address".
-1. What is the weather like in (city name)
 
 ### In progress features
 
