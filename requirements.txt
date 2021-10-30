@@ -5,3 +5,6 @@ requests
 speechRecognition
 wikipedia
 ecapture
+pyjokes
+beautifulsoup4
+winshell

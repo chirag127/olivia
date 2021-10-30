@@ -26,13 +26,9 @@
 
 1. Take a screenshot of the screen and save it in your computer.
 
-1. Take an Image from your camera and save it in your computer.
-
 1. Create a note.
 
 1. Open your notes. 
-
-1. 
 
 ### In progress features
 

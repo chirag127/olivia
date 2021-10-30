@@ -1,15 +1,24 @@
-import pyttsx3  # pip install pyttsx3
-import speech_recognition as sr  # pip install speechRecognition
-import datetime
-import wikipedia  # pip install wikipedia
-import webbrowser
-import os
-import smtplib
-import sys
-import requests
-import json
+from bs4 import BeautifulSoup
 from googletrans import Translator
+import ctypes
+import datetime
+import json
+import operator
+import os
+import pyttsx3  # pip install pyttsx3
+import random
+import requests
 import shutil
+import smtplib
+import speech_recognition as sr  # pip install speechRecognition
+import subprocess
+import sys
+import time
+import tkinter
+import webbrowser
+import wikipedia  # pip install wikipedia
+import win32com.client as wincl
+import winshell
 
 
 # I was getting error so i install pyaudio
@@ -156,55 +165,6 @@ if __name__ == "__main__":
             query = query.replace("change my name to", "")
             uname = query
 
-        elif 'translate' in query:
-            query = query.replace("translate", "")
-            query = query.replace("to", "")
-
-            if 'spanish' in query:
-                query = query.replace("spanish", "")
-                k = Translator().translate(query, dest='spanish')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'hindi' in query:
-                query = query.replace("hindi", "")
-                k = Translator().translate(query, dest='hindi')
-                translated = str(k.text)
-                sp(translated)
-            elif 'french' in query:
-                query = query.replace("french", "")
-                k = Translator().translate(query, dest='french')
-                translated = str(k.text)
-                sp(translated)
-            elif 'german' in query:
-                query = query.replace("german", "")
-                k = Translator().translate(query, dest='german')
-                translated = str(k.text)
-                sp(translated)
-            elif 'dutch' in query:
-                query = query.replace("dutch", "")
-                k = Translator().translate(query, dest='dutch')
-                translated = str(k.text)
-                sp(translated)
-
-            if 'chinese' in query:
-                query = query.replace("chinese", "")
-
-                if 'traditional' in query:
-                    query = query.replace("traditional", "")
-                    query = query.replace("simplified", "")
-
-                    k = Translator().translate(query, dest='chinese (traditional)')
-                    translated = str(k.text)
-                    sp(translated)
-
-                else:
-                    query = query.replace("traditional", "")
-                    query = query.replace("simplified", "")
-                    k = Translator().translate(query, dest='chinese (simplified)')
-                    translated = str(k.text)
-                    sp(translated)
-
         elif 'hello' in query:
             speak("hello")
             wishMe()
@@ -308,6 +268,115 @@ if __name__ == "__main__":
             sp("exiting........")
             exitcode()
 
+        elif 'lock window' in query:
+            speak("locking the device")
+            ctypes.windll.user32.LockWorkStation()
+
+        elif 'shutdown system' in query:
+            speak("Hold On a Sec ! Your system is on its way to shut down")
+            subprocess.call('shutdown / p /f')
+
+        elif 'empty recycle bin' in query:
+            winshell.recycle_bin().empty(confirm=False, show_progress=False, sound=True)
+            speak("Recycle Bin Recycled")
+
+        elif "don't listen" in query or "stop listening" in query:
+            speak("for how much time you want to stop jarvis from listening commands")
+            a = int(takeCommand())
+            time.sleep(a)
+            print(a)
+
+        elif "where is" in query:
+            query = query.replace("where is", "")
+            location = query
+            speak("User asked to Locate")
+            speak(location)
+            webbrowser.open(
+                "https://www.google.nl / maps / place/" + location + "")
+
+        elif "camera" in query or "take a photo" in query:
+            ec.capture(0, "Jarvis Camera ", "img.jpg")
+
+        elif "restart" in query:
+            subprocess.call(["shutdown", "/r"])
+
+        elif "hibernate" in query or "sleep" in query:
+            speak("Hibernating")
+            subprocess.call("shutdown / h")
+
+        elif "log off" in query or "sign out" in query:
+            speak("Make sure all the application are closed before sign-out")
+            time.sleep(5)
+            subprocess.call(["shutdown", "/l"])
+
+        elif "write a note" in query:
+            speak("What should i write, sir")
+            note = takeCommand()
+            file = open('jarvis.txt', 'w')
+            speak("Sir, Should i include date and time")
+            snfm = takeCommand()
+            if 'yes' in snfm or 'sure' in snfm:
+                strTime = datetime.datetime.now().strftime("% H:% M:% S")
+                file.write(strTime)
+                file.write(" :- ")
+                file.write(note)
+            else:
+                file.write(note)
+
+        elif "show note" in query:
+            speak("Showing Notes")
+            file = open("jarvis.txt", "r")
+            print(file.read())
+            speak(file.read(6))
+
+        elif 'translate' in query:
+            query = query.replace("translate", "")
+            query = query.replace("to", "")
+
+            if 'spanish' in query:
+                query = query.replace("spanish", "")
+                k = Translator().translate(query, dest='spanish')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'hindi' in query:
+                query = query.replace("hindi", "")
+                k = Translator().translate(query, dest='hindi')
+                translated = str(k.text)
+                sp(translated)
+            elif 'french' in query:
+                query = query.replace("french", "")
+                k = Translator().translate(query, dest='french')
+                translated = str(k.text)
+                sp(translated)
+            elif 'german' in query:
+                query = query.replace("german", "")
+                k = Translator().translate(query, dest='german')
+                translated = str(k.text)
+                sp(translated)
+            elif 'dutch' in query:
+                query = query.replace("dutch", "")
+                k = Translator().translate(query, dest='dutch')
+                translated = str(k.text)
+                sp(translated)
+
+            if 'chinese' in query:
+                query = query.replace("chinese", "")
+
+                if 'traditional' in query:
+                    query = query.replace("traditional", "")
+                    query = query.replace("simplified", "")
+
+                    k = Translator().translate(query, dest='chinese (traditional)')
+                    translated = str(k.text)
+                    sp(translated)
+
+                else:
+                    query = query.replace("traditional", "")
+                    query = query.replace("simplified", "")
+                    k = Translator().translate(query, dest='chinese (simplified)')
+                    translated = str(k.text)
+                    sp(translated)
 
 """"        
 
