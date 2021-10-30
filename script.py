@@ -9,6 +9,7 @@ import sys
 import requests
 import json
 from googletrans import Translator
+import shutil
 
 
 # I was getting error so i install pyaudio
@@ -108,6 +109,207 @@ def translatelanguage(languageptext):
         k = Translator().translate(query, dest=languageptext)
         translated = str(k.text)
         sp(translated)
+
+
+def clear():
+    return os.system('cls')
+
+
+def username():
+    speak("What should i call you sir")
+    uname = takeCommand()
+    speak("Welcome Mister")
+    speak(uname)
+    columns = shutil.get_terminal_size().columns
+
+    print("#####################".center(columns))
+    print("Welcome Mr.", uname.center(columns))
+    print("#####################".center(columns))
+
+    speak("How can i Help you, Sir")
+
+
+if __name__ == "__main__":
+    # wishMe()
+
+    clear()
+
+    while True:
+        query = takeCommand().lower()
+
+        # Logic for executing tasks based on query
+        #  if 'olivia' in query:
+        if 'wikipedia' in query:
+            speak('Searching Wikipedia...')
+            query = query.replace("wikipedia", "")
+            results = wikipedia.summary(query, sentences=2)
+            speak("According to Wikipedia")
+            sp(results)
+
+        elif 'Call Me' in query:
+            speak('What is your name?')
+            query = query.replace("call me", "")
+            uname = query
+            speak('Hello ' + uname + ' How may I help you?')
+
+        elif "change my name to" in query:
+            query = query.replace("change my name to", "")
+            uname = query
+
+        elif 'translate' in query:
+            query = query.replace("translate", "")
+            query = query.replace("to", "")
+
+            if 'spanish' in query:
+                query = query.replace("spanish", "")
+                k = Translator().translate(query, dest='spanish')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'hindi' in query:
+                query = query.replace("hindi", "")
+                k = Translator().translate(query, dest='hindi')
+                translated = str(k.text)
+                sp(translated)
+            elif 'french' in query:
+                query = query.replace("french", "")
+                k = Translator().translate(query, dest='french')
+                translated = str(k.text)
+                sp(translated)
+            elif 'german' in query:
+                query = query.replace("german", "")
+                k = Translator().translate(query, dest='german')
+                translated = str(k.text)
+                sp(translated)
+            elif 'dutch' in query:
+                query = query.replace("dutch", "")
+                k = Translator().translate(query, dest='dutch')
+                translated = str(k.text)
+                sp(translated)
+
+            if 'chinese' in query:
+                query = query.replace("chinese", "")
+
+                if 'traditional' in query:
+                    query = query.replace("traditional", "")
+                    query = query.replace("simplified", "")
+
+                    k = Translator().translate(query, dest='chinese (traditional)')
+                    translated = str(k.text)
+                    sp(translated)
+
+                else:
+                    query = query.replace("traditional", "")
+                    query = query.replace("simplified", "")
+                    k = Translator().translate(query, dest='chinese (simplified)')
+                    translated = str(k.text)
+                    sp(translated)
+
+        elif 'hello' in query:
+            speak("hello")
+            wishMe()
+        elif 'how are you' in query:
+            speak("i am fine")
+
+        elif 'what you' in query:
+            sp("I am olivia. I Wish you According to the time of the day. I can Open websites like Google ,Youtube ,flipkart ,Stackoverflow. Give you a joke. Search websites like Google ,YouTube. Give the Introduction of someone or something according to wikipedia. Play music. Stop listening. Tell the current time. send email to someone.")
+
+        elif 'wish me' in query:
+            wishMe()
+
+        elif 'play video' in query:
+            music_dir = 'D:\\non critical\\video'
+            songs = os.listdir(music_dir)
+            print(songs)
+            os.startfile(os.path.join(music_dir, songs[0]))
+
+        elif 'play music' in query or "play song" in query:
+            sp("Here you go with music")
+            music_dir = "C:\\Users\\hp\\Music"
+            songs = os.listdir(music_dir)
+            print(songs)
+            random = os.startfile(os.path.join(music_dir, songs[1]))
+
+        elif 'time' in query:
+            strTime = datetime.datetime.now().strftime("%H:%M:%S")
+            sp(f"Sir, the time is {strTime}")
+
+        elif 'email to chirag' in query:
+            try:
+                speak("What should I say?")
+                content = takeCommand()
+                to = "chriagsinghal@gmail.com"
+                sendEmail(to, content)
+                speak("Email has been sent!")
+            except Exception as e:
+                print(e)
+                speak("Sorry my friend chirag sir. I am not able to send this email")
+
+        elif 'stop music' in query:
+            os.close("C:\\Program Files\\DAUM\\PotPlayer\\PotPlayerMini64.exe")
+
+        elif 'search' in query:
+            speak('Searching ...')
+            query = query.replace("search ", "")
+            query = query.replace(" on ", "")
+
+            if 'youtube' in query:
+                query = query.replace("youtube", "")
+                webbrowser.open(
+                    f"https://www.youtube.com/results?search_query={query}")
+
+            elif 'flipkart' in query:
+                query = query.replace("flipkart", "")
+                webbrowser.open(
+                    f"https://www.flipkart.com/search?q={query}&otracker1=olivia")
+            else:
+                query = query.replace("google", "")
+
+                webbrowser.open(
+                    f"https://www.google.com/search?q={query}&sourceid=olivia")
+
+        elif 'open' in query:
+            print("opening.....")
+            query = query.replace("open ", "")
+
+            if 'edge' in query:
+                if 'youtube' in query:
+                    webbrowser.register('edge',
+                                        None,
+                                        webbrowser.BackgroundBrowser("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"))
+                    webbrowser.get('edge').open(
+                        "https://www.youtube.com/feed/subscriptions")
+
+            else:
+                query = query.replace("website ", "")
+                webbrowser.open(
+                    f"https://duckduckgo.com/?q=%21+{query}&ia=olivia")
+
+        elif 'clear' in query:
+            clearConsole()
+
+        elif 'code' in query:
+            codePath = "C:\\Users\\hp\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+            os.startfile(codePath)
+
+        elif 'joke' in query:
+            givejoke()
+
+        elif 'kill me' in query:
+            sp("I won't")
+
+        elif 'your god' in query:
+            sp("chriag singhal is my god")
+
+        elif "who made you" in query or "who created you" in query or "who discovered you" in query:
+            speak("I was built by Chirag singhal")
+
+        elif 'exit' in query:
+            sp("exiting........")
+            exitcode()
+
+
+""""        
 
 
 alllanguage = ['afrikaans',
@@ -215,177 +417,6 @@ alllanguage = ['afrikaans',
                'yoruba',
                'zulu'
                ]
-
-
-if __name__ == "__main__":
-    # wishMe()
-
-    while True:
-        query = takeCommand().lower()
-
-        # Logic for executing tasks based on query
-        #  if 'olivia' in query:
-        if 'wikipedia' in query:
-            speak('Searching Wikipedia...')
-            query = query.replace("wikipedia", "")
-            results = wikipedia.summary(query, sentences=2)
-            speak("According to Wikipedia")
-            sp(results)
-
-        elif 'translate' in query:
-            query = query.replace("translate", "")
-            query = query.replace("to", "")
-
-            if 'spanish' in query:
-                query = query.replace("spanish", "")
-                k = Translator().translate(query, dest='spanish')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'hindi' in query:
-                query = query.replace("hindi", "")
-                k = Translator().translate(query, dest='hindi')
-                translated = str(k.text)
-                sp(translated)
-            elif 'french' in query:
-                query = query.replace("french", "")
-                k = Translator().translate(query, dest='french')
-                translated = str(k.text)
-                sp(translated)
-            elif 'german' in query:
-                query = query.replace("german", "")
-                k = Translator().translate(query, dest='german')
-                translated = str(k.text)
-                sp(translated)
-            elif 'dutch' in query:
-                query = query.replace("dutch", "")
-                k = Translator().translate(query, dest='dutch')
-                translated = str(k.text)
-                sp(translated)
-
-            if 'chinese' in query:
-                query = query.replace("chinese", "")
-
-                if 'traditional' in query:
-                    query = query.replace("traditional", "")
-                    query = query.replace("simplified", "")
-
-                    k = Translator().translate(query, dest='chinese (traditional)')
-                    translated = str(k.text)
-                    sp(translated)
-
-                else:
-                    query = query.replace("traditional", "")
-                    query = query.replace("simplified", "")
-                    k = Translator().translate(query, dest='chinese (simplified)')
-                    translated = str(k.text)
-                    sp(translated)
-
-        elif 'hello' in query:
-            speak("hello")
-            wishMe()
-        elif 'how are you' in query:
-            speak("i am fine")
-
-        elif 'what you' in query:
-            sp("I am olivia. I Wish you According to the time of the day. I can Open websites like Google ,Youtube ,flipkart ,Stackoverflow. Give you a joke. Search websites like Google ,YouTube. Give the Introduction of someone or something according to wikipedia. Play music. Stop listening. Tell the current time. send email to someone.")
-
-        elif 'wish me' in query:
-            wishMe()
-
-        elif 'play video' in query:
-            music_dir = 'D:\\non critical\\video'
-            songs = os.listdir(music_dir)
-            print(songs)
-            os.startfile(os.path.join(music_dir, songs[0]))
-
-        elif 'play music' in query:
-            music_dir = 'D:\\non critical\\music'
-            songs = os.listdir(music_dir)
-            print(songs)
-            os.startfile(os.path.join(music_dir, songs[0]))
-
-        elif 'time' in query:
-            strTime = datetime.datetime.now().strftime("%H:%M:%S")
-            sp(f"Sir, the time is {strTime}")
-
-        elif 'email to chirag' in query:
-            try:
-                speak("What should I say?")
-                content = takeCommand()
-                to = "chriagsinghal@gmail.com"
-                sendEmail(to, content)
-                speak("Email has been sent!")
-            except Exception as e:
-                print(e)
-                speak("Sorry my friend chirag sir. I am not able to send this email")
-
-        elif 'stop music' in query:
-            os.close("C:\\Program Files\\DAUM\\PotPlayer\\PotPlayerMini64.exe")
-
-        elif 'search' in query:
-            speak('Searching ...')
-            query = query.replace("search ", "")
-            query = query.replace(" on ", "")
-
-            if 'youtube' in query:
-                query = query.replace("youtube", "")
-                webbrowser.open(
-                    f"https://www.youtube.com/results?search_query={query}")
-
-            elif 'flipkart' in query:
-                query = query.replace("flipkart", "")
-                webbrowser.open(
-                    f"https://www.flipkart.com/search?q={query}&otracker1=olivia")
-            else:
-                query = query.replace("google", "")
-
-                webbrowser.open(
-                    f"https://www.google.com/search?q={query}&sourceid=olivia")
-
-        elif 'open' in query:
-            print("opening.....")
-            query = query.replace("open ", "")
-
-            if 'edge' in query:
-                if 'youtube' in query:
-                    webbrowser.register('edge',
-                                        None,
-                                        webbrowser.BackgroundBrowser("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"))
-                    webbrowser.get('edge').open(
-                        "https://www.youtube.com/feed/subscriptions")
-
-            else:
-                query = query.replace("website ", "")
-                webbrowser.open(
-                    f"https://duckduckgo.com/?q=%21+{query}&ia=olivia")
-
-        elif 'clear' in query:
-            clearConsole()
-
-        elif 'code' in query:
-            codePath = "C:\\Users\\hp\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
-            os.startfile(codePath)
-
-        elif 'joke' in query:
-            givejoke()
-
-        elif 'kill me' in query:
-            sp("I won't")
-
-        elif 'your god' in query:
-            sp("chriag singhal is my god")
-
-        elif "who made you" in query or "who created you" in query or "who discovered you" in query:
-            speak("I was built by Chirag singhal")
-
-        elif 'exit' in query:
-            sp("exiting........")
-            exitcode()
-
-
-""""        
-
 
 elif 'youtube' in query:
 

@@ -4,3 +4,4 @@ pyttsx3
 requests
 speechRecognition
 wikipedia
+ecapture

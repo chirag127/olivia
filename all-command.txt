@@ -6,3 +6,4 @@ pip install speechRecognition
 pip install wikipedia
 pip install pipwin
 pipwin install pyaudio
+pip install ecapture
