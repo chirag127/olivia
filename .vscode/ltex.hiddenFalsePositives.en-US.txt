@@ -1,0 +1,1 @@
+{"rule":"SEND_AN_EMAIL","sentence":"^\\QSend an Email to someone.\\E$"}

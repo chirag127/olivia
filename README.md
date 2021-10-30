@@ -46,6 +46,11 @@
 
 1. Hibernate the computer.
 
+1. Send an Email to someone.
+
+1. 
+
+
 ### In progress features
 
 1. Send mail.
