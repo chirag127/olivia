@@ -289,13 +289,10 @@ if __name__ == "__main__":
         elif "where is" in query:
             query = query.replace("where is", "")
             location = query
-            speak("User asked to Locate")
-            speak(location)
+            sp("User asked to Locate")
+            sp(location)
             webbrowser.open(
-                "https://www.google.nl / maps / place/" + location + "")
-
-        elif "camera" in query or "take a photo" in query:
-            ec.capture(0, "Jarvis Camera ", "img.jpg")
+                "https://www.google.com / maps / place/" + location + "")
 
         elif "restart" in query:
             subprocess.call(["shutdown", "/r"])

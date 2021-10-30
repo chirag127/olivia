@@ -28,7 +28,23 @@
 
 1. Create a note.
 
-1. Open your notes. 
+1. Open your notes.
+
+1. Logout of the Computer.
+
+1. Shutdown the Computer.
+
+1. Reboot the Computer.
+
+1. Lock the computer.
+
+1. Empty the recycle bin.
+
+1. Stop listening temporarily.
+
+1. Tell where a location is located.
+
+1. Hibernate the computer.
 
 ### In progress features
 
