@@ -120,6 +120,16 @@ def givejoke():
     speak(joketext)
 
 
+def giveip():
+    response_API = requests.get(
+        'https://api.ipify.org?format=json')
+    data = response_API.text
+    parse_json = json.loads(data)
+    key = parse_json['ip']
+    iptext = key
+    sp("Your IP address is ", iptext)
+
+
 def translatelanguage(languageptext):
     query = takeCommand().lower()
     if languageptext in query:
@@ -225,6 +235,9 @@ if __name__ == "__main__":
 
         elif 'wish me' in query:
             wishMe()
+
+        elif 'my ip address' in query:
+            giveip()
 
         elif 'play video' in query:
             music_dir = 'D:\\non critical\\video'
