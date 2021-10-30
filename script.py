@@ -158,6 +158,113 @@ def username():
     speak("How can i Help you, Sir")
 
 
+alllanguage = ['afrikaans',
+               'albanian',
+               'amharic',
+               'arabic',
+               'armenian',
+               'azerbaijani',
+               'basque',
+               'belarusian',
+               'bengali',
+               'bosnian',
+               'bulgarian',
+               'catalan',
+               'cebuano',
+               'chichewa',
+               'corsican',
+               'croatian',
+               'czech',
+               'danish',
+               'dutch',
+               'english',
+               'esperanto',
+               'estonian',
+               'filipino',
+               'finnish',
+               'french',
+               'frisian',
+               'galician',
+               'georgian',
+               'german',
+               'greek',
+               'gujarati',
+               'haitian creole',
+               'hausa',
+               'hawaiian',
+               'hebrew',
+               'hindi',
+               'hmong',
+               'hungarian',
+               'icelandic',
+               'igbo',
+               'indonesian',
+               'irish',
+               'italian',
+               'japanese',
+               'javanese',
+               'kannada',
+               'kazakh',
+               'khmer',
+               'korean',
+               'kurdish (kurmanji)',
+               'kyrgyz',
+               'lao',
+               'latin',
+               'latvian',
+               'lithuanian',
+               'luxembourgish',
+               'macedonian',
+               'malagasy',
+               'malay',
+               'malayalam',
+               'maltese',
+               'maori',
+               'marathi',
+               'mongolian',
+               'myanmar (burmese)',
+               'nepali',
+               'norwegian',
+               'odia',
+               'pashto',
+               'persian',
+               'polish',
+               'portuguese',
+               'punjabi',
+               'romanian',
+               'russian',
+               'samoan',
+               'scots gaelic',
+               'serbian',
+               'sesotho',
+               'shona',
+               'sindhi',
+               'sinhala',
+               'slovak',
+               'slovenian',
+               'somali',
+               'spanish',
+               'sundanese',
+               'swahili',
+               'swedish',
+               'tajik',
+               'tamil',
+               'telugu',
+               'thai',
+               'turkish',
+               'ukrainian',
+               'urdu',
+               'uyghur',
+               'uzbek',
+               'vietnamese',
+               'welsh',
+               'xhosa',
+               'yiddish',
+               'yoruba',
+               'zulu'
+               ]
+
+
 if __name__ == "__main__":
     # wishMe()
 
@@ -174,6 +281,35 @@ if __name__ == "__main__":
             results = wikipedia.summary(query, sentences=2)
             speak("According to Wikipedia")
             sp(results)
+
+        elif 'open' in query:
+            print("opening.....")
+            query = query.replace("open ", "")
+
+            if 'edge' in query:
+                if 'youtube' in query:
+                    webbrowser.register('edge',
+                                        None,
+                                        webbrowser.BackgroundBrowser("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"))
+                    webbrowser.get('edge').open(
+                        "https://www.youtube.com/feed/subscriptions")
+
+            elif 'youtube' in query:
+
+                webbrowser.open("https://www.youtube.com/")
+
+            elif 'google' in query:
+                webbrowser.open("https://www.google.com/")
+
+            elif 'stack overflow' in query:
+                webbrowser.open("https://www.stackoverflow.com/")
+
+            elif 'flipkart' in query:
+                webbrowser.open("https://www.flipkart.com/")
+
+            else:
+                webbrowser.open(
+                    f"https://duckduckgo.com/?q=%21+{query}&ia=olivia")
 
         elif 'Call Me' in query:
             speak('What is your name?')
@@ -241,24 +377,6 @@ if __name__ == "__main__":
 
                 webbrowser.open(
                     f"https://www.google.com/search?q={query}&sourceid=olivia")
-
-        elif 'open' in query:
-            print("opening.....")
-            query = query.replace("open ", "")
-
-            if 'edge' in query:
-                if 'youtube' in query:
-                    webbrowser.register('edge',
-                                        None,
-                                        webbrowser.BackgroundBrowser("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"))
-                    webbrowser.get('edge').open(
-                        "https://www.youtube.com/feed/subscriptions")
-
-            else:
-                query = query.replace("website ", "")
-                webbrowser.open(
-                    f"https://duckduckgo.com/?q=%21+{query}&ia=olivia")
-
         elif 'clear' in query:
             clearConsole()
 
@@ -576,16 +694,26 @@ if __name__ == "__main__":
                     query = query.replace("traditional", "")
                     query = query.replace("simplified", "")
 
-                    k = Translator().translate(query, dest='chinese (traditional)')
-                    translated = str(k.text)
-                    sp(translated)
+            elif 'azerbaijani' in query:
 
-                else:
-                    query = query.replace("traditional", "")
-                    query = query.replace("simplified", "")
-                    k = Translator().translate(query, dest='chinese (simplified)')
-                    translated = str(k.text)
-                    sp(translated)
+                query = query.replace("azerbaijani", "")
+                k = Translator().translate(query, dest='azerbaijani')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'farsi' in query:
+
+                query = query.replace("farsi", "")
+                k = Translator().translate(query, dest='farsi')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'hindi' in query:
+
+                query = query.replace("hindi", "")
+                k = Translator().translate(query, dest='hindi')
+                translated = str(k.text)
+                sp(translated)
 
         elif 'how are you' in query:
             speak("i am fine")
@@ -633,122 +761,6 @@ if __name__ == "__main__":
 """"        
 
 
-alllanguage = ['afrikaans',
-               'albanian',
-               'amharic',
-               'arabic',
-               'armenian',
-               'azerbaijani',
-               'basque',
-               'belarusian',
-               'bengali',
-               'bosnian',
-               'bulgarian',
-               'catalan',
-               'cebuano',
-               'chichewa',
-               'corsican',
-               'croatian',
-               'czech',
-               'danish',
-               'dutch',
-               'english',
-               'esperanto',
-               'estonian',
-               'filipino',
-               'finnish',
-               'french',
-               'frisian',
-               'galician',
-               'georgian',
-               'german',
-               'greek',
-               'gujarati',
-               'haitian creole',
-               'hausa',
-               'hawaiian',
-               'hebrew',
-               'hindi',
-               'hmong',
-               'hungarian',
-               'icelandic',
-               'igbo',
-               'indonesian',
-               'irish',
-               'italian',
-               'japanese',
-               'javanese',
-               'kannada',
-               'kazakh',
-               'khmer',
-               'korean',
-               'kurdish (kurmanji)',
-               'kyrgyz',
-               'lao',
-               'latin',
-               'latvian',
-               'lithuanian',
-               'luxembourgish',
-               'macedonian',
-               'malagasy',
-               'malay',
-               'malayalam',
-               'maltese',
-               'maori',
-               'marathi',
-               'mongolian',
-               'myanmar (burmese)',
-               'nepali',
-               'norwegian',
-               'odia',
-               'pashto',
-               'persian',
-               'polish',
-               'portuguese',
-               'punjabi',
-               'romanian',
-               'russian',
-               'samoan',
-               'scots gaelic',
-               'serbian',
-               'sesotho',
-               'shona',
-               'sindhi',
-               'sinhala',
-               'slovak',
-               'slovenian',
-               'somali',
-               'spanish',
-               'sundanese',
-               'swahili',
-               'swedish',
-               'tajik',
-               'tamil',
-               'telugu',
-               'thai',
-               'turkish',
-               'ukrainian',
-               'urdu',
-               'uyghur',
-               'uzbek',
-               'vietnamese',
-               'welsh',
-               'xhosa',
-               'yiddish',
-               'yoruba',
-               'zulu'
-               ]
 
-elif 'youtube' in query:
 
-            webbrowser.open("https://www.youtube.com/")
-
-        elif 'google' in query:
-            webbrowser.open("https://www.google.com/")
-
-        elif 'stack overflow' in query:
-            webbrowser.open("https://www.stackoverflow.com/")
-
-        elif 'flipkart' in query:
-            webbrowser.open("https://www.flipkart.com/")
 """
