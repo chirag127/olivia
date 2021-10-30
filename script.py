@@ -19,7 +19,7 @@ import webbrowser
 import wikipedia  # pip install wikipedia
 import win32com.client as wincl
 import winshell
-
+import pyautogui  # pip install pyautogui
 
 # I was getting error so i install pyaudio
 # error in that too so i googled it on the stackover flow.
@@ -75,6 +75,15 @@ def takeCommand():
     return query
 
 
+def takescreenshot():
+    subprocess.call(["screencapture", "-x", "image.png"])
+    speak("Sir, I have taken a screenshot of your screen")
+
+
+myScreenshot = pyautogui.screenshot()
+myScreenshot.save(r'C:\Users\Ron\Desktop\Test\screenshot_1.png')
+
+
 def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
@@ -124,6 +133,17 @@ def clear():
     return os.system('cls')
 
 
+def open_chrome():
+    chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+    webbrowser.get(chrome_path).open('https://www.google.com')
+
+
+def ctime():
+    now = datetime.datetime.now()
+    speak("The current time is")
+    speak(now.strftime("%I:%M:%S"))
+
+
 def username():
     speak("What should i call you sir")
     uname = takeCommand()
@@ -168,8 +188,6 @@ if __name__ == "__main__":
         elif 'hello' in query:
             speak("hello")
             wishMe()
-        elif 'how are you' in query:
-            speak("i am fine")
 
         elif 'what you' in query:
             sp("I am olivia. I Wish you According to the time of the day. I can Open websites like Google ,Youtube ,flipkart ,Stackoverflow. Give you a joke. Search websites like Google ,YouTube. Give the Introduction of someone or something according to wikipedia. Play music. Stop listening. Tell the current time. send email to someone.")
@@ -189,10 +207,6 @@ if __name__ == "__main__":
             songs = os.listdir(music_dir)
             print(songs)
             random = os.startfile(os.path.join(music_dir, songs[1]))
-
-        elif 'time' in query:
-            strTime = datetime.datetime.now().strftime("%H:%M:%S")
-            sp(f"Sir, the time is {strTime}")
 
         elif 'email to chirag' in query:
             try:
@@ -247,10 +261,6 @@ if __name__ == "__main__":
 
         elif 'clear' in query:
             clearConsole()
-
-        elif 'code' in query:
-            codePath = "C:\\Users\\hp\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
-            os.startfile(codePath)
 
         elif 'joke' in query:
             givejoke()
@@ -374,6 +384,49 @@ if __name__ == "__main__":
                     k = Translator().translate(query, dest='chinese (simplified)')
                     translated = str(k.text)
                     sp(translated)
+
+        elif 'how are you' in query:
+            speak("i am fine")
+        elif 'what time is it' in query:
+            speak(ctime())
+        elif 'who are you' in query:
+            speak("i am olivia")
+
+        elif 'the time' in query:
+            strTime = datetime.datetime.now().strftime("%H:%M:%S")
+            speak(f"Sir, the time is {strTime}")
+
+        elif 'open code' in query:
+            codePath = "C:\\Users\\Ron\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+            os.startfile(codePath)
+
+        elif 'open chrome' in query:
+            chromePath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+            os.startfile(chromePath)
+
+        elif 'open notepad' in query:
+            notepadPath = "C:\\Windows\\System32\\notepad.exe"
+            os.startfile(notepadPath)
+
+        elif 'open visual studio' in query:
+            visualStudioPath = "C:\\Program Files\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\devenv.exe"
+            os.startfile(visualStudioPath)
+
+        elif 'open visual studio code' in query:
+            visualStudioCodePath = "C:\\Program Files\\Microsoft VS Code\\Code.exe"
+            os.startfile(visualStudioCodePath)
+
+        elif 'open sublime text' in query:
+            sublimeTextPath = "C:\\Program Files\\Sublime Text 3\\sublime_text.exe"
+            os.startfile(sublimeTextPath)
+
+        elif 'open pycharm' in query:
+            pycharmPath = "C:\\Program Files\\JetBrains\\PyCharm Community Edition 2019.1.3\\bin\\pycharm64.exe"
+            os.startfile(pycharmPath)
+
+        elif 'open notepad++' in query:
+            notepadPath = "C:\\Program Files\\Notepad++\\notepad++.exe"
+            os.startfile(notepadPath)
 
 """"        
 

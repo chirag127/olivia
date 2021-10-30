@@ -7,3 +7,4 @@ wikipedia
 pyjokes
 beautifulsoup4
 winshell
+pyautogui
