@@ -1063,126 +1063,36 @@ if __name__ == "__main__":
 
         elif "what is your favorite book" in query:
             speak("My favorite book is Automate the boring stuff")
+            speak("I also like the books by the author of the book The Alchemist")
 
         elif "what is your favorite place" in query:
             speak("My favorite place is Ghaziabad")
 
+        elif "goodbye" in query:
+            speak("Goodbye Sir")
+            sys.exit()
 
-""""
-            elif 'outlook' in query:
-                outlookPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE"
-                os.startfile(outlookPath)
+        elif "thank you" in query:
+            speak("Welcome Sir")
 
-            elif 'microsoft word' in query:
-                wordPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE"
-                os.startfile(wordPath)
+        elif "who are you" in query:
+            speak("I am a Virtual assistant")
 
-            elif 'microsoft excel' in query:
-                excelPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE"
-                os.startfile(excelPath)
+        elif "who made you" in query:
+            speak("I was created by Chirag singhal")
 
-            elif 'microsoft powerpoint' in query:
-                powerpointPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.EXE"
-                os.startfile(powerpointPath)
+        elif "who is your creator" in query:
+            speak("I was created by Chirag singhal")
 
-            elif 'microsoft onenote' in query:
-                onenotePath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\ONENOTE.EXE"
-                sp("microsoft onenote is opening")
-                os.startfile(onenotePath)
+        elif "who made you" in query:
+            speak("I was made by Chirag singhal")
 
-            elif 'microsoft teams' in query:
-                teamsPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\TEAMS.EXE"
-                sp("microsoft teams is opening")
-                os.startfile(teamsPath)
+        elif "what is your country of origin" in query:
+            speak("I was made in India")
 
-            elif 'firefox' in query:
-                sp("Firefox is opening")
-                webbrowser.open("https://www.mozilla.org/en-US/firefox/new/")
+        elif "what is your language" in query:
+            speak("I am a computer program")
 
-            elif 'open code' in query:
-                codePath = "C:\\Users\\hp\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
-                os.startfile(codePath)
+        elif "what is your purpose" in query:
 
-            elif 'wordpad' in query:
-                speak("okay")
-                os.system("wordpad")
-
-            elif 'paint' in query:
-                speak("okay")
-                os.system("mspaint")
-
-            elif 'task manager' in query:
-                speak("okay")
-                os.system("taskmgr")
-
-            elif 'camera' in query:
-                speak("okay")
-                os.system("camera")
-
-            elif 'player' in query:
-                speak("okay")
-                os.system("wmplayer")
-            elif 'ms word' in query:
-                speak("okay")
-                os.system("winword")
-
-            elif 'ms excel' in query:
-                speak("okay")
-                os.system("excel")
-
-            elif 'ms powerpoint' in query:
-                speak("okay")
-                os.system("powerpnt")
-
-            elif 'ms paint' in query:
-                speak("okay")
-                os.system("mspaint")
-
-            elif 'edge' in query:
-                speak("okay")
-                os.system("edge")
-
-            elif 'chrome' in query:
-                speak("okay")
-                os.system("chrome")
-
-            elif 'firefox' in query:
-                speak("okay")
-                os.system("firefox")
-
-            elif 'opera' in query:
-                speak("okay")
-                os.system("opera")
-
-            elif 'treesizefree' in query:
-                speak("okay")
-                os.system("treesizefree")
-
-            elif 'skype' in query:
-                speak("okay")
-                os.system("skype")
-
-            elif 'qbittorrent' in query:
-                speak("okay")
-                os.system("qbittorrent")
-
-            elif 'steam' in query:
-                speak("okay")
-                os.system("steam")
-
-        elif 'play music' in query or "play song" in query:
-            sp("Here you go with music")
-            music_dir = "C:\\Users\\hp\\Music"
-            songs = os.listdir(music_dir)
-            print(songs)
-            random = os.startfile(os.path.join(music_dir, songs[1]))
-
-        elif 'play video' in query:
-            music_dir = 'D:\\non critical\\video'
-            songs = os.listdir(music_dir)
-            print(songs)
-            os.startfile(os.path.join(music_dir, songs[0]))
-
-
-
-"""
+            speak("I am a Virtual assistant")
