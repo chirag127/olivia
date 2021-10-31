@@ -256,20 +256,6 @@ if __name__ == "__main__":
 
         elif 'wish me' in query:
             wishMe()
-
-        elif 'play video' in query:
-            music_dir = 'D:\\non critical\\video'
-            songs = os.listdir(music_dir)
-            print(songs)
-            os.startfile(os.path.join(music_dir, songs[0]))
-
-        elif 'play music' in query or "play song" in query:
-            sp("Here you go with music")
-            music_dir = "C:\\Users\\hp\\Music"
-            songs = os.listdir(music_dir)
-            print(songs)
-            random = os.startfile(os.path.join(music_dir, songs[1]))
-
         elif 'email to chirag' in query:
             try:
                 speak("What should I say?")
@@ -349,13 +335,23 @@ if __name__ == "__main__":
             file = open('olivianote.txt', 'w')
             speak("Sir, Should i include date and time")
             snfm = takeCommand()
+
             if 'yes' in snfm or 'sure' in snfm:
-                strTime = datetime.datetime.now().strftime("% H:% M:% S")
+                strTime = datetime.datetime.now().strftime("%m-%d-%Y %T:%M%p")
                 file.write(strTime)
                 file.write(" :- ")
+                file.write("\n")
                 file.write(note)
+                speak("Note has been saved")
             else:
                 file.write(note)
+                speak("Note has been saved without date and time")
+
+        elif "read a note" in query:
+            speak("Reading Note Sir")
+            file = open('olivianote.txt', 'r')
+            print(file.read())
+            speak(file.read(6))
 
         elif "show note" in query:
             speak("Showing Notes")
@@ -367,32 +363,14 @@ if __name__ == "__main__":
             speak("Deleting Notes")
             os.remove("olivianote.txt")
 
-        elif "what is your name" in query:
-            speak("My name is Olivia")
-
-        elif "what is your age" in query:
-            speak("I am a computer program")
-
-        elif "what is your job" in query:
-            speak("I am a Virtual assistant")
-
-        elif "what is your favorite food" in query:
-            speak("I Like renewable electricity")
-
-        elif "what is your favorite color" in query:
-            speak("My favorite color is black")
-
-        elif "what is your favorite song" in query:
-            speak("My favorite song is the one by the same name")
-
-        elif "what is your favorite movie" in query:
-            speak("My favorite movie is the dead poet Society")
-
-        elif "what is your favorite actor" in query:
-            speak("My favorite actor is the one by the same name")
+        elif 'play' in query:
+            song = query.replace('play', '')
+            sp('playing ')
+            sp(song)
+            pywhatkit.playonyt(song)
 
         elif 'search' in query:
-            speak('Searching ...')
+            sp('Searching ...')
             query = query.replace("search ", "")
             query = query.replace(" on ", "")
 
@@ -1050,8 +1028,47 @@ if __name__ == "__main__":
                 translated = str(k.text)
                 sp(translated)
 
+        elif "what is your name" in query:
+            speak("My name is Olivia")
 
-""""        
+        elif "what is your age" in query:
+            speak("I am a computer program")
+
+        elif "what is your job" in query:
+            speak("I am a Virtual assistant")
+
+        elif "what is your favorite food" in query:
+            speak("I Like renewable electricity")
+
+        elif "what is your favorite color" in query:
+            speak("My favorite color is black")
+
+        elif "what is your favorite song" in query:
+            speak("My favorite song is the one by the Justin bieber")
+
+        elif "what is your favorite movie" in query:
+            speak("My favorite movie is the dead poet Society")
+
+        elif "what is your favorite actor" in query:
+            speak("My favorite actor is Alex Lawther")
+
+        elif "what is your favorite actress" in query:
+            speak("My favorite actress is Jessica Barden")
+
+        elif "what is your favorite cartoon" in query:
+            speak("My favorite cartoon is the one by the Tom and Jerry")
+
+        elif "what is your favorite cartoon character" in query:
+            speak("My favorite cartoon character is Jerry")
+
+        elif "what is your favorite book" in query:
+            speak("My favorite book is Automate the boring stuff")
+
+        elif "what is your favorite place" in query:
+            speak("My favorite place is Ghaziabad")
+
+
+""""
             elif 'outlook' in query:
                 outlookPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE"
                 os.startfile(outlookPath)
@@ -1152,6 +1169,20 @@ if __name__ == "__main__":
             elif 'steam' in query:
                 speak("okay")
                 os.system("steam")
+
+        elif 'play music' in query or "play song" in query:
+            sp("Here you go with music")
+            music_dir = "C:\\Users\\hp\\Music"
+            songs = os.listdir(music_dir)
+            print(songs)
+            random = os.startfile(os.path.join(music_dir, songs[1]))
+
+        elif 'play video' in query:
+            music_dir = 'D:\\non critical\\video'
+            songs = os.listdir(music_dir)
+            print(songs)
+            os.startfile(os.path.join(music_dir, songs[0]))
+
 
 
 """

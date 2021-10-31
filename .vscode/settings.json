@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["ctypes", "pipwin", "pyttsx"]
+  "cSpell.words": ["ctypes", "pipwin", "pyttsx"],
+  "files.autoSave": "afterDelay"
 }
