@@ -183,35 +183,6 @@ if __name__ == "__main__":
             speak("According to Wikipedia")
             sp(results)
 
-        elif 'open' in query:
-            print("opening.....")
-            query = query.replace("open ", "")
-
-            if 'edge' in query:
-                if 'youtube' in query:
-                    webbrowser.register('edge',
-                                        None,
-                                        webbrowser.BackgroundBrowser("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"))
-                    webbrowser.get('edge').open(
-                        "https://www.youtube.com/feed/subscriptions")
-
-            elif 'youtube' in query:
-
-                webbrowser.open("https://www.youtube.com/")
-
-            elif 'google' in query:
-                webbrowser.open("https://www.google.com/")
-
-            elif 'stack overflow' in query:
-                webbrowser.open("https://www.stackoverflow.com/")
-
-            elif 'flipkart' in query:
-                webbrowser.open("https://www.flipkart.com/")
-
-            else:
-                webbrowser.open(
-                    f"https://duckduckgo.com/?q=%21+{query}&ia=olivia")
-
         elif 'call me' in query:
             speak('What is your name?')
             query = query.replace("call me", "")
@@ -280,11 +251,87 @@ if __name__ == "__main__":
                 query = query.replace("flipkart", "")
                 webbrowser.open(
                     f"https://www.flipkart.com/search?q={query}&otracker1=olivia")
+
+            elif 'google' in query:
+                query = query.replace("google", "")
+                webbrowser.open(
+                    f"https://www.google.com/search?q={query}&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjNy7Ph39ndAhXGFYgKHcc8D_AQ_AUoAXoECAsQAw&biw=1366&bih=657")
+
+            elif 'stack overflow' in query:
+                query = query.replace("stack overflow", "")
+                webbrowser.open(
+                    f"https://stackoverflow.com/search?q={query}")
+
+            elif 'wikipedia' in query:
+                query = query.replace("wikipedia", "")
+                webbrowser.open(
+                    f"https://en.wikipedia.org/wiki/{query}")
+
+            elif 'facebook' in query:
+                query = query.replace("facebook", "")
+                webbrowser.open(
+                    f"https://www.facebook.com/search/top/?q={query}")  # facebook
+
+            elif 'instagram' in query:
+                query = query.replace("instagram", "")
+                webbrowser.open(
+                    f"https://www.instagram.com/{query}")
+
+            elif 'twitter' in query:
+                query = query.replace("twitter", "")
+                webbrowser.open(
+                    f"https://www.twitter.com/{query}")
+
+            elif 'linkedin' in query:
+                query = query.replace("linkedin", "")
+                webbrowser.open(
+                    f"https://www.linkedin.com/in/{query}")
+
+            elif 'google' in query:
+                query = query.replace("google", "")
+                webbrowser.open(
+                    f"https://www.google.com/search?q={query}")
+
+            elif 'amazon' in query:
+                query = query.replace("amazon", "")
+                webbrowser.open(
+                    f"https://www.amazon.in/s?k={query}")
+
+            elif 'ebay' in query:
+                query = query.replace("ebay", "")
+                webbrowser.open(
+                    f"https://www.ebay.com/sch/i.html?_nkw={query}")
+
+            elif 'netflix' in query:
+                query = query.replace("netflix", "")
+                webbrowser.open(
+                    f"https://www.netflix.com/search?q={query}")
+
+            elif 'spotify' in query:
+                query = query.replace("spotify", "")
+                webbrowser.open(
+                    f"https://open.spotify.com/search/{query}")
+
+            elif 'snapchat' in query:
+                query = query.replace("snapchat", "")
+                webbrowser.open(
+                    f"https://www.snapchat.com/search/{query}")
+
+            elif 'pinterest' in query:
+                query = query.replace("pinterest", "")
+                webbrowser.open(
+                    f"https://www.pinterest.com/search/{query}")
+
+            elif 'quora' in query:
+                query = query.replace("quora", "")
+                webbrowser.open(
+                    f"https://www.quora.com/{query}")
             else:
                 query = query.replace("google", "")
 
                 webbrowser.open(
                     f"https://www.google.com/search?q={query}&sourceid=olivia")
+
         elif 'clear' in query:
             clearConsole()
 
@@ -665,6 +712,99 @@ if __name__ == "__main__":
         elif 'open notepad++' in query:
             notepadPath = "C:\\Program Files\\Notepad++\\notepad++.exe"
             os.startfile(notepadPath)
+
+        elif 'open' in query:
+            print("opening.....")
+            query = query.replace("open ", "")
+
+            if 'edge' in query:
+                if 'youtube' in query:
+                    webbrowser.register('edge',
+                                        None,
+                                        webbrowser.BackgroundBrowser("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"))
+                    webbrowser.get('edge').open(
+                        "https://www.youtube.com/feed/subscriptions")
+
+            elif 'chrome' in query:
+                speak("Google Chrome is opening")
+                webbrowser.open("https://www.google.com/chrome/")
+
+            elif 'firefox' in query:
+
+                speak("Firefox is opening")
+                webbrowser.open("https://www.mozilla.org/en-US/firefox/new/")
+
+            elif 'youtube' in query:
+                speak("Youtube is opening")
+                webbrowser.open("https://www.youtube.com/")
+
+            elif 'facebook' in query:
+                speak("Facebook is opening")
+                webbrowser.open("https://www.facebook.com/")
+
+            elif 'whatsapp' in query:
+                speak("Whatsapp is opening")
+                webbrowser.open("https://web.whatsapp.com/")
+
+            elif 'instagram' in query:
+                speak("Instagram is opening")
+                webbrowser.open("https://www.instagram.com/")
+
+            elif 'twitter' in query:
+                speak("Twitter is opening")
+                webbrowser.open("https://twitter.com/")
+
+            elif 'linkedin' in query:
+                speak("Linkedin is opening")
+                webbrowser.open("https://www.linkedin.com/")
+
+            elif 'pinterest' in query:
+                speak("Pinterest is opening")
+                webbrowser.open("https://www.pinterest.com/")
+
+            elif 'quora' in query:
+                speak("Quora is opening")
+                webbrowser.open("https://www.quora.com/")
+
+            elif 'amazon' in query:
+                speak("Amazon is opening")
+                webbrowser.open("https://www.amazon.in/")
+
+            elif 'ebay' in query:
+                speak("Ebay is opening")
+                webbrowser.open("https://www.ebay.com/")
+
+            elif 'netflix' in query:
+                speak("Netflix is opening")
+                webbrowser.open("https://www.netflix.com/")
+
+            elif 'spotify' in query:
+                speak("Spotify is opening")
+                webbrowser.open("https://open.spotify.com/")
+
+            elif 'snapchat' in query:
+
+                speak("Snapchat is opening")
+                webbrowser.open("https://www.snapchat.com/")
+
+            elif 'gmail' in query:
+                speak("Gmail is opening")
+                webbrowser.open("https://mail.google.com/mail/u/0/#inbox")
+
+            elif 'google' in query:
+                speak("Google is opening")
+                webbrowser.open("https://www.google.com/")
+
+            elif 'stack overflow' in query:
+                webbrowser.open("https://www.stackoverflow.com/")
+
+            elif 'flipkart' in query:
+                webbrowser.open("https://www.flipkart.com/")
+
+            else:
+                webbrowser.open(
+                    f"https://duckduckgo.com/?q=%21+{query}&ia=olivia")
+
 
 """"        
 
