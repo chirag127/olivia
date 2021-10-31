@@ -23,6 +23,7 @@ import pyautogui  # pip install pyautogui
 import pywhatkit
 from bs4 import BeautifulSoup as soup  # pip install bs4
 import re
+import urlopen
 
 
 # I was getting error so i install pyaudio

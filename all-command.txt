@@ -12,3 +12,5 @@ pip install winshell
 pip install pyautogui
 pip install Pillow
 pip install pywhatkit
+pip install beautifulsoup4
+pip install urllib3

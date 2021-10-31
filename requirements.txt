@@ -10,3 +10,4 @@ winshell
 pyautogui
 Pillow
 pywhatkit
+beautifulsoup4
