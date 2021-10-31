@@ -319,9 +319,8 @@ if __name__ == "__main__":
 
         elif "don't listen" in query or "stop listening" in query:
             speak("for how much time you want to stop olivia from listening commands")
-                time.sleep(120)
-                speak("Olivia is listening again")
-
+            time.sleep(120)
+            speak("Olivia is listening again")
 
         elif "where is" in query:
             query = query.replace("where is", "")
