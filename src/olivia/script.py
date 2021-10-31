@@ -250,11 +250,6 @@ if __name__ == "__main__":
             query = query.replace("change my name to", "")
             uname = query
 
-        elif 'what you' in query:
-            sp("I am olivia. I Wish you According to the time of the day. I can Open websites like Google ,Youtube ,flipkart ,Stackoverflow. Give you a joke. Search websites like Google ,YouTube. Give the Introduction of someone or something according to wikipedia. Play music. Stop listening. Tell the current time. send email to someone.")
-
-        elif 'wish me' in query:
-            wishMe()
         elif 'email to chirag' in query:
             try:
                 speak("What should I say?")
@@ -1157,3 +1152,8 @@ if __name__ == "__main__":
 
         elif "who made you" in query or "who created you" in query or "who discovered you" in query:
             speak("I was built by Chirag singhal")
+        elif 'what you' in query:
+            sp("I am olivia. I Wish you According to the time of the day. I can Open websites like Google ,Youtube ,flipkart ,Stackoverflow. Give you a joke. Search websites like Google ,YouTube. Give the Introduction of someone or something according to wikipedia. Play music. Stop listening. Tell the current time. send email to someone.")
+
+        elif 'wish me' in query:
+            wishMe()
