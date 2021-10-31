@@ -43,67 +43,65 @@
 1. Send WhatsApp message by saying "send WhatsApp message to (your number)" or "send message".
 1. Tell location of a place by saying "where is (the name of the place)" or "where is (the name of the place) now" or "where is (the name of the place) now" etc. Example "where is Ghaziabad" will tell you the location of Ghaziabad by open the location of Ghaziabad in Google Maps.
 1. Search many websites example are there following :-
-  1.  Search on Wikipedia just say "search (the thing) in Wikipedia".
-  1.  Search on YouTube just say "search (the thing) in YouTube".
-  1.  Search on Facebook just say "search (the thing) in Facebook".
-  1.  Search on Twitter just say "search (the thing) on Twitter".
-  1.  Search on Instagram just say "search (the thing) in Instagram".
-  1.  Search on LinkedIn just say "search (the thing) in LinkedIn".
-  1.  search in github just say "search (the thing) in github".
-  1.  search in stackoverflow just say "search (the thing) in stackoverflow".
-  1.  search in quora just say "search (the thing) in quora".
-  1.  Search in Google just say "search (the thing) in Google".
-  1.  search in bing just say "search (the thing) in bing".
-  1.  search in yahoo just say "search (the thing) in yahoo".
-  1.  search in duckduckgo just say "search (the thing) in duckduckgo".
-  1.  Search in Pinterest just say "search (the thing) in Pinterest".
-1. Launch an applications by saying "launch (the name of the application)" or "launch (the name of the application) now" or "launch (the name of the application) now" e.g. 
-  1. Launch chrome just say "launch chrome" or "launch chrome now".
-  1. Launch notepad just say "launch notepad" or "launch notepad now".
-  1. Launch word just say "launch word" or "launch word now".
-  1. Launch powerpoint just say "launch powerpoint" or "launch powerpoint now".
-  1. Launch excel just say "launch excel" or "launch excel now".
-  1. Launch outlook just say "launch outlook" or "launch outlook now".
-  1. Launch spotify just say "launch spotify" or "launch spotify now".
-  1. Launch control panel just say "launch control panel" or "launch control panel now".
-  1. Launch task manager just say "launch task manager" or "launch task manager now".
-  1. Launch paint just say "launch paint" or "launch paint now".
+    -  Search on Wikipedia just say "search (the thing) in Wikipedia".
+    -  Search on YouTube just say "search (the thing) in YouTube".
+    -  Search on Facebook just say "search (the thing) in Facebook".
+    -  Search on Twitter just say "search (the thing) on Twitter".
+    -  Search on Instagram just say "search (the thing) in Instagram".
+    -  Search on LinkedIn just say "search (the thing) in LinkedIn".
+    -  search in github just say "search (the thing) in github".
+    -  search in stackoverflow just say "search (the thing) in stackoverflow".
+    -  search in quora just say "search (the thing) in quora".
+    -  Search in Google just say "search (the thing) in Google".
+    -  search in bing just say "search (the thing) in bing".
+    -  search in yahoo just say "search (the thing) in yahoo".
+    -  search in duckduckgo just say "search (the thing) in duckduckgo".
+    -  Search in Pinterest just say "search (the thing) in Pinterest".
+ 1. Launch an applications by saying "launch (the name of the application)" or "launch (the name of the application) now" or "launch (the name of the application) now" e.g. 
+    - Launch chrome just say "launch chrome" or "launch chrome now".
+    - Launch notepad just say "launch notepad" or "launch notepad now".
+    - Launch word just say "launch word" or "launch word now".
+    - Launch powerpoint just say "launch powerpoint" or "launch powerpoint now".
+    - Launch excel just say "launch excel" or "launch excel now".
+    - Launch outlook just say "launch outlook" or "launch outlook now".
+    - Launch spotify just say "launch spotify" or "launch spotify now".
+    - Launch control panel just say "launch control panel" or "launch control panel now".
+    - Launch task manager just say "launch task manager" or "launch task manager now".
+    - Launch paint just say "launch paint" or "launch paint now".
 1. Open any website just say "open (the name of the website)" or "open (the name of the website) now" or "open (the name of the website) now" e.g.
-         1. Open the amazon website by saying "open amazon" or "open amazon website".
-         1. Open the bing website by saying "open bing" or "open bing website".
-         1. Open the codeforces website by saying "open codeforces" or "open codeforces website".
-         1. Open the codewars website by saying "open codewars" or "open codewars website".
-         1. Open the duckduckgo website by saying "open duckduckgo" or "open duckduckgo website".
-         1. Open the facebook website by saying "open facebook" or "open facebook website".
-         1. Open the flipkart website by saying "open flipkart" or "open flipkart website".
-         1. Open the freecodecamp website by saying "open freecodecamp" or "open freecodecamp website".
-         1. Open the github website by saying "open github" or "open github website".
-         1. Open the gmail website by saying "open gmail" or "open gmail website".
-         1. Open the google maps website by saying "open google maps" or "open google maps website".
-         1. Open the google website by saying "open google" or "open google website".
-         1. Open the hackerearth website by saying "open hackerearth" or "open hackerearth website".
-         1. Open the hackerrank website by saying "open hackerrank" or "open hackerrank website".
-         1. Open the instagram website by saying "open instagram" or "open instagram website".
-         1. Open the kaggle website by saying "open kaggle" or "open kaggle website".
-         1. Open the linkedin website by saying "open linkedin" or "open linkedin website".
-         1. Open the outlook express website by saying "open outlook express" or "open outlook express website".
-         1. Open the outlook web app website by saying "open outlook web app" or "open outlook web app website"
-         1. Open the outlook website by saying "open outlook" or "open outlook website".
-         1. Open the pinterest website by saying "open pinterest" or "open pinterest website".
-         1. Open the quora website by saying "open quora" or "open quora website".
-         1. Open the reddit website by saying "open reddit" or "open reddit website".
-         1. Open the skype website by saying "open skype" or "open skype website".
-         1. Open the snapdeal website by saying "open snapdeal" or "open snapdeal website".
-         1. Open the stackoverflow website by saying "open stackoverflow" or "open stackoverflow website".
-         1. Open the telegram website by saying "open telegram" or "open telegram website".
-         1. Open the tinder website by saying "open tinder" or "open tinder website".
-         1. Open the twitter website by saying "open twitter" or "open twitter website".
-         1. Open the WhatsApp website by saying "open WhatsApp" or "open WhatsApp website".
-         1. Open the yahoo website by saying "open yahoo" or "open yahoo website".
-         1. Open the YouTube website by saying "open YouTube" or "open YouTube website".
-
-
-Translate the english to many other languages just saying "translate (the sentence you want to translate) to (the language to which you want to translate the sentence)"  example "translate hello to spanish" will translate the english sentence "hello" to spanish. The supported  languages are :-
+    - Open the amazon website by saying "open amazon" or "open amazon website".
+    - Open the bing website by saying "open bing" or "open bing website".
+    - Open the codeforces website by saying "open codeforces" or "open codeforces website".
+    - Open the codewars website by saying "open codewars" or "open codewars website".
+    - Open the duckduckgo website by saying "open duckduckgo" or "open duckduckgo website".
+    - Open the facebook website by saying "open facebook" or "open facebook website".
+    - Open the flipkart website by saying "open flipkart" or "open flipkart website".
+    - Open the freecodecamp website by saying "open freecodecamp" or "open freecodecamp website".
+    - Open the github website by saying "open github" or "open github website".
+    - Open the gmail website by saying "open gmail" or "open gmail website".
+    - Open the google maps website by saying "open google maps" or "open google maps website".
+    - Open the google website by saying "open google" or "open google website".
+    - Open the hackerearth website by saying "open hackerearth" or "open hackerearth website".
+    - Open the hackerrank website by saying "open hackerrank" or "open hackerrank website".
+    - Open the instagram website by saying "open instagram" or "open instagram website".
+    - Open the kaggle website by saying "open kaggle" or "open kaggle website".
+    - Open the linkedin website by saying "open linkedin" or "open linkedin website".
+    - Open the outlook express website by saying "open outlook express" or "open outlook express website".
+    - Open the outlook web app website by saying "open outlook web app" or "open outlook web app website"
+    - Open the outlook website by saying "open outlook" or "open outlook website".
+    - Open the pinterest website by saying "open pinterest" or "open pinterest website".
+    - Open the quora website by saying "open quora" or "open quora website".
+    - Open the reddit website by saying "open reddit" or "open reddit website".
+    - Open the skype website by saying "open skype" or "open skype website".
+    - Open the snapdeal website by saying "open snapdeal" or "open snapdeal website".
+    - Open the stackoverflow website by saying "open stackoverflow" or "open stackoverflow website".
+    - Open the telegram website by saying "open telegram" or "open telegram website".
+    - Open the tinder website by saying "open tinder" or "open tinder website".
+    - Open the twitter website by saying "open twitter" or "open twitter website".
+    - Open the WhatsApp website by saying "open WhatsApp" or "open WhatsApp website".
+    - Open the yahoo website by saying "open yahoo" or "open yahoo website".
+    - Open the YouTube website by saying "open YouTube" or "open YouTube website".
+1. Translate the english to many other languages just saying "translate (the sentence you want to translate) to (the language to which you want to translate the sentence)"  example "translate hello to spanish" will translate the english sentence "hello" to spanish. The supported  languages are :-
    1. spanish
    1. hindi
    1. french
@@ -114,7 +112,7 @@ Translate the english to many other languages just saying "translate (the senten
    1. japanese
    1. and many more.
 
-Answer to many questions like :-
+1. Answer to many questions like :-
    1. What is your name?
    1. What is your age?
    1. What is your job?
