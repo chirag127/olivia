@@ -21,6 +21,8 @@ import win32com.client as wincl
 import winshell
 import pyautogui  # pip install pyautogui
 import pywhatkit
+from bs4 import BeautifulSoup as soup  # pip install bs4
+import re
 
 
 # I was getting error so i install pyaudio
@@ -369,6 +371,57 @@ if __name__ == "__main__":
             sp(song)
             pywhatkit.playonyt(song)
 
+        elif 'pause' in query:
+            pywhatkit.pause()
+
+        elif 'resume' in query:
+            pywhatkit.resume()
+
+        elif 'stop' in query:
+            pywhatkit.stop()
+
+        elif 'next' in query:
+            pywhatkit.next()
+
+        elif 'previous' in query:
+            pywhatkit.previous()
+
+        elif 'repeat' in query:
+            pywhatkit.repeat()
+
+        elif 'shuffle' in query:
+            pywhatkit.shuffle()
+
+        elif 'volume up' in query:
+            pywhatkit.volumeup()
+
+        elif 'volume down' in query:
+            pywhatkit.volumedown()
+
+        elif 'mute' in query:
+            pywhatkit.mute()
+
+        elif 'unmute' in query:
+            pywhatkit.unmute()
+
+        elif 'news for today' in query:
+            try:
+                news_url = "https://news.google.com/news/rss"
+                Client = urlopen(news_url)
+                xml_page = Client.read()
+                Client.close()
+                soup_page = BeautifulSoup(xml_page, "xml")
+                news_list = soup_page.findAll("item")
+
+                for news in news_list[:15]:
+                    speak(news.title.text.encode('utf-8'))
+                    print(news.title.text.encode('utf-8'))
+                    speak("Moving on...")
+                    print("Moving on...")
+            except Exception as e:
+                print(e)
+                speak("Sorry Sir, I am not able to fetch news")
+
         elif 'search' in query:
             sp('Searching ...')
             query = query.replace("search ", "")
@@ -475,9 +528,8 @@ if __name__ == "__main__":
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
             speak(f"Sir, the time is {strTime}")
 
-        elif 'open' in query:
+        elif 'launch' in query:
             speak("okay")
-            query = query.replace("open ", "")
 
             if 'control panel' in query:
                 speak("okay")
@@ -649,25 +701,38 @@ if __name__ == "__main__":
                 microsoftPowerpointPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.EXE"
                 os.startfile(microsoftPowerpointPath)
 
-            elif 'app' in query:
+            elif 'spotify' in query:
+                spotifyPath = "C:\\Users\\hp\\AppData\\Roaming\\Spotify\\Spotify.exe"
+                os.startfile(spotifyPath)
 
-                if 'open spotify' in query:
-                    spotifyPath = "C:\\Users\\hp\\AppData\\Roaming\\Spotify\\Spotify.exe"
-                    os.startfile(spotifyPath)
+            elif 'whatsapp' in query:
+                whatsappPath = "C:\\Users\\hp\\AppData\\Local\\WhatsApp\\WhatsApp.exe"
+                os.startfile(whatsappPath)
 
-                elif 'open whatsapp' in query:
-                    whatsappPath = "C:\\Users\\hp\\AppData\\Local\\WhatsApp\\WhatsApp.exe"
-                    os.startfile(whatsappPath)
+            elif 'discord' in query:
+                discordPath = "C:\\Users\\hp\\AppData\\Local\\Discord\\Update\\Discord.exe"
+                os.startfile(discordPath)
 
-                elif 'open discord' in query:
-                    discordPath = "C:\\Users\\hp\\AppData\\Local\\Discord\\Update\\Discord.exe"
-                    os.startfile(discordPath)
+            elif 'gmail' in query:
+                gmailPath = "C:\\Users\\hp\\AppData\\Local\\Gmail\\Google Gmail.exe"
+                os.startfile(gmailPath)
 
-                elif 'open gmail' in query:
-                    gmailPath = "C:\\Users\\hp\\AppData\\Local\\Gmail\\Google Gmail.exe"
-                    os.startfile(gmailPath)
+            else:
+                try:
+                    reg_ex = re.search('launch (.*)', query)
+                    if reg_ex:
+                        appname = reg_ex.group(1)
+                        appname1 = appname+".exe"
+                        subprocess.Popen(
+                            ["open", "-n", "/Applications/" + appname1], stdout=subprocess.PIPE)
+                        sp('I have launched the desired application')
+                except:
+                    sp('I am not sure what application you want to launch')
 
-            elif 'firefox' in query:
+        elif 'open' in query:
+            query = query.replace("open", "")
+
+            if 'firefox' in query:
                 sp("Firefox is opening")
                 webbrowser.open(
                     "https://www.mozilla.org/en-US/firefox/new/")
@@ -757,11 +822,21 @@ if __name__ == "__main__":
             elif 'wikipedia' in query:
                 webbrowser.open("https://www.wikipedia.org/")
 
-            elif 'reddit' in query:
-                webbrowser.open("https://www.reddit.com/")
-
             elif 'quora' in query:
                 webbrowser.open("https://www.quora.com/")
+
+            elif 'reddit' in query:
+                if 'reddit' in query:
+                    reg_ex = re.search('reddit (.*)', query)
+                    url = 'https://www.reddit.com/'
+                    if reg_ex:
+                        subreddit = reg_ex.group(1)
+                        url = url + 'r/' + subreddit
+                    webbrowser.open(url)
+                    sp('The Reddit content has been opened for you Sir.')
+
+                else:
+                    webbrowser.open("https://www.reddit.com/")
 
             else:
                 webbrowser.open(
