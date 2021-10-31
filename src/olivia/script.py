@@ -1,12 +1,16 @@
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup  # pip install bs4
 from googletrans import Translator
 import ctypes
 import datetime
 import json
+import math
 import operator
 import os
+import pyautogui  # pip install pyautogui
 import pyttsx3  # pip install pyttsx3
+import pywhatkit
 import random
+import re
 import requests
 import shutil
 import smtplib
@@ -15,16 +19,11 @@ import subprocess
 import sys
 import time
 import tkinter
+import urlopen
 import webbrowser
 import wikipedia  # pip install wikipedia
 import win32com.client as wincl
 import winshell
-import pyautogui  # pip install pyautogui
-import pywhatkit
-from bs4 import BeautifulSoup as soup  # pip install bs4
-import re
-import urlopen
-
 
 # I was getting error so i install pyaudio
 # error in that too so i googled it on the stackover flow.
@@ -86,7 +85,7 @@ def takescreenshot():
 
 
 myScreenshot = pyautogui.screenshot()
-myScreenshot.save(r'D:\dl\Critical\code\screenshot_1.png')
+myScreenshot.save(r'D:\\dl\\Critical\\code\\screenshot_1.png')
 
 
 def sendEmail(to, content):
@@ -260,7 +259,17 @@ if __name__ == "__main__":
                 'https://www.google.com/search?q=' + search)
 
         elif 'time' in query:
+
             ctime()
+
+        elif 'date' in query:
+            now = datetime.datetime.now()
+            speak("The current date is")
+            speak(now.strftime("%d-%m-%Y"))
+
+        elif 'generate' in query:
+            if 'password' in query:
+                generate_random_password()
 
         elif 'username' in query:
             username()
