@@ -177,12 +177,46 @@ if __name__ == "__main__":
 
         # Logic for executing tasks based on query
         #  if 'olivia' in query:
-        if 'wikipedia' in query:
-            speak('Searching Wikipedia...')
+        #     speak("Yes Sir")
+
+        if 'open chrome' in query:
+            open_chrome()
+
+        elif 'wikipedia' in query:
+            speak("Searching Wikipedia...")
             query = query.replace("wikipedia", "")
             results = wikipedia.summary(query, sentences=2)
             speak("According to Wikipedia")
-            sp(results)
+            print(results)
+            speak(results)
+
+        elif 'search in chrome' in query:
+            speak("What should i search for sir")
+            chromepath = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+            search = takeCommand().lower()
+            webbrowser.get(chromepath).open(
+                'https://www.google.com/search?q=' + search)
+
+        elif 'time' in query:
+            ctime()
+
+        elif 'username' in query:
+            username()
+
+        elif 'clear' in query:
+            clearConsole()
+
+        elif 'exit' in query:
+            exitcode()
+
+        elif 'screenshot' in query:
+            takescreenshot()
+
+        elif 'joke' in query:
+            givejoke()
+
+        elif 'ip' in query:
+            giveip()
 
         elif 'call me' in query:
             speak('What is your name?')
@@ -194,10 +228,6 @@ if __name__ == "__main__":
             query = query.replace("change my name to", "")
             uname = query
 
-        elif "screenshot" in query:
-            sp("Taking Screenshot")
-            takescreenshot()
-
         elif 'hello' in query:
             speak("hello")
             wishMe()
@@ -207,9 +237,6 @@ if __name__ == "__main__":
 
         elif 'wish me' in query:
             wishMe()
-
-        elif 'my ip address' in query:
-            giveip()
 
         elif 'play video' in query:
             music_dir = 'D:\\non critical\\video'
@@ -233,7 +260,8 @@ if __name__ == "__main__":
                 speak("Email has been sent!")
             except Exception as e:
                 print(e)
-                speak("Sorry my friend chirag sir. I am not able to send this email")
+                speak(
+                    "Sorry my friend chirag sir. I am not able to send this email")
 
         elif 'stop music' in query:
             os.close("C:\\Program Files\\DAUM\\PotPlayer\\PotPlayerMini64.exe")
@@ -365,7 +393,8 @@ if __name__ == "__main__":
             speak("Recycle Bin Recycled")
 
         elif "don't listen" in query or "stop listening" in query:
-            speak("for how much time you want to stop jarvis from listening commands")
+            speak(
+                "for how much time you want to stop jarvis from listening commands")
             a = int(takeCommand())
             time.sleep(a)
             print(a)
@@ -700,6 +729,23 @@ if __name__ == "__main__":
                 speak("okay")
                 os.system("control")
 
+            elif 'quick assist' in query:
+                speak("okay")
+                os.system("quickassist")
+
+            elif 'game panel' in query:
+                speak("okay")
+                os.system("gamepanel")
+
+            elif 'task manager' in query:
+                speak("okay")
+                os.system("taskmgr")
+
+            elif 'command prompt' in query:
+
+                speak("okay")
+                os.system("cmd")
+
             elif 'edge' in query:
                 if 'youtube' in query:
                     webbrowser.register('edge',
@@ -752,35 +798,105 @@ if __name__ == "__main__":
                 cameraPath = "C:\\Windows\\System32\\mspaint.exe"
                 os.startfile(cameraPath)
 
-                
+            elif 'media player' in query:
 
-            elif 'open chrome' in query:
+                speak("okay")
+                mediaPlayerPath = "C:\\Program Files (x86)\\Windows Media Player\\wmplayer.exe"
+                os.startfile(mediaPlayerPath)
+
+            elif 'task manager' in query:
+
+                speak("okay")
+                taskManagerPath = "C:\\Windows\\System32\\taskmgr.exe"
+                os.startfile(taskManagerPath)
+
+            elif 'setting' in query:
+
+                speak("okay")
+                settingPath = "C:\\Windows\\System32\\control.exe"
+                os.startfile(settingPath)
+
+            elif 'wordpad' in query:
+
+                speak("okay")
+                wordpadPath = "C:\\Windows\\System32\\wordpad.exe"
+                os.startfile(wordpadPath)
+
+            elif 'calculator' in query:
+
+                speak("okay")
+                calculatorPath = "C:\\Windows\\System32\\calc.exe"
+                os.startfile(calculatorPath)
+
+            elif 'mspaint' in query:
+                speak("okay")
+                mspaintPath = "C:\\Windows\\System32\\mspaint.exe"
+                os.startfile(mspaintPath)
+
+            elif 'chrome' in query:
                 chromePath = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
                 os.startfile(chromePath)
 
-            elif 'open notepad' in query:
-                notepadPath = "C:\\Windows\\System32\\notepad.exe"
-                os.startfile(notepadPath)
-
-            elif 'open sublime text' in query:
+            elif 'sublime text' in query:
                 sublimeTextPath = "C:\\Program Files\\Sublime Text 3\\sublime_text.exe"
                 os.startfile(sublimeTextPath)
 
-            elif 'open pycharm' in query:
+            elif 'pycharm' in query:
                 pycharmPath = "C:\\Program Files\\JetBrains\\PyCharm Community Edition 2019.1.3\\bin\\pycharm64.exe"
                 os.startfile(pycharmPath)
 
-            elif 'open notepad++' in query:
+            elif 'notepad++' in query:
                 notepadPath = "C:\\Program Files\\Notepad++\\notepad++.exe"
                 os.startfile(notepadPath)
 
-            elif 'open vlc' in query:
+            elif 'vlc' in query:
                 vlcPath = "C:\\Program Files\\VideoLAN\\VLC\\vlc.exe"
                 os.startfile(vlcPath)
 
+            elif 'pot player' in query:
+                potPlayerPath = "C:\\Program Files\\PotPlayer\\PotPlayerMini64.exe"
+                os.startfile(potPlayerPath)
+
+            elif 'github desktop' in query:
+                githubPath = "C:\\Users\\admin\\AppData\\Local\\Programs\\GitHubDesktop\\GitHubDesktop.exe"
+                os.startfile(githubPath)
+
+            elif 'treesizefree' in query:
+                treesizefreePath = "C:\\Program Files\\TreesizeFree\\TreesizeFree.exe"
+                os.startfile(treesizefreePath)
+
+            elif 'microsoft store' in query:
+                microsoftStorePath = "C:\\Program Files\\Microsoft Store\\Microsoft Store.exe"
+                os.startfile(microsoftStorePath)
+
+            elif 'microsoft edge' in query:
+                microsoftEdgePath = "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe"
+                os.startfile(microsoftEdgePath)
+
+            elif 'microsoft mail' in query:
+                microsoftMailPath = "C:\\Program Files\\Microsoft\\Windows Live Mail\\wlmail.exe"
+                os.startfile(microsoftMailPath)
+
+            elif 'microsoft office' in query:
+                microsoftOfficePath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE"
+                os.startfile(microsoftOfficePath)
+
+            elif 'microsoft word' in query:
+                microsoftWordPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE"
+                os.startfile(microsoftWordPath)
+
+            elif 'microsoft excel' in query:
+
+                microsoftExcelPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE"
+                os.startfile(microsoftExcelPath)
+
+            elif 'microsoft powerpoint' in query:
+                microsoftPowerpointPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.EXE"
+                os.startfile(microsoftPowerpointPath)
+
             elif 'app' in query:
 
-                elif 'open spotify' in query:
+                if 'open spotify' in query:
                     spotifyPath = "C:\\Users\\hp\\AppData\\Roaming\\Spotify\\Spotify.exe"
                     os.startfile(spotifyPath)
 
@@ -792,9 +908,9 @@ if __name__ == "__main__":
                     discordPath = "C:\\Users\\hp\\AppData\\Local\\Discord\\Update\\Discord.exe"
                     os.startfile(discordPath)
 
-            elif 'open gmail' in query:
-                gmailPath = "C:\\Users\\hp\\AppData\\Local\\Gmail\\Google Gmail.exe"
-                os.startfile(gmailPath)
+                elif 'open gmail' in query:
+                    gmailPath = "C:\\Users\\hp\\AppData\\Local\\Gmail\\Google Gmail.exe"
+                    os.startfile(gmailPath)
 
         elif 'open' in query:
             print("opening.....")
@@ -802,7 +918,8 @@ if __name__ == "__main__":
 
             if 'firefox' in query:
                 sp("Firefox is opening")
-                webbrowser.open("https://www.mozilla.org/en-US/firefox/new/")
+                webbrowser.open(
+                    "https://www.mozilla.org/en-US/firefox/new/")
 
             elif 'youtube' in query:
                 speak("Youtube is opening")
@@ -1001,7 +1118,6 @@ if __name__ == "__main__":
             elif 'steam' in query:
                 speak("okay")
                 os.system("steam")
-
 
 
 """
