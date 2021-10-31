@@ -40,17 +40,17 @@ Write a note by saying "write a note" or "write note" or "write a note now" or "
 Read a note by saying "read a note" or "read note" or "read a note now" or "read note now".
 Delete a note by saying "delete a note" or "delete note" or "delete a note now" or "delete note now".
 Show all notes by saying "show all notes" or "show all notes now" or "show all notes now".
-Send whatsapp message by saying "send whatsapp message to (your number)" or "send message".
-tell location of a place by saying "where is (the name of the place)" or "where is (the name of the place) now" or "where is (the name of the place) now" etc. Example "where is ghaziabad" will tell you the location of ghaziabad by open the location of ghaziabad in google maps.
+Send WhatsApp message by saying "send WhatsApp message to (your number)" or "send message".
+Tell location of a place by saying "where is (the name of the place)" or "where is (the name of the place) now" or "where is (the name of the place) now" etc. Example "where is Ghaziabad" will tell you the location of Ghaziabad by open the location of Ghaziabad in Google Maps.
 
 
 Search many websites example are there following :-
-    Search in Wikipedia just say "search (the thing) in Wikipedia".
-    Search in YouTube just say "search (the thing) in YouTube".
-    search in facebook just say "search (the thing) in facebook".
-    search in twitter just say "search (the thing) in twitter".
-    search in instagram just say "search (the thing) in instagram".
-    search in linkedin just say "search (the thing) in linkedin".
+    Search on Wikipedia just say "search (the thing) in Wikipedia".
+    Search on YouTube just say "search (the thing) in YouTube".
+    Search on Facebook just say "search (the thing) in Facebook".
+    Search on Twitter just say "search (the thing) on Twitter".
+    Search on Instagram just say "search (the thing) in Instagram".
+    Search on LinkedIn just say "search (the thing) in LinkedIn".
     search in github just say "search (the thing) in github".
     search in stackoverflow just say "search (the thing) in stackoverflow".
     search in quora just say "search (the thing) in quora".
@@ -59,7 +59,7 @@ Search many websites example are there following :-
     search in yahoo just say "search (the thing) in yahoo".
     search in duckduckgo just say "search (the thing) in duckduckgo".
     Search in Pinterest just say "search (the thing) in Pinterest".
-Launch may applications by saying "launch (the name of the application)" or "launch (the name of the application) now" or "launch (the name of the application) now" e.g. 
+Launch an applications by saying "launch (the name of the application)" or "launch (the name of the application) now" or "launch (the name of the application) now" e.g. 
 
     launch chrome just say "launch chrome" or "launch chrome now".
     launch notepad just say "launch notepad" or "launch notepad now".
@@ -101,7 +101,7 @@ Launch may applications by saying "launch (the name of the application)" or "lau
             Open the reddit website by saying "open reddit" or "open reddit website".
             Open the twitter website by saying "open twitter" or "open twitter website".
             Open the tinder website by saying "open tinder" or "open tinder website".
-            Open the whatsapp website by saying "open whatsapp" or "open whatsapp website".
+            Open the WhatsApp website by saying "open WhatsApp" or "open WhatsApp website".
             Open the telegram website by saying "open telegram" or "open telegram website".
             Open the skype website by saying "open skype" or "open skype website".
             Open the gmail website by saying "open gmail" or "open gmail website".
@@ -125,18 +125,18 @@ Answer to many questions like :-
     What is your name?
     What is your age?
     What is your job?
-    What is your favourite color?   
-    What is your favourite food?
-    What is your favourite movie?
-    What is your favourite sport?
-    What is your favourite game?
-    What is your favourite book?
-    What is your favourite song?
-    What is your favourite animal?
-    What is your favourite cartoon?
-    What is your favourite cartoon character?
-    What is your favourite actor?
-    What is your favourite actress?
+    What is your favorite color?   
+    What is your favorite food?
+    What is your favorite movie?
+    What is your favorite sport?
+    What is your favorite game?
+    What is your favorite book?
+    What is your favorite song?
+    What is your favorite animal?
+    What is your favorite cartoon?
+    What is your favorite cartoon character?
+    What is your favorite actor?
+    What is your favorite actress?
     And many more...
 
 Exit the application just by saying "exit the application" or "exit" or "goodbye" or "bye".
@@ -144,27 +144,11 @@ Exit the application just by saying "exit the application" or "exit" or "goodbye
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### In progress features
 
 Tell you your operating system by saying "my operating system" or "my operating system is" or "my operating system is" or "my operating system is". 
-tell weather of a place by saying "what is the weather in (the name of the place)" or "what is the weather in (the name of the place) now" or "what is the weather in (the name of the place) now" etc. Example "what is the weather in ghaziabad" will tell you the weather of ghaziabad by open the weather of ghaziabad in google maps.
-give you a random fact by saying "fact" or "tell me a fact" or "tell me a random fact".
+Tell weather of a place by saying "what is the weather in (the name of the place)" or "what is the weather in (the name of the place) now" or "what is the weather in (the name of the place) now" etc. Example "what is the weather in Ghaziabad" will tell you the weather of Ghaziabad by open the weather of Ghaziabad in Google Maps.
+Give you a random fact by saying "fact" or "tell me a fact" or "tell me a random fact".
 Give a list of all the commands by saying "commands" or "help" or "what are the commands".
 Tell you the weather by saying "weather" or "what is the weather" or "tell me the weather" or "tell me the weather forecast".
 Tell you the temperature by saying "temperature" or "what is the temperature" or "tell me the temperature" or "tell me the weather forecast".

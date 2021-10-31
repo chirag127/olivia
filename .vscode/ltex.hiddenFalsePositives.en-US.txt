@@ -1,1 +1,13 @@
 {"rule":"SEND_AN_EMAIL","sentence":"^\\QSend an Email to someone.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QHibernate the computer system by saying \"hibernate the computer\" or \"hibernate the computer now\" or \"hibernate system\" .\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QSearch on facebook just say \"search (the thing) in facebook\".\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QSearch on twitter just say \"search (the thing) in twitter\".\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QSearch on Twitter just say \"search (the thing) in twitter\".\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QSearch on Twitter just say \"search (the thing) on twitter\".\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QSearch in instagram just say \"search (the thing) in instagram\".\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QSearch on Facebook just say \"search (the thing) in Facebook\".\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QSearch on Twitter just say \"search (the thing) on Twitter\".\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QSearch on linkedin just say \"search (the thing) in linkedin\".\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QTell you the current location by saying \"location\" or \"what is the location\" or \"tell me the location\" or \"tell me the weather forecast\".\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QWhat is your favorite actress?\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QWhat is your favorite actor?\\E$"}
