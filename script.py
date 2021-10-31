@@ -172,6 +172,7 @@ if __name__ == "__main__":
     # wishMe()
 
     while True:
+
         query = takeCommand().lower()
 
         # Logic for executing tasks based on query
@@ -681,43 +682,25 @@ if __name__ == "__main__":
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
             speak(f"Sir, the time is {strTime}")
 
-        elif 'open code' in query:
-            codePath = "C:\\Users\\Ron\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
-            os.startfile(codePath)
-
-        elif 'open chrome' in query:
-            chromePath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
-            os.startfile(chromePath)
-
-        elif 'open notepad' in query:
-            notepadPath = "C:\\Windows\\System32\\notepad.exe"
-            os.startfile(notepadPath)
-
-        elif 'open visual studio' in query:
-            visualStudioPath = "C:\\Program Files\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\devenv.exe"
-            os.startfile(visualStudioPath)
-
-        elif 'open visual studio code' in query:
-            visualStudioCodePath = "C:\\Program Files\\Microsoft VS Code\\Code.exe"
-            os.startfile(visualStudioCodePath)
-
-        elif 'open sublime text' in query:
-            sublimeTextPath = "C:\\Program Files\\Sublime Text 3\\sublime_text.exe"
-            os.startfile(sublimeTextPath)
-
-        elif 'open pycharm' in query:
-            pycharmPath = "C:\\Program Files\\JetBrains\\PyCharm Community Edition 2019.1.3\\bin\\pycharm64.exe"
-            os.startfile(pycharmPath)
-
-        elif 'open notepad++' in query:
-            notepadPath = "C:\\Program Files\\Notepad++\\notepad++.exe"
-            os.startfile(notepadPath)
-
         elif 'open' in query:
-            print("opening.....")
             query = query.replace("open ", "")
+            speak("okay")
+            sp("opening")
+            sp(query)
 
-            if 'edge' in query:
+            if 'notepad' in query:
+                speak("okay")
+                os.system("notepad")
+
+            elif 'calculator' in query:
+                speak("okay")
+                os.system("calc")
+
+            elif 'control panel' in query:
+                speak("okay")
+                os.system("control")
+
+            elif 'edge' in query:
                 if 'youtube' in query:
                     webbrowser.register('edge',
                                         None,
@@ -725,13 +708,100 @@ if __name__ == "__main__":
                     webbrowser.get('edge').open(
                         "https://www.youtube.com/feed/subscriptions")
 
+                else:
+                    webbrowser.register('edge',
+                                        None,
+                                        webbrowser.BackgroundBrowser("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"))
+                    webbrowser.get('edge').open(
+                        "https://www.google.com/")
+
             elif 'chrome' in query:
-                speak("Google Chrome is opening")
-                webbrowser.open("https://www.google.com/chrome/")
+                speak("okay")
+                chromePath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+                os.startfile(chromePath)
 
             elif 'firefox' in query:
+                speak("okay")
+                firefoxPath = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
+                os.startfile(firefoxPath)
 
-                speak("Firefox is opening")
+            elif 'word' in query:
+                speak("okay")
+                wordPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE"
+                os.startfile(wordPath)
+
+            elif 'excel' in query:
+                speak("okay")
+                excelPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE"
+                os.startfile(excelPath)
+
+            elif 'powerpoint' in query:
+                speak("okay")
+                powerpointPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.EXE"
+                os.startfile(powerpointPath)
+
+            elif 'paint' in query:
+
+                speak("okay")
+                paintPath = "C:\\Windows\\System32\\mspaint.exe"
+                os.startfile(paintPath)
+
+            elif 'camera' in query:
+
+                speak("okay")
+                cameraPath = "C:\\Windows\\System32\\mspaint.exe"
+                os.startfile(cameraPath)
+
+                
+
+            elif 'open chrome' in query:
+                chromePath = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+                os.startfile(chromePath)
+
+            elif 'open notepad' in query:
+                notepadPath = "C:\\Windows\\System32\\notepad.exe"
+                os.startfile(notepadPath)
+
+            elif 'open sublime text' in query:
+                sublimeTextPath = "C:\\Program Files\\Sublime Text 3\\sublime_text.exe"
+                os.startfile(sublimeTextPath)
+
+            elif 'open pycharm' in query:
+                pycharmPath = "C:\\Program Files\\JetBrains\\PyCharm Community Edition 2019.1.3\\bin\\pycharm64.exe"
+                os.startfile(pycharmPath)
+
+            elif 'open notepad++' in query:
+                notepadPath = "C:\\Program Files\\Notepad++\\notepad++.exe"
+                os.startfile(notepadPath)
+
+            elif 'open vlc' in query:
+                vlcPath = "C:\\Program Files\\VideoLAN\\VLC\\vlc.exe"
+                os.startfile(vlcPath)
+
+            elif 'app' in query:
+
+                elif 'open spotify' in query:
+                    spotifyPath = "C:\\Users\\hp\\AppData\\Roaming\\Spotify\\Spotify.exe"
+                    os.startfile(spotifyPath)
+
+                elif 'open whatsapp' in query:
+                    whatsappPath = "C:\\Users\\hp\\AppData\\Local\\WhatsApp\\WhatsApp.exe"
+                    os.startfile(whatsappPath)
+
+                elif 'open discord' in query:
+                    discordPath = "C:\\Users\\hp\\AppData\\Local\\Discord\\Update\\Discord.exe"
+                    os.startfile(discordPath)
+
+            elif 'open gmail' in query:
+                gmailPath = "C:\\Users\\hp\\AppData\\Local\\Gmail\\Google Gmail.exe"
+                os.startfile(gmailPath)
+
+        elif 'open' in query:
+            print("opening.....")
+            query = query.replace("open ", "")
+
+            if 'firefox' in query:
+                sp("Firefox is opening")
                 webbrowser.open("https://www.mozilla.org/en-US/firefox/new/")
 
             elif 'youtube' in query:
@@ -801,13 +871,136 @@ if __name__ == "__main__":
             elif 'flipkart' in query:
                 webbrowser.open("https://www.flipkart.com/")
 
+            elif 'hackerearth' in query:
+                webbrowser.open("https://www.hackerearth.com/")
+
+            elif 'bing' in query:
+                webbrowser.open("https://www.bing.com/")
+
+            elif 'duckduckgo' in query:
+                webbrowser.open("https://duckduckgo.com/")
+
+            elif 'github' in query:
+                webbrowser.open("https://www.github.com/")
+
+            elif 'stack overflow' in query:
+                webbrowser.open("https://www.stackoverflow.com/")
+
+            elif 'wikipedia' in query:
+                webbrowser.open("https://www.wikipedia.org/")
+
+            elif 'reddit' in query:
+                webbrowser.open("https://www.reddit.com/")
+
+            elif 'quora' in query:
+                webbrowser.open("https://www.quora.com/")
+
             else:
                 webbrowser.open(
                     f"https://duckduckgo.com/?q=%21+{query}&ia=olivia")
 
 
 """"        
+            elif 'outlook' in query:
+                outlookPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE"
+                os.startfile(outlookPath)
 
+            elif 'microsoft word' in query:
+                wordPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE"
+                os.startfile(wordPath)
+
+            elif 'microsoft excel' in query:
+                excelPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE"
+                os.startfile(excelPath)
+
+            elif 'microsoft powerpoint' in query:
+                powerpointPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.EXE"
+                os.startfile(powerpointPath)
+
+            elif 'microsoft onenote' in query:
+                onenotePath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\ONENOTE.EXE"
+                sp("microsoft onenote is opening")
+                os.startfile(onenotePath)
+
+            elif 'microsoft teams' in query:
+                teamsPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\TEAMS.EXE"
+                sp("microsoft teams is opening")
+                os.startfile(teamsPath)
+
+            elif 'firefox' in query:
+                sp("Firefox is opening")
+                webbrowser.open("https://www.mozilla.org/en-US/firefox/new/")
+
+            elif 'open code' in query:
+                codePath = "C:\\Users\\hp\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+                os.startfile(codePath)
+
+            elif 'wordpad' in query:
+                speak("okay")
+                os.system("wordpad")
+
+            elif 'paint' in query:
+                speak("okay")
+                os.system("mspaint")
+
+            elif 'task manager' in query:
+                speak("okay")
+                os.system("taskmgr")
+
+            elif 'camera' in query:
+                speak("okay")
+                os.system("camera")
+
+            elif 'player' in query:
+                speak("okay")
+                os.system("wmplayer")
+            elif 'ms word' in query:
+                speak("okay")
+                os.system("winword")
+
+            elif 'ms excel' in query:
+                speak("okay")
+                os.system("excel")
+
+            elif 'ms powerpoint' in query:
+                speak("okay")
+                os.system("powerpnt")
+
+            elif 'ms paint' in query:
+                speak("okay")
+                os.system("mspaint")
+
+            elif 'edge' in query:
+                speak("okay")
+                os.system("edge")
+
+            elif 'chrome' in query:
+                speak("okay")
+                os.system("chrome")
+
+            elif 'firefox' in query:
+                speak("okay")
+                os.system("firefox")
+
+            elif 'opera' in query:
+                speak("okay")
+                os.system("opera")
+
+            elif 'treesizefree' in query:
+                speak("okay")
+                os.system("treesizefree")
+
+            elif 'skype' in query:
+                speak("okay")
+                os.system("skype")
+
+            elif 'qbittorrent' in query:
+                speak("okay")
+                os.system("qbittorrent")
+
+            elif 'steam' in query:
+                speak("okay")
+                os.system("steam")
 
 
 
