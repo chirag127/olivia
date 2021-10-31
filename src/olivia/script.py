@@ -103,9 +103,12 @@ def exitcode():
 
 def clearConsole():
     command = 'clear'
+    speak("Clearing the console")
     if os.name in ('nt', 'dos'):
         command = 'cls'
     os.system(command)
+    speak("Cleared the console")
+    speak("What can i do for you now")
 
 
 def sp(text):
@@ -151,15 +154,6 @@ def giveip():
     sp(iptext)
 
 
-def translatelanguage(languageptext):
-    query = takeCommand().lower()
-    if languageptext in query:
-        query = query.replace(languageptext, "")
-        k = Translator().translate(query, dest=languageptext)
-        translated = str(k.text)
-        sp(translated)
-
-
 def clear():
     return os.system('cls')
 
@@ -195,7 +189,8 @@ def generate_random_password():
     special = "@#$%&*"
 
     # pass_len=random.randint(8,13)  #without User INput
-    pass_len = int(input("Enter Password Length"))
+
+    pass_len = random.randint(8, 13)
 
     # length of password by 50-30-20 formula
     alpha_len = pass_len//2
@@ -226,7 +221,7 @@ def generate_random_password():
     gen_password = ""
     for i in password:
         gen_password = gen_password + str(i)
-    print(gen_password)
+    sp(gen_password)
 
 
 if __name__ == "__main__":
@@ -866,14 +861,15 @@ if __name__ == "__main__":
                 translated = str(k.text)
                 sp(translated)
 
-            elif 'hindi' in query:
-                query = query.replace("hindi", "")
-                k = Translator().translate(query, dest='hindi')
-                translated = str(k.text)
-                sp(translated)
             elif 'french' in query:
                 query = query.replace("french", "")
                 k = Translator().translate(query, dest='french')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'hindi' in query:
+                query = query.replace("hindi", "")
+                k = Translator().translate(query, dest='hindi')
                 translated = str(k.text)
                 sp(translated)
             elif 'german' in query:
@@ -908,12 +904,6 @@ if __name__ == "__main__":
             elif 'turkish' in query:
                 query = query.replace("turkish", "")
                 k = Translator().translate(query, dest='turkish')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'chinese' in query:
-                query = query.replace("chinese", "")
-                k = Translator().translate(query, dest='chinese')
                 translated = str(k.text)
                 sp(translated)
 
@@ -1107,13 +1097,6 @@ if __name__ == "__main__":
 
                 query = query.replace("farsi", "")
                 k = Translator().translate(query, dest='farsi')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'hindi' in query:
-
-                query = query.replace("hindi", "")
-                k = Translator().translate(query, dest='hindi')
                 translated = str(k.text)
                 sp(translated)
 
