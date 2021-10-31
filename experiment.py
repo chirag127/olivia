@@ -18,7 +18,7 @@ speak("How long should i generate your password")
             if pass_len.isdigit():
                 return pass_len
             else:
-                speak("Please enter a valid number")
+                speak("Please enter a valID number")
                 take_pass_length()
 pass_len = take_pass_length()
 """

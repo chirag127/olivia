@@ -261,141 +261,6 @@ if __name__ == "__main__":
             speak("The current date is")
             speak(now.strftime("%d-%m-%Y"))
 
-        elif 'generate' in query:
-            if 'password' in query:
-                generate_random_password()
-
-        elif 'username' in query:
-            username()
-
-        elif 'clear' in query:
-            clearConsole()
-
-        elif 'exit' in query:
-            exitcode()
-
-        elif 'screenshot' in query:
-            takescreenshot()
-
-        elif 'joke' in query:
-            givejoke()
-
-        elif 'ip address' in query:
-            giveip()
-
-        elif 'call me' in query:
-            speak('What is your name?')
-            query = query.replace("call me", "")
-            uname = query
-            speak('Hello ' + uname + ' How may I help you?')
-
-        elif "change my name to" in query:
-            query = query.replace("change my name to", "")
-            uname = query
-
-        elif 'email to chirag' in query:
-            try:
-                speak("What should I say?")
-                content = takeCommand()
-                to = "chriagsinghal@gmail.com"
-                sendEmail(to, content)
-                speak("Email has been sent!")
-            except Exception as e:
-                print(e)
-                speak(
-                    "Sorry my friend chirag sir. I am not able to send this email")
-
-        elif 'lock window' in query:
-            speak("locking the device")
-            ctypes.windll.user32.LockWorkStation()
-
-        elif 'shutdown system' in query:
-            speak("Hold On a Sec ! Your system is on its way to shut down")
-            subprocess.call('shutdown / p /f')
-
-        elif 'empty recycle bin' in query:
-            winshell.recycle_bin().empty(confirm=False, show_progress=False, sound=True)
-            speak("Recycle Bin Recycled")
-
-        elif "don't listen" in query or "stop listening" in query:
-            speak("for how much time you want to stop olivia from listening commands")
-            time.sleep(120)
-            speak("Olivia is listening again")
-
-        elif "where is" in query:
-            query = query.replace("where is", "")
-            location = query
-            sp("User asked to Locate")
-            sp(location)
-            webbrowser.open(
-                "https://www.google.com / maps / place/" + location + "")
-
-        elif "restart" in query:
-            subprocess.call(["shutdown", "/r"])
-
-        elif "hibernate" in query or "sleep" in query:
-            speak("Hibernating")
-            subprocess.call("shutdown / h")
-
-        elif "log off" in query or "sign out" in query:
-            speak("Make sure all the application are closed before sign-out")
-            time.sleep(5)
-            subprocess.call(["shutdown", "/l"])
-
-        elif "write a note" in query:
-            speak("What should i write, sir")
-            note = takeCommand()
-            file = open('olivianote.txt', 'w')
-            speak("Sir, Should i include date and time")
-            snfm = takeCommand()
-
-            if 'yes' in snfm or 'sure' in snfm:
-                strTime = datetime.datetime.now().strftime("%m-%d-%Y %T:%M%p")
-                file.write(strTime)
-                file.write(" :- ")
-                file.write("\n")
-                file.write(note)
-                speak("Note has been saved")
-            else:
-                file.write(note)
-                speak("Note has been saved without date and time")
-
-        elif "read a note" in query:
-            speak("Reading Note Sir")
-            file = open('olivianote.txt', 'r')
-            print(file.read())
-            speak(file.read(6))
-
-        elif "show note" in query:
-            speak("Showing Notes")
-            file = open("olivianote.txt", "r")
-            print(file.read())
-            speak(file.read(6))
-
-        elif "delete note" in query:
-            speak("Deleting Notes")
-            os.remove("olivianote.txt")
-
-        elif "send message" in query:
-            speak("to whom should i send to?")
-            to = takeCommand()
-            speak("What hour should I send it at sir")
-            time = takeCommand()
-            speak("What minute should I send it at sir")
-            minute = takeCommand()
-            speak("What am I supposed to say sir")
-            message = takeCommand()
-            speak("Sending message")
-
-            try:
-
-                pywhatkit.sendwhatmsg(to, message, time, minute)
-                print("Successfully Sent!")
-
-            except:
-
-                print("An Unexpected Error!")
-
         elif 'play' in query:
 
             try:
@@ -426,6 +291,149 @@ if __name__ == "__main__":
             except Exception as e:
                 print(e)
                 speak("Sorry Sir, I am not able to fetch news")
+
+        elif 'generate' in query:
+            if 'password' in query:
+                generate_random_password()
+
+            elif 'number' in query:
+                sp(random.randint(0, 100))
+
+        elif 'clear' in query:
+            clearConsole()
+
+        elif 'exit' in query:
+            exitcode()
+
+        elif 'screenshot' in query:
+            takescreenshot()
+
+        elif 'joke' in query:
+            givejoke()
+
+        elif 'ip address' in query:
+            giveip()
+
+        elif 'username' in query:
+            username()
+
+        elif 'call me' in query:
+            speak('What is your name?')
+            query = query.replace("call me", "")
+            uname = query
+            speak('Hello ' + uname + ' How may I help you?')
+
+        elif "change my name to" in query:
+            query = query.replace("change my name to", "")
+            uname = query
+
+        elif 'email' in query:
+            try:
+                speak("What should I say?")
+                content = takeCommand()
+                to = "chriagsinghal@gmail.com"
+                sendEmail(to, content)
+                speak("Email has been sent!")
+            except Exception as e:
+                print(e)
+                speak(
+                    "Sorry my friend chirag sir. I am not able to send this email")
+
+        elif 'lock window' in query or 'lock screen' in query or 'lock the screen' in query:
+            speak("locking the device")
+            ctypes.windll.user32.LockWorkStation()
+
+        elif 'shutdown system' in query:
+            speak("Hold On a Sec ! Your system is on its way to shut down")
+            subprocess.call('shutdown / p /f')
+
+        elif 'empty recycle bin' in query:
+            winshell.recycle_bin().empty(confirm=False, show_progress=False, sound=True)
+            speak("Recycle Bin Recycled")
+
+        elif "don't listen" in query or "stop listening" in query:
+            speak("for how much time you want to stop olivia from listening commands")
+            time.sleep(120)
+            speak("Olivia is listening again")
+
+        elif "restart" in query or "reboot" in query:
+            subprocess.call(["shutdown", "/r"])
+
+        elif "hibernate" in query or "sleep" in query:
+            speak("Hibernating")
+            subprocess.call("shutdown / h")
+
+        elif "log off" in query or "sign out" in query:
+            speak("Make sure all the application are closed before sign-out")
+            time.sleep(5)
+            subprocess.call(["shutdown", "/l"])
+
+        elif "note" in query or "notes" in query:
+            if 'read' in query:
+                speak("Reading Note Sir")
+                file = open('olivianote.txt', 'r')
+                print(file.read())
+                speak(file.read(6))
+
+            elif 'write' in query:
+                speak("What should i write, sir")
+                note = takeCommand()
+                file = open('olivianote.txt', 'w')
+                speak("Sir, Should i include date and time")
+                snfm = takeCommand()
+
+                if 'yes' in snfm or 'sure' in snfm:
+                    strTime = datetime.datetime.now().strftime("%m-%d-%Y %T:%M%p")
+                    file.write(strTime)
+                    file.write(" :- ")
+                    file.write("\n")
+                    file.write(note)
+                    speak("Note has been saved")
+                else:
+                    file.write(note)
+                    speak("Note has been saved without date and time")
+
+            elif "show" in query:
+                speak("Showing Notes")
+                file = open("olivianote.txt", "r")
+                print(file.read())
+                speak(file.read(6))
+
+            elif "delete" in query:
+                speak("Deleting Note")
+                file = open("olivianote.txt", "w")
+                file.truncate()
+                speak("Note has been deleted")
+
+        elif "send" in query:
+            if 'message' in query:
+
+                speak("to whom should i send to?")
+                to = takeCommand()
+                speak("What hour should I send it at sir")
+                time = takeCommand()
+                speak("What minute should I send it at sir")
+                minute = takeCommand()
+                speak("What am I supposed to say sir")
+                message = takeCommand()
+                speak("Sending message")
+
+                try:
+
+                    pywhatkit.sendwhatmsg(to, message, time, minute)
+                    print("Successfully Sent!")
+
+                except:
+
+                    print("An Unexpected Error!")
+
+        elif "where is" in query:
+            query = query.replace("where is", "")
+            location = query
+            sp("User asked to Locate")
+            sp(location)
+            webbrowser.open(
+                "https://www.google.com / maps / place/" + location + "")
 
         elif 'search' in query:
             sp('Searching ...')
@@ -516,25 +524,32 @@ if __name__ == "__main__":
                 query = query.replace("quora", "")
                 webbrowser.open(
                     f"https://www.quora.com/{query}")
+
+            elif 'duckduckgo' in query:
+                query = query.replace("duckduckgo", "")
+                webbrowser.open(
+                    f"https://duckduckgo.com/?q={query}")
+
+            elif 'bing' in query:
+                query = query.replace("bing", "")
+                webbrowser.open(
+                    f"https://www.bing.com/search?q={query}")
+
+            elif 'yahoo' in query:
+                query = query.replace("yahoo", "")
+                webbrowser.open(
+                    f"https://search.yahoo.com/search?p={query}")
+
             else:
                 query = query.replace("google", "")
 
                 webbrowser.open(
                     f"https://www.google.com/search?q={query}&sourceid=olivia")
 
-        elif 'how are you' in query:
-            speak("i am fine")
-        elif 'what time is it' in query:
-            speak(ctime())
-        elif 'who are you' in query:
-            speak("i am olivia")
-
-        elif 'the time' in query:
-            strTime = datetime.datetime.now().strftime("%H:%M:%S")
-            speak(f"Sir, the time is {strTime}")
-
         elif 'launch' in query:
-            speak("okay")
+            query = query.replace("launch", "")
+            sp("Launching ")
+            sp(query)
 
             if 'control panel' in query:
                 speak("okay")
@@ -547,10 +562,6 @@ if __name__ == "__main__":
             elif 'game panel' in query:
                 speak("okay")
                 os.system("gamepanel")
-
-            elif 'command prompt' in query:
-                speak("okay")
-                os.system("cmd")
 
             elif 'edge' in query:
                 if 'youtube' in query:
@@ -568,30 +579,20 @@ if __name__ == "__main__":
                         "https://www.google.com/")
 
             elif 'chrome' in query:
-                speak("okay")
-                chromePath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+                chromePath = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
                 os.startfile(chromePath)
 
-            elif 'control panel' in query:
-                controlPanelPath = "Windows\\System32\\control.exe"
-                os.startfile(controlPanelPath)
-
             elif 'notepad' in query:
-                notepadPath = "C:\Windows\System32\notepad.exe"
+                notepadPath = "C:\\Windows\\System32\\notepad.exe"
                 os.startfile(notepadPath)
 
             elif 'calculator' in query:
-                calculatorPath = "C:\Windows\System32\calc.exe"
+                calculatorPath = "C:\\Windows\\System32\\calc.exe"
                 os.startfile(calculatorPath)
 
             elif 'task manager' in query:
-                taskManagerPath = "C:\Windows\System32\taskmgr.exe"
+                taskManagerPath = "C:\\Windows\\System32\\taskmgr.exe"
                 os.startfile(taskManagerPath)
-
-            elif 'firefox' in query:
-                speak("okay")
-                firefoxPath = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
-                os.startfile(firefoxPath)
 
             elif 'word' in query:
                 speak("okay")
@@ -709,10 +710,6 @@ if __name__ == "__main__":
             elif 'spotify' in query:
                 spotifyPath = "C:\\Users\\hp\\AppData\\Roaming\\Spotify\\Spotify.exe"
                 os.startfile(spotifyPath)
-
-            elif 'whatsapp' in query:
-                whatsappPath = "C:\\Users\\hp\\AppData\\Local\\WhatsApp\\WhatsApp.exe"
-                os.startfile(whatsappPath)
 
             else:
                 try:
@@ -1100,6 +1097,12 @@ if __name__ == "__main__":
         elif "what is your favorite food" in query:
             speak("I Like renewable electricity")
 
+        elif "what is your favorite animal" in query:
+            speak("I like dogs")
+
+        elif "what is your favorite sport" in query:
+            speak("I like cricket")
+
         elif "what is your favorite color" in query:
             speak("My favorite color is black")
 
@@ -1163,6 +1166,17 @@ if __name__ == "__main__":
         elif 'exit' in query:
             sp("exiting........")
             exitcode()
+
+        elif 'how are you' in query:
+            speak("i am fine")
+        elif 'what time is it' in query:
+            speak(ctime())
+        elif 'who are you' in query:
+            speak("i am olivia")
+
+        elif 'the time' in query:
+            strTime = datetime.datetime.now().strftime("%H:%M:%S")
+            speak(f"Sir, the time is {strTime}")
 
         elif 'kill me' in query:
             sp("I won't")
