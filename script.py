@@ -74,6 +74,8 @@ def takeCommand():
         return "None"
     return query
 
+    
+
 
 def takescreenshot():
     subprocess.call(["screencapture", "-x", "image.png"])
@@ -107,6 +109,26 @@ def clearConsole():
 def sp(text):
     print(text)
     speak(text)
+
+
+def greeting(text):
+    # Greeting inputs
+    GREETING_INPUTS = ['hi', 'hey', 'hola', 'wassup', 'hello']
+
+    # Greeting response
+    GREETING_RESPONSES = ['howdy', 'all that good', 'hello master', 'heythere']
+
+    # If users input is a greeting, then return a randomly chosen greetng response
+    for word in text.split():
+        if word.lower() in GREETING_INPUTS:
+            return random.choice(GREETING_RESPONSES) + '.'
+
+    # If no greeting was detected
+    return ''
+
+
+
+
 
 
 def givejoke():
