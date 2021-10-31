@@ -3,17 +3,17 @@
 ### Features
 
 
-    * **Voice-controlled**
-    * **Speech synthesis**
-    * **Speech recognition**
-    * **Natural language processing**
-    * **Intuitive interface**
-    * **Customizable**
-    * **Easy to use**
-    * **Open source**
-    * **Free to use**
-    * **Free to modify**
-    * **Free to redistribute** 
+    1. **Voice-controlled**
+    1. **Speech synthesis**
+    1. **Speech recognition**
+    1. **Natural language processing**
+    1. **Intuitive interface**
+    1. **Customizable**
+    1. **Easy to use**
+    1. **Open source**
+    1. **Free to use**
+    1. **Free to modify**
+    1. **Free to redistribute** 
 ### Assistant skills 
 
 Give description of anything according to Wikipedia just say "what is (the name of the thing) according to Wikipedia".
