@@ -20,6 +20,8 @@ import wikipedia  # pip install wikipedia
 import win32com.client as wincl
 import winshell
 import pyautogui  # pip install pyautogui
+import pywhatkit
+
 
 # I was getting error so i install pyaudio
 # error in that too so i googled it on the stackover flow.
@@ -283,6 +285,112 @@ if __name__ == "__main__":
         elif 'stop music' in query:
             os.close("C:\\Program Files\\DAUM\\PotPlayer\\PotPlayerMini64.exe")
 
+        elif 'clear' in query:
+            clearConsole()
+
+        elif 'joke' in query:
+            givejoke()
+
+        elif 'kill me' in query:
+            sp("I won't")
+
+        elif 'your god' in query:
+            sp("chriag singhal is my god")
+
+        elif "who made you" in query or "who created you" in query or "who discovered you" in query:
+            speak("I was built by Chirag singhal")
+
+        elif 'exit' in query:
+            sp("exiting........")
+            exitcode()
+
+        elif 'lock window' in query:
+            speak("locking the device")
+            ctypes.windll.user32.LockWorkStation()
+
+        elif 'shutdown system' in query:
+            speak("Hold On a Sec ! Your system is on its way to shut down")
+            subprocess.call('shutdown / p /f')
+
+        elif 'empty recycle bin' in query:
+            winshell.recycle_bin().empty(confirm=False, show_progress=False, sound=True)
+            speak("Recycle Bin Recycled")
+
+        elif "don't listen" in query or "stop listening" in query:
+            speak(
+                "for how much time you want to stop jarvis from listening commands")
+            a = int(takeCommand())
+            time.sleep(a)
+            print(a)
+
+        elif "where is" in query:
+            query = query.replace("where is", "")
+            location = query
+            sp("User asked to Locate")
+            sp(location)
+            webbrowser.open(
+                "https://www.google.com / maps / place/" + location + "")
+
+        elif "restart" in query:
+            subprocess.call(["shutdown", "/r"])
+
+        elif "hibernate" in query or "sleep" in query:
+            speak("Hibernating")
+            subprocess.call("shutdown / h")
+
+        elif "log off" in query or "sign out" in query:
+            speak("Make sure all the application are closed before sign-out")
+            time.sleep(5)
+            subprocess.call(["shutdown", "/l"])
+
+        elif "write a note" in query:
+            speak("What should i write, sir")
+            note = takeCommand()
+            file = open('olivianote.txt', 'w')
+            speak("Sir, Should i include date and time")
+            snfm = takeCommand()
+            if 'yes' in snfm or 'sure' in snfm:
+                strTime = datetime.datetime.now().strftime("% H:% M:% S")
+                file.write(strTime)
+                file.write(" :- ")
+                file.write(note)
+            else:
+                file.write(note)
+
+        elif "show note" in query:
+            speak("Showing Notes")
+            file = open("olivianote.txt", "r")
+            print(file.read())
+            speak(file.read(6))
+
+        elif "delete note" in query:
+            speak("Deleting Notes")
+            os.remove("olivianote.txt")
+
+        elif "what is your name" in query:
+            speak("My name is Olivia")
+
+        elif "what is your age" in query:
+            speak("I am a computer program")
+
+        elif "what is your job" in query:
+            speak("I am a Virtual assistant")
+
+        elif "what is your favorite food" in query:
+            speak("I Like renewable electricity")
+
+        elif "what is your favorite color" in query:
+            speak("My favorite color is black")
+
+        elif "what is your favorite song" in query:
+            speak("My favorite song is the one by the same name")
+
+        elif "what is your favorite movie" in query:
+            speak("My favorite movie is the dead poet Society")
+
+        elif "what is your favorite actor" in query:
+            speak("My favorite actor is the one by the same name")
+
         elif 'search' in query:
             speak('Searching ...')
             query = query.replace("search ", "")
@@ -377,345 +485,6 @@ if __name__ == "__main__":
 
                 webbrowser.open(
                     f"https://www.google.com/search?q={query}&sourceid=olivia")
-
-        elif 'clear' in query:
-            clearConsole()
-
-        elif 'joke' in query:
-            givejoke()
-
-        elif 'kill me' in query:
-            sp("I won't")
-
-        elif 'your god' in query:
-            sp("chriag singhal is my god")
-
-        elif "who made you" in query or "who created you" in query or "who discovered you" in query:
-            speak("I was built by Chirag singhal")
-
-        elif 'exit' in query:
-            sp("exiting........")
-            exitcode()
-
-        elif 'lock window' in query:
-            speak("locking the device")
-            ctypes.windll.user32.LockWorkStation()
-
-        elif 'shutdown system' in query:
-            speak("Hold On a Sec ! Your system is on its way to shut down")
-            subprocess.call('shutdown / p /f')
-
-        elif 'empty recycle bin' in query:
-            winshell.recycle_bin().empty(confirm=False, show_progress=False, sound=True)
-            speak("Recycle Bin Recycled")
-
-        elif "don't listen" in query or "stop listening" in query:
-            speak(
-                "for how much time you want to stop jarvis from listening commands")
-            a = int(takeCommand())
-            time.sleep(a)
-            print(a)
-
-        elif "where is" in query:
-            query = query.replace("where is", "")
-            location = query
-            sp("User asked to Locate")
-            sp(location)
-            webbrowser.open(
-                "https://www.google.com / maps / place/" + location + "")
-
-        elif "restart" in query:
-            subprocess.call(["shutdown", "/r"])
-
-        elif "hibernate" in query or "sleep" in query:
-            speak("Hibernating")
-            subprocess.call("shutdown / h")
-
-        elif "log off" in query or "sign out" in query:
-            speak("Make sure all the application are closed before sign-out")
-            time.sleep(5)
-            subprocess.call(["shutdown", "/l"])
-
-        elif "write a note" in query:
-            speak("What should i write, sir")
-            note = takeCommand()
-            file = open('jarvis.txt', 'w')
-            speak("Sir, Should i include date and time")
-            snfm = takeCommand()
-            if 'yes' in snfm or 'sure' in snfm:
-                strTime = datetime.datetime.now().strftime("% H:% M:% S")
-                file.write(strTime)
-                file.write(" :- ")
-                file.write(note)
-            else:
-                file.write(note)
-
-        elif "show note" in query:
-            speak("Showing Notes")
-            file = open("jarvis.txt", "r")
-            print(file.read())
-            speak(file.read(6))
-
-        elif 'translate' in query:
-            query = query.replace("translate", "")
-            query = query.replace("to", "")
-
-            if 'spanish' in query:
-                query = query.replace("spanish", "")
-                k = Translator().translate(query, dest='spanish')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'hindi' in query:
-                query = query.replace("hindi", "")
-                k = Translator().translate(query, dest='hindi')
-                translated = str(k.text)
-                sp(translated)
-            elif 'french' in query:
-                query = query.replace("french", "")
-                k = Translator().translate(query, dest='french')
-                translated = str(k.text)
-                sp(translated)
-            elif 'german' in query:
-                query = query.replace("german", "")
-                k = Translator().translate(query, dest='german')
-                translated = str(k.text)
-                sp(translated)
-            elif 'dutch' in query:
-                query = query.replace("dutch", "")
-                k = Translator().translate(query, dest='dutch')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'italian' in query:
-                query = query.replace("italian", "")
-                k = Translator().translate(query, dest='italian')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'portuguese' in query:
-                query = query.replace("portuguese", "")
-                k = Translator().translate(query, dest='portuguese')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'russian' in query:
-                query = query.replace("russian", "")
-                k = Translator().translate(query, dest='russian')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'turkish' in query:
-                query = query.replace("turkish", "")
-                k = Translator().translate(query, dest='turkish')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'chinese' in query:
-                query = query.replace("chinese", "")
-                k = Translator().translate(query, dest='chinese')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'japanese' in query:
-                query = query.replace("japanese", "")
-                k = Translator().translate(query, dest='japanese')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'korean' in query:
-                query = query.replace("korean", "")
-                k = Translator().translate(query, dest='korean')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'arabic' in query:
-                query = query.replace("arabic", "")
-                k = Translator().translate(query, dest='arabic')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'bengali' in query:
-                query = query.replace("bengali", "")
-                k = Translator().translate(query, dest='bengali')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'telugu' in query:
-                query = query.replace("telugu", "")
-                k = Translator().translate(query, dest='telugu')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'thai' in query:
-                query = query.replace("thai", "")
-                k = Translator().translate(query, dest='thai')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'vietnamese' in query:
-                query = query.replace("vietnamese", "")
-                k = Translator().translate(query, dest='vietnamese')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'urdu' in query:
-                query = query.replace("urdu", "")
-                k = Translator().translate(query, dest='urdu')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'malayalam' in query:
-                query = query.replace("malayalam", "")
-                k = Translator().translate(query, dest='malayalam')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'gujarati' in query:
-                query = query.replace("gujarati", "")
-                k = Translator().translate(query, dest='gujarati')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'punjabi' in query:
-                query = query.replace("punjabi", "")
-                k = Translator().translate(query, dest='punjabi')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'malay' in query:
-                query = query.replace("malay", "")
-                k = Translator().translate(query, dest='malay')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'tamil' in query:
-                query = query.replace("tamil", "")
-                k = Translator().translate(query, dest='tamil')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'sinhala' in query:
-                query = query.replace("sinhala", "")
-                k = Translator().translate(query, dest='sinhala')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'burmese' in query:
-                query = query.replace("burmese", "")
-                k = Translator().translate(query, dest='burmese')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'khmer' in query:
-                query = query.replace("khmer", "")
-                k = Translator().translate(query, dest='khmer')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'czech' in query:
-                query = query.replace("czech", "")
-                k = Translator().translate(query, dest='czech')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'danish' in query:
-                query = query.replace("danish", "")
-                k = Translator().translate(query, dest='danish')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'polish' in query:
-                query = query.replace("polish", "")
-                k = Translator().translate(query, dest='polish')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'icelandic' in query:
-                query = query.replace("icelandic", "")
-                k = Translator().translate(query, dest='icelandic')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'ukrainian' in query:
-                query = query.replace("ukrainian", "")
-                k = Translator().translate(query, dest='ukrainian')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'french' in query:
-                query = query.replace("french", "")
-                k = Translator().translate(query, dest='french')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'italian' in query:
-                query = query.replace("italian", "")
-                k = Translator().translate(query, dest='italian')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'portuguese' in query:
-                query = query.replace("portuguese", "")
-                k = Translator().translate(query, dest='portuguese')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'spanish' in query:
-
-                query = query.replace("spanish", "")
-                k = Translator().translate(query, dest='spanish')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'german' in query:
-
-                query = query.replace("german", "")
-                k = Translator().translate(query, dest='german')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'estonian' in query:
-
-                query = query.replace("estonian", "")
-                k = Translator().translate(query, dest='estonian')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'norwegian' in query:
-
-                query = query.replace("norwegian", "")
-                k = Translator().translate(query, dest='norwegian')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'chinese' in query:
-                query = query.replace("chinese", "")
-
-                if 'traditional' in query:
-                    query = query.replace("traditional", "")
-                    query = query.replace("simplified", "")
-
-            elif 'azerbaijani' in query:
-
-                query = query.replace("azerbaijani", "")
-                k = Translator().translate(query, dest='azerbaijani')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'farsi' in query:
-
-                query = query.replace("farsi", "")
-                k = Translator().translate(query, dest='farsi')
-                translated = str(k.text)
-                sp(translated)
-
-            elif 'hindi' in query:
-
-                query = query.replace("hindi", "")
-                k = Translator().translate(query, dest='hindi')
-                translated = str(k.text)
-                sp(translated)
 
         elif 'how are you' in query:
             speak("i am fine")
@@ -1019,6 +788,267 @@ if __name__ == "__main__":
             else:
                 webbrowser.open(
                     f"https://duckduckgo.com/?q=%21+{query}&ia=olivia")
+
+        elif 'translate' in query:
+            query = query.replace("translate", "")
+            query = query.replace("to", "")
+
+            if 'spanish' in query:
+                query = query.replace("spanish", "")
+                k = Translator().translate(query, dest='spanish')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'hindi' in query:
+                query = query.replace("hindi", "")
+                k = Translator().translate(query, dest='hindi')
+                translated = str(k.text)
+                sp(translated)
+            elif 'french' in query:
+                query = query.replace("french", "")
+                k = Translator().translate(query, dest='french')
+                translated = str(k.text)
+                sp(translated)
+            elif 'german' in query:
+                query = query.replace("german", "")
+                k = Translator().translate(query, dest='german')
+                translated = str(k.text)
+                sp(translated)
+            elif 'dutch' in query:
+                query = query.replace("dutch", "")
+                k = Translator().translate(query, dest='dutch')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'italian' in query:
+                query = query.replace("italian", "")
+                k = Translator().translate(query, dest='italian')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'portuguese' in query:
+                query = query.replace("portuguese", "")
+                k = Translator().translate(query, dest='portuguese')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'russian' in query:
+                query = query.replace("russian", "")
+                k = Translator().translate(query, dest='russian')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'turkish' in query:
+                query = query.replace("turkish", "")
+                k = Translator().translate(query, dest='turkish')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'chinese' in query:
+                query = query.replace("chinese", "")
+                k = Translator().translate(query, dest='chinese')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'japanese' in query:
+                query = query.replace("japanese", "")
+                k = Translator().translate(query, dest='japanese')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'korean' in query:
+                query = query.replace("korean", "")
+                k = Translator().translate(query, dest='korean')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'arabic' in query:
+                query = query.replace("arabic", "")
+                k = Translator().translate(query, dest='arabic')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'bengali' in query:
+                query = query.replace("bengali", "")
+                k = Translator().translate(query, dest='bengali')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'telugu' in query:
+                query = query.replace("telugu", "")
+                k = Translator().translate(query, dest='telugu')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'thai' in query:
+                query = query.replace("thai", "")
+                k = Translator().translate(query, dest='thai')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'vietnamese' in query:
+                query = query.replace("vietnamese", "")
+                k = Translator().translate(query, dest='vietnamese')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'urdu' in query:
+                query = query.replace("urdu", "")
+                k = Translator().translate(query, dest='urdu')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'malayalam' in query:
+                query = query.replace("malayalam", "")
+                k = Translator().translate(query, dest='malayalam')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'gujarati' in query:
+                query = query.replace("gujarati", "")
+                k = Translator().translate(query, dest='gujarati')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'punjabi' in query:
+                query = query.replace("punjabi", "")
+                k = Translator().translate(query, dest='punjabi')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'malay' in query:
+                query = query.replace("malay", "")
+                k = Translator().translate(query, dest='malay')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'tamil' in query:
+                query = query.replace("tamil", "")
+                k = Translator().translate(query, dest='tamil')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'sinhala' in query:
+                query = query.replace("sinhala", "")
+                k = Translator().translate(query, dest='sinhala')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'burmese' in query:
+                query = query.replace("burmese", "")
+                k = Translator().translate(query, dest='burmese')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'khmer' in query:
+                query = query.replace("khmer", "")
+                k = Translator().translate(query, dest='khmer')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'czech' in query:
+                query = query.replace("czech", "")
+                k = Translator().translate(query, dest='czech')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'danish' in query:
+                query = query.replace("danish", "")
+                k = Translator().translate(query, dest='danish')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'polish' in query:
+                query = query.replace("polish", "")
+                k = Translator().translate(query, dest='polish')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'icelandic' in query:
+                query = query.replace("icelandic", "")
+                k = Translator().translate(query, dest='icelandic')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'ukrainian' in query:
+                query = query.replace("ukrainian", "")
+                k = Translator().translate(query, dest='ukrainian')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'french' in query:
+                query = query.replace("french", "")
+                k = Translator().translate(query, dest='french')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'italian' in query:
+                query = query.replace("italian", "")
+                k = Translator().translate(query, dest='italian')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'portuguese' in query:
+                query = query.replace("portuguese", "")
+                k = Translator().translate(query, dest='portuguese')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'spanish' in query:
+
+                query = query.replace("spanish", "")
+                k = Translator().translate(query, dest='spanish')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'german' in query:
+
+                query = query.replace("german", "")
+                k = Translator().translate(query, dest='german')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'estonian' in query:
+
+                query = query.replace("estonian", "")
+                k = Translator().translate(query, dest='estonian')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'norwegian' in query:
+
+                query = query.replace("norwegian", "")
+                k = Translator().translate(query, dest='norwegian')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'chinese' in query:
+                query = query.replace("chinese", "")
+
+                if 'traditional' in query:
+                    query = query.replace("traditional", "")
+                    query = query.replace("simplified", "")
+
+            elif 'azerbaijani' in query:
+
+                query = query.replace("azerbaijani", "")
+                k = Translator().translate(query, dest='azerbaijani')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'farsi' in query:
+
+                query = query.replace("farsi", "")
+                k = Translator().translate(query, dest='farsi')
+                translated = str(k.text)
+                sp(translated)
+
+            elif 'hindi' in query:
+
+                query = query.replace("hindi", "")
+                k = Translator().translate(query, dest='hindi')
+                translated = str(k.text)
+                sp(translated)
 
 
 """"        
