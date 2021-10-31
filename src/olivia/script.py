@@ -250,10 +250,6 @@ if __name__ == "__main__":
             query = query.replace("change my name to", "")
             uname = query
 
-        elif 'hello' in query:
-            speak("hello")
-            wishMe()
-
         elif 'what you' in query:
             sp("I am olivia. I Wish you According to the time of the day. I can Open websites like Google ,Youtube ,flipkart ,Stackoverflow. Give you a joke. Search websites like Google ,YouTube. Give the Introduction of someone or something according to wikipedia. Play music. Stop listening. Tell the current time. send email to someone.")
 
@@ -279,19 +275,6 @@ if __name__ == "__main__":
 
         elif 'joke' in query:
             givejoke()
-
-        elif 'kill me' in query:
-            sp("I won't")
-
-        elif 'your god' in query:
-            sp("chriag singhal is my god")
-
-        elif "who made you" in query or "who created you" in query or "who discovered you" in query:
-            speak("I was built by Chirag singhal")
-
-        elif 'exit' in query:
-            sp("exiting........")
-            exitcode()
 
         elif 'lock window' in query:
             speak("locking the device")
@@ -366,44 +349,38 @@ if __name__ == "__main__":
             speak("Deleting Notes")
             os.remove("olivianote.txt")
 
+        elif "send message" in query:
+            speak("to whom should i send to?")
+            to = takeCommand()
+            speak("What hour should I send it at sir")
+            time = takeCommand()
+            speak("What minute should I send it at sir")
+            minute = takeCommand()
+            speak("What am I supposed to say sir")
+            message = takeCommand()
+            speak("Sending message")
+
+            try:
+
+                pywhatkit.sendwhatmsg(to, message, time, minute)
+                print("Successfully Sent!")
+
+            except:
+
+                print("An Unexpected Error!")
+
         elif 'play' in query:
-            song = query.replace('play', '')
-            sp('playing ')
-            sp(song)
-            pywhatkit.playonyt(song)
 
-        elif 'pause' in query:
-            pywhatkit.pause()
+            try:
+                song = query.replace('play', '')
+                sp('playing ')
+                sp(song)
+                pywhatkit.playonyt(song)
 
-        elif 'resume' in query:
-            pywhatkit.resume()
+            except:
 
-        elif 'stop' in query:
-            pywhatkit.stop()
-
-        elif 'next' in query:
-            pywhatkit.next()
-
-        elif 'previous' in query:
-            pywhatkit.previous()
-
-        elif 'repeat' in query:
-            pywhatkit.repeat()
-
-        elif 'shuffle' in query:
-            pywhatkit.shuffle()
-
-        elif 'volume up' in query:
-            pywhatkit.volumeup()
-
-        elif 'volume down' in query:
-            pywhatkit.volumedown()
-
-        elif 'mute' in query:
-            pywhatkit.mute()
-
-        elif 'unmute' in query:
-            pywhatkit.unmute()
+                # printing the error message
+                print("Network Error Occured")
 
         elif 'news for today' in query:
             try:
@@ -709,14 +686,6 @@ if __name__ == "__main__":
             elif 'whatsapp' in query:
                 whatsappPath = "C:\\Users\\hp\\AppData\\Local\\WhatsApp\\WhatsApp.exe"
                 os.startfile(whatsappPath)
-
-            elif 'discord' in query:
-                discordPath = "C:\\Users\\hp\\AppData\\Local\\Discord\\Update\\Discord.exe"
-                os.startfile(discordPath)
-
-            elif 'gmail' in query:
-                gmailPath = "C:\\Users\\hp\\AppData\\Local\\Gmail\\Google Gmail.exe"
-                os.startfile(gmailPath)
 
             else:
                 try:
@@ -1172,3 +1141,19 @@ if __name__ == "__main__":
         elif "what is your purpose" in query:
 
             speak("I am a Virtual assistant")
+        elif 'hello' in query:
+            speak("hello")
+            wishMe()
+
+        elif 'exit' in query:
+            sp("exiting........")
+            exitcode()
+
+        elif 'kill me' in query:
+            sp("I won't")
+
+        elif 'your god' in query:
+            sp("chriag singhal is my god")
+
+        elif "who made you" in query or "who created you" in query or "who discovered you" in query:
+            speak("I was built by Chirag singhal")
