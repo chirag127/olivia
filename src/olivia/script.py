@@ -254,7 +254,6 @@ if __name__ == "__main__":
                 'https://www.google.com/search?q=' + search)
 
         elif 'time' in query:
-
             ctime()
 
         elif 'date' in query:
@@ -306,15 +305,6 @@ if __name__ == "__main__":
                 speak(
                     "Sorry my friend chirag sir. I am not able to send this email")
 
-        elif 'stop music' in query:
-            os.close("C:\\Program Files\\DAUM\\PotPlayer\\PotPlayerMini64.exe")
-
-        elif 'clear' in query:
-            clearConsole()
-
-        elif 'joke' in query:
-            givejoke()
-
         elif 'lock window' in query:
             speak("locking the device")
             ctypes.windll.user32.LockWorkStation()
@@ -328,11 +318,10 @@ if __name__ == "__main__":
             speak("Recycle Bin Recycled")
 
         elif "don't listen" in query or "stop listening" in query:
-            speak(
-                "for how much time you want to stop jarvis from listening commands")
-            a = int(takeCommand())
-            time.sleep(a)
-            print(a)
+            speak("for how much time you want to stop olivia from listening commands")
+                time.sleep(120)
+                speak("Olivia is listening again")
+
 
         elif "where is" in query:
             query = query.replace("where is", "")
