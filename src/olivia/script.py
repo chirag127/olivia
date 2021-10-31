@@ -74,8 +74,6 @@ def takeCommand():
         return "None"
     return query
 
-    
-
 
 def takescreenshot():
     subprocess.call(["screencapture", "-x", "image.png"])
@@ -127,10 +125,6 @@ def greeting(text):
     return ''
 
 
-
-
-
-
 def givejoke():
     response_API = requests.get(
         'https://icanhazdadjoke.com/slack')
@@ -149,7 +143,8 @@ def giveip():
     parse_json = json.loads(data)
     key = parse_json['ip']
     iptext = key
-    sp("Your IP address is ", iptext)
+    sp("Your IP address is ")
+    sp(iptext)
 
 
 def translatelanguage(languageptext):
@@ -237,7 +232,7 @@ if __name__ == "__main__":
         elif 'joke' in query:
             givejoke()
 
-        elif 'ip' in query:
+        elif 'ip address' in query:
             giveip()
 
         elif 'call me' in query:
@@ -734,20 +729,10 @@ if __name__ == "__main__":
             speak(f"Sir, the time is {strTime}")
 
         elif 'open' in query:
-            query = query.replace("open ", "")
             speak("okay")
-            sp("opening")
-            sp(query)
+            query = query.replace("open ", "")
 
-            if 'notepad' in query:
-                speak("okay")
-                os.system("notepad")
-
-            elif 'calculator' in query:
-                speak("okay")
-                os.system("calc")
-
-            elif 'control panel' in query:
+            if 'control panel' in query:
                 speak("okay")
                 os.system("control")
 
@@ -759,12 +744,7 @@ if __name__ == "__main__":
                 speak("okay")
                 os.system("gamepanel")
 
-            elif 'task manager' in query:
-                speak("okay")
-                os.system("taskmgr")
-
             elif 'command prompt' in query:
-
                 speak("okay")
                 os.system("cmd")
 
@@ -788,6 +768,22 @@ if __name__ == "__main__":
                 chromePath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
                 os.startfile(chromePath)
 
+            elif 'control panel' in query:
+                controlPanelPath = "Windows\\System32\\control.exe"
+                os.startfile(controlPanelPath)
+
+            elif 'notepad' in query:
+                notepadPath = "C:\Windows\System32\notepad.exe"
+                os.startfile(notepadPath)
+
+            elif 'calculator' in query:
+                calculatorPath = "C:\Windows\System32\calc.exe"
+                os.startfile(calculatorPath)
+
+            elif 'task manager' in query:
+                taskManagerPath = "C:\Windows\System32\taskmgr.exe"
+                os.startfile(taskManagerPath)
+
             elif 'firefox' in query:
                 speak("okay")
                 firefoxPath = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
@@ -809,13 +805,11 @@ if __name__ == "__main__":
                 os.startfile(powerpointPath)
 
             elif 'paint' in query:
-
                 speak("okay")
                 paintPath = "C:\\Windows\\System32\\mspaint.exe"
                 os.startfile(paintPath)
 
             elif 'camera' in query:
-
                 speak("okay")
                 cameraPath = "C:\\Windows\\System32\\mspaint.exe"
                 os.startfile(cameraPath)
@@ -826,20 +820,12 @@ if __name__ == "__main__":
                 mediaPlayerPath = "C:\\Program Files (x86)\\Windows Media Player\\wmplayer.exe"
                 os.startfile(mediaPlayerPath)
 
-            elif 'task manager' in query:
-
-                speak("okay")
-                taskManagerPath = "C:\\Windows\\System32\\taskmgr.exe"
-                os.startfile(taskManagerPath)
-
             elif 'setting' in query:
-
                 speak("okay")
                 settingPath = "C:\\Windows\\System32\\control.exe"
                 os.startfile(settingPath)
 
             elif 'wordpad' in query:
-
                 speak("okay")
                 wordpadPath = "C:\\Windows\\System32\\wordpad.exe"
                 os.startfile(wordpadPath)
@@ -880,10 +866,10 @@ if __name__ == "__main__":
                 os.startfile(potPlayerPath)
 
             elif 'github desktop' in query:
-                githubPath = "C:\\Users\\admin\\AppData\\Local\\Programs\\GitHubDesktop\\GitHubDesktop.exe"
+                githubPath = "C:\\Users\\hp\\AppData\\Local\\GitHubDesktop\\GitHubDesktop.exe"
                 os.startfile(githubPath)
 
-            elif 'treesizefree' in query:
+            elif 'treesize free' in query:
                 treesizefreePath = "C:\\Program Files\\TreesizeFree\\TreesizeFree.exe"
                 os.startfile(treesizefreePath)
 
@@ -934,11 +920,7 @@ if __name__ == "__main__":
                     gmailPath = "C:\\Users\\hp\\AppData\\Local\\Gmail\\Google Gmail.exe"
                     os.startfile(gmailPath)
 
-        elif 'open' in query:
-            print("opening.....")
-            query = query.replace("open ", "")
-
-            if 'firefox' in query:
+            elif 'firefox' in query:
                 sp("Firefox is opening")
                 webbrowser.open(
                     "https://www.mozilla.org/en-US/firefox/new/")
