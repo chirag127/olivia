@@ -100,6 +100,11 @@ def query_day():
         pass
 
 
+def query_time():
+    time = datetime.datetime.now().strftime("%I:%M:%S")
+    speak(f"the time is {time[1]} o'clock" and {time[3:5]} minutes")
+
+
 def takescreenshot():
     subprocess.call(["screencapture", "-x", "image.png"])
     speak("Sir, I have taken a screenshot of your screen")
