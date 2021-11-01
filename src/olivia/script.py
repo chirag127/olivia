@@ -553,6 +553,26 @@ if __name__ == "__main__":
                 webbrowser.open(
                     f"https://www.google.com/search?q={query}&sourceid=olivia")
 
+        elif 'open word' in query:
+            speak('ok. opening word')
+            os.startfile('C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE')
+            speak('do you want me to type sir?')
+            typin = takecommand()
+            if 'yes' in typin:
+                pyautogui.press('enter')
+                speak('sir you can start. say stop typing if I have to stop')
+                while not 'stop typing' in type_sentence:
+                    type_sentence = takecommand()
+                    if type_sentence != 'stop typing' and type_sentence != 'press enter':
+                        pyautogui.write(type_sentence + '. ')
+                    elif type_sentence == 'press enter':
+                        pyautogui.press('enter')
+                speak('stopped typing')
+            elif 'no' in typin:
+                speak('ok sir')
+        elif 'stop typing' in query:
+            speak('sir I already stopped typing')
+
         elif 'launch' in query:
             query = query.replace("launch", "")
             sp("Launching ")
