@@ -1020,184 +1020,184 @@ if __name__ == "__main__":
                 query = query.replace("to danish", "")
                 translator = Translator()
                 result = translator.translate(query, dest='da')
-                spt.text)
+                sp(result.text)
 
                 # translate to dutch
 
             elif 'to dutch' in query:
-                query=query.replace("to dutch", "")
-                translator=Translator()
-                result=translator.translate(query, dest = 'nl')
-                spt.text)
+                query = query.replace("to dutch", "")
+                translator = Translator()
+                result = translator.translate(query, dest='nl')
+                sp(result.text)
 
                 # translate to estonian
 
             elif 'to estonian' in query:
-                query=query.replace("to estonian", "")
-                translator=Translator()
-                result=translator.translate(query, dest='et')
+                query = query.replace("to estonian", "")
+                translator = Translator()
+                result = translator.translate(query, dest='et')
                 sp(result.text)
 
                 # translate to finnish
 
             elif 'to finnish' in query:
-                query=query.replace("to finnish", "")
-                translator=Translator()
-                result=translator.translate(query, dest='fi')
+                query = query.replace("to finnish", "")
+                translator = Translator()
+                result = translator.translate(query, dest='fi')
                 sp(result.text)
 
                 # translate to greek
 
             elif 'to greek' in query:
 
-                query=query.replace("to greek", "")
-                translator=Translator()
-                result=translator.translate(query, dest='el')
+                query = query.replace("to greek", "")
+                translator = Translator()
+                result = translator.translate(query, dest='el')
                 sp(result.text)
 
                 # translate to hebrew
 
             elif 'to hebrew' in query:
-                query=query.replace("to hebrew", "")
-                translator=Translator()
-                result=translator.translate(query, dest='he')
+                query = query.replace("to hebrew", "")
+                translator = Translator()
+                result = translator.translate(query, dest='he')
                 speak(result.text)
 
                 # translate to hindi
 
             elif 'to hindi' in query:
-                query=query.replace("to hindi", "")
-                translator=Translator()
-                result=translator.translate(query, dest='hi')
+                query = query.replace("to hindi", "")
+                translator = Translator()
+                result = translator.translate(query, dest='hi')
                 speak(result.text)
 
                 # translate to hungarian
 
             elif 'to hungarian' in query:
-                query=query.replace("to hungarian", "")
-                translator=Translator()
-                result=translator.translate(query, dest='hu')
+                query = query.replace("to hungarian", "")
+                translator = Translator()
+                result = translator.translate(query, dest='hu')
                 speak(result.text)
 
                 # translate to indonesian
 
             elif 'to indonesian' in query:
-                query=query.replace("to indonesian", "")
-                translator=Translator()
-                result=translator.translate(query, dest='id')
+                query = query.replace("to indonesian", "")
+                translator = Translator()
+                result = translator.translate(query, dest='id')
                 speak(result.text)
 
                 # translate to italian
 
             elif 'to italian' in query:
 
-                query=query.replace("to italian", "")
-                translator=Translator()
-                result=translator.translate(query, dest='it')
+                query = query.replace("to italian", "")
+                translator = Translator()
+                result = translator.translate(query, dest='it')
                 speak(result.text)
 
                 # translate to japanese
 
             elif 'to japanese' in query:
-                query=query.replace("to japanese", "")
-                translator=Translator()
-                result=translator.translate(query, dest='ja')
+                query = query.replace("to japanese", "")
+                translator = Translator()
+                result = translator.translate(query, dest='ja')
                 speak(result.text)
 
                 # translate to korean
 
             elif 'to korean' in query:
-                query=query.replace("to korean", "")
-                translator=Translator()
-                result=translator.translate(query, dest='ko')
+                query = query.replace("to korean", "")
+                translator = Translator()
+                result = translator.translate(query, dest='ko')
                 speak(result.text)
 
                 # translate to chinese
 
             elif 'to chinese' in query:
-                query=query.replace("to chinese", "")
-                translator=Translator()
-                result=translator.translate(query, dest='zh-cn')
+                query = query.replace("to chinese", "")
+                translator = Translator()
+                result = translator.translate(query, dest='zh-cn')
                 sp(result.text)
 
                 # translate to portuguese
 
             elif 'to portuguese' in query:
-                query=query.replace("to portuguese", "")
-                translator=Translator()
-                result=translator.translate(query, dest='pt')
+                query = query.replace("to portuguese", "")
+                translator = Translator()
+                result = translator.translate(query, dest='pt')
                 sp(result.text)
 
                 # translate to latvian
 
             elif 'to latvian' in query:
-                query=query.replace("to latvian", "")
-                translator=Translator()
-                result=translator.translate(query, dest='lv')
+                query = query.replace("to latvian", "")
+                translator = Translator()
+                result = translator.translate(query, dest='lv')
                 sp(result.text)
 
                 # translate to lithuanian
 
             elif 'to lithuanian' in query:
-                query=query.replace("to lithuanian", "")
-                translator=Translator()
-                result=translator.translate(query, dest='lt')
+                query = query.replace("to lithuanian", "")
+                translator = Translator()
+                result = translator.translate(query, dest='lt')
                 sp(result.text)
 
                 # translate to malay
 
             elif 'to malay' in query:
-                query=query.replace("to malay", "")
-                translator=Translator()
-                result=translator.translate(query, dest='ms')
+                query = query.replace("to malay", "")
+                translator = Translator()
+                result = translator.translate(query, dest='ms')
                 sp(result.text)
 
                 # translate to norwegian
 
             elif 'to norwegian' in query:
-                query=query.replace("to norwegian", "")
-                translator=Translator()
-                result=translator.translate(query, dest='no')
+                query = query.replace("to norwegian", "")
+                translator = Translator()
+                result = translator.translate(query, dest='no')
                 sp(result.text)
 
                 # translate to persian
 
             elif 'to persian' in query:
-                query=query.replace("to persian", "")
-                translator=Translator()
-                result=translator.translate(query, dest='fa')
+                query = query.replace("to persian", "")
+                translator = Translator()
+                result = translator.translate(query, dest='fa')
                 sp(result.text)
 
                 # translate to polish
 
             elif 'to polish' in query:
-                query=query.replace("to polish", "")
-                translator=Translator()
-                result=translator.translate(query, dest='pl')
+                query = query.replace("to polish", "")
+                translator = Translator()
+                result = translator.translate(query, dest='pl')
                 sp(result.text)
 
                 # translate to portuguese
 
             elif 'to portuguese' in query:
-                query=query.replace("to portuguese", "")
-                translator=Translator()
-                result=translator.translate(query, dest='pt')
+                query = query.replace("to portuguese", "")
+                translator = Translator()
+                result = translator.translate(query, dest='pt')
                 sp(result.text)
 
                 # translate to romanian
 
             elif 'to romanian' in query:
-                query=query.replace("to romanian", "")
-                translator=Translator()
-                result=translator.translate(query, dest='ro')
-                spt.text)
+                query = query.replace("to romanian", "")
+                translator = Translator()
+                result = translator.translate(query, dest='ro')
+                sp(result.text)
 
                 # translate to russian
 
             elif 'to russian' in query:
-                query=query.replace("to russian", "")
-                translator=Translator()
-                result=translator.translate(query, dest='ru')
+                query = query.replace("to russian", "")
+                translator = Translator()
+                result = translator.translate(query, dest='ru')
                 sp)
 
                 # translate to slovak
@@ -1205,7 +1205,7 @@ if __name__ == "__main__":
             elif 'to slovak' in query:
                 query=query.replace("to slovak", "")
                 translator=Translator()
-                result=translator.translate(query, dest='sk')
+                result=translator.translate(query, dest = 'sk')
                 sp)
 
                 # translate to spanish
