@@ -343,9 +343,13 @@ if __name__ == "__main__":
             speak("locking the device")
             ctypes.windll.user32.LockWorkStation()
 
-        elif 'shutdown system' in query:
+
+        elif 'shut down the computer' in query or 'shutdown the computer' in query or 'shot down the computer' in query or 'shutdown system' in query:
             speak("Hold On a Sec ! Your system is on its way to shut down")
-            subprocess.call('shutdown / p /f')
+            os.system('shutdown /s /f')
+            running = False
+            sys.exit()
+
 
         elif 'empty recycle bin' in query:
             winshell.recycle_bin().empty(confirm=False, show_progress=False, sound=True)
@@ -593,12 +597,7 @@ if __name__ == "__main__":
             elif 'task manager' in query:
                 taskManagerPath = "C:\\Windows\\System32\\taskmgr.exe"
                 os.startfile(taskManagerPath)
-
-            elif 'word' in query:
-                speak("okay")
-                wordPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE"
-                os.startfile(wordPath)
-
+                        
             elif 'excel' in query:
                 speak("okay")
                 excelPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE"
@@ -620,7 +619,6 @@ if __name__ == "__main__":
                 os.startfile(cameraPath)
 
             elif 'media player' in query:
-
                 speak("okay")
                 mediaPlayerPath = "C:\\Program Files (x86)\\Windows Media Player\\wmplayer.exe"
                 os.startfile(mediaPlayerPath)
@@ -693,10 +691,6 @@ if __name__ == "__main__":
             elif 'microsoft office' in query:
                 microsoftOfficePath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE"
                 os.startfile(microsoftOfficePath)
-
-            elif 'microsoft word' in query:
-                microsoftWordPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE"
-                os.startfile(microsoftWordPath)
 
             elif 'microsoft excel' in query:
 
@@ -1199,3 +1193,33 @@ if __name__ == "__main__":
         elif query == 'quit' or 'olivia quit' in query or 'olivia bye' in query or query == 'bye' or query == 'exit' or query == 'close' or query == 'goodbye':
             speak("Bye Sir")
             exit()
+
+        elif 'close chrome' in query or 'close google chrome' in query:
+            speak("closing chrome")
+            os.system("TASKKILL /F /IM chrome.exe")
+
+            # close spotify
+        elif 'close spotify' in query:
+            speak("closing spotify")
+            os.system("TASKKILL /F /IM spotify.exe")
+
+        elif 'open word' in query:
+            speak('ok. opening word')
+            os.startfile("C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE")
+            speak('do you want me to type sir?')
+            typin = takeCommand()
+            if 'yes' in typin:
+                pyautogui.press('enter')
+                speak('sir you can start. say stop typing if I have to stop')
+                while not 'stop typing' in type_sentence:
+                    type_sentence = takeCommand()
+                    if type_sentence != 'stop typing' and type_sentence != 'press enter':
+                        pyautogui.write(type_sentence + '. ')
+                    elif type_sentence == 'press enter':
+                        pyautogui.press('enter')
+                speak('stopped typing')
+            elif 'no' in typin:
+                speak('ok sir')
+
+        elif 'stop typing' in text:
+            speak('sir I already stopped typing')
