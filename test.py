@@ -1,4 +1,3 @@
-import script
 from collections import Counter
 
 alllanguage = ['afrikaans',
