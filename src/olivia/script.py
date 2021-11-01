@@ -4,7 +4,6 @@ import ctypes
 import datetime
 import json
 import math
-import operator
 import os
 import pyautogui  # pip install pyautogui
 import pyttsx3  # pip install pyttsx3
@@ -562,12 +561,14 @@ if __name__ == "__main__":
             if 'yes' in typin:
                 pyautogui.press('enter')
                 speak('sir you can start. say stop typing if I have to stop')
-                while not 'stop typing' in type_sentence:
+                while True:
                     type_sentence = takeCommand()
-                    if type_sentence != 'stop typing' and type_sentence != 'press enter':
-                        pyautogui.write(type_sentence + '. ')
-                    elif type_sentence == 'press enter':
+                    if 'stop typing' in type_sentence:
+                        break
+                    elif 'enter' in type_sentence:
                         pyautogui.press('enter')
+                    else:
+                        pyautogui.typewrite(type_sentence)
                 speak('stopped typing')
             elif 'no' in typin:
                 speak('ok sir')
@@ -965,7 +966,7 @@ if __name__ == "__main__":
             k = wikipedia.summary(query, sentences=2)
             speak(k)
 
-        elif query == 'quit' or 'olivia quit' in query or 'olivia bye' in query or query == 'bye' or query == 'exit' or query == 'close' or query == 'goodbye':
+        elif query == 'quit' or 'olivia quit' in query or 'olivia bye' in query or query == 'bye' or query == 'exit' or query == 'close' or query == 'goodbye' or query == 'bye bye':
             speak("Bye Sir")
             exit()
 
@@ -1327,5 +1328,6 @@ if __name__ == "__main__":
                 result = translator.translate(query, dest='pa')
                 sp(result.text)
 
-        else:
+        elif query != "":
+            query = query.lower()
             sp('sorry sir that is not assigned.')
