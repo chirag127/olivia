@@ -1496,7 +1496,9 @@ if __name__ == "__main__":
                 result = translator.translate(query, dest='ml')
                 sp(result.text)
 
-""""
+                
+
+"""
 
 
         else:
@@ -1530,4 +1532,4 @@ if __name__ == "__main__":
                     webbrowser.get().open_new_tab('https://www.youtube.com/results?search_query=' + query)
             else:
                 speak('ok. anything else sir?')
-""""
+"""
