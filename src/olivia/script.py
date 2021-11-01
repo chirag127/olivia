@@ -34,10 +34,19 @@ import winshell
 
 """
 
+# create a wonderful virtual voice assistant named olivia and she will help you in your daily life with her amazing features like text to speech, voice to text, google search, wikipedia search, youtube search, news search, weather search, time search, date search, screenshot, email, jokes, ip address, and many more.
+# olivia is a virtual voice assistant and she will help you in your daily life with her amazing features like text to speech, voice to text, google search, wikipedia search, youtube search, news search, weather search, time search, date search, screenshot, email, jokes, ip address, and many more.
+# Olivia is created by chirag singhal.
+# chirag singhal is a software engineer and she is a virtual voice assistant.
+# chirag singhal made this virtual voice assistant for his mini-project in his college. 
 
-engine = pyttsx3.init('sapi5')
+
+# reqiured engines
+engine = pyttsx3.init('sapi5')  
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
+
+
 
 
 def speak(audio):
@@ -82,10 +91,8 @@ def takeCommand():
 def takescreenshot():
     subprocess.call(["screencapture", "-x", "image.png"])
     speak("Sir, I have taken a screenshot of your screen")
-
-
-myScreenshot = pyautogui.screenshot()
-myScreenshot.save(r'D:\\dl\\Critical\\code\\screenshot_1.png')
+    myScreenshot = pyautogui.screenshot()
+    myScreenshot.save(r'D:\\dl\\Critical\\code\\screenshot_1.png')
 
 
 def sendEmail(to, content):
@@ -343,13 +350,11 @@ if __name__ == "__main__":
             speak("locking the device")
             ctypes.windll.user32.LockWorkStation()
 
-
         elif 'shut down the computer' in query or 'shutdown the computer' in query or 'shot down the computer' in query or 'shutdown system' in query:
-            speak("Hold On a Sec ! Your system is on its way to shut down")
+            speak("Hold On ! Your system is on its way to shut down")
             os.system('shutdown /s /f')
             running = False
             sys.exit()
-
 
         elif 'empty recycle bin' in query:
             winshell.recycle_bin().empty(confirm=False, show_progress=False, sound=True)
@@ -597,7 +602,7 @@ if __name__ == "__main__":
             elif 'task manager' in query:
                 taskManagerPath = "C:\\Windows\\System32\\taskmgr.exe"
                 os.startfile(taskManagerPath)
-                        
+
             elif 'excel' in query:
                 speak("okay")
                 excelPath = "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE"
@@ -1205,7 +1210,8 @@ if __name__ == "__main__":
 
         elif 'open word' in query:
             speak('ok. opening word')
-            os.startfile("C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE")
+            os.startfile(
+                "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE")
             speak('do you want me to type sir?')
             typin = takeCommand()
             if 'yes' in typin:
