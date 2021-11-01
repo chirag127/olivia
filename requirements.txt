@@ -12,3 +12,4 @@ Pillow
 pywhatkit
 beautifulsoup4
 clipboard
+psutil
