@@ -13,3 +13,5 @@ pywhatkit
 beautifulsoup4
 clipboard
 psutil
+
+youtube-video-play-pause-bot

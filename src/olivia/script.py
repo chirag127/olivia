@@ -25,6 +25,7 @@ import wikipedia  # pip install wikipedia
 import win32com.client as wincl
 import winshell
 import clipboard
+import youtube-video-play-pause-bot
 import psutil  # pip install psutil
 
 
@@ -95,7 +96,6 @@ def cpu():
     speak("CPU is at")
     speak(usage)
     sp("pencentage")
-
 
 
 def ram():
@@ -291,15 +291,10 @@ def generate_random_password():
 if __name__ == "__main__":
     # wishMe()
     # clear the console on the start
-    clearConsole()
-
-    cpu()
-    ram()
-    disk()
-    battery()
-    
 
     while True:
+
+        # take command from user and convert it to lower case and assign it to a variable named as query
 
         query = takeCommand().lower()
 
@@ -307,8 +302,11 @@ if __name__ == "__main__":
         #  if 'olivia' in query:
         #     speak("Yes Sir")
 
+        # open google chrome if 'chrome' is in query
         if 'open chrome' in query:
             open_chrome()
+
+        # search the wikipedia if 'wikipedia' is in query and speak first 2 sentences of the the wikipedia page
 
         elif 'wikipedia' in query:
             speak("Searching Wikipedia...")
@@ -318,15 +316,32 @@ if __name__ == "__main__":
             print(results)
             speak(results)
 
+        # tell user the common usage of the command if 'usage' is in query
+
         elif 'usage' in query:
+
+            # if 'usage' is in query and 'cpu' is in query give the usage of cpu
             if 'cpu' in query:
                 cpu()
+
+            # if 'usage' is in query and 'ram' is in query give the usage of ram
+
             elif 'ram' in query:
                 ram()
-            elif 'disk' in query:
-                disk()
+
+            # if 'usage' is in query and 'battery' is in query give the usage of battery
+
             elif 'battery' in query:
                 battery()
+
+            # if 'usage' is in query and 'disk' is in query give the usage of disk
+
+            elif 'disk' in query:
+                disk()
+
+            # if 'usage' is in query and 'network' is in query give the usage of network
+
+        # search in chrome when the query is 'search'
 
         elif 'search in chrome' in query:
             speak("What should i search for sir")
@@ -335,17 +350,29 @@ if __name__ == "__main__":
             webbrowser.get(chromepath).open(
                 'https://www.google.com/search?q=' + search)
 
+        # if 'time' is in query then tell the time
+
         elif 'time' in query:
             ctime()
 
+        # if 'joke' is in query then tell the random joke
+
+        elif 'joke' in query:
+            givejoke()
+
+        # Read the copied text from clipboard and speak it if 'read' is in query and 'aloud' is in query
         elif 'read' in query:
             if 'aloud' in query:
                 text2speech()
 
+# give the current date and time if 'date' is in query
         elif 'date' in query:
             now = datetime.datetime.now()
             speak("The current date is")
             speak(now.strftime("%d-%m-%Y"))
+
+# play the video on the youtube. e.g. play the video on youtube of the song 'song name'
+# example: play lonely by justin bieber will play the video of the song 'lonely by justin bieber'
 
         elif 'play' in query:
 
@@ -355,10 +382,61 @@ if __name__ == "__main__":
                 sp(song)
                 pywhatkit.playonyt(song)
 
+                # pause the video if 'pause' is in query
+
+                while True:
+                    query = takeCommand().lower()
+
+                    if 'pause' in query:
+
+                        youtube.play_pause_video()
+
+                    elif 'play' in query:
+                        youtube.play_pause_video()
+
+                    # stop the video if 'stop' is in query
+                    elif 'next' in query:
+                        pywhatkit.press('n')
+                        sp('Gone to the next video')
+
+                    # previous the video if 'previous' is in query
+                    elif 'previous' in query:
+                        pywhatkit.press('p')
+                        sp('Gone to the previous video')
+
+                    # mute the video if 'mute' is in query
+                    elif 'mute' in query:
+                        pywhatkit.press('m')
+
+                        sp('muted the video')
+
+                    # unmute the video if 'unmute' is in query
+                    elif 'unmute' in query:
+                        pywhatkit.press('m')
+                        sp('unmuted the video')
+
+                    # Increase the volume if 'volume up' is in query
+                    elif 'volume up' in query:
+                        pywhatkit.press('up')
+                        sp('Increased the volume')
+
+                    # Decrease the volume if 'volume down' is in query
+                    elif 'volume down' in query:
+                        pywhatkit.press('down')
+                        sp('Decreased the volume')
+
+                    # close the video if 'close' is in query
+                    elif 'close' in query:
+                        pywhatkit.press('shift', 'w')
+                        sp('Closed the video')
+                        break
+
             except:
 
                 # printing the error message
                 print("Network Error Occured")
+
+                #
 
         elif 'news for today' in query:
             try:
