@@ -1131,10 +1131,6 @@ if __name__ == "__main__":
         elif "what is your favorite place" in query:
             speak("My favorite place is Ghaziabad")
 
-        elif "goodbye" in query:
-            speak("Goodbye Sir")
-            sys.exit()
-
         elif "thank you" in query:
             speak("Welcome Sir")
 
@@ -1163,10 +1159,6 @@ if __name__ == "__main__":
             speak("hello")
             wishMe()
 
-        elif 'exit' in query:
-            sp("exiting........")
-            exitcode()
-
         elif 'how are you' in query:
             speak("i am fine")
         elif 'what time is it' in query:
@@ -1191,3 +1183,19 @@ if __name__ == "__main__":
 
         elif 'wish me' in query:
             wishMe()
+        elif 'roll' in query and 'dice' in query:
+            r = random.randint(1, 6)
+            dice = str(r)
+            speak('you got ' + dice)
+        elif 'who is' in query:
+            query = query.replace("who is", "")
+            k = wikipedia.summary(query, sentences=2)
+            speak(k)
+        elif 'tell me about' in query:
+            query = query.replace("tell me about", "")
+            k = wikipedia.summary(query, sentences=2)
+            speak(k)
+
+        elif query == 'quit' or 'olivia quit' in query or 'olivia bye' in query or query == 'bye' or query == 'exit' or query == 'close' or query == 'goodbye':
+            speak("Bye Sir")
+            exit()
