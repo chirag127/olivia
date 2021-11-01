@@ -1,3 +1,4 @@
+from typing import Mapping
 from bs4 import BeautifulSoup  # pip install bs4
 from googletrans import Translator
 import ctypes
@@ -78,11 +79,25 @@ def takeCommand():
         print("Recognizing...")
         query = r.recognize_google(audio, language='en-in')
         print(f"User said: {query}\n")
-
     except Exception as e:
         print("Say that again please...")
         return "None"
     return query
+
+
+def query_day():
+    day = datetime.datetime.today()
+    # print the day of the week
+    weekday = day.weekday()
+
+    # print = {0: "Monday", 1: "Tuesday", 2: "Wednesday", 3: "Thursday", 4: "Friday", 5: "Saturday", 6: "Sunday"}
+    Mapping = {0: "Monday", 1: "Tuesday", 2: "Wednesday",
+               3: "Thursday", 4: "Friday", 5: "Saturday", 6: "Sunday"}
+
+    try:
+        speak("Today is " + Mapping[weekday])
+    except:
+        pass
 
 
 def takescreenshot():
