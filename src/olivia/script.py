@@ -24,6 +24,8 @@ import webbrowser
 import wikipedia  # pip install wikipedia
 import win32com.client as wincl
 import winshell
+import clipboard
+
 
 # I was getting error so i install pyaudio
 # error in that too so i googled it on the stackover flow.
@@ -100,9 +102,12 @@ def query_day():
         pass
 
 
-def query_time():
-    time = datetime.datetime.now().strftime("%I:%M:%S")
-    speak(f"the time is {time[1]} o'clock" and {time[3:5]} minutes")
+def send_whatapp(to, content):
+    webbrowser.open('https://web.whatsapp.com/send?phone=' +
+                    to + '&text=' + content)
+    import time
+    time.sleep(20)
+    pyautogui.press('enter')
 
 
 def takescreenshot():
@@ -119,6 +124,12 @@ def sendEmail(to, content):
     server.login('chriagsinghal@gmail.com', 'my password')
     server.sendmail('chiragsinghal@gmail.com', to, content)
     server.close()
+
+
+def text2speech():
+    text = clipboard.paste()
+    print(text)
+    speak(text)
 
 
 def exitcode():
@@ -280,6 +291,10 @@ if __name__ == "__main__":
         elif 'time' in query:
             ctime()
 
+        elif 'read' in query:
+            if 'aloud' in query:
+                text2speech()
+
         elif 'date' in query:
             now = datetime.datetime.now()
             speak("The current date is")
@@ -354,7 +369,7 @@ if __name__ == "__main__":
         elif 'email' in query:
             try:
                 speak("What should I say?")
-                content = takeCommand()
+                content = takeCommand().lower()
                 to = "chriagsinghal@gmail.com"
                 sendEmail(to, content)
                 speak("Email has been sent!")
@@ -432,26 +447,53 @@ if __name__ == "__main__":
                 speak("Note has been deleted")
 
         elif "send" in query:
+
+            # send whatsapp message
             if 'message' in query:
+                username = {
+                    'chirag': '+91 9999999999',
+                    'india': '+91 9999999998',
+                    'abhinav': '+91 9999999997',
+                    'ram': '+91 9999999996',
+                    'shivam': '+91 9999999995',
+                    'saurabh': '+91 9999999994',
+                    'sahil': '+91 9999999993',
+                    'siddharth': '+91 9999999992',
+                    'sagar': '+91 9999999991',
+                    'shubham': '+91 9999999990',
+                    'shivani': '+91 9999999989',
+                    'shivam': '+91 9999999988',
+                    'shubham': '+91 9999999987',
+                    'shivam': '+91 9999999986',
+                    'shivam': '+91 9999999985',
+                    'shivam': '+91 9999999984',
+                    'sourya': '+91 9999999983',
+                    'sourya': '+91 9999999982',
+                    'aryan': '+91 9999999981',
+                    'aviral': '+91 9999999980',
+                    'kushi': '+91 9999999979',
+                    'kushal': '+91 9999999978',
+                    'jatin': '+91 9999999977',
 
-                speak("to whom should i send to?")
-                to = takeCommand()
-                speak("What hour should I send it at sir")
-                time = takeCommand()
-                speak("What minute should I send it at sir")
-                minute = takeCommand()
-                speak("What am I supposed to say sir")
-                message = takeCommand()
-                speak("Sending message")
 
+                    'None': '+91 9999999995'  # if you want to add more contacts
+                    # 'None' : '+91 9999999995' # if you want to add more contacts
+                    # 'None' : '+91 9999999995' # if you want to default contact
+
+
+                }
                 try:
+                    speak("to whom should i send to?")
+                    name = takeCommand().lower()
+                    to = username[name]
+                    speak("What should i say?")
+                    content = takeCommand()
+                    send_whatapp(to, content)
+                    speak("Message has been sent")
 
-                    pywhatkit.sendwhatmsg(to, message, time, minute)
-                    print("Successfully Sent!")
-
-                except:
-
-                    print("An Unexpected Error!")
+                except Exception as e:
+                    print(e)
+                    speak("Sorry Sir, I am not able to send this message")
 
         elif "where is" in query:
             query = query.replace("where is", "")
@@ -460,6 +502,91 @@ if __name__ == "__main__":
             sp(location)
             webbrowser.open(
                 "https://www.google.com / maps / place/" + location + "")
+
+# tell the stock price of the company using yahoo finance api and speak the result to the user using google speech api and print the result to the console
+        elif "stock" in query:
+            if 'price' in query:
+                speak("What company's stock price you want to check?")
+                company = takeCommand()
+                speak("Checking the stock price of " + company)
+                try:
+                    url = "https://in.finance.yahoo.com/quote/" + company + "?p=" + company
+                    page = requests.get(url)
+                    soup = BeautifulSoup(page.content, 'html.parser')
+                    price = soup.find(
+                        "div", {"class": "My(6px) Pos(r) smartphone_Mt(6px)"}).find("span").get_text()
+                    sp(price)
+                    print(price)
+                except Exception as e:
+                    print(e)
+                    speak("Sorry Sir, I am not able to fetch the stock price")
+# tell the weather of the city using openweathermap api and speak the result to the user using google speech api and print the result to the console
+        elif "weather" in query:
+            if 'today' in query:
+                speak("What city's weather you want to check?")
+                city = takeCommand()
+                speak("Checking the weather of " + city)
+                try:
+                    url = "https://openweathermap.org/data/2.5/weather?q=" + \
+                        city + "&appid=b6907d289e10d714a6e88b30761fae22"
+                    page = requests.get(url)
+                    soup = BeautifulSoup(page.content, 'html.parser')
+                    weather = soup.find(
+                        "div", {"class": "weather-widget__container"}).find("p").get_text()
+                    sp(weather)
+                    print(weather)
+                except Exception as e:
+                    print(e)
+                    speak("Sorry Sir, I am not able to fetch the weather")
+
+        elif "date" in query:
+            speak("Sir, What date you want to check")
+            date = takeCommand()
+            speak("Checking the date of " + date)
+            try:
+                url = "https://www.timeanddate.com/worldclock/fixedtime.html?msg=" + date + "&iso=&p1=150"
+                page = requests.get(url)
+                soup = BeautifulSoup(page.content, 'html.parser')
+                date = soup.find(
+                    "div", {"class": "time-date"}).find("p").get_text()
+                sp(date)
+                print(date)
+            except Exception as e:
+                print(e)
+                speak("Sorry Sir, I am not able to fetch the date")
+
+        elif "calculate" in query:
+            speak("Sir, What you want to calculate")
+            query = takeCommand()
+            speak("Calculating " + query)
+            try:
+                url = "https://www.google.com/search?q=" + query
+                page = requests.get(url)
+                soup = BeautifulSoup(page.content, 'html.parser')
+                result = soup.find(
+                    "div", {"class": "kno-ecr-pt"}).find("span").get_text()
+                sp(result)
+                print(result)
+            except Exception as e:
+                print(e)
+                speak("Sorry Sir, I am not able to fetch the result")
+
+# tell the user the current time using datetime module and speak the result to the user using google speech api and print the result to the console
+        elif "current time" in query:
+            speak("Sir, What time you want to check")
+            time = takeCommand()
+            speak("Checking the time of " + time)
+            try:
+                url = "https://www.timeanddate.com/worldclock/fixedtime.html?msg=" + time + "&iso=&p1=150"
+                page = requests.get(url)
+                soup = BeautifulSoup(page.content, 'html.parser')
+                time = soup.find(
+                    "div", {"class": "time-date"}).find("p").get_text()
+                sp(time)
+                print(time)
+            except Exception as e:
+                print(e)
+                speak("Sorry Sir, I am not able to fetch the time")
 
         elif 'search' in query:
             sp('Searching ...')
@@ -1348,6 +1475,59 @@ if __name__ == "__main__":
                 result = translator.translate(query, dest='pa')
                 sp(result.text)
 
-        elif query != "":
-            query = query.lower()
-            sp('sorry sir that is not assigned.')
+            # translate to gujarati
+            elif 'to gujarati' in query:
+                query = query.replace("to gujarati", "")
+                translator = Translator()
+                result = translator.translate(query, dest='gu')
+                sp(result.text)
+
+            # translate to kannada
+            elif 'to kannada' in query:
+                query = query.replace("to kannada", "")
+                translator = Translator()
+                result = translator.translate(query, dest='kn')
+                sp(result.text)
+
+            # translate to malayalam
+            elif 'to malayalam' in query:
+                query = query.replace("to malayalam", "")
+                translator = Translator()
+                result = translator.translate(query, dest='ml')
+                sp(result.text)
+
+""""
+
+
+        else:
+            speak(
+                'sorry sir that is not assigned. do you want to search for ' + query + '?')
+            confirmation = takeCommand().lower()
+            if 'yes' in confirmation:
+                speak('do you want me to search in google, wikipedia or youtube sir?')
+                answer4 = takeCommand().lower()
+                if 'google' in answer4:
+                    speak('searching for ' + query + ' in google')
+                    webbrowser.open('www.google.com/search?gx&q=' + query)
+
+                elif 'Wikipedia' in answer4:
+                    speak('do you want me to narrate or open webpage sir?')
+                    answer2 = takeCommand().lower()
+                    if 'narrate' in answer2 or 'direct' in answer2:
+                        results = wikipedia.summary(
+                            query, sentences=1, auto_suggest=False)
+                        speak('according to wikipedia ' + results)
+                    elif 'web page' in answer2 or 'website' in answer2 or 'webpage' in answer2:
+                        page1 = wikipedia.page(query, auto_suggest=False)
+                        print(page1)
+                        page2 = page1.url
+                        print(page2)
+                        speak('redirecting to webpage')
+                        webbrowser.get().open_new_tab(page2)
+                        print(page2)
+                elif 'youtube' in answer4:
+                    speak('searching for ' + query + 'in youtube')
+                    webbrowser.get().open_new_tab('https://www.youtube.com/results?search_query=' + query)
+            else:
+                speak('ok. anything else sir?')
+""""
