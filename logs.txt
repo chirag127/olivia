@@ -1,0 +1,97 @@
+Installing DataKund  PIP         -2021-11-01 17:45:37
+
+
+DataKundTypePip  PIP         -2021-11-01 17:45:37
+
+
+driverversion95  PIP         -2021-11-01 17:45:37
+
+
+Exception in setting agent'user_agent'  PIP         -2021-11-01 17:45:37
+
+
+Exception in saving download folder'download_folder'  PIP         -2021-11-01 17:45:37
+
+
+downloadchrome function  PIP         -2021-11-01 17:45:37
+
+
+Version found from subprocess code95  PIP         -2021-11-01 17:45:38
+
+
+driverversion95  PIP         -2021-11-01 17:45:38
+
+
+Driver Version:-95  PIP         -2021-11-01 17:45:38
+
+
+Folder path  PIP         -2021-11-01 17:45:40
+
+
+Going to try new version  PIP         -2021-11-01 17:45:40
+
+
+Version found from subprocess code95  PIP         -2021-11-01 17:45:40
+
+
+Going to download new chrome version 95  PIP         -2021-11-01 17:45:40
+
+
+ChromeDriver95 downloadedd  PIP         -2021-11-01 17:45:44
+
+
+Chromedriver 95opened  PIP         -2021-11-01 17:45:45
+
+
+Driver opened after download  PIP         -2021-11-01 17:45:45
+
+
+Driver quited after testing in first time installation  PIP         -2021-11-01 17:45:47
+
+
+Driver opened  PIP         -2021-11-01 17:45:47
+
+
+StartChrome function finished  PIP         -2021-11-01 17:45:47
+
+
+Exception in setting global driver'developer'  PIP         -2021-11-01 17:45:47
+
+
+Saved version  PIP         -2021-11-01 17:45:47
+
+
+DataKundTypePip  PIP         -2021-11-01 17:45:47
+
+
+driverversion  PIP         -2021-11-01 17:45:47
+
+
+Exception in setting agent'user_agent'  PIP         -2021-11-01 17:45:47
+
+
+Exception in saving download folder'download_folder'  PIP         -2021-11-01 17:45:47
+
+
+Driver opened  PIP         -2021-11-01 17:45:49
+
+
+StartChrome function finished  PIP         -2021-11-01 17:45:49
+
+
+Exception in setting global driver'developer'  PIP         -2021-11-01 17:45:49
+
+
+Tab already closed, Exception:-Message: chrome not reachable
+  (Session info: chrome=95.0.4638.54)
+,Bot:-youtube_play_pause_video~D75HsPTUIeOmN0bLp5ulrwB7F1f2, User:-192-168-0-103  PIP         -2021-11-01 17:46:38
+
+
+Driver already closed, Exception:-Message: chrome not reachable
+  (Session info: chrome=95.0.4638.54)
+,Bot:-youtube_play_pause_video~D75HsPTUIeOmN0bLp5ulrwB7F1f2, User:-192-168-0-103  PIP         -2021-11-01 17:46:38
+
+
+Exception:- event done by bot youtube_play_pause_video~D75HsPTUIeOmN0bLp5ulrwB7F1f2 on url                    -192-168-0-103             -2021-11-01 17:46:38   PIP
+
+

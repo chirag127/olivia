@@ -25,7 +25,9 @@ import wikipedia  # pip install wikipedia
 import win32com.client as wincl
 import winshell
 import clipboard
-import youtube-video-play-pause-bot
+
+# from youtube_video_play_pause_bot import *
+
 import psutil  # pip install psutil
 
 
