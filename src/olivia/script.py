@@ -25,6 +25,7 @@ import wikipedia  # pip install wikipedia
 import win32com.client as wincl
 import winshell
 import clipboard
+import psutil  # pip install psutil
 
 
 # I was getting error so i install pyaudio
@@ -87,6 +88,36 @@ def takeCommand():
     return query
 
 
+def cpu():
+    usage = psutil.cpu_percent()
+    print("CPU is at")
+    print(usage)
+    speak("CPU is at")
+    speak(usage)
+    sp("pencentage")
+
+
+
+def ram():
+    usage = psutil.virtual_memory()
+    print("RAM is at")
+    print(usage)
+    speak("RAM is at")
+    speak(usage)
+
+
+def disk():
+    usage = psutil.disk_usage('/')
+    sp("Disk is at")
+    sp(usage)
+
+
+def battery():
+
+    sp("Battery is at")
+    sp(psutil.sensors_battery())
+
+
 def query_day():
     day = datetime.datetime.today()
     # print the day of the week
@@ -142,8 +173,6 @@ def clearConsole():
     if os.name in ('nt', 'dos'):
         command = 'cls'
     os.system(command)
-    speak("Cleared the console")
-    speak("What can i do for you now")
 
 
 def sp(text):
@@ -261,6 +290,14 @@ def generate_random_password():
 
 if __name__ == "__main__":
     # wishMe()
+    # clear the console on the start
+    clearConsole()
+
+    cpu()
+    ram()
+    disk()
+    battery()
+    
 
     while True:
 
@@ -280,6 +317,16 @@ if __name__ == "__main__":
             speak("According to Wikipedia")
             print(results)
             speak(results)
+
+        elif 'usage' in query:
+            if 'cpu' in query:
+                cpu()
+            elif 'ram' in query:
+                ram()
+            elif 'disk' in query:
+                disk()
+            elif 'battery' in query:
+                battery()
 
         elif 'search in chrome' in query:
             speak("What should i search for sir")
@@ -1496,7 +1543,6 @@ if __name__ == "__main__":
                 result = translator.translate(query, dest='ml')
                 sp(result.text)
 
-                
 
 """
 
