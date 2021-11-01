@@ -555,14 +555,15 @@ if __name__ == "__main__":
 
         elif 'open word' in query:
             speak('ok. opening word')
-            os.startfile('C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE')
+            os.startfile(
+                'C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE')
             speak('do you want me to type sir?')
-            typin = takecommand()
+            typin = takeCommand()
             if 'yes' in typin:
                 pyautogui.press('enter')
                 speak('sir you can start. say stop typing if I have to stop')
                 while not 'stop typing' in type_sentence:
-                    type_sentence = takecommand()
+                    type_sentence = takeCommand()
                     if type_sentence != 'stop typing' and type_sentence != 'press enter':
                         pyautogui.write(type_sentence + '. ')
                     elif type_sentence == 'press enter':
@@ -923,8 +924,8 @@ if __name__ == "__main__":
         elif "what is your purpose" in query:
 
             speak("I am a Virtual assistant")
-        elif 'hello' in query:
-            speak("hello")
+        elif query == "hello" or query == "hi" or query == "hey" or query == "hii":
+            speak("Hello Sir")  # Hello Sir
             wishMe()
 
         elif 'how are you' in query:
