@@ -22,7 +22,6 @@ import speech_recognition as sr
 import subprocess  # subprocess is used to run the command line commands for screen capture
 import sys  # sys library is used to exit the program
 import time  # time library is used for timezones
-import tkinter  # is the library installed used to make a gui
 import urlopen  # used to open url
 import webbrowser  # webbrowser is used to open the url in the default browser
 import wikipedia  # get article from wikipedia
@@ -97,18 +96,14 @@ def takeCommand():
     with sr.Microphone() as source:
         # print listening to the user to know that the program is listening
         print("Listening...")
-        # listen for the user's input
+        # refer to the https://www.codesofinterest.com/2017/04/energy-threshold-calibration-in-speech-recognition.html to understand the energy threshold
+
         # pause for a second to let the recognizer adjust the threshold before listening for input
-        # r.pause_threshold = 1
-
+        r.pause_threshold = 1
+        # r.adjust_for_ambient_noise(source, duration=1)
+        # r.dynamic_energy_threshold = True
         r.energy_threshold = 800
-        r.dynamic_energy_threshold = True
-        r.dynamic_energy_adjustment_damping = 0.2
-        print(r.dynamic_energy_threshold)
-        print(r.energy_threshold)
-        print(r.dynamic_energy_adjustment_damping)
-        print(r.pause_threshold)
-
+        # r.dynamic_energy_adjustment_damping = 0.2
         # listen for the user's input and store it in audio variable and convert it to text later
         audio = r.listen(source)
     try:
@@ -415,7 +410,7 @@ if __name__ == "__main__":
 # play the video on the youtube. e.g. play the video on youtube of the song 'song name'
 # example: play lonely by justin bieber will play the video of the song 'lonely by justin bieber'
 
-        elif 'play' in query and 'music' in query or 'playlist' in query:
+        elif 'play' in query and 'music play' in query or 'playlist' in query:
             speak('ok sir enjoy your music')
             spotify_path = 'C:/Users/hp/AppData/Roaming/Spotify/Spotify.exe'
             os.startfile(spotify_path)
@@ -961,9 +956,47 @@ if __name__ == "__main__":
             # for google search engine
             # search on the google if google is in the resultant query after the execution of the above lines.
             elif 'google' in query:
+
                 query = query.replace("google", "")
-                webbrowser.open(
-                    f"https://www.google.com/search?q={query}")
+
+                if 'images' in query:
+                    query = query.replace("images", "")
+                    webbrowser.open(
+                        f"https://www.google.com/search?tbm=isch&q={query}")
+
+                elif 'maps' in query:
+                    query = query.replace("maps", "")
+                    webbrowser.open(
+                        f"https://www.google.com/maps/search/{query}")
+
+                elif 'news' in query:
+                    query = query.replace("news", "")
+                    webbrowser.open(
+                        f"https://www.google.com/search?q={query}&tbm=nws")
+
+                elif 'videos' in query:
+                    query = query.replace("videos", "")
+                    webbrowser.open(
+                        f"https://www.google.com/search?tbm=vid&q={query}")
+
+                elif 'books' in query:
+                    query = query.replace("books", "")
+                    webbrowser.open(
+                        f"https://www.google.com/search?tbm=bks&q={query}")
+
+                elif 'translate' in query:
+                    query = query.replace("translate", "")
+                    webbrowser.open(
+                        f"https://translate.google.com/#auto/en/{query}")
+
+                elif 'news' in query:
+                    query = query.replace("news", "")
+                    webbrowser.open(
+                        f"https://www.google.com/search?q={query}&tbm=nws")
+
+                else:
+                    webbrowser.open(
+                        f"https://www.google.com/search?q={query}")
 
             # for duckduckgo search engine
             # search on the duckduckgo if duckduckgo is in the resultant query after the execution of the above lines.
@@ -994,6 +1027,79 @@ if __name__ == "__main__":
                 query = query.replace("wikipedia", "")
                 webbrowser.open(
                     f"https://www.wikipedia.org/search-redirect.php?search={query}")
+
+            # for wikitionary search engine
+            # search on the wikitionary if wikitionary is in the resultant query after the execution of the above lines.
+            elif 'wiktionary' in query:
+                query = query.replace("wiktionary", "")
+                webbrowser.open(
+                    f"https://en.wiktionary.org/wiki/{query}")
+
+            # for wikiquote search engine
+            # search on the wikiquote if wikiquote is in the resultant query after the execution of the above lines.
+            elif 'wikiquote' in query:
+                query = query.replace("wikiquote", "")
+                webbrowser.open(
+                    f"https://en.wikiquote.org/wiki/{query}")
+
+            # for wikisource search engine
+            # search on the wikisource if wikisource is in the resultant query after the execution of the above lines.
+            elif 'wikisource' in query:
+                query = query.replace("wikisource", "")
+                webbrowser.open(
+                    f"https://en.wikisource.org/wiki/{query}")
+
+            # for wikibooks search engine
+            # search on the wikibooks if wikibooks is in the resultant query after the execution of the above lines.
+            elif 'wikibooks' in query:
+                query = query.replace("wikibooks", "")
+                webbrowser.open(
+                    f"https://en.wikibooks.org/wiki/{query}")
+
+            # for wikinews search engine
+            # search on the wikinews if wikinews is in the resultant query after the execution of the above lines.
+            elif 'wikinews' in query:
+
+                query = query.replace("wikinews", "")
+                webbrowser.open(
+                    f"https://en.wikinews.org/wiki/{query}")
+
+            # for wikidata search engine
+            # search on the wikidata if wikidata is in the resultant query after the execution of the above lines.
+            elif 'wikidata' in query:
+
+                query = query.replace("wikidata", "")
+                webbrowser.open(
+                    f"https://www.wikidata.org/wiki/{query}")
+
+            # for wikiversity search engine
+            # search on the wikiversity if wikiversity is in the resultant query after the execution of the above lines.
+            elif 'wikiversity' in query:
+
+                query = query.replace("wikiversity", "")
+                webbrowser.open(
+                    f"https://en.wikiversity.org/wiki/{query}")
+
+            # for wikispecies search engine
+            # search on the wikispecies if wikispecies is in the resultant query after the execution of the above lines.
+            elif 'wikispecies' in query:
+                query = query.replace("wikispecies", "")
+                webbrowser.open(
+                    f"https://species.wikimedia.org/wiki/{query}")
+
+            # for wikimedia search engine
+            # search on the wikimedia if wikimedia is in the resultant query after the execution of the above lines.
+            elif 'wikimedia' in query:
+                query = query.replace("wikimedia", "")
+                webbrowser.open(
+                    f"https://commons.wikimedia.org/wiki/{query}")
+
+            # for wikivoyage search engine
+            # search on the wikivoyage if wikivoyage is in the resultant query after the execution of the above lines.
+            elif 'wikivoyage' in query:
+                query = query.replace("wikivoyage", "")
+                webbrowser.open(
+                    f"https://en.wikivoyage.org/wiki/{query}")
 
             # for stackoverflow search engine
             # search on the stackoverflow if stackoverflow is in the resultant query after the execution of the above lines.
@@ -1395,6 +1501,9 @@ if __name__ == "__main__":
         elif "what is your favorite place" in query:
             speak("My favorite place is Ghaziabad")
 
+        elif "what is Your dream" in query:
+            speak("My dream is to be a Software Engineer")
+
         elif "thank you" in query:
             speak("Welcome Sir")
 
@@ -1425,8 +1534,10 @@ if __name__ == "__main__":
 
         elif 'how are you' in query:
             speak("i am fine")
+
         elif 'what time is it' in query:
             speak(ctime())
+
         elif 'who are you' in query:
             speak("i am olivia")
 
@@ -1628,23 +1739,7 @@ if __name__ == "__main__":
                 result = translator.translate(query, dest='ko')
                 speak(result.text)
 
-                # translate to chinese
-
-            elif 'to chinese' in query:
-                query = query.replace("to chinese", "")
-                translator = Translator()
-                result = translator.translate(query, dest='zh-cn')
-                sp(result.text)
-
-                # translate to portuguese
-
-            elif 'to portuguese' in query:
-                query = query.replace("to portuguese", "")
-                translator = Translator()
-                result = translator.translate(query, dest='pt')
-                sp(result.text)
-
-                # translate to latvian
+            # translate to latvian
 
             elif 'to latvian' in query:
                 query = query.replace("to latvian", "")
@@ -1715,6 +1810,21 @@ if __name__ == "__main__":
                 translator = Translator()
                 result = translator.translate(query, dest='ru')
                 sp(result.text)
+
+                # translate to spanish
+            elif 'to spanish' in query:
+                query = query.replace("to spanish", "")
+                translator = Translator()
+                result = translator.translate(query, dest='es')
+                sp(result.text)
+
+                # translate to serbian
+            elif 'to serbian' in query:
+                query = query.replace("to serbian", "")
+                translator = Translator()
+                result = translator.translate(query, dest='sr')
+                sp(result.text)
+
                 # translate to slovak
 
             elif 'to slovak' in query:
