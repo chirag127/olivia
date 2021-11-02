@@ -381,6 +381,29 @@ if __name__ == "__main__":
 # play the video on the youtube. e.g. play the video on youtube of the song 'song name'
 # example: play lonely by justin bieber will play the video of the song 'lonely by justin bieber'
 
+        elif 'play' in query and 'music' in query or 'playlist' in query:
+            speak('ok sir enjoy your music')
+            spotify_path = 'C:/Users/hp/AppData/Roaming/Spotify/Spotify.exe'
+            os.startfile(spotify_path)
+            time.sleep(1)
+            pyautogui.click(button='left')
+            pyautogui.press('space')
+            pyautogui.hotkey('alt', 'f4')
+            while not 'wake up' in wakeup_txt:
+                wakeup_txt = time.sleep()
+                if wakeup_txt == 'quit':
+                    speak('bye bye sir. have a great day')
+                    running = False
+                    sys.exit()
+                elif 'pause' in wakeup_txt or 'play' in wakeup_txt:
+                    os.system('spotify')
+                    time.sleep(1)
+                    pyautogui.press('space')
+                    pyautogui.hotkey('alt', 'f4')
+                elif 'close spotify' in wakeup_txt:
+                    os.system('TASKKILL /F /IM Spotify.exe')
+            speak('hello again sir')
+
         elif 'play' in query:
             song = query.replace('play', '')
             sp('playing ')
@@ -393,54 +416,49 @@ if __name__ == "__main__":
                 # pause the video if 'pause' is in query
                 if 'pause' in query:
                     presskey('space')
-                    sp('paused')
+                   # sp('paused')
 
                 elif 'play' in query:
                     presskey('space')
-                    sp('playing')
+                   # sp('playing')
 
                 elif 'stop' in query:
                     presskey('space')
-                    sp('stopped')
-                    break
-
-                elif 'next' in query:
-                    presskey('right')
-                    sp('next')
+                    # sp('stopped')
 
                 elif 'next' in query:
                     pyautogui.hotkey('shift', 'n')
-                    sp('Gone to the next video')
+                   # sp('Gone to the next video')
 
                 # previous the video if 'previous' is in query
                 elif 'previous' in query:
                     pyautogui.hotkey('shift', 'p')
-                    sp('Gone to the previous video')
+                   # sp('Gone to the previous video')
 
                 # mute the video if 'mute' is in query
                 elif 'mute' in query:
                     presskey('m')
-                    sp('muted the video')
+                  #  sp('muted the video')
 
                 # unmute the video if 'unmute' is in query
                 elif 'unmute' in query:
                     presskey('m')
-                    sp('unmuted the video')
+                    #sp('unmuted the video')
 
                 # Increase the volume if 'volume up' is in query
                 elif 'volume up' in query:
                     presskey('up')
-                    sp('Increased the volume')
+                 ##   sp('Increased the volume')
 
                 # Decrease the volume if 'volume down' is in query
                 elif 'volume down' in query:
                     presskey('down')
-                    sp('Decreased the volume')
+                  #  sp('Decreased the volume')
 
                 # close the video if 'close' is in query
                 elif 'close' in query:
                     pyautogui.hotkey('ctrl', 'w')
-                    sp('Closed the video')
+                    # sp('Closed the video')
                     break
 
         elif 'news for today' in query:
@@ -464,27 +482,8 @@ if __name__ == "__main__":
         elif 'generate' in query:
             if 'password' in query:
                 generate_random_password()
-
             elif 'number' in query:
                 sp(random.randint(0, 100))
-
-        elif 'clear' in query:
-            clearConsole()
-
-        elif 'exit' in query:
-            exitcode()
-
-        elif 'screenshot' in query:
-            takescreenshot()
-
-        elif 'joke' in query:
-            givejoke()
-
-        elif 'ip address' in query:
-            giveip()
-
-        elif 'username' in query:
-            username()
 
         elif 'call me' in query:
             speak('What is your name?')
@@ -1244,7 +1243,7 @@ if __name__ == "__main__":
             speak(k)
 
         elif query == 'quit' or 'olivia quit' in query or 'olivia bye' in query or query == 'bye' or query == 'exit' or query == 'close' or query == 'goodbye' or query == 'bye bye':
-            speak("Bye Sir")
+            sp("Bye Sir")
             exit()
 
         elif 'close chrome' in query or 'close google chrome' in query:
@@ -1625,6 +1624,33 @@ if __name__ == "__main__":
                 translator = Translator()
                 result = translator.translate(query, dest='ml')
                 sp(result.text)
+
+        elif 'close' in query:
+            if 'tab' in query or 'this page' in query or 'tabs' in query:
+                pyautogui.hotkey('ctrl', 'w')
+               # sp('Closed')
+
+            elif'app' in query or 'application' in query or 'program' in query or 'process' in query or 'window' in query or 'all tabs' in query:
+                pyautogui.hotkey('alt', 'f4')
+               # sp('Closed')
+
+        elif 'clear' in query:
+            clearConsole()
+
+        elif 'exit' in query:
+            exitcode()
+
+        elif 'screenshot' in query:
+            takescreenshot()
+
+        elif 'joke' in query:
+            givejoke()
+
+        elif 'ip address' in query:
+            giveip()
+
+        elif 'username' in query:
+            username()
 
 
 """
