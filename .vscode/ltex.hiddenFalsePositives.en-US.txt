@@ -11,3 +11,5 @@
 {"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QTell you the current location by saying \"location\" or \"what is the location\" or \"tell me the location\" or \"tell me the weather forecast\".\\E$"}
 {"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QWhat is your favorite actress?\\E$"}
 {"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QWhat is your favorite actor?\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QOlivia-A-Personal-Virtual-Assistant\nOlivia-A-Personal-Virtual-Assistant\nFeatures\nAssistant skills\nIn progress features\nInstallation instruction\nIf You Get \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q Error!\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QSearch on Instagram just say \"search (the thing) in Instagram\".\\E$"}

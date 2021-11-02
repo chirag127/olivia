@@ -1,5 +1,10 @@
 # Olivia-A-Personal-Virtual-Assistant
-
+- [Olivia-A-Personal-Virtual-Assistant](#olivia-a-personal-virtual-assistant)
+    - [Features](#features)
+    - [Assistant skills](#assistant-skills)
+    - [In progress features](#in-progress-features)
+  - [Installation instruction](#installation-instruction)
+    - [If You Get `No Module Named pyaudio` Error!](#if-you-get-no-module-named-pyaudio-error)
 ### Features
 
 
