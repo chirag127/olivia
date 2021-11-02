@@ -1,6 +1,7 @@
 from typing import Mapping
 #  BeautifulSoup is used for web scraping
-from bs4 import BeautifulSoup  # pip install bs4
+from bs4 import BeautifulSoup
+from bs4.element import TemplateString  # pip install bs4
 # googletrans is used for translation and google translate is used for language detection
 from googletrans import Translator
 # ctypes is used maniplulate the data types
@@ -405,17 +406,33 @@ if __name__ == "__main__":
                 text2speech()
 
         # type the text in the current window if 'type' is in query
-        elif 'type' in query:
+        elif 'typing' in query:
             if 'start' in query:
                 speak("What should i type sir")
                 while True:
-                    type_sentence = takeCommand()
-                    if 'stop typing' in type_sentence:
-                        break
-                    elif 'enter' in type_sentence:
-                        pyautogui.press('enter')
-                    else:
-                        pyautogui.typewrite(type_sentence)
+                    if query != 'none':
+                        type_sentence = takeCommand()
+                        if 'stop typing' in type_sentence:
+                            break
+                        elif 'enter' in type_sentence:
+                            pyautogui.press('enter')
+                        elif 'backspace' in type_sentence:
+                            pyautogui.hotkey('ctrl','backspace')
+                        elif 'tab' in type_sentence:
+                            pyautogui.press('tab')
+
+                        elif 'space' in type_sentence:
+                            pyautogui.press('space')
+
+                        elif 'caps lock' in type_sentence:
+                            pyautogui.press('caps lock')
+
+                        else:
+                            pyautogui.typewrite(type_sentence)
+
+        # if 'open' is in query and 'notepad' is in query then open notepad
+        elif 'open notepad' in query:
+            os.system('notepad')
 
         # press the key specified in the query if 'press' is in query
         elif 'press' in query:
