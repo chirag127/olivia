@@ -1,1 +1,9 @@
 FlipKart
+Zomato
+Tmall
+QQ
+TaoBao
+cn
+uk
+hk
+sina

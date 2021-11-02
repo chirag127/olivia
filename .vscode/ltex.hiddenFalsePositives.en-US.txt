@@ -14,3 +14,4 @@
 {"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QOlivia-A-Personal-Virtual-Assistant\nOlivia-A-Personal-Virtual-Assistant\nFeatures\nAssistant skills\nIn progress features\nInstallation instruction\nIf You Get \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q Error!\\E$"}
 {"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QSearch on Instagram just say \"search (the thing) in Instagram\".\\E$"}
 {"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QGive the RAM usage of the computer just say \"RAM usage\" or \"RAM usage of the computer\" or \"RAM usage of the computer\".\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QLikewise, Open Xinhua website by saying \"open xinhua\" or \"open xinhua website\".\\E$"}
