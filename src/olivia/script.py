@@ -62,6 +62,45 @@ def speak(audio):
     engine.say(audio)
     engine.runAndWait()
 
+# defining the function to take command from the user
+
+
+def takeCommand():
+    # create a recognizer object
+    r = sr.Recognizer()
+    # use the microphone as source for input
+    with sr.Microphone() as source:
+        # print listening to the user to know that the program is listening
+        print("Listening...")
+        # refer to the https://www.codesofinterest.com/2017/04/energy-threshold-calibration-in-speech-recognition.html to understand the energy threshold
+
+        # pause for a second to let the recognizer adjust the threshold before listening for input
+        r.pause_threshold = 1
+        # r.adjust_for_ambient_noise(source, duration=1)
+        # r.dynamic_energy_threshold = True
+        r.energy_threshold = 800
+        # r.dynamic_energy_adjustment_damping = 0.2
+        # listen for the user's input and store it in audio variable and convert it to text later
+        audio = r.listen(source)
+    try:
+        # convert the audio to text
+        # print recongzing the user's voice to know that the program is re cognizing the user's voice
+        print("Recognizing...")
+        # use google translate to detect the language of the user's voice
+        query = r.recognize_google(audio, language='en-us')
+
+        # print the user's voice to the console
+        print(f"User said: {query}\n")
+    # if the user does not say anything then the program will listen again
+    except Exception as e:
+        # print the error to the console
+        print("Say that again please...")
+        # return the function to takeCommand()
+        return "None"
+    # return the function to takeCommand()
+    return query
+
+
 # fuction of press the specified key
 
 
@@ -87,42 +126,6 @@ def wishMe():
     speak("I am olivia Sir. Please tell me how may I help you")
 
 # It will take microphone input from the user and return string output
-
-
-def takeCommand():
-    # create a recognizer object
-    r = sr.Recognizer()
-    # use the microphone as source for input
-    with sr.Microphone() as source:
-        # print listening to the user to know that the program is listening
-        print("Listening...")
-        # refer to the https://www.codesofinterest.com/2017/04/energy-threshold-calibration-in-speech-recognition.html to understand the energy threshold
-
-        # pause for a second to let the recognizer adjust the threshold before listening for input
-        r.pause_threshold = 1
-        # r.adjust_for_ambient_noise(source, duration=1)
-        # r.dynamic_energy_threshold = True
-        r.energy_threshold = 800
-        # r.dynamic_energy_adjustment_damping = 0.2
-        # listen for the user's input and store it in audio variable and convert it to text later
-        audio = r.listen(source)
-    try:
-        # convert the audio to text
-        # print recongzing the user's voice to know that the program is recognizing the user's voice
-        print("Recognizing...")
-        # use google translate to detect the language of the user's voice
-        query = r.recognize_google(audio, language='en-in')
-
-        # print the user's voice to the console
-        print(f"User said: {query}\n")
-    # if the user does not say anything then the program will listen again
-    except Exception as e:
-        # print the error to the console
-        print("Say that again please...")
-        # return the function to takeCommand()
-        return "None"
-    # return the function to takeCommand()
-    return query
 
 
 def cpu():
@@ -400,6 +403,50 @@ if __name__ == "__main__":
         elif 'read' in query:
             if 'aloud' in query:
                 text2speech()
+
+        # type the text in the current window if 'type' is in query
+        elif 'type' in query:
+            if 'start' in query:
+                speak("What should i type sir")
+                while True:
+                    type_sentence = takeCommand()
+                    if 'stop typing' in type_sentence:
+                        break
+                    elif 'enter' in type_sentence:
+                        pyautogui.press('enter')
+                    else:
+                        pyautogui.typewrite(type_sentence)
+
+        # press the key specified in the query if 'press' is in query
+        elif 'press' in query:
+            if 'key' in query:
+                if 'enter' in query:
+                    pyautogui.press('enter')
+
+                elif 'backspace' in query:
+                    pyautogui.press('backspace')
+
+                elif 'tab' in query:
+                    pyautogui.press('tab')
+
+                elif 'space' in query:
+                    pyautogui.press('space')
+
+                elif 'esc' in query:
+                    pyautogui.press('esc')
+
+                elif 'up' in query:
+                    pyautogui.press('up')
+
+                elif 'down' in query:
+                    pyautogui.press('down')
+
+                elif 'left' in query:
+                    pyautogui.press('left')
+
+                elif 'right' in query:
+                    pyautogui.press('right')
+
 
 # give the current date and time if 'date' is in query
         elif 'date' in query:
@@ -1403,14 +1450,6 @@ if __name__ == "__main__":
                 speak("Snapchat is opening")
                 webbrowser.open("https://www.snapchat.com/")
 
-            elif 'gmail' in query:
-                speak("Gmail is opening")
-                webbrowser.open("https://mail.google.com/mail/u/0/#inbox")
-
-            elif 'google' in query:
-                speak("Google is opening")
-                webbrowser.open("https://www.google.com/")
-
             elif 'stack overflow' in query:
                 webbrowser.open("https://www.stackoverflow.com/")
 
@@ -1994,6 +2033,10 @@ if __name__ == "__main__":
             # query in skype or open the query in snapchat or open the query in pinterest or open the query in tinder or open the
             if query != 'none':
                 speak(
+                    'sorry sir that is not assigned. do you want to search for ' + query + '?')
+
+                print('\n')
+                print(
                     'sorry sir that is not assigned. do you want to search for ' + query + '?')
                 confirmation = takeCommand().lower()  # taking the input from the user
                 if 'yes' in confirmation:  # if the user says yes then we will search the query in google
