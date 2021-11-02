@@ -908,6 +908,7 @@ if __name__ == "__main__":
 
                 elif 'next' in query:
                     pyautogui.hotkey('shift', 'n')
+                    # sp('next song')
                    # sp('Gone to the next video')
 
                 # previous the video if 'previous' is in query
