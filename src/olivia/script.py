@@ -1,34 +1,35 @@
 from typing import Mapping
+#  BeautifulSoup is used for web scraping
 from bs4 import BeautifulSoup  # pip install bs4
+# googletrans is used for translation and google translate is used for language detection
 from googletrans import Translator
+# ctypes is used maniplulate the data types
 import ctypes
-import datetime
-import json
-import math
-import os
-import pyautogui  # pip install pyautogui
-import pyttsx3  # pip install pyttsx3
-import pywhatkit
-import random
-import re
-import requests
-import shutil
-import smtplib
-import speech_recognition as sr  # pip install speechRecognition
-import subprocess
-import sys
-import time
-import tkinter
-import urlopen
-import webbrowser
-import wikipedia  # pip install wikipedia
+import datetime  # date and time module is for timezones
+import json  # json library is used for reading and writing json files obtained by apis
+import math  # math library provides math fuctions .
+import os  # os library is used to open the system and open the specified file
+import pyautogui  # pyaoautogui is used for mouse and keyboard control
+import pyttsx3  # pyttx3 is used for text to speech
+import pywhatkit  # pywhatkit is used for playing the youtube videos
+import random  # random library is used for random number generation
+import re  # regular expression library is used for regular expressions
+import requests  # requests library is used to make http requests to apis
+import shutil  # shutil is used to copy files and folders from one location to another location or for archiving files and folders
+import smtplib  # smtplib is used for sending emails
+# spech_recognition library is used for speech recognition and google translate is used for language detection
+import speech_recognition as sr
+import subprocess  # subprocess is used to run the command line commands for screen capture
+import sys  # sys library is used to exit the program
+import time  # time library is used for timezones
+import tkinter  # is the library installed used to make a gui
+import urlopen  # used to open url
+import webbrowser  # webbrowser is used to open the url in the default browser
+import wikipedia  # get article from wikipedia
 import win32com.client as wincl
 import winshell
-import clipboard
-
-# from youtube_video_play_pause_bot import *
-
-import psutil  # pip install psutil
+import clipboard  # clipboard is used to read the text from the clipboard
+import psutil  # pip install psutil # psutil is used to get the cpu usage and ram usage and disk usage and battery usage
 
 
 # I was getting error so i install pyaudio
@@ -49,13 +50,20 @@ import psutil  # pip install psutil
 
 # reqiured engines
 engine = pyttsx3.init('sapi5')
+# sapi5 is the default voice engine of windows and it is installed by default in windows
+# getproperties is used to get the properties of the engine like rate, volume, pitch, etc.
 voices = engine.getProperty('voices')
+# setproperties is used to set the properties of the engine like rate, volume, pitch, etc.
 engine.setProperty('voice', voices[1].id)
+
+# defining the function to speak the text
 
 
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
+
+# fuction of press the specified key
 
 
 def presskey(key):
@@ -63,36 +71,62 @@ def presskey(key):
     pyautogui.press(key)
 
 
+#  function to wish the user according to the time of the day and the day of the week
 def wishMe():
     hour = int(datetime.datetime.now().hour)
     if hour >= 0 and hour < 12:
         speak("Good Morning!")
+        # if time is between 0 and 12 then say good morning
 
-    elif hour >= 12 and hour < 18:
+    elif hour >= 12 and hour < 18:  # if time is between 12 and 18 then say good afternoon
         speak("Good Afternoon!")
 
-    else:
+    else:  # if time is between 18 and 24 then say good evening
         speak("Good Evening!")
 
+    # tell the user how may i help you
     speak("I am olivia Sir. Please tell me how may I help you")
+
+# It will take microphone input from the user and return string output
 
 
 def takeCommand():
-    # It takes microphone input from the user and returns string output
-
+    # create a recognizer object
     r = sr.Recognizer()
+    # use the microphone as source for input
     with sr.Microphone() as source:
+        # print listening to the user to know that the program is listening
         print("Listening...")
-        r.pause_threshold = 1
-        audio = r.listen(source)
+        # listen for the user's input
+        # pause for a second to let the recognizer adjust the threshold before listening for input
+        # r.pause_threshold = 1
 
+        r.energy_threshold = 800
+        r.dynamic_energy_threshold = True
+        r.dynamic_energy_adjustment_damping = 0.2
+        print(r.dynamic_energy_threshold)
+        print(r.energy_threshold)
+        print(r.dynamic_energy_adjustment_damping)
+        print(r.pause_threshold)
+
+        # listen for the user's input and store it in audio variable and convert it to text later
+        audio = r.listen(source)
     try:
+        # convert the audio to text
+        # print recongzing the user's voice to know that the program is recognizing the user's voice
         print("Recognizing...")
+        # use google translate to detect the language of the user's voice
         query = r.recognize_google(audio, language='en-in')
+
+        # print the user's voice to the console
         print(f"User said: {query}\n")
+    # if the user does not say anything then the program will listen again
     except Exception as e:
+        # print the error to the console
         print("Say that again please...")
+        # return the function to takeCommand()
         return "None"
+    # return the function to takeCommand()
     return query
 
 
@@ -404,63 +438,6 @@ if __name__ == "__main__":
                     os.system('TASKKILL /F /IM Spotify.exe')
             speak('hello again sir')
 
-        elif 'play' in query:
-            song = query.replace('play', '')
-            sp('playing ')
-            sp(song)
-            pywhatkit.playonyt(song)
-            query = query.replace('play', '')
-
-            while True:
-                query = takeCommand().lower()
-                # pause the video if 'pause' is in query
-                if 'pause' in query:
-                    presskey('space')
-                   # sp('paused')
-
-                elif 'play' in query:
-                    presskey('space')
-                   # sp('playing')
-
-                elif 'stop' in query:
-                    presskey('space')
-                    # sp('stopped')
-
-                elif 'next' in query:
-                    pyautogui.hotkey('shift', 'n')
-                   # sp('Gone to the next video')
-
-                # previous the video if 'previous' is in query
-                elif 'previous' in query:
-                    pyautogui.hotkey('shift', 'p')
-                   # sp('Gone to the previous video')
-
-                # mute the video if 'mute' is in query
-                elif 'mute' in query:
-                    presskey('m')
-                  #  sp('muted the video')
-
-                # unmute the video if 'unmute' is in query
-                elif 'unmute' in query:
-                    presskey('m')
-                    # sp('unmuted the video')
-
-                # Increase the volume if 'volume up' is in query
-                elif 'volume up' in query:
-                    presskey('up')
-                 # sp('Increased the volume')
-
-                # Decrease the volume if 'volume down' is in query
-                elif 'volume down' in query:
-                    presskey('down')
-                  #  sp('Decreased the volume')
-
-                # close the video if 'close' is in query
-                elif 'close' in query:
-                    pyautogui.hotkey('ctrl', 'w')
-                    # sp('Closed the video')
-                    break
-
         elif 'news for today' in query:
             try:
                 news_url = "https://news.google.com/news/rss"
@@ -717,112 +694,6 @@ if __name__ == "__main__":
                 print(e)
                 speak("Sorry Sir, I am not able to fetch the time")
 
-        elif 'search' in query:
-            sp('Searching ...')
-            query = query.replace("search ", "")
-            query = query.replace(" on ", "")
-
-            if 'youtube' in query:
-                query = query.replace("youtube", "")
-                webbrowser.open(
-                    f"https://www.youtube.com/results?search_query={query}")
-
-            elif 'flipkart' in query:
-                query = query.replace("flipkart", "")
-                webbrowser.open(
-                    f"https://www.flipkart.com/search?q={query}&otracker1=olivia")
-
-            elif 'google' in query:
-                query = query.replace("google", "")
-                webbrowser.open(
-                    f"https://www.google.com/search?q={query}")
-
-            elif 'stack overflow' in query:
-                query = query.replace("stack overflow", "")
-                webbrowser.open(
-                    f"https://stackoverflow.com/search?q={query}")
-
-            elif 'wikipedia' in query:
-                query = query.replace("wikipedia", "")
-                webbrowser.open(
-                    f"https://en.wikipedia.org/wiki/{query}")
-
-            elif 'facebook' in query:
-                query = query.replace("facebook", "")
-                webbrowser.open(
-                    f"https://www.facebook.com/search/top/?q={query}")  # facebook
-
-            elif 'instagram' in query:
-                query = query.replace("instagram", "")
-                webbrowser.open(
-                    f"https://www.instagram.com/{query}")
-
-            elif 'twitter' in query:
-                query = query.replace("twitter", "")
-                webbrowser.open(
-                    f"https://www.twitter.com/{query}")
-
-            elif 'linkedin' in query:
-                query = query.replace("linkedin", "")
-                webbrowser.open(
-                    f"https://www.linkedin.com/in/{query}")
-
-            elif 'amazon' in query:
-                query = query.replace("amazon", "")
-                webbrowser.open(
-                    f"https://www.amazon.in/s?k={query}")
-
-            elif 'ebay' in query:
-                query = query.replace("ebay", "")
-                webbrowser.open(
-                    f"https://www.ebay.com/sch/i.html?_nkw={query}")
-
-            elif 'netflix' in query:
-                query = query.replace("netflix", "")
-                webbrowser.open(
-                    f"https://www.netflix.com/search?q={query}")
-
-            elif 'spotify' in query:
-                query = query.replace("spotify", "")
-                webbrowser.open(
-                    f"https://open.spotify.com/search/{query}")
-
-            elif 'snapchat' in query:
-                query = query.replace("snapchat", "")
-                webbrowser.open(
-                    f"https://www.snapchat.com/search/{query}")
-
-            elif 'pinterest' in query:
-                query = query.replace("pinterest", "")
-                webbrowser.open(
-                    f"https://www.pinterest.com/search/{query}")
-
-            elif 'quora' in query:
-                query = query.replace("quora", "")
-                webbrowser.open(
-                    f"https://www.quora.com/{query}")
-
-            elif 'duckduckgo' in query:
-                query = query.replace("duckduckgo", "")
-                webbrowser.open(
-                    f"https://duckduckgo.com/?q={query}")
-
-            elif 'bing' in query:
-                query = query.replace("bing", "")
-                webbrowser.open(
-                    f"https://www.bing.com/search?q={query}")
-
-            elif 'yahoo' in query:
-                query = query.replace("yahoo", "")
-                webbrowser.open(
-                    f"https://search.yahoo.com/search?p={query}")
-
-            else:
-                query = query.replace("google", "")
-
-                webbrowser.open(
-                    f"https://www.google.com/search?q={query}&sourceid=olivia")
-
         elif 'open word' in query:
             speak('ok. opening word')
             os.startfile(
@@ -1012,6 +883,357 @@ if __name__ == "__main__":
                         sp('I have launched the desired application')
                 except:
                     sp('I am not sure what application you want to launch')
+
+        elif 'play' in query:
+            song = query.replace('play', '')
+            sp('playing ')
+            sp(song)
+            pywhatkit.playonyt(song)
+            query = query.replace('play', '')
+
+            while True:
+                query = takeCommand().lower()
+                # pause the video if 'pause' is in query
+                if 'pause' in query:
+                    presskey('space')
+                   # sp('paused')
+
+                elif 'play' in query:
+                    presskey('space')
+                   # sp('playing')
+
+                elif 'stop' in query:
+                    presskey('space')
+                    # sp('stopped')
+
+                elif 'next' in query:
+                    pyautogui.hotkey('shift', 'n')
+                   # sp('Gone to the next video')
+
+                # previous the video if 'previous' is in query
+                elif 'previous' in query:
+                    pyautogui.hotkey('shift', 'p')
+                   # sp('Gone to the previous video')
+
+                # mute the video if 'mute' is in query
+                elif 'mute' in query:
+                    presskey('m')
+                  #  sp('muted the video')
+
+                # unmute the video if 'unmute' is in query
+                elif 'unmute' in query:
+                    presskey('m')
+                    # sp('unmuted the video')
+
+                # Increase the volume if 'volume up' is in query
+                elif 'volume up' in query:
+                    presskey('up')
+                 # sp('Increased the volume')
+
+                # Decrease the volume if 'volume down' is in query
+                elif 'volume down' in query:
+                    presskey('down')
+                  #  sp('Decreased the volume')
+
+                # close the video if 'close' is in query
+                elif 'close' in query:
+                    pyautogui.hotkey('ctrl', 'w')
+                    # sp('Closed the video')
+                    break
+
+        elif 'search' in query:
+            # indicates the start of a search query
+            sp('Searching ...')
+            # use the function to get the result of the query
+            query = query.replace("search ", "")
+            # replace the query with the result of the query
+            query = query.replace(" on ", "")
+
+            # search on the youtube if youtube is in the resultant query after the execution of the above lines.
+            if 'youtube' in query:
+                query = query.replace("youtube", "")
+                webbrowser.open(
+                    f"https://www.youtube.com/results?search_query={query}")
+
+            # writing code for all search engines in the below lines
+
+            # for google search engine
+            # search on the google if google is in the resultant query after the execution of the above lines.
+            elif 'google' in query:
+                query = query.replace("google", "")
+                webbrowser.open(
+                    f"https://www.google.com/search?q={query}")
+
+            # for duckduckgo search engine
+            # search on the duckduckgo if duckduckgo is in the resultant query after the execution of the above lines.
+            elif 'duckduckgo' in query:
+                query = query.replace("duckduckgo", "")
+                webbrowser.open(
+                    f"https://duckduckgo.com/?q={query}")
+
+            # for bing search engine
+            # search on the bing if bing is in the resultant query after the execution of the above lines.
+            elif 'bing' in query:
+                query = query.replace("bing", "")
+                webbrowser.open(
+                    f"https://www.bing.com/search?q={query}")
+
+            # for yahoo search engine
+            # search on the yahoo if yahoo is in the resultant query after the execution of the above lines.
+            elif 'yahoo' in query:
+                query = query.replace("yahoo", "")
+                webbrowser.open(
+                    f"https://search.yahoo.com/search?p={query}")
+
+            # search all the educational websites in the below lines
+
+            # for wikipedia search engine
+            # search on the wikipedia if wikipedia is in the resultant query after the execution of the above lines.
+            elif 'wikipedia' in query:
+                query = query.replace("wikipedia", "")
+                webbrowser.open(
+                    f"https://www.wikipedia.org/search-redirect.php?search={query}")
+
+            # for stackoverflow search engine
+            # search on the stackoverflow if stackoverflow is in the resultant query after the execution of the above lines.
+            elif 'stackoverflow' in query:
+                query = query.replace("stackoverflow", "")
+                webbrowser.open(
+                    f"https://stackoverflow.com/search?q={query}")
+
+            # for quora search engine
+            # search on the quora if quora is in the resultant query after the execution of the above lines.
+            elif 'quora' in query:
+                query = query.replace("quora", "")
+                webbrowser.open(
+                    f"https://www.quora.com/search?q={query}")
+
+            # for coursera search engine
+            # search on the coursera if coursera is in the resultant query after the execution of the above lines.
+            elif 'coursera' in query:
+                query = query.replace("coursera", "")
+                webbrowser.open(
+                    f"https://www.coursera.org/search?query={query}")
+
+            # for edx search engine
+            # search on the edx if edx is in the resultant query after the execution of the above lines.
+            elif 'edx' in query:
+                query = query.replace("edx", "")
+                webbrowser.open(
+                    f"https://www.edx.org/search?query={query}")
+
+            # for udemy search engine
+            # search on the udemy if udemy is in the resultant query after the execution of the above lines.
+            elif 'udemy' in query:
+                query = query.replace("udemy", "")
+                webbrowser.open(
+                    f"https://www.udemy.com/search/?q={query}")
+
+            # for udacity search engine
+            # search on the udacity if udacity is in the resultant query after the execution of the above lines.
+            elif 'udacity' in query:
+                query = query.replace("udacity", "")
+                webbrowser.open(
+                    f"https://www.udacity.com/course/search?query={query}")
+
+            # For the eccomerce websites in the below lines
+            # for amazon search engine
+            # search on the amazon if amazon is in the resultant query after the execution of the above lines.
+            elif 'amazon' in query:
+                query = query.replace("amazon", "")
+                webbrowser.open(
+                    f"https://www.amazon.in/s?k={query}")
+
+            # for flipkart search engine
+            # search on the flipkart if flipkart is in the resultant query after the execution of the above lines.
+            elif 'flipkart' in query:
+                query = query.replace("flipkart", "")
+                webbrowser.open(
+                    f"https://www.flipkart.com/search?q={query}")
+
+            # for snapdeal search engine
+            # search on the snapdeal if snapdeal is in the resultant query after the execution of the above lines.
+            elif 'snapdeal' in query:
+                query = query.replace("snapdeal", "")
+                webbrowser.open(
+                    f"https://www.snapdeal.com/search?keyword={query}")
+
+            # for shopclues search engine
+            # search on the shopclues if shopclues is in the resultant query after the execution of the above lines.
+            elif 'shopclues' in query:
+                query = query.replace("shopclues", "")
+                webbrowser.open(
+                    f"https://www.shopclues.com/search?q={query}")
+
+            # for myntra search engine
+            # search on the myntra if myntra is in the resultant query after the execution of the above lines.
+            elif 'myntra' in query:
+                query = query.replace("myntra", "")
+                webbrowser.open(
+                    f"https://www.myntra.com/search?q={query}")
+
+            # for jabong search engine
+            # search on the jabong if jabong is in the resultant query after the execution of the above lines.
+            elif 'jabong' in query:
+                query = query.replace("jabong", "")
+                webbrowser.open(
+                    f"https://www.jabong.com/search?q={query}")
+
+            # for paytm search engine
+            # search on the paytm if paytm is in the resultant query after the execution of the above lines.
+            elif 'paytm' in query:
+                query = query.replace("paytm", "")
+                webbrowser.open(
+                    f"https://paytm.com/shop/search?q={query}")
+
+            # for ebay search engine
+            # search on the ebay if ebay is in the resultant query after the execution of the above lines.
+            elif 'ebay' in query:
+                query = query.replace("ebay", "")
+                webbrowser.open(
+                    f"https://www.ebay.com/sch/i.html?_nkw={query}")
+
+            # For social media websites in the below lines
+            # for facebook search engine
+            # search on the facebook if facebook is in the resultant query after the execution of the above lines.
+            elif 'facebook' in query:
+                query = query.replace("facebook", "")
+                webbrowser.open(
+                    f"https://www.facebook.com/search/top/?q={query}")
+
+            # for instagram search engine
+            # search on the instagram if instagram is in the resultant query after the execution of the above lines.
+            elif 'instagram' in query:
+                query = query.replace("instagram", "")
+                webbrowser.open(
+                    f"https://www.instagram.com/explore/tags/{query}")
+
+            # for twitter search engine
+            # search on the twitter if twitter is in the resultant query after the execution of the above lines.
+            elif 'twitter' in query:
+                query = query.replace("twitter", "")
+                webbrowser.open(
+                    f"https://twitter.com/search?q={query}")
+
+            # for linkedin search engine
+            # search on the linkedin if linkedin is in the resultant query after the execution of the above lines.
+            elif 'linkedin' in query:
+                query = query.replace("linkedin", "")
+                webbrowser.open(
+                    f"https://www.linkedin.com/search/results/index/?keywords={query}")
+
+            # for snapchat search engine
+            # search on the snapchat if snapchat is in the resultant query after the execution of the above lines.
+            elif 'snapchat' in query:
+                query = query.replace("snapchat", "")
+                webbrowser.open(
+                    f"https://www.snapchat.com/search/{query}")
+
+            # for video streaming websites in the below lines
+            # for youtube search engine
+            # search on the youtube if youtube is in the resultant query after the execution of the above lines.
+            elif 'youtube' in query:
+                query = query.replace("youtube", "")
+                webbrowser.open(
+                    f"https://www.youtube.com/results?search_query={query}")
+
+            # for vimeo search engine
+            # search on the vimeo if vimeo is in the resultant query after the execution of the above lines.
+            elif 'vimeo' in query:
+                query = query.replace("vimeo", "")
+                webbrowser.open(
+                    f"https://vimeo.com/search?q={query}")
+
+            # for dailymotion search engine
+            # search on the dailymotion if dailymotion is in the resultant query after the execution of the above lines.
+            elif 'dailymotion' in query:
+                query = query.replace("dailymotion", "")
+                webbrowser.open(
+                    f"https://www.dailymotion.com/search/{query}")
+
+            # for twitch search engine
+            # search on the twitch if twitch is in the resultant query after the execution of the above lines.
+            elif 'twitch' in query:
+                query = query.replace("twitch", "")
+                webbrowser.open(
+                    f"https://www.twitch.tv/search?q={query}")
+
+            # for netflix search engine
+            # search on the netflix if netflix is in the resultant query after the execution of the above lines.
+            elif 'netflix' in query:
+                query = query.replace("netflix", "")
+                webbrowser.open(
+                    f"https://www.netflix.com/search?q={query}")
+
+            # for hulu search engine
+            # search on the hulu if hulu is in the resultant query after the execution of the above lines.
+            elif 'hulu' in query:
+                query = query.replace("hulu", "")
+                webbrowser.open(
+                    f"https://www.hulu.com/search?q={query}")
+
+            # for disney search engine
+            # search on the disney if disney is in the resultant query after the execution of the above lines.
+            elif 'disney' in query:
+                query = query.replace("disney", "")
+                webbrowser.open(
+                    f"https://disney.go.com/search?q={query}")
+
+            # for hbo search engine
+            # search on the hbo if hbo is in the resultant query after the execution of the above lines.
+            elif 'hbo' in query:
+                query = query.replace("hbo", "")
+                webbrowser.open(
+                    f"https://www.hbo.com/search?q={query}")
+
+            # for hotstar search engine
+            # search on the hotstar if
+            # hotstar is in the resultant query after the execution of the above lines.
+            elif 'hotstar' in query:
+                query = query.replace("hotstar", "")
+                webbrowser.open(
+                    f"https://www.hotstar.com/search?q={query}")
+
+            # for music search engine or music player websites or music streaming websites or for songs streaming websites
+            # for spotify search engine
+            # search on the spotify if spotify is in the resultant query after the execution of the above lines.
+            elif 'spotify' in query:
+                query = query.replace("spotify", "")
+                webbrowser.open(
+                    f"https://open.spotify.com/search/{query}")
+
+            # for apple music search engine
+            # search on the apple music if apple music is in the resultant query after the execution of the above lines.
+            elif 'apple music' in query:
+                query = query.replace("apple music", "")
+                webbrowser.open(
+                    f"https://music.apple.com/search?term={query}")
+
+            # for soundcloud search engine
+            # search on the soundcloud if soundcloud is in the resultant query after the execution of the above lines.
+            elif 'soundcloud' in query:
+                query = query.replace("soundcloud", "")
+                webbrowser.open(
+                    f"https://soundcloud.com/search?q={query}")
+
+            # for tidal search engine
+            # search on the tidal if tidal is in the resultant query after the execution of the above lines.
+            elif 'tidal' in query:
+                query = query.replace("tidal", "")
+                webbrowser.open(
+                    f"https://tidal.com/search?q={query}")
+
+            # for youtube music search engine
+            # search on the youtube music if youtube music is in the resultant query after the execution of the above lines.
+            elif 'youtube music' in query:
+                query = query.replace("youtube music", "")
+                webbrowser.open(
+                    f"https://music.youtube.com/search?q={query}")
+
+            else:
+                query = query.replace("google", "")
+                webbrowser.open(
+                    f"https://www.google.com/search?q={query}&sourceid=olivia")
 
         elif 'open' in query:
             query = query.replace("open", "")
@@ -1648,35 +1870,61 @@ if __name__ == "__main__":
             username()
 
         else:
+            # writing code for the queries or the commands that are not in the above list of commands. so we will ask the user
+            # if he or she wants to search the query in google or wikipedia or translate the query or open the query in browser
+            # or open the query in youtube or open the query in stackoverflow or open the query in github or open the query in
+            # facebook or open the query in instagram or open the query in twitter or open the query in linkedin or open the query in
+            # gmail or open the query in whatsapp or open the query in skype or open the query in snapchat or open the query in
+            # pinterest or open the query in tinder or open the query in reddit or open the query in quora or open the query in
+            # stackoverflow or open the query in amazon or open the query in flipkart or open the query in gmail or open the query in
+            # yahoo or open the query in google or open the query in wikipedia or open the query in youtube or open the query in
+            # stackoverflow or open the query in github or open the query in facebook or open the query in instagram or open the
+            # query in twitter or open the query in linkedin or open the query in gmail or open the query in whatsapp or open the
+            # query in skype or open the query in snapchat or open the query in pinterest or open the query in tinder or open the
             if query != 'none':
                 speak(
                     'sorry sir that is not assigned. do you want to search for ' + query + '?')
-                confirmation = takeCommand().lower()
-                if 'yes' in confirmation:
+                confirmation = takeCommand().lower()  # taking the input from the user
+                if 'yes' in confirmation:  # if the user says yes then we will search the query in google
+
                     speak(
-                        'do you want me to search in google, wikipedia or youtube sir?')
+                        'do you want me to search in google, wikipedia or youtube sir?')  # asking the user to search in which website
+                    # taking the input from the user and converting it to lower case and storing it in answer4
                     answer4 = takeCommand().lower()
-                    if 'google' in answer4:
+                    if 'google' in answer4:  # if the user says google then we will search the query in google
+                        # telling the user that we are searching the query in google
                         speak('searching for ' + query + ' in google')
+                        # opening the query in google
                         webbrowser.open('www.google.com/search?gx&q=' + query)
 
-                    elif 'Wikipedia' in answer4:
+                    elif 'Wikipedia' in answer4:  # if the user says wikipedia then we will search the query in wikipedia
+                        # asking the user to narrate or open the webpage
                         speak('do you want me to narrate or open webpage sir?')
+                        # taking the input from the user and converting it to lower case and storing it in answer2
                         answer2 = takeCommand().lower()
+                        # if the user says narrate or direct then we will narrate the query
                         if 'narrate' in answer2 or 'direct' in answer2:
+                            # getting the summary of the query
                             results = wikipedia.summary(
                                 query, sentences=1, auto_suggest=False)
+                            # narrating the summary of the query
                             speak('according to wikipedia ' + results)
+                        # if the user says web page or website or webpage then we will open the query in browser
                         elif 'web page' in answer2 or 'website' in answer2 or 'webpage' in answer2:
+                            # getting the page of the query
                             page1 = wikipedia.page(query, auto_suggest=False)
-                            print(page1)
-                            page2 = page1.url
-                            print(page2)
+                            print(page1)  # printing the page of the query
+                            page2 = page1.url  # getting the url of the query
+                            print(page2)  # printing the url of the query
+                            # telling the user that we are redirecting to the webpage
                             speak('redirecting to webpage')
-                            webbrowser.get().open_new_tab(page2)
-                            print(page2)
-                    elif 'youtube' in answer4:
+                            webbrowser.get().open_new_tab(page2)  # opening the webpage of the query
+                            print(page2)  # printing the url of the query
+                    elif 'youtube' in answer4:  # if the user says youtube then we will search the query in youtube
+                        # telling the user that we are searching the query in youtube
                         speak('searching for ' + query + 'in youtube')
-                        webbrowser.get().open_new_tab('https://www.youtube.com/results?search_query=' + query)
+                        webbrowser.get().open_new_tab('https://www.youtube.com/results?search_query=' +
+                                                      query)  # opening the query in youtube
                 else:
+                    # Asking user if he or she want olivia to do anything else.
                     speak('ok. anything else sir?')
