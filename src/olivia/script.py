@@ -58,6 +58,12 @@ def speak(audio):
     engine.runAndWait()
 
 
+def presskey(key):
+
+    time.sleep(5)
+    pyautogui.press(key)
+
+
 def wishMe():
     hour = int(datetime.datetime.now().hour)
     if hour >= 0 and hour < 12:
@@ -378,66 +384,57 @@ if __name__ == "__main__":
 
         elif 'play' in query:
 
-            try:
-                song = query.replace('play', '')
-                sp('playing ')
-                sp(song)
-                pywhatkit.playonyt(song)
+            while True:
+                            song = query.replace('play', '')
+                            sp('playing ')
+                            sp(song)
+                            pywhatkit.playonyt(song)
 
-                # pause the video if 'pause' is in query
+                            # pause the video if 'pause' is in query
+                            if 'pause' in query:
+                                presskey(key='space')
+                                sp('paused')
 
-                    query = takeCommand().lower()
+                            elif 'play' in query:
+                                presskey(key='space')
+                                sp('playing')
 
-                   if 'pause' in query:
+                            # stop the video if 'stop' is in query
+                            elif 'next' in query:
+                                presskey(key='n')
+                                sp('Gone to the next video')
 
-                        youtube.play_pause_video()
+                            # previous the video if 'previous' is in query
+                            elif 'previous' in query:
+                                presskey(key='p')
 
-                    elif 'play' in query:
-                        youtube.play_pause_video()
+                                sp('Gone to the previous video')
 
-                    # stop the video if 'stop' is in query
-                    elif 'next' in query:
-                        pywhatkit.press('n')
-                        sp('Gone to the next video')
+                            # mute the video if 'mute' is in query
+                            elif 'mute' in query:
+                                presskey(key='m')
+                                sp('muted the video')
 
-                    # previous the video if 'previous' is in query
-                    elif 'previous' in query:
-                        pywhatkit.press('p')
-                        sp('Gone to the previous video')
+                            # unmute the video if 'unmute' is in query
+                            elif 'unmute' in query:
+                                presskey(key='m')
+                                sp('unmuted the video')
 
-                    # mute the video if 'mute' is in query
-                    elif 'mute' in query:
-                        pywhatkit.press('m')
+                            # Increase the volume if 'volume up' is in query
+                            elif 'volume up' in query:
+                                .press('up')
+                                sp('Increased the volume')
 
-                        sp('muted the video')
+                            # Decrease the volume if 'volume down' is in query
+                            elif 'volume down' in query:
+                                .press('down')
+                                sp('Decreased the volume')
 
-                    # unmute the video if 'unmute' is in query
-                    elif 'unmute' in query:
-                        pywhatkit.press('m')
-                        sp('unmuted the video')
-
-                    # Increase the volume if 'volume up' is in query
-                    elif 'volume up' in query:
-                        pywhatkit.press('up')
-                        sp('Increased the volume')
-
-                    # Decrease the volume if 'volume down' is in query
-                    elif 'volume down' in query:
-                        pywhatkit.press('down')
-                        sp('Decreased the volume')
-
-                    # close the video if 'close' is in query
-                    elif 'close' in query:
-                        pywhatkit.press('shift', 'w')
-                        sp('Closed the video')
-                        break
-
-            except:
-
-                # printing the error message
-                print("Network Error Occured")
-
-                #
+                            # close the video if 'close' is in query
+                            elif 'close' in query:
+                                .press('shift', 'w')
+                                sp('Closed the video')
+                                break
 
         elif 'news for today' in query:
             try:
