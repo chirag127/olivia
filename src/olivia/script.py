@@ -60,7 +60,6 @@ def speak(audio):
 
 def presskey(key):
 
-    time.sleep(5)
     pyautogui.press(key)
 
 
@@ -387,9 +386,10 @@ if __name__ == "__main__":
             sp('playing ')
             sp(song)
             pywhatkit.playonyt(song)
+            query = query.replace('play', '')
 
             while True:
-
+                query = takeCommand().lower()
                 # pause the video if 'pause' is in query
                 if 'pause' in query:
                     presskey('space')
@@ -399,15 +399,22 @@ if __name__ == "__main__":
                     presskey('space')
                     sp('playing')
 
-                # stop the video if 'stop' is in query
+                elif 'stop' in query:
+                    presskey('space')
+                    sp('stopped')
+                    break
+
                 elif 'next' in query:
-                    presskey('n')
+                    presskey('right')
+                    sp('next')
+
+                elif 'next' in query:
+                    pyautogui.hotkey('shift', 'n')
                     sp('Gone to the next video')
 
                 # previous the video if 'previous' is in query
                 elif 'previous' in query:
-                    presskey('p')
-
+                    pyautogui.hotkey('shift', 'p')
                     sp('Gone to the previous video')
 
                 # mute the video if 'mute' is in query
@@ -432,8 +439,7 @@ if __name__ == "__main__":
 
                 # close the video if 'close' is in query
                 elif 'close' in query:
-                    presskey('shift', 'w')
-
+                    pyautogui.hotkey('ctrl', 'w')
                     sp('Closed the video')
                     break
 
