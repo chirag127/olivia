@@ -443,12 +443,12 @@ if __name__ == "__main__":
                 # unmute the video if 'unmute' is in query
                 elif 'unmute' in query:
                     presskey('m')
-                    #sp('unmuted the video')
+                    # sp('unmuted the video')
 
                 # Increase the volume if 'volume up' is in query
                 elif 'volume up' in query:
                     presskey('up')
-                 ##   sp('Increased the volume')
+                 # sp('Increased the volume')
 
                 # Decrease the volume if 'volume down' is in query
                 elif 'volume down' in query:
@@ -735,7 +735,7 @@ if __name__ == "__main__":
             elif 'google' in query:
                 query = query.replace("google", "")
                 webbrowser.open(
-                    f"https://www.google.com/search?q={query}&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjNy7Ph39ndAhXGFYgKHcc8D_AQ_AUoAXoECAsQAw&biw=1366&bih=657")
+                    f"https://www.google.com/search?q={query}")
 
             elif 'stack overflow' in query:
                 query = query.replace("stack overflow", "")
@@ -766,11 +766,6 @@ if __name__ == "__main__":
                 query = query.replace("linkedin", "")
                 webbrowser.open(
                     f"https://www.linkedin.com/in/{query}")
-
-            elif 'google' in query:
-                query = query.replace("google", "")
-                webbrowser.open(
-                    f"https://www.google.com/search?q={query}")
 
             elif 'amazon' in query:
                 query = query.replace("amazon", "")
@@ -1652,39 +1647,36 @@ if __name__ == "__main__":
         elif 'username' in query:
             username()
 
-
-"""
-
-
         else:
-            speak(
-                'sorry sir that is not assigned. do you want to search for ' + query + '?')
-            confirmation = takeCommand().lower()
-            if 'yes' in confirmation:
-                speak('do you want me to search in google, wikipedia or youtube sir?')
-                answer4 = takeCommand().lower()
-                if 'google' in answer4:
-                    speak('searching for ' + query + ' in google')
-                    webbrowser.open('www.google.com/search?gx&q=' + query)
+            if query != 'none':
+                speak(
+                    'sorry sir that is not assigned. do you want to search for ' + query + '?')
+                confirmation = takeCommand().lower()
+                if 'yes' in confirmation:
+                    speak(
+                        'do you want me to search in google, wikipedia or youtube sir?')
+                    answer4 = takeCommand().lower()
+                    if 'google' in answer4:
+                        speak('searching for ' + query + ' in google')
+                        webbrowser.open('www.google.com/search?gx&q=' + query)
 
-                elif 'Wikipedia' in answer4:
-                    speak('do you want me to narrate or open webpage sir?')
-                    answer2 = takeCommand().lower()
-                    if 'narrate' in answer2 or 'direct' in answer2:
-                        results = wikipedia.summary(
-                            query, sentences=1, auto_suggest=False)
-                        speak('according to wikipedia ' + results)
-                    elif 'web page' in answer2 or 'website' in answer2 or 'webpage' in answer2:
-                        page1 = wikipedia.page(query, auto_suggest=False)
-                        print(page1)
-                        page2 = page1.url
-                        print(page2)
-                        speak('redirecting to webpage')
-                        webbrowser.get().open_new_tab(page2)
-                        print(page2)
-                elif 'youtube' in answer4:
-                    speak('searching for ' + query + 'in youtube')
-                    webbrowser.get().open_new_tab('https://www.youtube.com/results?search_query=' + query)
-            else:
-                speak('ok. anything else sir?')
-"""
+                    elif 'Wikipedia' in answer4:
+                        speak('do you want me to narrate or open webpage sir?')
+                        answer2 = takeCommand().lower()
+                        if 'narrate' in answer2 or 'direct' in answer2:
+                            results = wikipedia.summary(
+                                query, sentences=1, auto_suggest=False)
+                            speak('according to wikipedia ' + results)
+                        elif 'web page' in answer2 or 'website' in answer2 or 'webpage' in answer2:
+                            page1 = wikipedia.page(query, auto_suggest=False)
+                            print(page1)
+                            page2 = page1.url
+                            print(page2)
+                            speak('redirecting to webpage')
+                            webbrowser.get().open_new_tab(page2)
+                            print(page2)
+                    elif 'youtube' in answer4:
+                        speak('searching for ' + query + 'in youtube')
+                        webbrowser.get().open_new_tab('https://www.youtube.com/results?search_query=' + query)
+                else:
+                    speak('ok. anything else sir?')
