@@ -383,58 +383,59 @@ if __name__ == "__main__":
 # example: play lonely by justin bieber will play the video of the song 'lonely by justin bieber'
 
         elif 'play' in query:
+            song = query.replace('play', '')
+            sp('playing ')
+            sp(song)
+            pywhatkit.playonyt(song)
 
             while True:
-                            song = query.replace('play', '')
-                            sp('playing ')
-                            sp(song)
-                            pywhatkit.playonyt(song)
 
-                            # pause the video if 'pause' is in query
-                            if 'pause' in query:
-                                presskey(key='space')
-                                sp('paused')
+                # pause the video if 'pause' is in query
+                if 'pause' in query:
+                    presskey('space')
+                    sp('paused')
 
-                            elif 'play' in query:
-                                presskey(key='space')
-                                sp('playing')
+                elif 'play' in query:
+                    presskey('space')
+                    sp('playing')
 
-                            # stop the video if 'stop' is in query
-                            elif 'next' in query:
-                                presskey(key='n')
-                                sp('Gone to the next video')
+                # stop the video if 'stop' is in query
+                elif 'next' in query:
+                    presskey('n')
+                    sp('Gone to the next video')
 
-                            # previous the video if 'previous' is in query
-                            elif 'previous' in query:
-                                presskey(key='p')
+                # previous the video if 'previous' is in query
+                elif 'previous' in query:
+                    presskey('p')
 
-                                sp('Gone to the previous video')
+                    sp('Gone to the previous video')
 
-                            # mute the video if 'mute' is in query
-                            elif 'mute' in query:
-                                presskey(key='m')
-                                sp('muted the video')
+                # mute the video if 'mute' is in query
+                elif 'mute' in query:
+                    presskey('m')
+                    sp('muted the video')
 
-                            # unmute the video if 'unmute' is in query
-                            elif 'unmute' in query:
-                                presskey(key='m')
-                                sp('unmuted the video')
+                # unmute the video if 'unmute' is in query
+                elif 'unmute' in query:
+                    presskey('m')
+                    sp('unmuted the video')
 
-                            # Increase the volume if 'volume up' is in query
-                            elif 'volume up' in query:
-                                .press('up')
-                                sp('Increased the volume')
+                # Increase the volume if 'volume up' is in query
+                elif 'volume up' in query:
+                    presskey('up')
+                    sp('Increased the volume')
 
-                            # Decrease the volume if 'volume down' is in query
-                            elif 'volume down' in query:
-                                .press('down')
-                                sp('Decreased the volume')
+                # Decrease the volume if 'volume down' is in query
+                elif 'volume down' in query:
+                    presskey('down')
+                    sp('Decreased the volume')
 
-                            # close the video if 'close' is in query
-                            elif 'close' in query:
-                                .press('shift', 'w')
-                                sp('Closed the video')
-                                break
+                # close the video if 'close' is in query
+                elif 'close' in query:
+                    presskey('shift', 'w')
+
+                    sp('Closed the video')
+                    break
 
         elif 'news for today' in query:
             try:
