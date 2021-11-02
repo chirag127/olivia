@@ -25,7 +25,6 @@ import wikipedia  # pip install wikipedia
 import win32com.client as wincl
 import winshell
 import clipboard
-from youtube_video_play_pause_bot import *
 
 # from youtube_video_play_pause_bot import *
 
@@ -387,10 +386,9 @@ if __name__ == "__main__":
 
                 # pause the video if 'pause' is in query
 
-                while True:
                     query = takeCommand().lower()
 
-                    if 'pause' in query:
+                   if 'pause' in query:
 
                         youtube.play_pause_video()
 
