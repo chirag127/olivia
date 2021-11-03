@@ -42,30 +42,30 @@
 2. Give the CPU usage of the computer just say "CPU usage" or "CPU usage of the computer" or "usage of the CPU".
 3. Present with the RAM usage of the computer just say "RAM usage" or "RAM usage of the computer" or "RAM usage of the computer".
 4. Give the disk usage of the computer just say "disk usage" or "disk usage of the computer" or "disk usage of the computer".
-5. Give the battery usage of the computer just say "battery usage" or "battery usage of the computer" or "battery usage of the computer".
+6. Give the battery usage of the computer just say "battery usage" or "battery usage of the computer" or "battery usage of the computer".
 7. Search in chrome just say "search in chrome".
 8. Tell you the time by saying "time" or "what time is it" or "what is the time" or "tell me the time".
 9. Tell you the date by saying "date" or "what date is it" or "what is the date" or "tell me the date".
-11. Generate a random password by saying "generate a password" or "generate a random password".
-12. Generate a random number by saying "generate a number" or "generate a random number".
-13. Change your name by saying "change my name to (your name)" or "call me (your name)".
-14. Send a mail by saying "send a mail to (your mail ID)" or "send a mail to (your mail ID) with (your message)".
-15. Lock the screen by saying "lock the screen" or "lock window" or "lock screen".
-16. Shutdown the computer by saying "shutdown the computer" or "shutdown the computer now" or "shutdown system".
-17. Empty the recycle bin by saying "empty the recycle bin" or "empty recycle bin".
-18. Stop listening by saying "stop listening" or "stop listening now" or "don't listen" or "don't listen now".
-19. Tell you the location of a place by saying "where is (the name of the place)".
-20. Restart the computer by saying "restart the computer" or "restart the computer now" or "restart system" or "reboot the computer" or "reboot the computer now" or "reboot system".
-21. Hibernate the computer system by saying "hibernate the computer" or "hibernate the computer now" or "hibernate system" .
-22. Logout the computer by saying "logout the computer" or "logout the computer now" or "logout system" or "sign out the computer" or "sign out the computer now" or "sign out system".
-23. Write a note by saying "write a note" or "write note" or "write a note now" or "write note now" with further of including the time and date by saying yes or no.
-24. Read a note by saying "read a note" or "read note" or "read a note now" or "read note now".
-25. Delete a note by saying "delete a note" or "delete note" or "delete a note now" or "delete note now".
-26. Show all notes by saying "show all notes" or "show all notes now" or "show all notes now".
-27. Send WhatsApp message by saying "send WhatsApp message to (your number)" or "send message".
-28. Tell location of a place by saying "where is (the name of the place)" or "where is (the name of the place) now" or "where is (the name of the place) now" etc. Example "where is Ghaziabad" will tell you the location of Ghaziabad by open the location of Ghaziabad in Google Maps.
-29. Open word by saying "open word" or "open word now" and then type your document by saying "yes" or "no" when asked if "do you want me to type" and stop typing by saying "stop typing".
-30. Launch an application by saying "launch (the name of the application)" or "launch (the name of the application) now" or "launch (the name of the application) now" 
+10. Generate a random password by saying "generate a password" or "generate a random password".
+11. Generate a random number by saying "generate a number" or "generate a random number".
+12. Change your name by saying "change my name to (your name)" or "call me (your name)".
+13. Send a mail by saying "send a mail to (your mail ID)" or "send a mail to (your mail ID) with (your message)".
+14. Lock the screen by saying "lock the screen" or "lock window" or "lock screen".
+15. Shutdown the computer by saying "shutdown the computer" or "shutdown the computer now" or "shutdown system".
+16. Empty the recycle bin by saying "empty the recycle bin" or "empty recycle bin".
+17. Stop listening by saying "stop listening" or "stop listening now" or "don't listen" or "don't listen now".
+18. Tell you the location of a place by saying "where is (the name of the place)".
+19. Restart the computer by saying "restart the computer" or "restart the computer now" or "restart system" or "reboot the computer" or "reboot the computer now" or "reboot system".
+20. Hibernate the computer system by saying "hibernate the computer" or "hibernate the computer now" or "hibernate system" .
+21. Logout the computer by saying "logout the computer" or "logout the computer now" or "logout system" or "sign out the computer" or "sign out the computer now" or "sign out system".
+22. Write a note by saying "write a note" or "write note" or "write a note now" or "write note now" with further of including the time and date by saying yes or no.
+23. Read a note by saying "read a note" or "read note" or "read a note now" or "read note now".
+24. Delete a note by saying "delete a note" or "delete note" or "delete a note now" or "delete note now".
+25. Show all notes by saying "show all notes" or "show all notes now" or "show all notes now".
+26. Send WhatsApp message by saying "send WhatsApp message to (your number)" or "send message".
+27. Tell location of a place by saying "where is (the name of the place)" or "where is (the name of the place) now" or "where is (the name of the place) now" etc. Example "where is Ghaziabad" will tell you the location of Ghaziabad by open the location of Ghaziabad in Google Maps.
+28. Open word by saying "open word" or "open word now" and then type your document by saying "yes" or "no" when asked if "do you want me to type" and stop typing by saying "stop typing".
+29. Launch an application by saying "launch (the name of the application)" or "launch (the name of the application) now" or "launch (the name of the application) now" 
     #### Example:
     1. Launch chrome just say "launch chrome" or "launch chrome now".
     2. Launch notepad just say "launch notepad" or "launch notepad now".
@@ -78,8 +78,8 @@
     9. Open task manager just say "launch task manager" or "launch task manager now".
     10. Launch paint just say "launch paint" or "launch paint now".
 
-32. Play a song by saying "play a song" or "play song" or "play a song now".
-33. Play any a video on a specific topic by saying "play a video on (the name of the topic)" or "play (the name of the topic) video" or "play (the name of the topic)". Example are as following:
+30. Play a song by saying "play a song" or "play song" or "play a song now".
+31. Play any a video on a specific topic by saying "play a video on (the name of the topic)" or "play (the name of the topic) video" or "play (the name of the topic)". Example are as following:
     #### Example:
     1. Play a video on cricket just say "play a video on cricket" or "play cricket video" or "play cricket".
     2. Play a video on football just say "play a video on football" or "play football video" or "play football".
@@ -90,15 +90,15 @@
     7. Start a video on how to make a cake just say "play a video on how to make a cake" or "play how to make a cake video" or "play how to make a cake".
     8. Play a video on python just say "play a video on python" or "play python video" or "play python".
 
-35.  Play any song of your choice by saying "play (name of the song(maybe with the name of the singer if there are two or more song by the same name there will be no confusion.)) Examples are as follows:-
+32.  Play any song of your choice by saying "play (name of the song(maybe with the name of the singer if there are two or more song by the same name there will be no confusion.)) Examples are as follows:-
     #### Example:
     1. Play lonely by the Beatles just say "play lonely by the Beatles" or "play the song lonely by the Beatles".
-    1. Play lonely by Justin Bieber just say "play lonely by Justin Bieber" or "play the song lonely by Justin Bieber".
-    1. Play love yourself just say "play love yourself" or "play the song love yourself".
-    1. Open peaches just say "play peaches" or "play the song peaches".
-    1. I hope you understand now.
+    2. Play lonely by Justin Bieber just say "play lonely by Justin Bieber" or "play the song lonely by Justin Bieber".
+    3. Play love yourself just say "play love yourself" or "play the song love yourself".
+    4. Open peaches just say "play peaches" or "play the song peaches".
+    5. I hope you understand now.
 
-37. Open any website just say "open (the name of the website)" or "open (the name of the website) now" or "open (the name of the website) now" e.g.
+33. Open any website just say "open (the name of the website)" or "open (the name of the website) now" or "open (the name of the website) now" e.g.
      1. Open the Amazon website by saying "open Amazon" or "open Amazon website".
      2. Open the Bing website by saying "open Bing" or "open Bing website".
      3. Likewise, Open the code forces website by saying "open code forces" or "open code forces website".
@@ -158,13 +158,17 @@
      57. Open the Google.com.hk website by saying "open Google.com.hk" or "open Google.com.hk website".
      58. Open the sina website by saying "open sina" or "open sina website".
      59. Likewise, Open Xinhua website by saying "open xinhua" or "open xinhua website".
-     60. 
+     60. Open the Amazon.de website by saying "open Amazon.de" or "open Amazon.de website".
+     61. Open the Amazon.fr website by saying "open Amazon.fr" or "open Amazon.fr website".
+     62. Likewise, Open the Amazon.es website by saying "open Amazon.es" or "open Amazon.es website".
+     63. Open the Amazon.it website by saying "open Amazon.it" or "open Amazon.it website".
+     64. Open the Amazon.co.jp website by saying "open Amazon.co.jp" or "open Amazon.co.jp website".
+     65. Likewise, Open the Amazon.ca website by saying "open Amazon.ca" or "open Amazon.ca website".
+     66. Open the Amazon.com.mx website by saying "open Amazon.com.mx" or "open Amazon.com.mx website".
+     67. Open the Amazon.com.br website by saying "open Amazon.com.br" or "open Amazon.com.br website".
+     68. Likewise, Open the Amazon.com.au website by saying "open Amazon.com.au" or "open Amazon.com.au website".
 
-
-
-
-
-38. Search many websites like YouTube, Google (with Google Images, Google News etc.), Bing, Yahoo, DuckDuckGo, Wikipedia, Wiktionary, and many more just by saying "search (the name of the website) on (the thing you want to search on the website.). For example,
+34. Search many websites like YouTube, Google (with Google Images, Google News etc.), Bing, Yahoo, DuckDuckGo, Wikipedia, Wiktionary, and many more just by saying "search (the name of the website) on (the thing you want to search on the website.). For example,
     1. If you want to search for "Python" on YouTube, you can say "search Python on YouTube".
     2. If you want to search for "Python" on Google, you can say "search Python on Google".
     3. If you want to search for "Python" on Google Images, you can say "search Python on Google Images".
@@ -210,7 +214,7 @@
     40. And many more.
 
 
-39. Answer to many questions like :- 
+35. Answer to many questions like :- 
     1. What is your name?
     2. What is your age?
     3. Who is your favorite animal?
@@ -229,8 +233,8 @@
     16. Who is your favorite actor?
     17. And many more...
    
-40. Exit the application just by saying "exit the application" or "exit" or "goodbye" or "bye".
-41. If the Virtual assistant Don't know the answer to any of your questions, Olivia will ask you if he or she wants to search the query in google or YouTube or Wikipedia. If you say yes, then it will ask in which of these websites you want to search the query like if you YouTube it will search the query on YouTube. In last, If you say no, then it will do nothing and just say 'ok. Anything else sir?'
+36. Exit the application just by saying "exit the application" or "exit" or "goodbye" or "bye".
+37. If the Virtual assistant Don't know the answer to any of your questions, Olivia will ask you if he or she wants to search the query in google or YouTube or Wikipedia. If you say yes, then it will ask in which of these websites you want to search the query like if you YouTube it will search the query on YouTube. In last, If you say no, then it will do nothing and just say 'ok. Anything else sir?'
 
 
 ### In progress features
