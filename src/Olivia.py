@@ -579,41 +579,45 @@ if __name__ == "__main__":
             ctypes.windll.user32.LockWorkStation()
 
         elif "note" in query or "notes" in query:
-            if 'read' in query:
-                speak("Reading Note Sir")
-                file = open('olivianote.txt', 'r')
-                print(file.read())
-                speak(file.read(6))
+            if (not os.path.exists("olivianote.txt")):
+                with open("olivianote.txt", "w") as f:
+                    f.write(" ")
 
-            elif 'write' in query:
-                speak("What should i write, sir")
-                note = takeCommand()
-                file = open('olivianote.txt', 'w')
-                speak("Sir, Should i include date and time")
-                snfm = takeCommand()
+                if 'read' in query:
+                    speak("Reading Note Sir")
+                    file = open('olivianote.txt', 'r')
+                    print(file.read())
+                    speak(file.read(6))
 
-                if 'yes' in snfm or 'sure' in snfm:
-                    strTime = datetime.datetime.now().strftime("%m-%d-%Y %T:%M%p")
-                    file.write(strTime)
-                    file.write(" :- ")
-                    file.write("\n")
-                    file.write(note)
-                    speak("Note has been saved")
-                else:
-                    file.write(note)
-                    speak("Note has been saved without date and time")
+                elif 'write' in query:
+                    speak("What should i write, sir")
+                    note = takeCommand()
+                    file = open('olivianote.txt', 'w')
+                    speak("Sir, Should i include date and time")
+                    snfm = takeCommand()
 
-            elif "show" in query:
-                speak("Showing Notes")
-                file = open("olivianote.txt", "r")
-                print(file.read())
-                speak(file.read(6))
+                    if 'yes' in snfm or 'sure' in snfm:
+                        strTime = datetime.datetime.now().strftime("%m-%d-%Y %T:%M%p")
+                        file.write(strTime)
+                        file.write(" :- ")
+                        file.write("\n")
+                        file.write(note)
+                        speak("Note has been saved")
+                    else:
+                        file.write(note)
+                        speak("Note has been saved without date and time")
 
-            elif "delete" in query:
-                speak("Deleting Note")
-                file = open("olivianote.txt", "w")
-                file.truncate()
-                speak("Note has been deleted")
+                elif "show" in query:
+                    speak("Showing Notes")
+                    file = open("olivianote.txt", "r")
+                    print(file.read())
+                    speak(file.read(6))
+
+                elif "delete" in query:
+                    speak("Deleting Note")
+                    file = open("olivianote.txt", "w")
+                    file.truncate()
+                    speak("Note has been deleted")
 
         elif "send" in query:
 
