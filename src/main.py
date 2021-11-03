@@ -30,7 +30,7 @@ import win32com.client as wincl
 import winshell
 import clipboard  # clipboard is used to read the text from the clipboard
 import psutil  # pip install psutil # psutil is used to get the cpu usage and ram usage and disk usage and battery usage
-
+import file1
 
 # I was getting error so i install pyaudio
 # error in that too so i googled it on the stackover flow.
@@ -76,10 +76,10 @@ def takeCommand():
         # refer to the https://www.codesofinterest.com/2017/04/energy-threshold-calibration-in-speech-recognition.html to understand the energy threshold
 
         # pause for a second to let the recognizer adjust the threshold before listening for input
-        r.pause_threshold = 1
-        # r.adjust_for_ambient_noise(source, duration=1)
-        # r.dynamic_energy_threshold = True
-        r.energy_threshold = 800
+        # r.pause_threshold = 1
+        r.adjust_for_ambient_noise(source, duration=1)
+        r.dynamic_energy_threshold = True
+        # r.energy_threshold = 800
         # r.dynamic_energy_adjustment_damping = 0.2
         # listen for the user's input and store it in audio variable and convert it to text later
         audio = r.listen(source)
@@ -88,7 +88,7 @@ def takeCommand():
         # print recongzing the user's voice to know that the program is re cognizing the user's voice
         print("Recognizing...")
         # use google translate to detect the language of the user's voice
-        query = r.recognize_google(audio, language='en-us')
+        query = r.recognize_google(audio, language='en-in')
 
         # print the user's voice to the console
         print(f"User said: {query}\n")
@@ -100,6 +100,61 @@ def takeCommand():
         return "None"
     # return the function to takeCommand()
     return query
+
+
+# fuction to show a snake game for the user to play against the computer
+def snake():
+    import pygame
+    import random
+    import time
+
+    pygame.init()
+    pygame.font.init()
+    pygame.mixer.init()
+    pygame.mixer.music.load('snake.mp3')
+    pygame.mixer.music.play(-1)
+    pygame.mixer.music.set_volume(0.5)
+    pygame.display.set_caption("Snake Game")
+    clock = pygame.time.Clock()
+    pygame.display.set_icon(pygame.image.load('snake.png'))
+    screen = pygame.display.set_mode((800, 600))
+    pygame.display.update()
+    score = 0
+    # load the images
+    snake_head = pygame.image.load('snake.png')
+    snake_body = pygame.image.load('snake.png')
+    snake_tail = pygame.image.load('snake.png')
+    apple = pygame.image.load('snake.png')
+    # set the apple position
+    apple_x = random.randint(0, 800)
+    apple_y = random.randint(0, 600)
+    # set the snake position
+    snake_x = random.randint(0, 800)
+    snake_y = random.randint(0, 600)
+    # set the snake direction
+    snake_direction = 'right'
+    # set the snake speed
+    snake_speed = 15
+    # set the snake body
+    snake_body_list = []
+    snake_body_list.append((snake_x, snake_y))
+    # set the snake tail
+    snake_tail_list = []
+    snake_tail_list.append((snake_x, snake_y))
+    # set the snake length
+    snake_length = 1
+    # set the snake score
+    snake_score = 0
+    # set the snake game over
+    snake_game_over = False
+    # set the snake game over
+    snake_game_over_text = pygame.font.Font('freesansbold.ttf', 50)
+
+    # set the snake game over
+    snake_game_over_text_x = 400
+    snake_game_over_text_y = 300
+    # set the snake game over
+    snake_game_over_text_color = (255, 255, 255)
 
 
 # fuction of press the specified key
@@ -181,22 +236,6 @@ def send_whatapp(to, content):
     pyautogui.press('enter')
 
 
-def takescreenshot():
-    subprocess.call(["screencapture", "-x", "image.png"])
-    speak("Sir, I have taken a screenshot of your screen")
-    myScreenshot = pyautogui.screenshot()
-    myScreenshot.save(r'D:\\dl\\Critical\\code\\screenshot_1.png')
-
-
-def sendEmail(to, content):
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.ehlo()
-    server.starttls()
-    server.login('chriagsinghal@gmail.com', 'my password')
-    server.sendmail('chiragsinghal@gmail.com', to, content)
-    server.close()
-
-
 def text2speech():
     text = clipboard.paste()
     print(text)
@@ -236,28 +275,6 @@ def greeting(text):
     return ''
 
 
-def givejoke():
-    response_API = requests.get(
-        'https://icanhazdadjoke.com/slack')
-    data = response_API.text
-    parse_json = json.loads(data)
-    key = parse_json['attachments']
-    joketext = key[0]['text']
-    print("The random joke is ", joketext)
-    speak(joketext)
-
-
-def giveip():
-    response_API = requests.get(
-        'https://api.ipify.org?format=json')
-    data = response_API.text
-    parse_json = json.loads(data)
-    key = parse_json['ip']
-    iptext = key
-    sp("Your IP address is ")
-    sp(iptext)
-
-
 def clear():
     return os.system('cls')
 
@@ -285,47 +302,6 @@ def username():
     print("#####################".center(columns))
 
     speak("How can i Help you, Sir")
-
-
-def generate_random_password():
-    alpha = "abcdefghijklmnopqrstuvwxyz"
-    num = "0123456789"
-    special = "@#$%&*"
-
-    # pass_len=random.randint(8,13)  #without User INput
-
-    pass_len = random.randint(8, 13)
-
-    # length of password by 50-30-20 formula
-    alpha_len = pass_len//2
-    num_len = math.ceil(pass_len*30/100)
-    special_len = pass_len-(alpha_len+num_len)
-
-    password = []
-
-    def generate_pass(length, array, is_alpha=False):
-        for i in range(length):
-            index = random.randint(0, len(array) - 1)
-            character = array[index]
-            if is_alpha:
-                case = random.randint(0, 1)
-                if case == 1:
-                    character = character.upper()
-            password.append(character)
-
-    # alpha password
-    generate_pass(alpha_len, alpha, True)
-    # numeric password
-    generate_pass(num_len, num)
-    # special Character password
-    generate_pass(special_len, special)
-    # suffle the generated password list
-    random.shuffle(password)
-    # convert List To string
-    gen_password = ""
-    for i in password:
-        gen_password = gen_password + str(i)
-    sp(gen_password)
 
 
 if __name__ == "__main__":
@@ -398,7 +374,7 @@ if __name__ == "__main__":
         # if 'joke' is in query then tell the random joke
 
         elif 'joke' in query:
-            givejoke()
+            file1.givejoke()
 
         # Read the copied text from clipboard and speak it if 'read' is in query and 'aloud' is in query
         elif 'read' in query:
@@ -517,7 +493,7 @@ if __name__ == "__main__":
 
         elif 'generate' in query:
             if 'password' in query:
-                generate_random_password()
+                file1.generate_random_password()
             elif 'number' in query:
                 sp(random.randint(0, 100))
 
@@ -536,7 +512,7 @@ if __name__ == "__main__":
                 speak("What should I say?")
                 content = takeCommand().lower()
                 to = "chriagsinghal@gmail.com"
-                sendEmail(to, content)
+                file1.sendEmail(to, content)
                 speak("Email has been sent!")
             except Exception as e:
                 print(e)
@@ -578,7 +554,6 @@ if __name__ == "__main__":
         elif 'lock window' in query or 'lock screen' in query or 'lock the screen' in query:
             speak("locking the device")
             ctypes.windll.user32.LockWorkStation()
-
 
         elif "note" in query or "notes" in query:
             if 'read' in query:
@@ -1628,7 +1603,7 @@ if __name__ == "__main__":
             k = wikipedia.summary(query, sentences=2)
             speak(k)
 
-        elif query == 'quit' or 'olivia quit' in query or 'olivia bye' in query or query == 'bye' or query == 'exit' or query == 'close' or query == 'goodbye' or query == 'bye bye':
+        elif query == 'quit' or 'olivia quit' in query or 'olivia bye' in query or query == 'bye' or query == 'exit' or query == 'goodbye' or query == 'bye bye':
             sp("Bye Sir")
             exit()
 
@@ -2026,13 +2001,13 @@ if __name__ == "__main__":
             exitcode()
 
         elif 'screenshot' in query:
-            takescreenshot()
+            file1.takescreenshot
 
         elif 'joke' in query:
-            givejoke()
+            file1.givejoke
 
         elif 'ip address' in query:
-            giveip()
+            file1.giveip()
 
         elif 'username' in query:
             username()

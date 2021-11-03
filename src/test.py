@@ -1,0 +1,3 @@
+import snakegame
+
+snakegame.main()
