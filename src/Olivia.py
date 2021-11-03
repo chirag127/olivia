@@ -102,61 +102,6 @@ def takeCommand():
     return query
 
 
-# fuction to show a snake game for the user to play against the computer
-def snake():
-    import pygame
-    import random
-    import time
-
-    pygame.init()
-    pygame.font.init()
-    pygame.mixer.init()
-    pygame.mixer.music.load('snake.mp3')
-    pygame.mixer.music.play(-1)
-    pygame.mixer.music.set_volume(0.5)
-    pygame.display.set_caption("Snake Game")
-    clock = pygame.time.Clock()
-    pygame.display.set_icon(pygame.image.load('snake.png'))
-    screen = pygame.display.set_mode((800, 600))
-    pygame.display.update()
-    score = 0
-    # load the images
-    snake_head = pygame.image.load('snake.png')
-    snake_body = pygame.image.load('snake.png')
-    snake_tail = pygame.image.load('snake.png')
-    apple = pygame.image.load('snake.png')
-    # set the apple position
-    apple_x = random.randint(0, 800)
-    apple_y = random.randint(0, 600)
-    # set the snake position
-    snake_x = random.randint(0, 800)
-    snake_y = random.randint(0, 600)
-    # set the snake direction
-    snake_direction = 'right'
-    # set the snake speed
-    snake_speed = 15
-    # set the snake body
-    snake_body_list = []
-    snake_body_list.append((snake_x, snake_y))
-    # set the snake tail
-    snake_tail_list = []
-    snake_tail_list.append((snake_x, snake_y))
-    # set the snake length
-    snake_length = 1
-    # set the snake score
-    snake_score = 0
-    # set the snake game over
-    snake_game_over = False
-    # set the snake game over
-    snake_game_over_text = pygame.font.Font('freesansbold.ttf', 50)
-
-    # set the snake game over
-    snake_game_over_text_x = 400
-    snake_game_over_text_y = 300
-    # set the snake game over
-    snake_game_over_text_color = (255, 255, 255)
-
-
 # fuction of press the specified key
 
 
@@ -211,6 +156,85 @@ def battery():
 
     sp("Battery is at")
     sp(psutil.sensors_battery())
+
+
+def givejoke():
+    response_API = requests.get(
+        'https://icanhazdadjoke.com/slack')
+    data = response_API.text
+    parse_json = json.loads(data)
+    key = parse_json['attachments']
+    joketext = key[0]['text']
+    print("The random joke is ", joketext)
+    speak(joketext)
+
+
+def giveip():
+    response_API = requests.get(
+        'https://api.ipify.org?format=json')
+    data = response_API.text
+    parse_json = json.loads(data)
+    key = parse_json['ip']
+    iptext = key
+    sp("Your IP address is ")
+    sp(iptext)
+
+
+def generate_random_password():
+    alpha = "abcdefghijklmnopqrstuvwxyz"
+    num = "0123456789"
+    special = "@#$%&*"
+
+    # pass_len=random.randint(8,13)  #without User INput
+
+    pass_len = random.randint(8, 13)
+
+    # length of password by 50-30-20 formula
+    alpha_len = pass_len//2
+    num_len = math.ceil(pass_len*30/100)
+    special_len = pass_len-(alpha_len+num_len)
+
+    password = []
+
+    def generate_pass(length, array, is_alpha=False):
+        for i in range(length):
+            index = random.randint(0, len(array) - 1)
+            character = array[index]
+            if is_alpha:
+                case = random.randint(0, 1)
+                if case == 1:
+                    character = character.upper()
+            password.append(character)
+
+    # alpha password
+    generate_pass(alpha_len, alpha, True)
+    # numeric password
+    generate_pass(num_len, num)
+    # special Character password
+    generate_pass(special_len, special)
+    # suffle the generated password list
+    random.shuffle(password)
+    # convert List To string
+    gen_password = ""
+    for i in password:
+        gen_password = gen_password + str(i)
+    sp(gen_password)
+
+
+def takescreenshot():
+    subprocess.call(["screencapture", "-x", "image.png"])
+    speak("Sir, I have taken a screenshot of your screen")
+    myScreenshot = pyautogui.screenshot()
+    myScreenshot.save(r'D:\\dl\\Critical\\code\\screenshot_1.png')
+
+
+def sendEmail(to, content):
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.ehlo()
+    server.starttls()
+    server.login('chriagsinghal@gmail.com', 'my password')
+    server.sendmail('chiragsinghal@gmail.com', to, content)
+    server.close()
 
 
 def query_day():
