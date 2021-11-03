@@ -417,7 +417,7 @@ if __name__ == "__main__":
                         elif 'enter' in type_sentence:
                             pyautogui.press('enter')
                         elif 'backspace' in type_sentence:
-                            pyautogui.hotkey('ctrl','backspace')
+                            pyautogui.hotkey('ctrl', 'backspace')
                         elif 'tab' in type_sentence:
                             pyautogui.press('tab')
 
@@ -543,36 +543,42 @@ if __name__ == "__main__":
                 speak(
                     "Sorry my friend chirag sir. I am not able to send this email")
 
-        elif 'lock window' in query or 'lock screen' in query or 'lock the screen' in query:
-            speak("locking the device")
-            ctypes.windll.user32.LockWorkStation()
-
-        elif 'shut down the computer' in query or 'shutdown the computer' in query or 'shot down the computer' in query or 'shutdown system' in query:
-            speak("Hold On ! Your system is on its way to shut down")
-            os.system('shutdown /s /f')
-            running = False
-            sys.exit()
-
-        elif 'empty recycle bin' in query:
-            winshell.recycle_bin().empty(confirm=False, show_progress=False, sound=True)
-            speak("Recycle Bin Recycled")
-
         elif "don't listen" in query or "stop listening" in query:
             speak("for how much time you want to stop olivia from listening commands")
             time.sleep(120)
             speak("Olivia is listening again")
 
-        elif "restart" in query or "reboot" in query:
-            subprocess.call(["shutdown", "/r"])
+        elif 'clear' in query or 'empty' in query:
+            if 'trash' in query or 'recycle bin' in query:
+                speak("Emptying the recycle bin")
+                winshell.recycle_bin().empty(confirm=False, show_progress=False, sound=True)
+                speak("Recycle Bin Recycled")
 
-        elif "hibernate" in query or "sleep" in query:
-            speak("Hibernating")
-            subprocess.call("shutdown / h")
+        elif 'desktop' in query or 'computer' in query or 'system' in query:
+            if 'the' in query:
+                if 'shutdown' in query:
+                    speak("Hold On ! Your system is on its way to shut down")
+                    os.system('shutdown /s /f')
+                    running = False
+                    sys.exit()
 
-        elif "log off" in query or "sign out" in query:
-            speak("Make sure all the application are closed before sign-out")
-            time.sleep(5)
-            subprocess.call(["shutdown", "/l"])
+                elif "restart" in query or "reboot" in query:
+                    subprocess.call(["shutdown", "/r"])
+
+                elif "hibernate" in query or "sleep" in query:
+                    speak("Hibernating")
+                    subprocess.call("shutdown / h")
+
+                elif "log off" in query or "sign out" in query or "signout" in query or 'logout' in query:
+                    speak("Make sure all the application are closed before sign-out")
+                    time.sleep(5)
+                    speak("Signing out")
+                    subprocess.call("shutdown / l")
+
+        elif 'lock window' in query or 'lock screen' in query or 'lock the screen' in query:
+            speak("locking the device")
+            ctypes.windll.user32.LockWorkStation()
+
 
         elif "note" in query or "notes" in query:
             if 'read' in query:
@@ -1414,10 +1420,6 @@ if __name__ == "__main__":
                 webbrowser.open(
                     "https://www.mozilla.org/en-US/firefox/new/")
 
-            elif 'youtube' in query:
-                speak("Youtube is opening")
-                webbrowser.open("https://www.youtube.com/")
-
             elif 'facebook' in query:
                 speak("Facebook is opening")
                 webbrowser.open("https://www.facebook.com/")
@@ -1463,7 +1465,6 @@ if __name__ == "__main__":
                 webbrowser.open("https://open.spotify.com/")
 
             elif 'snapchat' in query:
-
                 speak("Snapchat is opening")
                 webbrowser.open("https://www.snapchat.com/")
 
