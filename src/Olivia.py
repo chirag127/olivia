@@ -396,9 +396,6 @@ if __name__ == "__main__":
 
         # if 'joke' is in query then tell the random joke
 
-        elif 'joke' in query:
-            file1.givejoke()
-
         # Read the copied text from clipboard and speak it if 'read' is in query and 'aloud' is in query
         elif 'read' in query:
             if 'aloud' in query:
@@ -516,9 +513,33 @@ if __name__ == "__main__":
 
         elif 'generate' in query:
             if 'password' in query:
-                file1.generate_random_password()
+                generate_random_password()
             elif 'number' in query:
                 sp(random.randint(0, 100))
+
+        elif 'joke' in query:
+            givejoke()
+
+        elif 'email' in query:
+            try:
+                speak("What should I say?")
+                content = takeCommand().lower()
+                to = "chriagsinghal@gmail.com"
+                sendEmail(to, content)
+                speak("Email has been sent!")
+            except Exception as e:
+                print(e)
+                speak(
+                    "Sorry my friend chirag sir. I am not able to send this email")
+
+        elif 'screenshot' in query:
+            takescreenshot
+
+        elif 'joke' in query:
+            givejoke
+
+        elif 'ip address' in query:
+            giveip()
 
         elif 'call me' in query:
             speak('What is your name?')
@@ -529,19 +550,6 @@ if __name__ == "__main__":
         elif "change my name to" in query:
             query = query.replace("change my name to", "")
             uname = query
-
-        elif 'email' in query:
-            try:
-                speak("What should I say?")
-                content = takeCommand().lower()
-                to = "chriagsinghal@gmail.com"
-                file1.sendEmail(to, content)
-                speak("Email has been sent!")
-            except Exception as e:
-                print(e)
-                speak(
-                    "Sorry my friend chirag sir. I am not able to send this email")
-
         elif "don't listen" in query or "stop listening" in query:
             speak("for how much time you want to stop olivia from listening commands")
             time.sleep(120)
@@ -579,55 +587,61 @@ if __name__ == "__main__":
             ctypes.windll.user32.LockWorkStation()
 
         elif "note" in query or "notes" in query:
-            if (not os.path.exists("olivianote.txt")):
-                with open("olivianote.txt", "w") as f:
-                    f.write(" ")
+            if 'write' in query:
+                speak("What should I write down?")
+                note = takeCommand()
+                file = open('olivianote.txt', 'w')
+                speak("Sir, Should i include date and time")
+                snfm = takeCommand()
+                if 'yes' in snfm or 'sure' in snfm or 'ok' in snfm:
+                    file.write(datetime.datetime.now().strftime(
+                        "%d-%m-%Y %H:%M:%S") + '\n')
+                    file.write(note)
+                    speak("Note has been saved")
+                else:
+                    file.write(note)
+                    speak("Note has been saved")
+                file.close()
 
-                if 'read' in query:
-                    speak("Reading Note Sir")
-                    file = open('olivianote.txt', 'r')
-                    print(file.read())
-                    speak(file.read(6))
+            elif 'read' in query:
+                speak("Reading Note Sir")
+                file = open('olivianote.txt', 'r')
+                print(file.read())
+                speak(file.read(6))
+                file.close()
 
-                elif 'write' in query:
-                    speak("What should i write, sir")
-                    note = takeCommand()
-                    file = open('olivianote.txt', 'w')
-                    speak("Sir, Should i include date and time")
-                    snfm = takeCommand()
+            elif 'delete' in query:
+                speak("Deleting Note Sir")
+                os.remove('olivianote.txt')
+                speak("Note has been deleted")
 
-                    if 'yes' in snfm or 'sure' in snfm:
-                        strTime = datetime.datetime.now().strftime("%m-%d-%Y %T:%M%p")
-                        file.write(strTime)
-                        file.write(" :- ")
-                        file.write("\n")
-                        file.write(note)
-                        speak("Note has been saved")
-                    else:
-                        file.write(note)
-                        speak("Note has been saved without date and time")
+            elif 'open' in query:
+                speak("Opening Note")
+                os.startfile('olivianote.txt')
 
-                elif "show" in query:
-                    speak("Showing Notes")
-                    file = open("olivianote.txt", "r")
-                    print(file.read())
-                    speak(file.read(6))
+            elif 'close' in query:
+                speak("Closing Note")
+                os.system('TASKKILL /F /IM notepad.exe')
 
-                elif "delete" in query:
-                    speak("Deleting Note")
-                    file = open("olivianote.txt", "w")
-                    file.truncate()
-                    speak("Note has been deleted")
+            elif 'clear' in query or 'empty' in query:
+                speak("Emptying Note")
+                os.remove('olivianote.txt')
+                speak("Note has been deleted")
+
+            elif 'save' in query:
+                speak("Saving Note")
+                file = open('olivianote.txt', 'a')
+                file.write('\n')
+                file.close()
 
         elif "send" in query:
-
             # send whatsapp message
             if 'message' in query:
                 username = {
                     'chirag': '+91 9999999999',
                     'india': '+91 9999999998',
                     'abhinav': '+91 9999999997',
-                    'ram': '+91 9999999996',
+                    'ram': '+91 1234567891',
                     'shivam': '+91 9999999995',
                     'saurabh': '+91 9999999994',
                     'sahil': '+91 9999999993',
@@ -2026,15 +2040,6 @@ if __name__ == "__main__":
 
         elif 'exit' in query:
             exitcode()
-
-        elif 'screenshot' in query:
-            file1.takescreenshot
-
-        elif 'joke' in query:
-            file1.givejoke
-
-        elif 'ip address' in query:
-            file1.giveip()
 
         elif 'username' in query:
             username()
