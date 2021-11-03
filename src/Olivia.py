@@ -30,7 +30,6 @@ import win32com.client as wincl
 import winshell
 import clipboard  # clipboard is used to read the text from the clipboard
 import psutil  # pip install psutil # psutil is used to get the cpu usage and ram usage and disk usage and battery usage
-import file1
 
 # I was getting error so i install pyaudio
 # error in that too so i googled it on the stackover flow.
