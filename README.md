@@ -158,6 +158,7 @@
      57. Open the Google.com.hk website by saying "open Google.com.hk" or "open Google.com.hk website".
      58. Open the sina website by saying "open sina" or "open sina website".
      59. Likewise, Open Xinhua website by saying "open xinhua" or "open xinhua website".
+     60. 
 
 
 
