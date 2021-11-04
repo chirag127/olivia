@@ -1,6 +1,5 @@
-from typing import Mapping
 #  BeautifulSoup is used for web scraping
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup as soup
 # googletrans is used for translation and google translate is used for language detection
 from googletrans import Translator
 # ctypes is used maniplulate the data types
@@ -678,9 +677,8 @@ if __name__ == "__main__":
                 sp('closing notepad')
                 os.system('TASKKILL /F /IM notepad.exe')
 
-
             # all the office apps should be closed before closing the office
-            
+
             # microsoft word
             elif 'word' in query:
                 sp('closing word')
@@ -716,8 +714,6 @@ if __name__ == "__main__":
                 sp('closing store')
                 os.system('TASKKILL /F /IM STORE.EXE')
 
-
-
             # writing code to close microsoft office if microsoft office is open and exists in query
             elif 'office' in query:
                 sp('closing office')
@@ -738,8 +734,50 @@ if __name__ == "__main__":
                 sp('closing edge')
                 os.system('TASKKILL /F /IM MicrosoftEdge.exe')
 
+        # writing code to fetch the news from the "https://news.google.com/news/rss" using webscraping and reading that news using beautiful soup
+        elif 'news' in query:
+            # sp('Fetching news...')
+            # url = 'https://news.google.com/news/rss'
+            # Client = urlopen(url)
+            # xml_page = Client.read()
+            # Client.close()
+            # soup_page = soup(xml_page, "xml")
+            # news_list = soup_page.findAll("item")
+            # for news in news_list[:15]:
+            #     sp(news.title.text.encode('utf-8'))
+            #     sp(news.link.text.encode('utf-8'))
+            #     sp(news.pubDate.text.encode('utf-8'))
+            #     sp("-"*60)
+            import bs4 as bs
+            import urllib.request
+            import re
+            import datetime
+            from datetime import date
+            import time
+            from datetime import datetime
+            from datetime import timedelta
+            import calendar
+            import requests
 
-            
+            url = 'https://news.google.com/news/rss'
+            Client = urlopen(url)
+            xml_page = Client.read()
+            Client.close()
+            soup_page = bs.BeautifulSoup(xml_page, "lxml")
+            news_list = soup_page.findAll("item")
+            for news in news_list[:15]:
+                sp(news.title.text.encode('utf-8'))
+                sp(news.link.text.encode('utf-8'))
+                sp(news.pubDate.text.encode('utf-8'))
+                sp("-"*60)
+            # sp(news_list[0].title.text.encode('utf-8'))
+            # sp(news_list[0].link.text.encode('utf-8'))
+            # sp(news_list[0].pubDate.text.encode('utf-8'))
+            # sp("-"*60)
+            # sp(news_list[1].title.text.encode('utf-8'))
+            # sp(news_list[1].link.text.encode('utf-8'))
+            # sp(news_list[1].pubDate.text.encode('utf-8'))
+            # sp("-"*60)
 
 
         elif 'generate' in query:
