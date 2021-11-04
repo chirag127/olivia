@@ -499,6 +499,101 @@ if __name__ == "__main__":
                     os.system('TASKKILL /F /IM Spotify.exe')
             speak('hello again sir')
 
+
+
+        elif 'play' in query:
+            song = query.replace('play', '')
+            sp('playing ')
+            sp(song)
+            pywhatkit.playonyt(song)
+            query = query.replace('play', '')
+
+            while True:
+                query = takeCommand().lower()
+                # pause the video if 'pause' is in query
+                if 'pause' in query:
+                    presskey('space')
+                   # sp('paused')
+
+                elif 'play' in query:
+                    presskey('space')
+                   # sp('playing')
+
+                elif 'stop' in query:
+                    presskey('space')
+                    # sp('stopped')
+
+                elif 'next' in query:
+                    presshotkey('shift', 'n')
+                    # sp('next song')
+                   # sp('Gone to the next video')
+
+                # previous the video if 'previous' is in query
+                elif 'previous' in query:
+                    presshotkey('shift', 'p')
+                   # sp('Gone to the previous video')
+
+                # Increase the speed if 'faster' is in query or increase the speed if 'speed up' is in query or 'increase speed' is in query
+                elif 'faster' in query or 'speed up' in query or 'increase speed' in query:
+                    presshotkey('shift', '.')
+                    # sp('speed increased')
+
+                # Decrease the speed if 'slower' is in query or decrease the speed if 'slow down' is in query or 'decrease speed' is in query
+                elif 'slower' in query or 'slow down' in query or 'decrease speed' in query:
+                    presshotkey('shift', ',')
+                    # sp('decreased the speed of the video')
+
+
+                    # Increase the volume if 'volume up' is in query or increase the volume if 'increase volume' is in query or 'louder' is in query
+                elif 'volume up' in query or 'increase volume' in query or 'louder' in query:
+                    presskey('up')
+                 # sp('increased the volume')
+
+                # Decrease the volume if 'volume down' is in query
+                elif 'volume down' in query or 'decrease volume' in query or 'quieter' in query:
+                    presskey('down')
+                    # sp('decreased the volume')
+
+                # mute the video if 'mute' is in query
+                elif 'mute' in query:
+                    presskey('m')
+                  #  sp('muted the video')
+
+                # unmute the video if 'unmute' is in query
+                elif 'unmute' in query:
+                    presskey('m')
+                    # sp('unmuted the video')
+
+                # close the video if 'close' is in query
+                elif 'close' in query:
+                    presshotkey('ctrl', 'w')
+                    # sp('Closed the video')
+                    break
+
+                # if 'exit' is in query then exit the video
+                elif 'exit' in query:
+                    presshotkey('alt', 'f4')
+                    # sp('Exited the video')
+                    break
+
+
+                # if 'quit' is in query then quit pro
+                elif 'quit' in query:
+                    presshotkey('alt', 'f4')
+                    # sp('Quited the video')
+                    break
+
+                # if 'restart' is in query then restart the video
+                elif 'restart' in query:
+                    presshotkey('alt', 'r')
+                    
+
+
+                    
+
+
+
+
         elif 'news for today' in query:
             try:
                 news_url = "https://news.google.com/news/rss"
@@ -971,74 +1066,6 @@ if __name__ == "__main__":
                 except:
                     sp('I am not sure what application you want to launch')
 
-        elif 'play' in query:
-            song = query.replace('play', '')
-            sp('playing ')
-            sp(song)
-            pywhatkit.playonyt(song)
-            query = query.replace('play', '')
-
-            while True:
-                query = takeCommand().lower()
-                # pause the video if 'pause' is in query
-                if 'pause' in query:
-                    presskey('space')
-                   # sp('paused')
-
-                elif 'play' in query:
-                    presskey('space')
-                   # sp('playing')
-
-                elif 'stop' in query:
-                    presskey('space')
-                    # sp('stopped')
-
-                elif 'next' in query:
-                    presshotkey('shift', 'n')
-                    # sp('next song')
-                   # sp('Gone to the next video')
-
-                # previous the video if 'previous' is in query
-                elif 'previous' in query:
-                    presshotkey('shift', 'p')
-                   # sp('Gone to the previous video')
-
-                # Increase the speed if 'faster' is in query or increase the speed if 'speed up' is in query or 'increase speed' is in query
-                elif 'faster' in query or 'speed up' in query or 'increase speed' in query:
-                    presshotkey('shift', '.')
-                    # sp('speed increased')
-
-                # Decrease the speed if 'slower' is in query or decrease the speed if 'slow down' is in query or 'decrease speed' is in query
-                elif 'slower' in query or 'slow down' in query or 'decrease speed' in query:
-                    presshotkey('shift', ',')
-                    # sp('decreased the speed of the video')
-
-
-                    # Increase the volume if 'volume up' is in query or increase the volume if 'increase volume' is in query or 'louder' is in query
-                elif 'volume up' in query or 'increase volume' in query or 'louder' in query:
-                    presskey('up')
-                 # sp('increased the volume')
-
-                # Decrease the volume if 'volume down' is in query
-                elif 'volume down' in query or 'decrease volume' in query or 'quieter' in query:
-                    presskey('down')
-                    # sp('decreased the volume')
-
-                # mute the video if 'mute' is in query
-                elif 'mute' in query:
-                    presskey('m')
-                  #  sp('muted the video')
-
-                # unmute the video if 'unmute' is in query
-                elif 'unmute' in query:
-                    presskey('m')
-                    # sp('unmuted the video')
-
-                # close the video if 'close' is in query
-                elif 'close' in query:
-                    presshotkey('ctrl', 'w')
-                    # sp('Closed the video')
-                    break
 
         elif 'search' in query:
             # indicates the start of a search query
