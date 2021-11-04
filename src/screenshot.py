@@ -1,0 +1,39 @@
+from os import close
+import time
+import pyautogui
+import tkinter as tk
+
+
+def screenshot():
+    name = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())
+    name = f"C:\\Users\\hp\\Pictures\\Screenshots\\{name}.png"
+    time.sleep(1)
+    # save screenshot to file in C:\Users\hp\Pictures\Screenshots
+    img = pyautogui.screenshot(name)
+    img.show()
+    print('Screenshot taken')
+
+    # make a gui using tkinter library to display the screenshot and take a screenshot of a specific area
+
+    root = tk.Tk()
+    root.title('Screenshot')
+    root.geometry('500x500')
+
+    frame = tk.Frame(root, bg='#80c1ff')
+    frame.place(relwidth=1, relheight=1)
+    frame.pack()
+
+    button = tk.Button(frame, text='Take Screenshot', command=screenshot)
+    button.pack(side=tk.LEFT)
+
+    close = tk.Button(frame, text='Quit', command=quit)
+    close.pack(side=tk.LEFT)
+
+    root.mainloop()
+
+
+
+
+
+if __name__ == '__main__':
+    screenshot()
