@@ -1,7 +1,6 @@
 from typing import Mapping
 #  BeautifulSoup is used for web scraping
 from bs4 import BeautifulSoup
-from bs4.element import TemplateString  # pip install bs4
 # googletrans is used for translation and google translate is used for language detection
 from googletrans import Translator
 # ctypes is used maniplulate the data types
@@ -75,9 +74,9 @@ def takeCommand():
         # refer to the https://www.codesofinterest.com/2017/04/energy-threshold-calibration-in-speech-recognition.html to understand the energy threshold
 
         # pause for a second to let the recognizer adjust the threshold before listening for input
-        # r.pause_threshold = 1
-        r.adjust_for_ambient_noise(source, duration=1)
-        r.dynamic_energy_threshold = True
+        r.pause_threshold = 1
+        # r.adjust_for_ambient_noise(source, duration=1)
+        # r.dynamic_energy_threshold = True
         # r.energy_threshold = 800
         # r.dynamic_energy_adjustment_damping = 0.2
         # listen for the user's input and store it in audio variable and convert it to text later
@@ -499,8 +498,6 @@ if __name__ == "__main__":
                     os.system('TASKKILL /F /IM Spotify.exe')
             speak('hello again sir')
 
-
-
         elif 'play' in query:
             song = query.replace('play', '')
             sp('playing ')
@@ -532,8 +529,6 @@ if __name__ == "__main__":
                 elif 'previous' in query:
                     presshotkey('shift', 'p')
                    # sp('Gone to the previous video')
-
-
 
                 # Increase the speed if 'faster' is in query or increase the speed if 'speed up' is in query or 'increase speed' is in query
                 elif 'faster' in query or 'speed up' in query or 'increase speed' in query:
@@ -577,7 +572,6 @@ if __name__ == "__main__":
                     # sp('Exited the video')
                     break
 
-
                 # if 'quit' is in query then quit pro
                 elif 'quit' in query:
                     presshotkey('alt', 'f4')
@@ -599,7 +593,6 @@ if __name__ == "__main__":
                     presshotkey('f')
                     # sp('Exited the full screen')
 
-
                 # if 'brightness' is in query then show the brightness
                 elif 'brightness' in query:
                     if 'increase' in query:
@@ -610,16 +603,13 @@ if __name__ == "__main__":
                         presshotkey('f2')
                         # sp('Decreased the brightness')
 
-
-
-
-        elif 'news for today' in query:
+        elif 'today' in query:
             try:
                 news_url = "https://news.google.com/news/rss"
                 Client = urlopen(news_url)
                 xml_page = Client.read()
                 Client.close()
-                soup_page = BeautifulSoup(xml_page, "xml")
+                soup_page = BeautifulSoup.BeautifulSoup(xml_page)
                 news_list = soup_page.findAll("item")
 
                 for news in news_list[:15]:
@@ -1084,7 +1074,6 @@ if __name__ == "__main__":
                         sp('I have launched the desired application')
                 except:
                     sp('I am not sure what application you want to launch')
-
 
         elif 'search' in query:
             # indicates the start of a search query
