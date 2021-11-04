@@ -718,30 +718,29 @@ if __name__ == "__main__":
 
 
 
+            # writing code to close microsoft office if microsoft office is open and exists in query
+            elif 'office' in query:
+                sp('closing office')
+                os.system('TASKKILL /F /IM MICROSOFT.EXE')
+
+            # writing code to close microsoft teams if microsoft teams is open and exists in query
+            elif 'teams' in query:
+                sp('closing teams')
+                os.system('TASKKILL /F /IM Teams.exe')
+
+            # writing code to close skype if skype is open and exists in query
+            elif 'skype' in query:
+                sp('closing skype')
+                os.system('TASKKILL /F /IM skype.exe')
+
+            # writing code to close microsoft edge if microsoft edge is open and exists in query\
+            elif 'edge' in query:
+                sp('closing edge')
+                os.system('TASKKILL /F /IM MicrosoftEdge.exe')
 
 
+            
 
-
-
-
-
-        elif 'today' in query:
-            try:
-                news_url = "https://news.google.com/news/rss"
-                Client = urlopen(news_url)
-                xml_page = Client.read()
-                Client.close()
-                soup_page = BeautifulSoup.BeautifulSoup(xml_page)
-                news_list = soup_page.findAll("item")
-
-                for news in news_list[:15]:
-                    speak(news.title.text.encode('utf-8'))
-                    print(news.title.text.encode('utf-8'))
-                    speak("Moving on...")
-                    print("Moving on...")
-            except Exception as e:
-                print(e)
-                speak("Sorry Sir, I am not able to fetch news")
 
         elif 'generate' in query:
             if 'password' in query:
