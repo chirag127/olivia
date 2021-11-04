@@ -622,16 +622,15 @@ if __name__ == "__main__":
             elif 'new' in query:
                 presshotkey('ctrl', 't')
 
-
-
         elif 'close' in query:
             if 'page' in query:
                 presshotkey('ctrl', 'w')
                # sp('Closed')
 
-            elif'app' in query or 'application' in query or 'program' in query or 'process' in query or 'window' in query or 'all tabs' in query:
-                presshotkey('alt', 'f4')
-               # sp('Closed')
+            elif 'this' in query:
+                if 'app' in query or 'application' in query or 'program' in query or 'process' in query or 'window' in query or 'all tabs' in query:
+                    presshotkey('alt', 'f4')
+                    # sp('Closed')
 
             elif 'tab' in query:
                 presshotkey('ctrl', 't')
@@ -661,7 +660,7 @@ if __name__ == "__main__":
 
             elif 'github desktop' in query:
                 sp('closing github desktop')
-                os.system('TASKKILL /F /IM github.exe')
+                os.system('TASKKILL /F /IM GitHubDesktop.exe')
 
             elif 'telegram' in query:
                 sp('closing telegram')
@@ -671,7 +670,57 @@ if __name__ == "__main__":
                 sp('closing whatsapp')
                 os.system('TASKKILL /F /IM WhatsApp.exe')
 
-                
+            elif 'explorer' in query:
+                sp('closing explorer')
+                os.system('TASKKILL /F /IM explorer.exe')
+
+            elif 'notepad' in query:
+                sp('closing notepad')
+                os.system('TASKKILL /F /IM notepad.exe')
+
+
+            # all the office apps should be closed before closing the office
+            
+            # microsoft word
+            elif 'word' in query:
+                sp('closing word')
+                os.system('TASKKILL /F /IM WINWORD.EXE')
+
+            # writing code to close microsoft excel if microsoft excel is open and exists in query
+            elif 'excel' in query:
+                sp('closing excel')
+                os.system('TASKKILL /F /IM EXCEL.EXE')
+
+            # writing code to close microsoft powerpoint if microsoft powerpoint is open and exists in query
+            elif 'powerpoint' in query:
+                sp('closing powerpoint')
+                os.system('TASKKILL /F /IM POWERPNT.EXE')
+
+            # writing code to close microsoft outlook if microsoft outlook is open and exists in query
+            elif 'outlook' in query:
+                sp('closing outlook')
+                os.system('TASKKILL /F /IM OUTLOOK.EXE')
+
+            # writing code to close microsoft onenote if microsoft onenote is open and exists in query
+            elif 'onenote' in query:
+                sp('closing onenote')
+                os.system('TASKKILL /F /IM ONENOTE.EXE')
+
+            # writing code to close microsoft onedrive if microsoft onedrive is open and exists in query
+            elif 'onedrive' in query:
+                sp('closing onedrive')
+                os.system('TASKKILL /F /IM OneDrive.exe')
+
+            # writing code to close microsoft store if microsoft store is open and exists in query
+            elif 'store' in query:
+                sp('closing store')
+                os.system('TASKKILL /F /IM STORE.EXE')
+
+
+
+
+
+
 
 
 
@@ -1774,7 +1823,6 @@ if __name__ == "__main__":
             exit()
 
 
-
 # create a translate feature in the virutal assistant
         elif 'translate' in query:
             query = query.replace("translate", "")
@@ -2142,7 +2190,6 @@ if __name__ == "__main__":
                 translator = Translator()
                 result = translator.translate(query, dest='ml')
                 sp(result.text)
-
 
         elif 'clear' in query:
             clearConsole()
