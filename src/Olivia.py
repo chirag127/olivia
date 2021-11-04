@@ -508,7 +508,7 @@ if __name__ == "__main__":
             while True:
                 query = takeCommand().lower()
                 # pause the video if 'pause' is in query
-                if 'pause' in query:
+                if 'pause' in query or 'pass' in query:
                     presskey('space')
                    # sp('paused')
 
@@ -521,7 +521,11 @@ if __name__ == "__main__":
                     # sp('stopped')
 
                 elif 'next' in query:
-                    presshotkey('shift', 'n')
+                    if 'tab' in query:
+                        pyautogui.hotkey('ctrl', 'shift', 't')
+
+                    else:
+                        presshotkey('shift', 'n')
                     # sp('next song')
                    # sp('Gone to the next video')
 
@@ -590,18 +594,77 @@ if __name__ == "__main__":
 
                 # if 'exit full screen' is in query then exit the full screen
                 elif 'exit full screen' in query:
-                    presshotkey('f')
+                    presskey('f')
                     # sp('Exited the full screen')
 
                 # if 'brightness' is in query then show the brightness
                 elif 'brightness' in query:
                     if 'increase' in query:
-                        presshotkey('f3')
+                        presskey('f3')
                         # sp('Increased the brightness')
 
                     elif 'decrease' in query:
-                        presshotkey('f2')
+                        presskey('f2')
                         # sp('Decreased the brightness')
+
+        elif 'tab' in query and 'tabs' in query:
+            if 'next' in query:
+                presshotkey('ctrl', 'shift', 't')
+            elif 'previous' in query:
+                presshotkey('shift', 't')
+
+            elif 'quit' in query:
+                presshotkey('alt', 'f4')
+
+            elif 'restart' in query or 'reload' in query or 'refresh' in query or 'reboot' in query:
+                presshotkey('ctrl', 'r')
+
+            elif 'new' in query:
+                presshotkey('ctrl', 't')
+
+
+
+        elif 'close' in query:
+            if 'page' in query:
+                presshotkey('ctrl', 'w')
+               # sp('Closed')
+
+            elif'app' in query or 'application' in query or 'program' in query or 'process' in query or 'window' in query or 'all tabs' in query:
+                presshotkey('alt', 'f4')
+               # sp('Closed')
+
+            elif 'tab' in query:
+                presshotkey('ctrl', 't')
+
+            elif 'window' in query:
+                presshotkey('alt', 'f4')
+
+            elif 'chrome' in query:
+                sp('closing chrome')
+                os.system('TASKKILL /F /IM chrome.exe')
+
+            elif 'spotify' in query:
+                sp('closing spotify')
+                os.system('TASKKILL /F /IM Spotify.exe')
+
+            elif 'youtube' in query:
+                sp('closing youtube')
+                os.system('TASKKILL /F /IM chrome.exe')
+
+            elif 'qbittorrent' in query or 'bittorrent' in query or 'torrent' in query:
+                sp('closing qbittorrent')
+                os.system('TASKKILL /F /IM qbittorrent.exe')
+
+            elif 'vs code' in query:
+                sp('closing vs code')
+                os.system('TASKKILL /F /IM code.exe')
+
+            elif 'github desktop' in query:
+                sp('closing github desktop')
+                os.system('TASKKILL /F /IM github.exe')
+
+
+
 
         elif 'today' in query:
             try:
@@ -1700,14 +1763,6 @@ if __name__ == "__main__":
             sp("Bye Sir")
             exit()
 
-        elif 'close chrome' in query or 'close google chrome' in query:
-            speak("closing chrome")
-            os.system("TASKKILL /F /IM chrome.exe")
-
-            # close spotify
-        elif 'close spotify' in query:
-            speak("closing spotify")
-            os.system("TASKKILL /F /IM spotify.exe")
 
 
 # create a translate feature in the virutal assistant
@@ -2078,14 +2133,6 @@ if __name__ == "__main__":
                 result = translator.translate(query, dest='ml')
                 sp(result.text)
 
-        elif 'close' in query:
-            if 'tab' in query or 'this page' in query or 'tabs' in query:
-                presshotkey('ctrl', 'w')
-               # sp('Closed')
-
-            elif'app' in query or 'application' in query or 'program' in query or 'process' in query or 'window' in query or 'all tabs' in query:
-                presshotkey('alt', 'f4')
-               # sp('Closed')
 
         elif 'clear' in query:
             clearConsole()
