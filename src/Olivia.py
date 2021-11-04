@@ -392,9 +392,10 @@ if __name__ == "__main__":
         #  if 'olivia' in query:
         #     speak("Yes Sir")
 
-        # open google chrome if 'chrome' is in query
-        if 'open chrome' in query:
-            open_chrome()
+        # if the google recognition fails to recognize the query then the query is = none and we should just continue
+        # the while loop
+        if query == 'none':
+            continue
 
         # search the wikipedia if 'wikipedia' is in query and speak first 2 sentences of the the wikipedia page
 
@@ -2255,6 +2256,8 @@ if __name__ == "__main__":
             username()
 
         else:
+
+            print("else statement is executed")
             # writing code for the queries or the commands that are not in the above list of commands. so we will ask the user
             # if he or she wants to search the query in google or wikipedia or translate the query or open the query in browser
             # or open the query in youtube or open the query in stackoverflow or open the query in github or open the query in
