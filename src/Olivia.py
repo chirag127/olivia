@@ -28,7 +28,7 @@ import win32com.client as wincl
 import winshell
 import clipboard  # clipboard is used to read the text from the clipboard
 import psutil  # pip install psutil # psutil is used to get the cpu usage and ram usage and disk usage and battery usage
-
+import tkinter as tk
 # I was getting error so i install pyaudio
 # error in that too so i googled it on the stackover flow.
 
@@ -248,10 +248,34 @@ def generate_random_password():
 
 
 def takescreenshot():
-    subprocess.call(["screencapture", "-x", "image.png"])
-    speak("Sir, I have taken a screenshot of your screen")
-    myScreenshot = pyautogui.screenshot()
-    myScreenshot.save(r'D:\\dl\\Critical\\code\\screenshot_1.png')
+
+    name = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())  
+      # take the screenshot and save it to the C:\\Programfiles\\Olivia\\screenshot folder
+    dir = "C:\\Olivia\\screenshot\\"  
+    name = dir + name + ".png"
+    # create the folder named C:\\Screenshots if it doesn't already exist
+    if not os.path.exists(dir):
+        os.makedirs(dir)
+    # save screenshot to file in image forma
+    img = pyautogui.screenshot(name)
+    img.show()
+    print('Screenshot taken')
+
+    # make a gui using tkinter library to display the screenshot and take a screenshot of a specific area
+    root = tk.Tk()
+    root.title('Screenshot')
+
+    frame = tk.Frame(root, bg='#80c1ff')
+    frame.place(relwidth=1, relheight=1)
+    frame.pack()
+
+    button = tk.Button(frame, text='Take Screenshot', command=takescreenshot)
+    button.pack(side=tk.LEFT)
+
+    close = tk.Button(frame, text='Quit', command=quit)
+    close.pack(side=tk.LEFT)
+
+    root.mainloop()
 
 
 def sendEmail(to, content):
@@ -792,10 +816,10 @@ if __name__ == "__main__":
                     "Sorry my friend chirag sir. I am not able to send this email")
 
         elif 'screenshot' in query:
-            takescreenshot
+            takescreenshot()
 
         elif 'joke' in query:
-            givejoke
+            givejoke()
 
         elif 'ip address' in query:
             giveip()
@@ -2248,33 +2272,36 @@ if __name__ == "__main__":
             # in facebook or open the query in instagram or open the query in twitter or open the query in linkedin or open the query
             # in gmail or open the query in whatsapp or open the query in skype or open the query in snapchat or open the query in
             # pinterest or open the query in tinder or open the query in reddit or open the query in quora or open the query in
-            # stackoverflow or open the query in amazon or open the query in flipkart or open the query in gmail or open the query 
+            # stackoverflow or open the query in amazon or open the query in flipkart or open the query in gmail or open the query
             # in yahoo or open the query in google or open the query in wikipedia or open the query in youtube or open the query in
             # stackoverflow or open the query in github or open the query in facebook or open the query in instagram or open the query
             # in twitter or open the query in linkedin or open the query in gmail or open the query in whatsapp or open the query in
             # skype or open the query in snapchat or open the query in pinterest or open the query in tinder or open the query in
             if query != 'none':
-                speak('sorry sir that is not assigned. do you want to search for ' + query + '?')
+                speak(
+                    'sorry sir that is not assigned. do you want to search for ' + query + '?')
                 print('\n')
-                print('say yes or no. normal command will not work.') # asking the user to confirm the query or not 
+                # asking the user to confirm the query or not
+                print('say yes or no. normal command will not work.')
                 print('\n')
-                
+
                 confirmation = takeCommand().lower()  # taking the input from the user
                 # if the user says yes or yep or something similar then we will search the query in google
                 if 'yes' in confirmation or 'yep' in confirmation or 'sure' in confirmation or 'yeah' in confirmation or 'absolutely' in confirmation or 'fine' in confirmation or 'looks good' in confirmation or 'okay' in confirmation:
                     print('\n')
                     # asking the user to search in which website
-                    speak('do you want me to search in google, wikipedia or youtube sir?')
+                    speak(
+                        'do you want me to search in google, wikipedia or youtube sir?')
                     # taking the input from the user and converting it to lower case and storing it in answer4
-                    answer4 = takeCommand().lower() 
+                    answer4 = takeCommand().lower()
                     # if the user says google then we will search the query in google
-                    if 'google' in answer4: 
+                    if 'google' in answer4:
                         # telling the user that we are searching the query in google
                         speak('searching for ' + query + ' in google')
                         # opening the query in google
                         webbrowser.open('www.google.com/search?gx&q=' + query)
                     # if the user says wikipedia then we will search the query in wikipedia
-                    elif 'Wikipedia' in answer4:  
+                    elif 'Wikipedia' in answer4:
                         # asking the user to narrate or open the webpage
                         speak('do you want me to narrate or open webpage sir?')
                         # taking the input from the user and converting it to lower case and storing it in answer2

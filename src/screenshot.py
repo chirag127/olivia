@@ -1,4 +1,3 @@
-from os import close
 import time
 import pyautogui
 import tkinter as tk
@@ -17,7 +16,6 @@ def screenshot():
 
     root = tk.Tk()
     root.title('Screenshot')
-    root.geometry('500x500')
 
     frame = tk.Frame(root, bg='#80c1ff')
     frame.place(relwidth=1, relheight=1)
@@ -30,6 +28,14 @@ def screenshot():
     close.pack(side=tk.LEFT)
 
     root.mainloop()
+
+    # make a gui using tkinter library to display the screenshot and take a screenshot of a specific area
+    # write a code to take a screenshot of a specific area and  display it in a gui
+root = tk.Tk()
+root.title('Screenshot')
+root.geometry('500x500')
+
+
 
 
 
