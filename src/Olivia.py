@@ -533,6 +533,8 @@ if __name__ == "__main__":
                     presshotkey('shift', 'p')
                    # sp('Gone to the previous video')
 
+
+
                 # Increase the speed if 'faster' is in query or increase the speed if 'speed up' is in query or 'increase speed' is in query
                 elif 'faster' in query or 'speed up' in query or 'increase speed' in query:
                     presshotkey('shift', '.')
@@ -542,7 +544,6 @@ if __name__ == "__main__":
                 elif 'slower' in query or 'slow down' in query or 'decrease speed' in query:
                     presshotkey('shift', ',')
                     # sp('decreased the speed of the video')
-
 
                     # Increase the volume if 'volume up' is in query or increase the volume if 'increase volume' is in query or 'louder' is in query
                 elif 'volume up' in query or 'increase volume' in query or 'louder' in query:
@@ -584,12 +585,30 @@ if __name__ == "__main__":
                     break
 
                 # if 'restart' is in query then restart the video
-                elif 'restart' in query:
-                    presshotkey('alt', 'r')
-                    
+                elif 'restart' in query or 'reload' in query or 'refresh' in query or 'reboot' in query:
+                    presshotkey('ctrl', 'r')
+                    # sp('Restarted the video')
+
+                # if 'full screen' is in query then make the video full screen
+                elif 'full screen' in query:
+                    presshotkey('f')
+                    # sp('Made the video full screen')
+
+                # if 'exit full screen' is in query then exit the full screen
+                elif 'exit full screen' in query:
+                    presshotkey('f')
+                    # sp('Exited the full screen')
 
 
-                    
+                # if 'brightness' is in query then show the brightness
+                elif 'brightness' in query:
+                    if 'increase' in query:
+                        presshotkey('f3')
+                        # sp('Increased the brightness')
+
+                    elif 'decrease' in query:
+                        presshotkey('f2')
+                        # sp('Decreased the brightness')
 
 
 
