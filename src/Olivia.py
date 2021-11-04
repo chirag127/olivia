@@ -663,6 +663,16 @@ if __name__ == "__main__":
                 sp('closing github desktop')
                 os.system('TASKKILL /F /IM github.exe')
 
+            elif 'telegram' in query:
+                sp('closing telegram')
+                os.system('TASKKILL /F /IM Telegram.exe')
+
+            elif 'whatsapp' in query:
+                sp('closing whatsapp')
+                os.system('TASKKILL /F /IM WhatsApp.exe')
+
+                
+
 
 
 
