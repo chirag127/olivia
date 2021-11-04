@@ -109,7 +109,12 @@ def presskey(key):
     pyautogui.press(key)
 
 
+def presshotkey(key1, key2):
+    pyautogui.hotkey(key1, key2)
+
 #  function to wish the user according to the time of the day and the day of the week
+
+
 def wishMe():
     hour = int(datetime.datetime.now().hour)
     if hour >= 0 and hour < 12:
@@ -413,7 +418,7 @@ if __name__ == "__main__":
                         elif 'enter' in type_sentence:
                             pyautogui.press('enter')
                         elif 'backspace' in type_sentence:
-                            pyautogui.hotkey('ctrl', 'backspace')
+                            presshotkey('ctrl', 'backspace')
                         elif 'tab' in type_sentence:
                             pyautogui.press('tab')
 
@@ -477,7 +482,7 @@ if __name__ == "__main__":
             time.sleep(1)
             pyautogui.click(button='left')
             pyautogui.press('space')
-            pyautogui.hotkey('alt', 'f4')
+            presshotkey('alt', 'f4')
             while not 'wake up' in wakeup_txt:
                 wakeup_txt = time.sleep()
                 if wakeup_txt == 'quit':
@@ -488,7 +493,8 @@ if __name__ == "__main__":
                     os.system('spotify')
                     time.sleep(1)
                     pyautogui.press('space')
-                    pyautogui.hotkey('alt', 'f4')
+                    presshotkey('alt', 'f4')
+
                 elif 'close spotify' in wakeup_txt:
                     os.system('TASKKILL /F /IM Spotify.exe')
             speak('hello again sir')
@@ -988,14 +994,35 @@ if __name__ == "__main__":
                     # sp('stopped')
 
                 elif 'next' in query:
-                    pyautogui.hotkey('shift', 'n')
+                    presshotkey('shift', 'n')
                     # sp('next song')
                    # sp('Gone to the next video')
 
                 # previous the video if 'previous' is in query
                 elif 'previous' in query:
-                    pyautogui.hotkey('shift', 'p')
+                    presshotkey('shift', 'p')
                    # sp('Gone to the previous video')
+
+                # Increase the speed if 'faster' is in query or increase the speed if 'speed up' is in query or 'increase speed' is in query
+                elif 'faster' in query or 'speed up' in query or 'increase speed' in query:
+                    presshotkey('shift', '.')
+                    # sp('speed increased')
+
+                # Decrease the speed if 'slower' is in query or decrease the speed if 'slow down' is in query or 'decrease speed' is in query
+                elif 'slower' in query or 'slow down' in query or 'decrease speed' in query:
+                    presshotkey('shift', ',')
+                    # sp('decreased the speed of the video')
+
+
+                    # Increase the volume if 'volume up' is in query or increase the volume if 'increase volume' is in query or 'louder' is in query
+                elif 'volume up' in query or 'increase volume' in query or 'louder' in query:
+                    presskey('up')
+                 # sp('increased the volume')
+
+                # Decrease the volume if 'volume down' is in query
+                elif 'volume down' in query or 'decrease volume' in query or 'quieter' in query:
+                    presskey('down')
+                    # sp('decreased the volume')
 
                 # mute the video if 'mute' is in query
                 elif 'mute' in query:
@@ -1007,19 +1034,9 @@ if __name__ == "__main__":
                     presskey('m')
                     # sp('unmuted the video')
 
-                # Increase the volume if 'volume up' is in query
-                elif 'volume up' in query:
-                    presskey('up')
-                 # sp('Increased the volume')
-
-                # Decrease the volume if 'volume down' is in query
-                elif 'volume down' in query:
-                    presskey('down')
-                  #  sp('Decreased the volume')
-
                 # close the video if 'close' is in query
                 elif 'close' in query:
-                    pyautogui.hotkey('ctrl', 'w')
+                    presshotkey('ctrl', 'w')
                     # sp('Closed the video')
                     break
 
@@ -2028,11 +2045,11 @@ if __name__ == "__main__":
 
         elif 'close' in query:
             if 'tab' in query or 'this page' in query or 'tabs' in query:
-                pyautogui.hotkey('ctrl', 'w')
+                presshotkey('ctrl', 'w')
                # sp('Closed')
 
             elif'app' in query or 'application' in query or 'program' in query or 'process' in query or 'window' in query or 'all tabs' in query:
-                pyautogui.hotkey('alt', 'f4')
+                presshotkey('alt', 'f4')
                # sp('Closed')
 
         elif 'clear' in query:
