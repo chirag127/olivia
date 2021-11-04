@@ -52,7 +52,6 @@ engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 # setproperties is used to set the properties of the engine like rate, volume, pitch, etc.
 engine.setProperty('voice', voices[1].id)
-
 # defining the function to speak the text
 
 
@@ -108,9 +107,34 @@ def presskey(key):
 
 
 def presshotkey(key1, key2):
+
     pyautogui.hotkey(key1, key2)
 
 #  function to wish the user according to the time of the day and the day of the week
+
+
+def NewsFromBBC():
+
+    query_params = {
+        "source": "bbc-news",
+        "sortBy": "top",
+        "apiKey": "4dbc17e007ab436fb66416009dfb59a8"
+    }
+    main_url = " https://newsapi.org/v1/articles"
+
+    res = requests.get(main_url, params=query_params)
+    open_bbc_page = res.json()
+
+    article = open_bbc_page["articles"]
+    results = []
+
+    for ar in article:
+        results.append(ar["title"])
+
+    for i in range(len(results)):
+
+        print(i + 1, results[i])
+        speak(results[i])
 
 
 def wishMe():
@@ -358,6 +382,10 @@ if __name__ == "__main__":
             print(results)
             speak(results)
 
+        elif 'news' in query:
+            if 'news' in query:
+                NewsFromBBC()
+
         # tell user the common usage of the command if 'usage' is in query
 
         elif 'usage' in query:
@@ -520,17 +548,22 @@ if __name__ == "__main__":
                     # sp('stopped')
 
                 elif 'next' in query:
-                    if 'tab' in query:
-                        pyautogui.hotkey('ctrl', 'shift', 't')
 
+                    if 'tab' in query:
+
+                        pyautogui.hotkey('ctrl', 'tab')
+
+                        time.sleep(1)
                     else:
+
                         presshotkey('shift', 'n')
+
                     # sp('next song')
                    # sp('Gone to the next video')
 
                 # previous the video if 'previous' is in query
                 elif 'previous' in query:
-                    presshotkey('shift', 'p')
+                    presskey('p')
                    # sp('Gone to the previous video')
 
                 # Increase the speed if 'faster' is in query or increase the speed if 'speed up' is in query or 'increase speed' is in query
@@ -606,9 +639,10 @@ if __name__ == "__main__":
                         presskey('f2')
                         # sp('Decreased the brightness')
 
-        elif 'tab' in query and 'tabs' in query:
+        elif 'tab' in query or 'tabs' in query:
             if 'next' in query:
-                presshotkey('ctrl', 'shift', 't')
+                presshotkey('ctrl', 'tab')
+                # sp('Gone to the next tab')
             elif 'previous' in query:
                 presshotkey('shift', 't')
 
@@ -632,7 +666,7 @@ if __name__ == "__main__":
                     # sp('Closed')
 
             elif 'tab' in query:
-                presshotkey('ctrl', 't')
+                presshotkey('ctrl', 'w')
 
             elif 'window' in query:
                 presshotkey('alt', 'f4')
@@ -732,53 +766,9 @@ if __name__ == "__main__":
             # writing code to close microsoft edge if microsoft edge is open and exists in query\
             elif 'edge' in query:
                 sp('closing edge')
-                os.system('TASKKILL /F /IM MicrosoftEdge.exe')
+                os.system('TASKKILL /F /IM msedge.exe')
 
         # writing code to fetch the news from the "https://news.google.com/news/rss" using webscraping and reading that news using beautiful soup
-        elif 'news' in query:
-            # sp('Fetching news...')
-            # url = 'https://news.google.com/news/rss'
-            # Client = urlopen(url)
-            # xml_page = Client.read()
-            # Client.close()
-            # soup_page = soup(xml_page, "xml")
-            # news_list = soup_page.findAll("item")
-            # for news in news_list[:15]:
-            #     sp(news.title.text.encode('utf-8'))
-            #     sp(news.link.text.encode('utf-8'))
-            #     sp(news.pubDate.text.encode('utf-8'))
-            #     sp("-"*60)
-            import bs4 as bs
-            import urllib.request
-            import re
-            import datetime
-            from datetime import date
-            import time
-            from datetime import datetime
-            from datetime import timedelta
-            import calendar
-            import requests
-
-            url = 'https://news.google.com/news/rss'
-            Client = urlopen(url)
-            xml_page = Client.read()
-            Client.close()
-            soup_page = bs.BeautifulSoup(xml_page, "lxml")
-            news_list = soup_page.findAll("item")
-            for news in news_list[:15]:
-                sp(news.title.text.encode('utf-8'))
-                sp(news.link.text.encode('utf-8'))
-                sp(news.pubDate.text.encode('utf-8'))
-                sp("-"*60)
-            # sp(news_list[0].title.text.encode('utf-8'))
-            # sp(news_list[0].link.text.encode('utf-8'))
-            # sp(news_list[0].pubDate.text.encode('utf-8'))
-            # sp("-"*60)
-            # sp(news_list[1].title.text.encode('utf-8'))
-            # sp(news_list[1].link.text.encode('utf-8'))
-            # sp(news_list[1].pubDate.text.encode('utf-8'))
-            # sp("-"*60)
-
 
         elif 'generate' in query:
             if 'password' in query:
@@ -959,6 +949,7 @@ if __name__ == "__main__":
             webbrowser.open(
                 "https://www.google.com / maps / place/" + location + "")
 
+
 # tell the stock price of the company using yahoo finance api and speak the result to the user using google speech api and print the result to the console
         elif "stock" in query:
             if 'price' in query:
@@ -976,6 +967,8 @@ if __name__ == "__main__":
                 except Exception as e:
                     print(e)
                     speak("Sorry Sir, I am not able to fetch the stock price")
+
+
 # tell the weather of the city using openweathermap api and speak the result to the user using google speech api and print the result to the console
         elif "weather" in query:
             if 'today' in query:
@@ -2249,27 +2242,39 @@ if __name__ == "__main__":
             # stackoverflow or open the query in github or open the query in facebook or open the query in instagram or open the
             # query in twitter or open the query in linkedin or open the query in gmail or open the query in whatsapp or open the
             # query in skype or open the query in snapchat or open the query in pinterest or open the query in tinder or open the
+            # query in reddit or open the query in quora or open the query in stackoverflow or open the query in amazon or open the
+            # query in flipkart or open the query in gmail or open the query in yahoo or open the query in google or open the query in
+            # wikipedia or open the query in youtube or open the query in stackoverflow or open the query in github or open the query
+            # in facebook or open the query in instagram or open the query in twitter or open the query in linkedin or open the query
+            # in gmail or open the query in whatsapp or open the query in skype or open the query in snapchat or open the query in
+            # pinterest or open the query in tinder or open the query in reddit or open the query in quora or open the query in
+            # stackoverflow or open the query in amazon or open the query in flipkart or open the query in gmail or open the query 
+            # in yahoo or open the query in google or open the query in wikipedia or open the query in youtube or open the query in
+            # stackoverflow or open the query in github or open the query in facebook or open the query in instagram or open the query
+            # in twitter or open the query in linkedin or open the query in gmail or open the query in whatsapp or open the query in
+            # skype or open the query in snapchat or open the query in pinterest or open the query in tinder or open the query in
             if query != 'none':
-                speak(
-                    'sorry sir that is not assigned. do you want to search for ' + query + '?')
-
+                speak('sorry sir that is not assigned. do you want to search for ' + query + '?')
                 print('\n')
-                print(
-                    'sorry sir that is not assigned. do you want to search for ' + query + '?')
+                print('say yes or no. normal command will not work.') # asking the user to confirm the query or not 
+                print('\n')
+                
                 confirmation = takeCommand().lower()  # taking the input from the user
-                if 'yes' in confirmation:  # if the user says yes then we will search the query in google
-
-                    speak(
-                        'do you want me to search in google, wikipedia or youtube sir?')  # asking the user to search in which website
+                # if the user says yes or yep or something similar then we will search the query in google
+                if 'yes' in confirmation or 'yep' in confirmation or 'sure' in confirmation or 'yeah' in confirmation or 'absolutely' in confirmation or 'fine' in confirmation or 'looks good' in confirmation or 'okay' in confirmation:
+                    print('\n')
+                    # asking the user to search in which website
+                    speak('do you want me to search in google, wikipedia or youtube sir?')
                     # taking the input from the user and converting it to lower case and storing it in answer4
-                    answer4 = takeCommand().lower()
-                    if 'google' in answer4:  # if the user says google then we will search the query in google
+                    answer4 = takeCommand().lower() 
+                    # if the user says google then we will search the query in google
+                    if 'google' in answer4: 
                         # telling the user that we are searching the query in google
                         speak('searching for ' + query + ' in google')
                         # opening the query in google
                         webbrowser.open('www.google.com/search?gx&q=' + query)
-
-                    elif 'Wikipedia' in answer4:  # if the user says wikipedia then we will search the query in wikipedia
+                    # if the user says wikipedia then we will search the query in wikipedia
+                    elif 'Wikipedia' in answer4:  
                         # asking the user to narrate or open the webpage
                         speak('do you want me to narrate or open webpage sir?')
                         # taking the input from the user and converting it to lower case and storing it in answer2
