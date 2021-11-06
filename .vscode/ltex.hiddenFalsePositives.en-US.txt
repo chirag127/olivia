@@ -15,3 +15,4 @@
 {"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QSearch on Instagram just say \"search (the thing) in Instagram\".\\E$"}
 {"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QGive the RAM usage of the computer just say \"RAM usage\" or \"RAM usage of the computer\" or \"RAM usage of the computer\".\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QLikewise, Open Xinhua website by saying \"open xinhua\" or \"open xinhua website\".\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QPlay a video on hockey just say \"play a video on hockey\" or \"play hockey video\" or \"play hockey\".\\E$"}

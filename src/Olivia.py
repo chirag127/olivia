@@ -1,5 +1,5 @@
 #  BeautifulSoup is used for web scraping
-from bs4 import BeautifulSoup as soup
+from bs4 import BeautifulSoup
 # googletrans is used for translation and google translate is used for language detection
 from googletrans import Translator
 # ctypes is used maniplulate the data types

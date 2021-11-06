@@ -66,7 +66,6 @@
 27. Tell location of a place by saying "where is (the name of the place)" or "where is (the name of the place) now" or "where is (the name of the place) now" etc. Example "where is Ghaziabad" will tell you the location of Ghaziabad by open the location of Ghaziabad in Google Maps.
 28. Open word by saying "open word" or "open word now" and then type your document by saying "yes" or "no" when asked if "do you want me to type" and stop typing by saying "stop typing".
 29. Launch an application by saying "launch (the name of the application)" or "launch (the name of the application) now" or "launch (the name of the application) now" 
-    #### Example:
     1. Launch chrome just say "launch chrome" or "launch chrome now".
     2. Launch notepad just say "launch notepad" or "launch notepad now".
     3. Open word just say "launch word" or "launch word now".
@@ -80,7 +79,7 @@
 
 30. Play a song by saying "play a song" or "play song" or "play a song now".
 31. Play any a video on a specific topic by saying "play a video on (the name of the topic)" or "play (the name of the topic) video" or "play (the name of the topic)". Example are as following:
-    #### Example:
+
     1. Play a video on cricket just say "play a video on cricket" or "play cricket video" or "play cricket".
     2. Play a video on football just say "play a video on football" or "play football video" or "play football".
     3. Play a video on hockey just say "play a video on hockey" or "play hockey video" or "play hockey".
@@ -90,15 +89,18 @@
     7. Start a video on how to make a cake just say "play a video on how to make a cake" or "play how to make a cake video" or "play how to make a cake".
     8. Play a video on python just say "play a video on python" or "play python video" or "play python".
 
-32.  Play any song of your choice by saying "play (name of the song(maybe with the name of the singer if there are two or more song by the same name there will be no confusion.)) Examples are as follows:-
-    #### Example:
-    1. Play lonely by the Beatles just say "play lonely by the Beatles" or "play the song lonely by the Beatles".
-    2. Play lonely by Justin Bieber just say "play lonely by Justin Bieber" or "play the song lonely by Justin Bieber".
-    3. Play love yourself just say "play love yourself" or "play the song love yourself".
-    4. Open peaches just say "play peaches" or "play the song peaches".
-    5. I hope you understand now.
 
-33. Open any website just say "open (the name of the website)" or "open (the name of the website) now" or "open (the name of the website) now" e.g.
+32.  Play any song of your choice by saying "play (name of the song(maybe with the name of the singer if there are two or more song by the same name there will be no confusion.)) Examples are as follows:
+
+    - Play lonely by the Beatles just say "play lonely by the Beatles" or "play the song lonely by the Beatles".
+    - Play lonely by Justin Bieber just say "play lonely by Justin Bieber" or "play the song lonely by Justin Bieber".
+    - Likewise, Play love yourself just say "play love yourself" or "play the song love yourself".
+    - Open peaches just say "play peaches" or "play the song peaches".
+    - I hope you understand now.
+
+
+
+34. Open any website just say "open (the name of the website)" or "open (the name of the website) now" or "open (the name of the website) now" e.g.
      1. Open the Amazon website by saying "open Amazon" or "open Amazon website".
      2. Open the Bing website by saying "open Bing" or "open Bing website".
      3. Likewise, Open the code forces website by saying "open code forces" or "open code forces website".
@@ -168,53 +170,53 @@
      67. Open the Amazon.com.br website by saying "open Amazon.com.br" or "open Amazon.com.br website".
      68. Likewise, Open the Amazon.com.au website by saying "open Amazon.com.au" or "open Amazon.com.au website".
 
-34. Search many websites like YouTube, Google (with Google Images, Google News etc.), Bing, Yahoo, DuckDuckGo, Wikipedia, Wiktionary, and many more just by saying "search (the name of the website) on (the thing you want to search on the website.). For example,
-    1. If you want to search for "Python" on YouTube, you can say "search Python on YouTube".
-    2. If you want to search for "Python" on Google, you can say "search Python on Google".
-    3. If you want to search for "Python" on Google Images, you can say "search Python on Google Images".
-    4. Weather you want to search for "Python" on Google News, you can say "search Python on Google News".
-    5. If you want to search for "Python" on Google Maps, you can say "search Python on Google Maps".
-    6. If you want to search for "Python" on Google Scholar, you can say "search Python on Google Scholar".
+35. Search many websites like YouTube, Google (with Google Images, Google News etc.), Bing, Yahoo, DuckDuckGo, Wikipedia, Wiktionary, and many more just by saying "search (the name of the website) on (the thing you want to search on the website.). For example,
+    - If you want to search for "Python" on YouTube, you can say "search Python on YouTube".
+    - If you want to search for "Python" on Google, you can say "search Python on Google".
+    - If you want to search for "Python" on Google Images, you can say "search Python on Google Images".
+    - Weather you want to search for "Python" on Google News, you can say "search Python on Google News".
+    - If you want to search for "Python" on Google Maps, you can say "search Python on Google Maps".
+    - If you want to search for "Python" on Google Scholar, you can say "search Python on Google Scholar".
 
 
- 1.  Translate the English to many other languages just saying "translate (the sentence you want to translate) to (the language to which you want to translate the sentence)" example "translate hello to Spanish" will translate the English sentence "hello" to Spanish. The supported languages are :-
-    7. Arabic
-    8. Bengali
-    9. Bulgarian
-    10. Catalan
-    11. Chinese
-    12. Croatian
-    13. Czech
-    14. Danish
-    15. Dutch
-    16. ESPAÑOL
-    17. ESTONIAN
-    18. FINNISH
-    19. Greek
-    20. Hebrew
-    21. Hindi
-    22. Hungarian
-    23. Indonesian
-    24. Italian
-    25. Japanese
-    26. Korean
-    27. Latvian
-    28. Lithuanian
-    29. Malay
-    30. Norwegian
-    31. Persian
-    32. Polish
-    33. Portuguese
-    34. Romanian
-    35. Russian
-    36. Serbian
-    37. Slovak
-    38. Spanish
-    39. Swedish
-    40. And many more.
 
+36.  Translate the English to many other languages just saying "translate (the sentence you want to translate) to (the language to which you want to translate the sentence)" example "translate hello to Spanish" will translate the English sentence "hello" to Spanish. The supported languages are :
+        - Arabic
+        - Bengali
+        - Bulgarian
+        - Catalan
+        - Chinese
+        - Croatian
+        - Czech
+        - Danish
+        - Dutch
+        - ESPAÑOL
+        - ESTONIAN
+        - FINNISH
+        - Greek
+        - Hebrew
+        - Hindi
+        - Hungarian
+        - Indonesian
+        - Italian
+        - Japanese
+        - Korean
+        - Latvian
+        - Lithuanian
+        - Malay
+        - Norwegian
+        - Persian
+        - Polish
+        - Portuguese
+        - Romanian
+        - Russian
+        - Serbian
+        - Slovak
+        - Spanish
+        - Swedish
+        - And many more.
 
-35. Answer to many questions like :- 
+36. Answer to many questions like :- 
     1. What is your name?
     2. What is your age?
     3. Who is your favorite animal?
@@ -232,9 +234,13 @@
     15. What is your favorite cartoon character?
     16. Who is your favorite actor?
     17. And many more...
+
+
+37.  Type by saying "start typing" and then start typing by the instruction given.
+38.  Press many key by saying "press (the key you want to press) key" example "press space key" will press the space key on your keyboard or "press enter key" will press the enter key on your keyboard, "press tab key" will press the tab key on your keyboard and so on.
    
-36. Exit the application just by saying "exit the application" or "exit" or "goodbye" or "bye".
-37. If the Virtual assistant Don't know the answer to any of your questions, Olivia will ask you if he or she wants to search the query in google or YouTube or Wikipedia. If you say yes, then it will ask in which of these websites you want to search the query like if you YouTube it will search the query on YouTube. In last, If you say no, then it will do nothing and just say 'ok. Anything else sir?'
+40. Exit the application just by saying "exit the application" or "exit" or "goodbye" or "bye".
+41. If the Virtual assistant Don't know the answer to any of your questions, Olivia will ask you if he or she wants to search the query in google or YouTube or Wikipedia. If you say yes, then it will ask in which of these websites you want to search the query like if you YouTube it will search the query on YouTube. In last, If you say no, then it will do nothing and just say 'ok. Anything else sir?'
 
 
 ### In progress features
