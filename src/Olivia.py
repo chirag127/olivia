@@ -1892,15 +1892,11 @@ if __name__ == "__main__":
             exit()
 
 
-
 # create a translate feature in the virutal assistant
-
-        
-
 
         elif 'translate' in query:
             query = query.replace("translate", "")
-                        
+
             LANGUAGES = {
                 'af': 'afrikaans',
                 'sq': 'albanian',
@@ -2011,11 +2007,8 @@ if __name__ == "__main__":
                 'zu': 'zulu',
             }
 
-
-
-
             # translate to the afrikaans
-            
+
             if 'afrikaans' in query:
                 # telling the user that we are translating the text to the afrikaans
                 speak("translating to afrikaans")
@@ -2027,7 +2020,7 @@ if __name__ == "__main__":
                 result = translator.translate(query, dest='af')
                 # speaking and printing the result
                 sp(result.text)
-            
+
             # translate to the albanian
 
             elif 'albanian' in query:
@@ -2070,7 +2063,6 @@ if __name__ == "__main__":
                 # speaking and printing the result
                 sp(result.text)
 
-
             # translate to the armenian
 
             elif 'armenian' in query:
@@ -2100,7 +2092,7 @@ if __name__ == "__main__":
                 # speaking and printing the result
                 sp(result.text)
 
-            # translate to the basque  
+            # translate to the basque
 
             elif 'basque' in query:
                 # telling the user that we are translating the text to the basque
@@ -2130,15 +2122,1230 @@ if __name__ == "__main__":
 
             # translate to the bosnian
 
-            elif 'bosnian' in query:    
+            elif 'bosnian' in query:
                 # telling the user that we are translating the text to the bosnian
-                speak
+                speak("translating to bosnian")
+                # getting the text from the user and replacing the "to bosnian" with nothing so that we can translate the text
+                query = query.replace("to bosnian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the bosnian and storing the result in a variable named result
+                result = translator.translate(query, dest='bs')
+                # speaking and printing the result
+                sp(result.text)
 
+            # translate to the bulgarian
+            elif 'bulgarian' in query:
+                # telling the user that we are translating the text to the bulgarian
+                speak("translating to bulgarian")
+                # getting the text from the user and replacing the "to bulgarian" with nothing so that we can translate the text
+                query = query.replace("to bulgarian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the bulgarian and storing the result in a variable named result
+                result = translator.translate(query, dest='bg')
+                # speaking and printing the result
+                sp(result.text)
 
+            # translate to the catalan
+            elif 'catalan' in query:
+                # telling the user that we are translating the text to the catalan
+                speak("translating to catalan")
+                # getting the text from the user and replacing the "to catalan" with nothing so that we can translate the text
+                query = query.replace("to catalan", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the catalan and storing the result in a variable named result
+                result = translator.translate(query, dest='ca')
+                # speaking and printing the result
+                sp(result.text)
 
+            # translate to the cebuano
+            elif 'cebuano' in query:
+                # telling the user that we are translating the text to the cebuano
+                speak("translating to cebuano")
+                # getting the text from the user and replacing the "to cebuano" with nothing so that we can translate the text
+                query = query.replace("to cebuano", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the cebuano and storing the result in a variable named result
+                result = translator.translate(query, dest='ceb')
+                # speaking and printing the result
+                sp(result.text)
 
+            # translate to the chinese
+            elif 'chinese' in query:
+                # telling the user that we are translating the text to the chinese
+                speak("translating to chinese")
+                # getting the text from the user and replacing the "to chinese" with nothing so that we can translate the text
+                query = query.replace("to chinese", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the chinese and storing the result in a variable named result
+                result = translator.translate(query, dest='zh-CN')
+                # speaking and printing the result
+                sp(result.text)
 
+            # translate to the croatian
+            elif 'croatian' in query:
+                # telling the user that we are translating the text to the croatian
+                speak("translating to croatian")
+                # getting the text from the user and replacing the "to croatian" with nothing so that we can translate the text
+                query = query.replace("to croatian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the croatian and storing the result in a variable named result
+                result = translator.translate(query, dest='hr')
+                # speaking and printing the result
+                sp(result.text)
 
+            # translate to the czech
+            elif 'czech' in query:
+                # telling the user that we are translating the text to the czech
+                speak("translating to czech")
+                # getting the text from the user and replacing the "to czech" with nothing so that we can translate the text
+                query = query.replace("to czech", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the czech and storing the result in a variable named result
+                result = translator.translate(query, dest='cs')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the danish
+            elif 'danish' in query:
+                # telling the user that we are translating the text to the danish
+                speak("translating to danish")
+                # getting the text from the user and replacing the "to danish" with nothing so that we can translate the text
+                query = query.replace("to danish", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the danish and storing the result in a variable named result
+                result = translator.translate(query, dest='da')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the dutch
+            elif 'dutch' in query:
+                # telling the user that we are translating the text to the dutch
+                speak("translating to dutch")
+                # getting the text from the user and replacing the "to dutch" with nothing so that we can translate the text
+                query = query.replace("to dutch", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the dutch and storing the result in a variable named result
+                result = translator.translate(query, dest='nl')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the english
+            elif 'english' in query:
+                # telling the user that we are translating the text to the english
+                speak("translating to english")
+                # getting the text from the user and replacing the "to english" with nothing so that we can translate the text
+                query = query.replace("to english", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the english and storing the result in a variable named result
+                result = translator.translate(query, dest='en')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the esperanto
+            elif 'esperanto' in query:
+                # telling the user that we are translating the text to the esperanto
+                speak("translating to esperanto")
+                # getting the text from the user and replacing the "to esperanto" with nothing so that we can translate the text
+                query = query.replace("to esperanto", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the esperanto and storing the result in a variable named result
+                result = translator.translate(query, dest='eo')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the estonian
+            elif 'estonian' in query:
+                # telling the user that we are translating the text to the estonian
+                speak("translating to estonian")
+                # getting the text from the user and replacing the "to estonian" with nothing so that we can translate the text
+                query = query.replace("to estonian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the estonian and storing the result in a variable named result
+                result = translator.translate(query, dest='et')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the filipino
+            elif 'filipino' in query:
+                # telling the user that we are translating the text to the filipino
+                speak("translating to filipino")
+                # getting the text from the user and replacing the "to filipino" with nothing so that we can translate the text
+                query = query.replace("to filipino", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the filipino and storing the result in a variable named result
+                result = translator.translate(query, dest='tl')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the finnish
+            elif 'finnish' in query:
+                # telling the user that we are translating the text to the finnish
+                speak("translating to finnish")
+                # getting the text from the user and replacing the "to finnish" with nothing so that we can translate the text
+                query = query.replace("to finnish", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the finnish and storing the result in a variable named result
+                result = translator.translate(query, dest='fi')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the french
+            elif 'french' in query:
+                # telling the user that we are translating the text to the french
+                speak("translating to french")
+                # getting the text from the user and replacing the "to french" with nothing so that we can translate the text
+                query = query.replace("to french", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the french and storing the result in a variable named result
+                result = translator.translate(query, dest='fr')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the frisian
+            elif 'frisian' in query:
+                # telling the user that we are translating the text to the frisian
+                speak("translating to frisian")
+                # getting the text from the user and replacing the "to frisian" with nothing so that we can translate the text
+                query = query.replace("to frisian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the frisian and storing the result in a variable named result
+                result = translator.translate(query, dest='fy')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the galician
+            elif 'galician' in query:
+                # telling the user that we are translating the text to the galician
+                speak("translating to galician")
+                # getting the text from the user and replacing the "to galician" with nothing so that we can translate the text
+                query = query.replace("to galician", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the galician and storing the result in a variable named result
+                result = translator.translate(query, dest='gl')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the georgian
+            elif 'georgian' in query:
+
+                # telling the user that we are translating the text to the georgian
+                speak("translating to georgian")
+                # getting the text from the user and replacing the "to georgian" with nothing so that we can translate the text
+                query = query.replace("to georgian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the georgian and storing the result in a variable named result
+                result = translator.translate(query, dest='ka')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the german
+            elif 'german' in query:
+                # telling the user that we are translating the text to the german
+                speak("translating to german")
+                # getting the text from the user and replacing the "to german" with nothing so that we can translate the text
+                query = query.replace("to german", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the german and storing the result in a variable named result
+                result = translator.translate(query, dest='de')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the greek
+            elif 'greek' in query:
+                # telling the user that we are translating the text to the greek
+                speak("translating to greek")
+                # getting the text from the user and replacing the "to greek" with nothing so that we can translate the text
+                query = query.replace("to greek", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the greek and storing the result in a variable named result
+                result = translator.translate(query, dest='el')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the gujarati
+            elif 'gujarati' in query:
+                # telling the user that we are translating the text to the gujarati
+                speak("translating to gujarati")
+                # getting the text from the user and replacing the "to gujarati" with nothing so that we can translate the text
+                query = query.replace("to gujarati", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the gujarati and storing the result in a variable named result
+                result = translator.translate(query, dest='gu')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the haitian creole
+            elif 'haitian creole' in query:
+                # telling the user that we are translating the text to the haitian creole
+                speak("translating to haitian creole")
+                # getting the text from the user and replacing the "to haitian creole" with nothing so that we can translate the text
+                query = query.replace("to haitian creole", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the haitian creole and storing the result in a variable named result
+                result = translator.translate(query, dest='ht')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the hausa
+            elif 'hausa' in query:
+
+                # telling the user that we are translating the text to the hausa
+                speak("translating to hausa")
+                # getting the text from the user and replacing the "to hausa" with nothing so that we can translate the text
+                query = query.replace("to hausa", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the hausa and storing the result in a variable named result
+                result = translator.translate(query, dest='ha')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the hawaiian
+            elif 'hawaiian' in query:
+                # telling the user that we are translating the text to the hawaiian
+                speak("translating to hawaiian")
+                # getting the text from the user and replacing the "to hawaiian" with nothing so that we can translate the text
+                query = query.replace("to hawaiian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the hawaiian and storing the result in a variable named result
+                result = translator.translate(query, dest='haw')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the hebrew
+            elif 'hebrew' in query:
+                # telling the user that we are translating the text to the hebrew
+                speak("translating to hebrew")
+                # getting the text from the user and replacing the "to hebrew" with nothing so that we can translate the text
+                query = query.replace("to hebrew", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the hebrew and storing the result in a variable named result
+                result = translator.translate(query, dest='he')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the hindi
+            elif 'hindi' in query:
+                # telling the user that we are translating the text to the hindi
+                speak("translating to hindi")
+                # getting the text from the user and replacing the "to hindi" with nothing so that we can translate the text
+                query = query.replace("to hindi", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the hindi and storing the result in a variable named result
+                result = translator.translate(query, dest='hi')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the hungarian
+            elif 'hungarian' in query:
+                # telling the user that we are translating the text to the hungarian
+                speak("translating to hungarian")
+                # getting the text from the user and replacing the "to hungarian" with nothing so that we can translate the text
+                query = query.replace("to hungarian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the hungarian and storing the result in a variable named result
+                result = translator.translate(query, dest='hu')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the icelandic
+            elif 'icelandic' in query:
+                # telling the user that we are translating the text to the icelandic
+                speak("translating to icelandic")
+                # getting the text from the user and replacing the "to icelandic" with nothing so that we can translate the text
+                query = query.replace("to icelandic", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the icelandic and storing the result in a variable named result
+                result = translator.translate(query, dest='is')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the igbo
+            elif 'igbo' in query:
+                # telling the user that we are translating the text to the igbo
+                speak("translating to igbo")
+                # getting the text from the user and replacing the "to igbo" with nothing so that we can translate the text
+                query = query.replace("to igbo", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the igbo and storing the result in a variable named result
+                result = translator.translate(query, dest='ig')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the indonesian
+            elif 'indonesian' in query:
+                # telling the user that we are translating the text to the indonesian
+                speak("translating to indonesian")
+                # getting the text from the user and replacing the "to indonesian" with nothing so that we can translate the text
+                query = query.replace("to indonesian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the indonesian and storing the result in a variable named result
+                result = translator.translate(query, dest='id')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the irish
+            elif 'irish' in query:
+                # telling the user that we are translating the text to the irish
+                speak("translating to irish")
+                # getting the text from the user and replacing the "to irish" with nothing so that we can translate the text
+                query = query.replace("to irish", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the irish and storing the result in a variable named result
+                result = translator.translate(query, dest='ga')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the italian
+            elif 'italian' in query:
+                # telling the user that we are translating the text to the italian
+                speak("translating to italian")
+                # getting the text from the user and replacing the "to italian" with nothing so that we can translate the text
+                query = query.replace("to italian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the italian and storing the result in a variable named result
+                result = translator.translate(query, dest='it')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the japanese
+            elif 'japanese' in query:
+
+                # telling the user that we are translating the text to the japanese
+                speak("translating to japanese")
+                # getting the text from the user and replacing the "to japanese" with nothing so that we can translate the text
+                query = query.replace("to japanese", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the japanese and storing the result in a variable named result
+                result = translator.translate(query, dest='ja')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the javanese
+            elif 'javanese' in query:
+                # telling the user that we are translating the text to the javanese
+                speak("translating to javanese")
+                # getting the text from the user and replacing the "to javanese" with nothing so that we can translate the text
+                query = query.replace("to javanese", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the javanese and storing the result in a variable named result
+                result = translator.translate(query, dest='jw')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the kannada
+            elif 'kannada' in query:
+                # telling the user that we are translating the text to the kannada
+                speak("translating to kannada")
+                # getting the text from the user and replacing the "to kannada" with nothing so that we can translate the text
+                query = query.replace("to kannada", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the kannada and storing the result in a variable named result
+                result = translator.translate(query, dest='kn')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the kazakh
+            elif 'kazakh' in query:
+                # telling the user that we are translating the text to the kazakh
+                speak("translating to kazakh")
+                # getting the text from the user and replacing the "to kazakh" with nothing so that we can translate the text
+                query = query.replace("to kazakh", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the kazakh and storing the result in a variable named result
+                result = translator.translate(query, dest='kk')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the khmer
+            elif 'khmer' in query:
+
+                # telling the user that we are translating the text to the khmer
+                speak("translating to khmer")
+                # getting the text from the user and replacing the "to khmer" with nothing so that we can translate the text
+                query = query.replace("to khmer", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the khmer and storing the result in a variable named result
+                result = translator.translate(query, dest='km')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the korean
+            elif 'korean' in query:
+                # telling the user that we are translating the text to the korean
+                speak("translating to korean")
+                # getting the text from the user and replacing the "to korean" with nothing so that we can translate the text
+                query = query.replace("to korean", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the korean and storing the result in a variable named result
+                result = translator.translate(query, dest='ko')
+                # speaking and printing the result
+                sp(result.text)
+            # translate to the kyrgyz
+            elif 'kyrgyz' in query:
+
+                # telling the user that we are translating the text to the kyrgyz
+                speak("translating to kyrgyz")
+                # getting the text from the user and replacing the "to kyrgyz" with nothing so that we can translate the text
+                query = query.replace("to kyrgyz", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the kyrgyz and storing the result in a variable named result
+                result = translator.translate(query, dest='ky')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the lao
+            elif 'lao' in query:
+                # telling the user that we are translating the text to the lao
+                speak("translating to lao")
+                # getting the text from the user and replacing the "to lao" with nothing so that we can translate the text
+                query = query.replace("to lao", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the lao and storing the result in a variable named result
+                result = translator.translate(query, dest='lo')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the latin
+            elif 'latin' in query:
+                # telling the user that we are translating the text to the latin
+                speak("translating to latin")
+                # getting the text from the user and replacing the "to latin" with nothing so that we can translate the text
+                query = query.replace("to latin", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the latin and storing the result in a variable named result
+                result = translator.translate(query, dest='la')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the latvian
+            elif 'latvian' in query:
+
+                # telling the user that we are translating the text to the latvian
+                speak("translating to latvian")
+                # getting the text from the user and replacing the "to latvian" with nothing so that we can translate the text
+                query = query.replace("to latvian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the latvian and storing the result in a variable named result
+                result = translator.translate(query, dest='lv')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the lithuanian
+            elif 'lithuanian' in query:
+                # telling the user that we are translating the text to the lithuanian
+                speak("translating to lithuanian")
+                # getting the text from the user and replacing the "to lithuanian" with nothing so that we can translate the text
+                query = query.replace("to lithuanian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the lithuanian and storing the result in a variable named result
+                result = translator.translate(query, dest='lt')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the luxembourgish
+            elif 'luxembourgish' in query:
+                # telling the user that we are translating the text to the luxembourgish
+                speak("translating to luxembourgish")
+                # getting the text from the user and replacing the "to luxembourgish" with nothing so that we can translate the text
+                query = query.replace("to luxembourgish", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the luxembourgish and storing the result in a variable named result
+                result = translator.translate(query, dest='lb')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the macedonian
+            elif 'macedonian' in query:
+                # telling the user that we are translating the text to the macedonian
+                speak("translating to macedonian")
+                # getting the text from the user and replacing the "to macedonian" with nothing so that we can translate the text
+                query = query.replace("to macedonian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the macedonian and storing the result in a variable named result
+                result = translator.translate(query, dest='mk')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the malagasy
+            elif 'malagasy' in query:
+                # telling the user that we are translating the text to the malagasy
+                speak("translating to malagasy")
+                # getting the text from the user and replacing the "to malagasy" with nothing so that we can translate the text
+                query = query.replace("to malagasy", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the malagasy and storing the result in a variable named result
+                result = translator.translate(query, dest='mg')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the malay
+            elif 'malay' in query:
+                # telling the user that we are translating the text to the malay
+                speak("translating to malay")
+                # getting the text from the user and replacing the "to malay" with nothing so that we can translate the text
+                query = query.replace("to malay", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the malay and storing the result in a variable named result
+                result = translator.translate(query, dest='ms')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the malayalam
+            elif 'malayalam' in query:
+                # telling the user that we are translating the text to the malayalam
+                speak("translating to malayalam")
+                # getting the text from the user and replacing the "to malayalam" with nothing so that we can translate the text
+                query = query.replace("to malayalam", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the malayalam and storing the result in a variable named result
+                result = translator.translate(query, dest='ml')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the maltese
+            elif 'maltese' in query:
+                # telling the user that we are translating the text to the maltese
+                speak("translating to maltese")
+                # getting the text from the user and replacing the "to maltese" with nothing so that we can translate the text
+                query = query.replace("to maltese", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the maltese and storing the result in a variable named result
+                result = translator.translate(query, dest='mt')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the maori
+            elif 'maori' in query:
+                # telling the user that we are translating the text to the maori
+                speak("translating to maori")
+                # getting the text from the user and replacing the "to maori" with nothing so that we can translate the text
+                query = query.replace("to maori", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the maori and storing the result in a variable named result
+                result = translator.translate(query, dest='mi')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the marathi
+            elif 'marathi' in query:
+                # telling the user that we are translating the text to the marathi
+                speak("translating to marathi")
+                # getting the text from the user and replacing the "to marathi" with nothing so that we can translate the text
+                query = query.replace("to marathi", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the marathi and storing the result in a variable named result
+                result = translator.translate(query, dest='mr')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the mongolian
+            elif 'mongolian' in query:
+                # telling the user that we are translating the text to the mongolian
+                speak("translating to mongolian")
+                # getting the text from the user and replacing the "to mongolian" with nothing so that we can translate the text
+                query = query.replace("to mongolian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the mongolian and storing the result in a variable named result
+                result = translator.translate(query, dest='mn')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the myanmar
+            elif 'myanmar' in query:
+                # telling the user that we are translating the text to the myanmar
+                speak("translating to myanmar")
+                # getting the text from the user and replacing the "to myanmar" with nothing so that we can translate the text
+                query = query.replace("to myanmar", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the myanmar and storing the result in a variable named result
+                result = translator.translate(query, dest='my')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the burmese
+            elif 'burmese' in query:
+                # telling the user that we are translating the text to the burmese
+                speak("translating to burmese")
+                # getting the text from the user and replacing the "to burmese" with nothing so that we can translate the text
+                query = query.replace("to burmese", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the burmese and storing the result in a variable named result
+                result = translator.translate(query, dest='my')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the nepali
+            elif 'nepali' in query:
+                # telling the user that we are translating the text to the nepali
+                speak("translating to nepali")
+                # getting the text from the user and replacing the "to nepali" with nothing so that we can translate the text
+                query = query.replace("to nepali", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the nepali and storing the result in a variable named result
+                result = translator.translate(query, dest='ne')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the norwegian
+            elif 'norwegian' in query:
+                # telling the user that we are translating the text to the norwegian
+                speak("translating to norwegian")
+                # getting the text from the user and replacing the "to norwegian" with nothing so that we can translate the text
+                query = query.replace("to norwegian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the norwegian and storing the result in a variable named result
+                result = translator.translate(query, dest='no')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the odia
+            elif 'odia' in query:
+                # telling the user that we are translating the text to the odia
+                speak("translating to odia")
+                # getting the text from the user and replacing the "to odia" with nothing so that we can translate the text
+                query = query.replace("to odia", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the odia and storing the result in a variable named result
+                result = translator.translate(query, dest='or')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the pashto
+            elif 'pashto' in query:
+                # telling the user that we are translating the text to the pashto
+                speak("translating to pashto")
+                # getting the text from the user and replacing the "to pashto" with nothing so that we can translate the text
+                query = query.replace("to pashto", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the pashto and storing the result in a variable named result
+                result = translator.translate(query, dest='ps')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the persian
+            elif 'persian' in query:
+                # telling the user that we are translating the text to the persian
+                speak("translating to persian")
+                # getting the text from the user and replacing the "to persian" with nothing so that we can translate the text
+                query = query.replace("to persian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the persian and storing the result in a variable named result
+                result = translator.translate(query, dest='fa')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the polish
+            elif 'polish' in query:
+                # telling the user that we are translating the text to the polish
+                speak("translating to polish")
+                # getting the text from the user and replacing the "to polish" with nothing so that we can translate the text
+                query = query.replace("to polish", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the polish and storing the result in a variable named result
+                result = translator.translate(query, dest='pl')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the portuguese
+            elif 'portuguese' in query:
+                # telling the user that we are translating the text to the portuguese
+                speak("translating to portuguese")
+                # getting the text from the user and replacing the "to portuguese" with nothing so that we can translate the text
+                query = query.replace("to portuguese", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the portuguese and storing the result in a variable named result
+                result = translator.translate(query, dest='pt')
+                # speaking and printing the result
+                sp(result.text)
+            # translate to the punjabi
+            elif 'punjabi' in query:
+                # telling the user that we are translating the text to the punjabi
+                speak("translating to punjabi")
+                # getting the text from the user and replacing the "to punjabi" with nothing so that we can translate the text
+                query = query.replace("to punjabi", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the punjabi and storing the result in a variable named result
+                result = translator.translate(query, dest='pa')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the romanian
+            elif 'romanian' in query:
+                # telling the user that we are translating the text to the romanian
+                speak("translating to romanian")
+                # getting the text from the user and replacing the "to romanian" with nothing so that we can translate the text
+                query = query.replace("to romanian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the romanian and storing the result in a variable named result
+                result = translator.translate(query, dest='ro')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the russian
+            elif 'russian' in query:
+                # telling the user that we are translating the text to the russian
+                speak("translating to russian")
+                # getting the text from the user and replacing the "to russian" with nothing so that we can translate the text
+                query = query.replace("to russian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the russian and storing the result in a variable named result
+                result = translator.translate(query, dest='ru')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the samoan
+            elif 'samoan' in query:
+                # telling the user that we are translating the text to the samoan
+                speak("translating to samoan")
+                # getting the text from the user and replacing the "to samoan" with nothing so that we can translate the text
+                query = query.replace("to samoan", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the samoan and storing the result in a variable named result
+                result = translator.translate(query, dest='sm')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the scots gaelic
+            elif 'scots gaelic' in query:
+                # telling the user that we are translating the text to the scots gaelic
+                speak("translating to scots gaelic")
+                # getting the text from the user and replacing the "to scots gaelic" with nothing so that we can translate the text
+                query = query.replace("to scots gaelic", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the scots gaelic and storing the result in a variable named result
+                result = translator.translate(query, dest='gd')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the serbian
+            elif 'serbian' in query:
+                # telling the user that we are translating the text to the serbian
+                speak("translating to serbian")
+                # getting the text from the user and replacing the "to serbian" with nothing so that we can translate the text
+                query = query.replace("to serbian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the serbian and storing the result in a variable named result
+                result = translator.translate(query, dest='sr')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the sesotho
+            elif 'sesotho' in query:
+                # telling the user that we are translating the text to the sesotho
+                speak("translating to sesotho")
+                # getting the text from the user and replacing the "to sesotho" with nothing so that we can translate the text
+                query = query.replace("to sesotho", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the sesotho and storing the result in a variable named result
+                result = translator.translate(query, dest='st')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the shona
+            elif 'shona' in query:
+                # telling the user that we are translating the text to the shona
+                speak("translating to shona")
+                # getting the text from the user and replacing the "to shona" with nothing so that we can translate the text
+                query = query.replace("to shona", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the shona and storing the result in a variable named result
+                result = translator.translate(query, dest='sn')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the sindhi
+            elif 'sindhi' in query:
+                # telling the user that we are translating the text to the sindhi
+                speak("translating to sindhi")
+                # getting the text from the user and replacing the "to sindhi" with nothing so that we can translate the text
+                query = query.replace("to sindhi", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the sindhi and storing the result in a variable named result
+                result = translator.translate(query, dest='sd')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the sinhala
+            elif 'sinhala' in query:
+                # telling the user that we are translating the text to the sinhala
+                speak("translating to sinhala")
+                # getting the text from the user and replacing the "to sinhala" with nothing so that we can translate the text
+                query = query.replace("to sinhala", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the sinhala and storing the result in a variable named result
+                result = translator.translate(query, dest='si')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the slovak
+            elif 'slovak' in query:
+                # telling the user that we are translating the text to the slovak
+                speak("translating to slovak")
+                # getting the text from the user and replacing the "to slovak" with nothing so that we can translate the text
+                query = query.replace("to slovak", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the slovak and storing the result in a variable named result
+                result = translator.translate(query, dest='sk')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the slovenian
+            elif 'slovenian' in query:
+                # telling the user that we are translating the text to the slovenian
+                speak("translating to slovenian")
+                # getting the text from the user and replacing the "to slovenian" with nothing so that we can translate the text
+                query = query.replace("to slovenian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the slovenian and storing the result in a variable named result
+                result = translator.translate(query, dest='sl')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the somali
+            elif 'somali' in query:
+                # telling the user that we are translating the text to the somali
+                speak("translating to somali")
+                # getting the text from the user and replacing the "to somali" with nothing so that we can translate the text
+                query = query.replace("to somali", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the somali and storing the result in a variable named result
+                result = translator.translate(query, dest='so')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the spanish
+            elif 'spanish' in query:
+
+                # telling the user that we are translating the text to the spanish
+                speak("translating to spanish")
+                # getting the text from the user and replacing the "to spanish" with nothing so that we can translate the text
+                query = query.replace("to spanish", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the spanish and storing the result in a variable named result
+                result = translator.translate(query, dest='es')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the sundanese
+            elif 'sundanese' in query:
+                # telling the user that we are translating the text to the sundanese
+                speak("translating to sundanese")
+                # getting the text from the user and replacing the "to sundanese" with nothing so that we can translate the text
+                query = query.replace("to sundanese", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the sundanese and storing the result in a variable named result
+                result = translator.translate(query, dest='su')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the swahili
+            elif 'swahili' in query:
+                # telling the user that we are translating the text to the swahili
+                speak("translating to swahili")
+                # getting the text from the user and replacing the "to swahili" with nothing so that we can translate the text
+                query = query.replace("to swahili", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the swahili and storing the result in a variable named result
+                result = translator.translate(query, dest='sw')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the swedish
+            elif 'swedish' in query:
+                # telling the user that we are translating the text to the swedish
+                speak("translating to swedish")
+                # getting the text from the user and replacing the "to swedish" with nothing so that we can translate the text
+                query = query.replace("to swedish", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the swedish and storing the result in a variable named result
+                result = translator.translate(query, dest='sv')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the tajik
+            elif 'tajik' in query:
+                # telling the user that we are translating the text to the tajik
+                speak("translating to tajik")
+                # getting the text from the user and replacing the "to tajik" with nothing so that we can translate the text
+                query = query.replace("to tajik", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the tajik and storing the result in a variable named result
+                result = translator.translate(query, dest='tg')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the tamil
+            elif 'tamil' in query:
+                # telling the user that we are translating the text to the tamil
+                speak("translating to tamil")
+                # getting the text from the user and replacing the "to tamil" with nothing so that we can translate the text
+                query = query.replace("to tamil", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the tamil and storing the result in a variable named result
+                result = translator.translate(query, dest='ta')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the telugu
+            elif 'telugu' in query:
+                # telling the user that we are translating the text to the telugu
+                speak("translating to telugu")
+                # getting the text from the user and replacing the "to telugu" with nothing so that we can translate the text
+                query = query.replace("to telugu", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the telugu and storing the result in a variable named result
+                result = translator.translate(query, dest='te')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the thai
+            elif 'thai' in query:
+                # telling the user that we are translating the text to the thai
+                speak("translating to thai")
+                # getting the text from the user and replacing the "to thai" with nothing so that we can translate the text
+                query = query.replace("to thai", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the thai and storing the result in a variable named result
+                result = translator.translate(query, dest='th')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the turkish
+            elif 'turkish' in query:
+                # telling the user that we are translating the text to the turkish
+                speak("translating to turkish")
+                # getting the text from the user and replacing the "to turkish" with nothing so that we can translate the text
+                query = query.replace("to turkish", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the turkish and storing the result in a variable named result
+                result = translator.translate(query, dest='tr')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the ukrainian
+            elif 'ukrainian' in query:
+                # telling the user that we are translating the text to the ukrainian
+                speak("translating to ukrainian")
+                # getting the text from the user and replacing the "to ukrainian" with nothing so that we can translate the text
+                query = query.replace("to ukrainian", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the ukrainian and storing the result in a variable named result
+                result = translator.translate(query, dest='uk')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the urdu
+            elif 'urdu' in query:
+                # telling the user that we are translating the text to the urdu
+                speak("translating to urdu")
+                # getting the text from the user and replacing the "to urdu" with nothing so that we can translate the text
+                query = query.replace("to urdu", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the urdu and storing the result in a variable named result
+                result = translator.translate(query, dest='ur')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the uyghur
+            elif 'uyghur' in query:
+                # telling the user that we are translating the text to the uyghur
+                speak("translating to uyghur")
+                # getting the text from the user and replacing the "to uyghur" with nothing so that we can translate the text
+                query = query.replace("to uyghur", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the uyghur and storing the result in a variable named result
+                result = translator.translate(query, dest='ug')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the uzbek
+            elif 'uzbek' in query:
+                # telling the user that we are translating the text to the uzbek
+                speak("translating to uzbek")
+                # getting the text from the user and replacing the "to uzbek" with nothing so that we can translate the text
+                query = query.replace("to uzbek", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the uzbek and storing the result in a variable named result
+                result = translator.translate(query, dest='uz')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the vietnamese
+            elif 'vietnamese' in query:
+                # telling the user that we are translating the text to the vietnamese
+                speak("translating to vietnamese")
+                # getting the text from the user and replacing the "to vietnamese" with nothing so that we can translate the text
+                query = query.replace("to vietnamese", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the vietnamese and storing the result in a variable named result
+                result = translator.translate(query, dest='vi')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the welsh
+            elif 'welsh' in query:
+                # telling the user that we are translating the text to the welsh
+                speak("translating to welsh")
+                # getting the text from the user and replacing the "to welsh" with nothing so that we can translate the text
+                query = query.replace("to welsh", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the welsh and storing the result in a variable named result
+                result = translator.translate(query, dest='cy')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the xhosa
+            elif 'xhosa' in query:
+                # telling the user that we are translating the text to the xhosa
+                speak("translating to xhosa")
+                # getting the text from the user and replacing the "to xhosa" with nothing so that we can translate the text
+                query = query.replace("to xhosa", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the xhosa and storing the result in a variable named result
+                result = translator.translate(query, dest='xh')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the yiddish
+            elif 'yiddish' in query:
+                # telling the user that we are translating the text to the yiddish
+                speak("translating to yiddish")
+                # getting the text from the user and replacing the "to yiddish" with nothing so that we can translate the text
+                query = query.replace("to yiddish", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the yiddish and storing the result in a variable named result
+                result = translator.translate(query, dest='yi')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the yoruba
+            elif 'yoruba' in query:
+                # telling the user that we are translating the text to the yoruba
+                speak("translating to yoruba")
+                # getting the text from the user and replacing the "to yoruba" with nothing so that we can translate the text
+                query = query.replace("to yoruba", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the yoruba and storing the result in a variable named result
+                result = translator.translate(query, dest='yo')
+                # speaking and printing the result
+                sp(result.text)
+
+            # translate to the zulu
+            elif 'zulu' in query:
+                # telling the user that we are translating the text to the zulu
+                speak("translating to zulu")
+                # getting the text from the user and replacing the "to zulu" with nothing so that we can translate the text
+                query = query.replace("to zulu", "")
+                # using the goslate library to translate the text
+                translator = Translator()
+                # translating the text to the zulu and storing the result in a variable named result
+                result = translator.translate(query, dest='zu')
+                # speaking and printing the result
+                sp(result.text)
+            # if the user wants to exit the program
+            elif 'exit' in query:
+                # telling the user that the program is exiting
+                speak("exiting")
+                # exiting the program
+                exit()
+            # if the user wants to repeat the last command
+            elif 'repeat' in query:
+                # telling the user that the program is repeating the last command
+                speak("repeating the last command")
+                # repeating the last command
+                sp(query)
 
         elif 'clear' in query:
             clearConsole()
@@ -2182,7 +3389,7 @@ if __name__ == "__main__":
                 print('say yes or no. normal command will not work.')
                 print('\n')
 
-                 confirmation = takeCommand().lower()  # taking the input from the user
+                confirmation = takeCommand().lower()  # taking the input from the user
                 # if the user says yes or yep or something similar then we will search the query in google
                 if 'yes' in confirmation or 'yep' in confirmation or 'sure' in confirmation or 'yeah' in confirmation or 'absolutely' in confirmation or 'fine' in confirmation or 'looks good' in confirmation or 'okay' in confirmation:
                     print('\n')
@@ -2235,7 +3442,6 @@ if __name__ == "__main__":
 
                 elif 'no' in query or 'not' in query or 'negative' in query:
 
-
                     # asking the user if he wants to get rick rolled
                     speak('do you want to get rick rolled sir?')
                     # taking the input from the user and converting it to lower case and storing it in answer5
@@ -2246,19 +3452,14 @@ if __name__ == "__main__":
                         # telling the user that we are rick rolling
                         speak('sir i am rick rolling you')
 
-
                         # opening the rick roll video in the browser
                         webbrowser.get().open_new_tab(
                             'https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 
-
-
                         speak('sir i am rick rolling you')
                         # opening the rick roll video in the browser
 
+                else:
 
-                else:        
-
-
-                            # Asking user if he or she want olivia to do anything else.
-                            speak('ok. anything else sir?')
+                    # Asking user if he or she want olivia to do anything else.
+                    speak('ok. anything else sir?')
