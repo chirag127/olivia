@@ -31,6 +31,8 @@ import psutil  # pip install psutil # psutil is used to get the cpu usage and ra
 import tkinter as tk
 # I was getting error so i install pyaudio
 # error in that too so i googled it on the stackover flow.
+from tkinter import *
+import numpy as np
 
 """
 # Text to Speech Engine
@@ -155,8 +157,6 @@ def wishMe():
 # It will take microphone input from the user and return string output
 
 def tictactoe():
-    from tkinter import *
-    import numpy as np
 
     size_of_board = 600
     symbol_size = (size_of_board / 3 - size_of_board / 8) / 2
@@ -365,6 +365,7 @@ def tictactoe():
 
     game_instance = Tic_Tac_Toe()
     game_instance.mainloop()
+
 
         
 
@@ -671,8 +672,11 @@ if __name__ == "__main__":
                 text2speech()
 
         # play tictactoe game if 'tictactoe' is in query
-        elif 'tictactoe' in query:
-            tictactoe()
+        elif 'game' in query:
+            if 'tic' in query or 'tac' in query or 'toe' in query:
+                tictactoe()
+                continue
+           
 
         # type the text in the current window if 'type' is in query
         elif 'typing' in query:
