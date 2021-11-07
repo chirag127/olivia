@@ -249,9 +249,9 @@ def generate_random_password():
 
 def takescreenshot():
 
-    name = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())  
-      # take the screenshot and save it to the C:\\Programfiles\\Olivia\\screenshot folder
-    dir = "C:\\Olivia\\screenshot\\"  
+    name = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())
+    # take the screenshot and save it to the C:\\Programfiles\\Olivia\\screenshot folder
+    dir = "C:\\Olivia\\screenshot\\"
     name = dir + name + ".png"
     # create the folder named C:\\Screenshots if it doesn't already exist
     if not os.path.exists(dir):
@@ -870,6 +870,20 @@ if __name__ == "__main__":
             speak("locking the device")
             ctypes.windll.user32.LockWorkStation()
 
+        elif 'remember that' in query:
+            speak("What should i remember?")
+            data = takeCommand()
+            speak("You said me to remember that " + data)
+            remember = open('data.txt', 'w')
+            remember.write(data)
+            remember.close()
+            speak("I have remembered that")
+
+        elif 'do you know anything' in query:
+            remember = open('data.txt', 'r')
+            speak("You said me to remember that " + remember.read())
+            remember.close()
+
         elif "note" in query or "notes" in query:
             if 'write' in query:
                 speak("What should I write down?")
@@ -1061,16 +1075,6 @@ if __name__ == "__main__":
             except Exception as e:
                 print(e)
                 speak("Sorry Sir, I am not able to fetch the time")
-
-
-        elif 'remember that' in query:
-            speak("What should i remember?")
-            data = takeCommand()
-            speak("You said me to remember that " + data)
-            remember = open('data.txt', 'w')
-            remember.write(data)
-            remember.close()
-            speak("I have remembered that")
 
         elif 'open word' in query:
             speak('ok. opening word')
