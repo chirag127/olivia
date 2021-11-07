@@ -2132,8 +2132,7 @@ if __name__ == "__main__":
 
             elif 'bosnian' in query:    
                 # telling the user that we are translating the text to the bosnian
-                s   
-
+                speak
 
 
 
