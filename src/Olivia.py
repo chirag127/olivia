@@ -1062,6 +1062,16 @@ if __name__ == "__main__":
                 print(e)
                 speak("Sorry Sir, I am not able to fetch the time")
 
+
+        elif 'remember that' in query:
+            speak("What should i remember?")
+            data = takeCommand()
+            speak("You said me to remember that " + data)
+            remember = open('data.txt', 'w')
+            remember.write(data)
+            remember.close()
+            speak("I have remembered that")
+
         elif 'open word' in query:
             speak('ok. opening word')
             os.startfile(

@@ -35,11 +35,5 @@ root = tk.Tk()
 root.title('Screenshot')
 root.geometry('500x500')
 
-
-
-
-
-
-
 if __name__ == '__main__':
     screenshot()
