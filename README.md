@@ -5,22 +5,23 @@
     - [Assistant skills](#assistant-skills)
     - [In progress features](#in-progress-features)
   - [Installation instruction](#installation-instruction)
-    - [If You Get `No Module Named pyaudio` Error!](#if-you-get-no-module-named-pyaudio-error)
+    - [If You Get `No Module Named pyaudio` Error](#if-you-get-no-module-named-pyaudio-error)
   - [How to use the application](#how-to-use-the-application)
-- [Precautions while using the software in the application](#precautions-while-using-the-software-in-the-application)
-- [Libraries used in the software](#libraries-used-in-the-software)
+  - [Precautions while using the software in the application](#precautions-while-using-the-software-in-the-application)
+  - [Libraries used in the software](#libraries-used-in-the-software)
+  - [Technologies used in the software](#technologies-used-in-the-software)
 
 ## Features
 
-1. Fully customizable
-2. A lot of features
-3. Built-in voice recognition
-4. Dynamic voice recognition
-5. Easy to use
-6. Great UI
-7. Intuitive
-8. Just a bit of magic
-9. Keyboard-controlled
+01. Fully customizable
+02. A lot of features
+03. Built-in voice recognition
+04. Dynamic voice recognition
+05. Easy to use
+06. Great UI
+07. Intuitive
+08. Just a bit of magic
+09. Keyboard-controlled
 10. Lightweight
 11. Minimal
 12. No need for a database
@@ -43,14 +44,15 @@
 
 ### Assistant skills
 
-01. Give description of anything according to Wikipedia just say "what is (the name of the thing) according to Wikipedia".
-02. Give the CPU usage of the computer just say "CPU usage" or "CPU usage of the computer" or "usage of the CPU".
-03. Present with the RAM usage of the computer just say "RAM usage" or "RAM usage of the computer" or "RAM usage of the 0computer".
-04. Give the disk usage of the computer just say "disk usage" or "disk usage of the computer" or "disk usage of the computer".
-06. Give the battery usage of the computer just say "battery usage" or "battery usage of the computer" or "battery usage of 0the computer".
-07. Search in chrome just say "search in chrome".
-08. Tell you the time by saying "time" or "what time is it" or "what is the time" or "tell me the time".
-09. Tell you the date by saying "date" or "what date is it" or "what is the date" or "tell me the date".
+1. Give description of anything according to Wikipedia just say "what is (the name of the thing) according to Wikipedia".
+2. Give the CPU usage of the computer just say "CPU usage" or "CPU usage of the computer" or "usage of the CPU".
+3. Present with the RAM usage of the computer just say "RAM usage" or "RAM usage of the computer" or "RAM usage of the 0computer".
+4. Give the disk usage of the computer just say "disk usage" or "disk usage of the computer" or "disk usage of the computer".
+5. Give the battery usage of the computer just say "battery usage" or "battery usage of the computer" or "battery usage of 0the computer".\
+6. Give the current weather of the city just say "current weather" or "current weather of the city".
+7. Search in chrome just say "search in chrome".
+8. Tell you the time by saying "time" or "what time is it" or "what is the time" or "tell me the time".
+9. Tell you the date by saying "date" or "what date is it" or "what is the date" or "tell me the date".
 10. Generate a random password by saying "generate a password" or "generate a random password".
 11. Generate a random number by saying "generate a number" or "generate a random number".
 12. Change your name by saying "change my name to (your name)" or "call me (your name)".
@@ -105,15 +107,15 @@
 33. You can control the video by saying "pause", "play","volume up", "volume down", "next". Saying "pause" pauses the video in the web browser, Saying "play" plays the video in
 
 34. Open any website just say "open (the name of the website)" or "open (the name of the website) now" or "open (the name of the website) now" e.g.
-     01. Open the Amazon website by saying "open Amazon" or "open Amazon website".
-     02. Open the Bing website by saying "open Bing" or "open Bing website".
-     03. Likewise, Open the code forces website by saying "open code forces" or "open code forces website".
-     04. Furthermore, Open the code wars website by saying "open code wars" or "open code wars website".
-     05. Open the DuckDuckGo website by saying "open DuckDuckGo" or "open DuckDuckGo website".
-     06. Open the Facebook website by saying "open Facebook" or "open Facebook website".
-     07. Likewise, Open the Flipkart website by saying "open Flipkart" or "open Flipkart website".
-     08. Open the freeCodeCamp website by saying "open freeCodeCamp" or "open freeCodeCamp website".
-     09. Open the GitHub website by saying "open GitHub" or "open GitHub website".
+     1. Open the Amazon website by saying "open Amazon" or "open Amazon website".
+     2. Open the Bing website by saying "open Bing" or "open Bing website".
+     3. Likewise, Open the code forces website by saying "open code forces" or "open code forces website".
+     4. Furthermore, Open the code wars website by saying "open code wars" or "open code wars website".
+     5. Open the DuckDuckGo website by saying "open DuckDuckGo" or "open DuckDuckGo website".
+     6. Open the Facebook website by saying "open Facebook" or "open Facebook website".
+     7. Likewise, Open the Flipkart website by saying "open Flipkart" or "open Flipkart website".
+     8. Open the freeCodeCamp website by saying "open freeCodeCamp" or "open freeCodeCamp website".
+     9. Open the GitHub website by saying "open GitHub" or "open GitHub website".
      10. Likewise, Open the Gmail website by saying "open Gmail" or "open Gmail website".
      11. Open the Google Maps website by saying "open Google Maps" or "open Google Maps website".
      12. Open the Google website by saying "open google" or "open google website".
