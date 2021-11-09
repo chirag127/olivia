@@ -7,7 +7,7 @@
     - [If You Get `No Module Named pyaudio` Error!](#if-you-get-no-module-named-pyaudio-error)
   - [How to use the application](#how-to-use-the-application)
 - [Precautions while using the software in the application](#precautions-while-using-the-software-in-the-application)
-- [Technologies used in the software](#technologies-used-in-the-software)
+- [Libraries used in the software](#libraries-used-in-the-software)
 ### Features
 
   
@@ -101,7 +101,7 @@
     - Open peaches just say "play peaches" or "play the song peaches".
     - I hope you understand now.
 
-33. You can control the video by saying "pause", "play","volume up", "volume down", "next". Saying "pause" pauses hte video in the web browser, Saying "play" plays the video in        
+33. You can control the video by saying "pause", "play","volume up", "volume down", "next". Saying "pause" pauses the video in the web browser, Saying "play" plays the video in        
 
 
 34. Open any website just say "open (the name of the website)" or "open (the name of the website) now" or "open (the name of the website) now" e.g.
@@ -295,4 +295,66 @@ pipwin install pyaudio
 2. Please do not forget to say "close" after playing a video on YouTube.
 3. Do not use it for bad purposes.
   
-# Technologies used in the software  
+# Libraries used in the software  
+
+/* comment start 
+
+#  BeautifulSoup is used for web scraping
+from bs4 import BeautifulSoup
+# google trans is used for translation and Google Translate is used for language detection
+from googletrans import Translator
+# ctypes is used maniplulate the data types
+import ctypes
+import datetime  # date and time module is for timezones
+import json  # json library is used for reading and writing json files obtained by apis
+import math  # math library provides math fuctions .
+import os  # os library is used to open the system and open the specified file
+import pyautogui  # pyaoautogui is used for mouse and keyboard control
+import pyttsx3  # pyttx3 is used for text to speech
+import pywhatkit  # pywhatkit is used for playing the youtube videos
+import random  # random library is used for random number generation
+import re  # regular expression library is used for regular expressions
+import requests  # requests library is used to make http requests to apis
+import shutil  # shutil is used to copy files and folders from one location to another location or for archiving files and folders
+import smtplib  # smtplib is used for sending emails
+# spech_recognition library is used for speech recognition and google translate is used for language detection
+import speech_recognition as sr
+import subprocess  # subprocess is used to run the command line commands for screen capture
+import sys  # sys library is used to exit the program
+import time  # time library is used for timezones
+import urlopen  # used to open url
+import webbrowser  # webbrowser is used to open the url in the default browser
+import wikipedia  # get article from wikipedia
+import win32com.client as wincl
+import winshell
+import clipboard  # clipboard is used to read the text from the clipboard
+import psutil  # pip install psutil # psutil is used to get the cpu usage and ram usage and disk usage and battery usage
+import tkinter as tk
+# I was getting error so i install pyaudio
+# error in that too so i googled it on the stackover flow.
+from tkinter import *
+import numpy as np
+
+*/ comment end */
+
+
+Speech recognition library: [PyAudio](https://people.csail.mit.edu/hubert/pyaudio/)
+BeutyifulSoup library: [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/)
+Google Translate library for translation of the text: [Google Translate](https://pypi.python.org/pypi/gT/)
+PyAudio library: [PyAudio](https://people.csail.mit.edu/hubert/pyaudio/)
+Tkinter library: [Tkinter](https://docs.python.org/3/library/tkinter.html)
+Pygame library: [Pygame](https://www.pygame.org/)
+Pyttsx library: [Pyttsx](https://pypi.python.org/pypi/pyttsx3/)
+ Datetime library: [Datetime](https://docs.python.org/3/library/datetime.html)
+ Numpy library: [Numpy](https://www.numpy.org/)
+ Pygame library: [Pygame](https://www.pygame.org/)
+ Pywhatkit library: [Pywhatkit](https://pypi.python.org/pypi/pywhatkit/)
+ WMI library: [WMI](https://pypi.python.org/pypi/wmi/)
+ Win32com library: [Win32com](https://docs.python.org/3/library/win32com.client.html)
+ WinShell library: [WinShell](https://pypi.python.org/pypi/winshell/)
+ Psutil library: [Psutil](https://pypi.python.org/pypi/psutil/)
+ Clipboard library: [Clipboard](https://pypi.python.org/pypi/clipboard)
+ Wikipedia library: [Wikipedia](https://pypi.python.org/pypi/wikipedia/)
+ Pyautogui library: [Pyautogui](https://pypi.python.org/pypi/pyautogui/)
+ Webbrowser library: [Webbrowser](https://pypi.python.org/pypi/webbrowser/)
+ 
