@@ -1,4 +1,4 @@
-# I was getting error so i install pyaudio
+from pyowm import OWM # import the library owm from pyowm for weather api 
 from bs4 import BeautifulSoup   #   BeautifulSoup is used for web scraping
 from googletrans import Translator  # googletrans is used for translation and google translate is used for language detection
 from tkinter import *
@@ -628,7 +628,7 @@ if __name__ == "__main__":
                 w = obs.get_weather()
                 k = w.get_status()
                 x = w.get_temperature(unit='celsius')
-                sofiaResponse('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (city, k, x['temp_max'], x['temp_min']))
+                speak('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (city, k, x['temp_max'], x['temp_min']))
 
         elif 'tell me about' in query:
                 reg_ex = re.search('tell me about (.*)', query)
@@ -636,9 +636,9 @@ if __name__ == "__main__":
                     if reg_ex:
                         topic = reg_ex.group(1)
                         ny = wikipedia.page(topic)
-                        sofiaResponse(ny.content[:500].encode('utf-8'))
+                        speak(ny.content[:500].encode('utf-8'))
                 except Exception as e:
-                        sofiaResponse(e)
+                        speak(e)
 
             
         elif 'news' in query:
