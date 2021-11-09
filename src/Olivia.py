@@ -116,7 +116,6 @@ def presshotkey(key1, key2):
 
 
 def NewsFromBBC():
-
     query_params = {
         "source": "bbc-news",
         "sortBy": "top",
@@ -3577,6 +3576,7 @@ if __name__ == "__main__":
         elif 'username' in query:
             username()
 
+"""
         else:
 
             print("else statement is executed")
@@ -3684,3 +3684,4 @@ if __name__ == "__main__":
 
                     # Asking user if he or she want olivia to do anything else.
                     speak('ok. anything else sir?')
+"""
