@@ -911,6 +911,7 @@ if __name__ == "__main__":
                         presskey('f2')
                         # sp('Decreased the brightness')
 
+            
         elif 'tab' in query or 'tabs' in query:
             if 'next' in query:
                 presshotkey('ctrl', 'tab')
@@ -927,20 +928,19 @@ if __name__ == "__main__":
             elif 'new' in query:
                 presshotkey('ctrl', 't')
 
+        elif 'close tab' in query or 'close this tab' or 'close all tabs' in query or 'close this window' in query:
+            presshotkey('ctrl', 'w')
+
         elif 'close' in query or 'exit' in query:
 
-            if 'page' in query:
+            if 'page' in query: 
                 presshotkey('ctrl', 'w')
                # sp('Closed')
 
-            elif 'this' in query:
-                if 'app' in query or 'application' in query or 'program' in query or 'process' in query or 'window' in query or 'all tabs' in query:
-                    presshotkey('alt', 'f4')
-                    # sp('Closed')
-
             elif 'tab' in query:
-                pyautogui.hotkey('ctrl', 'w')
-
+                presshotkey('ctrl', 'w')
+                # sp('Closed')
+ 
             elif 'window' in query:
                 presshotkey('alt', 'f4')
 
@@ -983,7 +983,11 @@ if __name__ == "__main__":
             elif 'notepad' in query:
                 sp('closing notepad')
                 os.system('TASKKILL /F /IM notepad.exe')
-
+            elif 'this' in query:
+                
+                if 'app' in query or 'application' in query or 'program' in query or 'process' in query or 'window' in query or 'all tabs' in query:
+                    presshotkey('alt', 'f4')
+                    # sp('Closed')
             # all the office apps should be closed before closing the office
 
             # microsoft word
@@ -1161,7 +1165,7 @@ if __name__ == "__main__":
                 os.remove('olivianote.txt')
                 speak("Note has been deleted")
 
-            elif 'open' in query:
+            elif 'open' in query or 'show' in query:
                 speak("Opening Note")
                 os.startfile('olivianote.txt')
 
