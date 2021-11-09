@@ -1,42 +1,33 @@
-from pyowm import OWM  # import the library owm from pyowm for weather api
-from bs4 import BeautifulSoup  # BeautifulSoup is used for web scraping
-# googletrans is used for translation and google translate is used for language detection
-from googletrans import Translator
-from tkinter import *
-import clipboard  # clipboard is used to read the text from the clipboard
-import ctypes  # ctypes is used maniplulate the data types
-import datetime  # date and time module is for timezones
-import json  # json library is used for reading and writing json files obtained by apis
-import math  # math library provides math fuctions .
-import numpy as np
-import os  # os library is used to open the system and open the specified file
-import psutil  # pip install psutil # psutil is used to get the cpu usage and ram usage and disk usage and battery usage
-import pyautogui  # pyaoautogui is used for mouse and keyboard control
-import pyttsx3  # pyttx3 is used for text to speech
-import pywhatkit  # pywhatkit is used for playing the youtube videos
-import random  # random library is used for random number generation
-import re  # regular expression library is used for regular expressions
-import requests  # requests library is used to make http requests to apis
-import shutil  # shutil is used to copy files and folders from one location to another location or for archiving files and folders
-import smtplib  # smtplib is used for sending emails
-# spech_recognition library is used for speech recognition and google translate is used for language detection
-import speech_recognition as sr
-import subprocess  # subprocess is used to run the command line commands for screen capture
-import sys  # sys library is used to exit the program
-import time  # time library is used for timezones
-import tkinter as tk
-import urlopen  # used to open url
-import webbrowser  # webbrowser is used to open the url in the default browser
-import wikipedia  # get article from wikipedia
-import win32com.client as wincl
-import winshell
-# error in that too so i googled it on the stackover flow.
-
-"""
-# Text to Speech Engine
-# Define Text to Speech Engine
-
-"""
+from bs4 import BeautifulSoup      # BeautifulSoup is used for web scraping
+from googletrans import Translator # googletrans is used for translation and google translate is used for language detection
+from pyowm import OWM              # import the library owm from pyowm for weather api
+from tkinter import *              # tkinter is used for GUI and tkinter is used for creating GUI in python and tkinter is used for creating GUI in python
+import clipboard                   # clipboard is used to read the text from the clipboard
+import ctypes                      # ctypes is used maniplulate the data types
+import datetime                    # date and time module is for timezones
+import json                        # json library is used for reading and writing json files obtained by apis
+import math                        # math library provides math fuctions .
+import numpy as np                 # Numpy library is used for mathematical calculations and mathematical operations
+import os                          # os library is used to open the system and open the specified file
+import psutil                      # psutil is used to get the cpu usage and ram usage and disk usage and battery usage
+import pyautogui                   # pyaoautogui is used for mouse and keyboard control
+import pyttsx3                     # pyttx3 is used for text to speech
+import pywhatkit                   # pywhatkit is used for playing the youtube videos
+import random                      # random library is used for random number generation
+import re                          # regular expression library is used for regular expressions
+import requests                    # requests library is used to make http requests to apis
+import shutil                      # shutil is used to copy files and folders from one location to another location or for archiving files and folders
+import smtplib                     # smtplib is used for sending emails
+import speech_recognition as sr    # spech_recognition library is used for speech recognition and google translate is used for language detection
+import subprocess                  # subprocess is used to run the command line commands for screen capture
+import sys                         # sys library is used to exit the program
+import time                        # time library is used for timezones
+import tkinter as tk               # tkinter is used for gui
+import urlopen                     # used to open url
+import webbrowser                  # webbrowser is used to open the url in the default browser
+import wikipedia                   # get article from wikipedia
+import win32com.client as wincl    # win32com.client is used to open the specified file and return the result to the user
+import winshell                    # use winshell for opening the specified file
 
 # create a wonderful virtual voice assistant named olivia and she will help you in your daily life with her amazing features like text to speech, voice to text, google search, wikipedia search, youtube search, news search, weather search, time search, date search, screenshot, email, jokes, ip address, and many more.
 # olivia is a virtual voice assistant and she will help you in your daily life with her amazing features like text to speech, voice to text, google search, wikipedia search, youtube search, news search, weather search, time search, date search, screenshot, email, jokes, ip address, and many more.
@@ -46,55 +37,100 @@ import winshell
 
 
 # reqiured engines
+
+
 engine = pyttsx3.init('sapi5')
+
 # sapi5 is the default voice engine of windows and it is installed by default in windows
+
 # getproperties is used to get the properties of the engine like rate, volume, pitch, etc.
+
+
 voices = engine.getProperty('voices')
+
+
 # setproperties is used to set the properties of the engine like rate, volume, pitch, etc.
+
+
 engine.setProperty('voice', voices[1].id)
+
+
 # defining the function to speak the text
 
 
 def speak(audio):
+
+
     engine.say(audio)
+
     engine.runAndWait()
 
 # defining the function to take command from the user
 
 
 def takeCommand():
+
     # create a recognizer object
+
     r = sr.Recognizer()
+
     # use the microphone as source for input
+
     with sr.Microphone() as source:
+
         # print listening to the user to know that the program is listening
+
         print("Listening...")
+
         # refer to the https://www.codesofinterest.com/2017/04/energy-threshold-calibration-in-speech-recognition.html to understand the energy threshold
 
         # pause for a second to let the recognizer adjust the threshold before listening for input
+
         r.pause_threshold = 1
+
         # r.adjust_for_ambient_noise(source, duration=1)
+
         # r.dynamic_energy_threshold = True
+
         # r.energy_threshold = 800
+
         # r.dynamic_energy_adjustment_damping = 0.2
+
         # listen for the user's input and store it in audio variable and convert it to text later
+
         audio = r.listen(source)
+
     try:
+
         # convert the audio to text
+
         # print recongzing the user's voice to know that the program is re cognizing the user's voice
+
         print("Recognizing...")
+
         # use google translate to detect the language of the user's voice
+
         query = r.recognize_google(audio, language='en-in')
 
+
         # print the user's voice to the console
+
         print(f"User said: {query}\n")
+
     # if the user does not say anything then the program will listen again
+
     except Exception as e:
+
         # print the error to the console
+
         print("Say that again please...")
+
         # return the function to takeCommand()
+
         return "None"
+
     # return the function to takeCommand()
+
     return query
 
 
