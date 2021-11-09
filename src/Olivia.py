@@ -633,38 +633,54 @@ if __name__ == "__main__":
         if 'fullform of abcdef' in query:
             sp("Any body can dance")
 
-        # telling the cpu usage when the says a command that contains both cpu and usage.
-        elif 'usage' in query and 'cpu' in query:
-            speak("CPU is at " + str(psutil.cpu_percent()) + "%")
 
-        # telling the ram usage when the says a command that contains both ram and usage.
-        elif 'usage' in query and 'ram' in query:
-            speak("RAM is at " + str(psutil.virtual_memory()[2]) + "%")
+        elif 'current weather' in query:
+            reg_ex = re.search('current weather in (.*)', query)
+            if reg_ex:
+                city = reg_ex.group(1)
+                owm = OWM(API_key='ab0d5e80e8dafb2cb81fa9e82431c1fa')
+                obs = owm.weather_at_place(city)
+                w = obs.get_weather()
+                k = w.get_status()
+                x = w.get_temperature(unit='celsius')
+                speak('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (
+                    city, k, x['temp_max'], x['temp_min']))
 
-        # telling the disk usage when the says a command that contains both disk and usage.
-        elif 'usage' in query and 'disk' in query:
-            speak("Disk is at " + str(psutil.disk_usage('/')[3]) + "%")
+        elif 'tell me about' in query:
 
-        # telling the battery usage when the says a command that contains both battery and usage.
-        elif 'usage' in query and 'battery' in query:
-            speak("Battery is at " + str(psutil.sensors_battery().percent) + "%")
+            reg_ex = re.search('tell me about (.*)', query)
 
-        # telling the battery status when the says a command that contains both battery and status.
-        elif 'status' in query and 'battery' in query:
-            if psutil.sensors_battery().power_plugged == True:
-
-                speak("Battery is charging")
+            try:
+                if reg_ex:
+                    topic = reg_ex.group(1)
+                    ny = wikipedia.page(topic)
+                    speak(ny.content[:500].encode('utf-8'))
+            except Exception as e:
+                speak(e)
 
 
-            if psutil.sensors_battery().power_plugged == False:
-                speak("Battery is discharging")
+        # if the query contains 'who is (something)', then return the information of that person/organisation from the wikipedia using the information from the wikipedia library
+        elif 'who is' in query:
+            reg_ex = re.search('who is (.*)', query)
+            if reg_ex:
+                topic = reg_ex.group(1)
+                ny = wikipedia.summary(topic, sentences=2)
+                speak('According to Wikipedia')
+                print(ny)
+                speak(ny)
+                
+
+        elif 'game' in query and 'start' in query:
+                    if 'tic' in query or 'tac' in query or 'toe' in query:
+
+                        tictactoe()
+                        continue
+
 
 
         # telling the joke when the query of the user contains joke
         elif 'joke' in query:
             givejoke()
-
-
 
         elif "send" in query and 'message' in query:
                 username = {
@@ -714,6 +730,33 @@ if __name__ == "__main__":
                     print(e)
                     speak("Sorry Sir, I am not able to send this message")
                     break
+
+        # telling the cpu usage when the says a command that contains both cpu and usage.
+        elif 'usage' in query and 'cpu' in query:
+            speak("CPU is at " + str(psutil.cpu_percent()) + "%")
+
+        # telling the ram usage when the says a command that contains both ram and usage.
+        elif 'usage' in query and 'ram' in query:
+            speak("RAM is at " + str(psutil.virtual_memory()[2]) + "%")
+
+        # telling the disk usage when the says a command that contains both disk and usage.
+        elif 'usage' in query and 'disk' in query:
+            speak("Disk is at " + str(psutil.disk_usage('/')[3]) + "%")
+
+        # telling the battery usage when the says a command that contains both battery and usage.
+        elif 'usage' in query and 'battery' in query:
+            speak("Battery is at " + str(psutil.sensors_battery().percent) + "%")
+
+        # telling the battery status when the says a command that contains both battery and status.
+        elif 'status' in query and 'battery' in query:
+            if psutil.sensors_battery().power_plugged == True:
+
+                speak("Battery is charging")
+
+
+            if psutil.sensors_battery().power_plugged == False:
+                speak("Battery is discharging")
+
 
         
         # type the text in the current window if 'type' is in query
@@ -798,49 +841,6 @@ if __name__ == "__main__":
                 file.write('\n')
                 file.close()
                 break
-
-        elif 'current weather' in query:
-            reg_ex = re.search('current weather in (.*)', query)
-            if reg_ex:
-                city = reg_ex.group(1)
-                owm = OWM(API_key='ab0d5e80e8dafb2cb81fa9e82431c1fa')
-                obs = owm.weather_at_place(city)
-                w = obs.get_weather()
-                k = w.get_status()
-                x = w.get_temperature(unit='celsius')
-                speak('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (
-                    city, k, x['temp_max'], x['temp_min']))
-
-        elif 'tell me about' in query:
-
-            reg_ex = re.search('tell me about (.*)', query)
-
-            try:
-                if reg_ex:
-                    topic = reg_ex.group(1)
-                    ny = wikipedia.page(topic)
-                    speak(ny.content[:500].encode('utf-8'))
-            except Exception as e:
-                speak(e)
-
-
-        # if the query contains 'who is (something)', then return the information of that person/organisation from the wikipedia using the information from the wikipedia library
-        elif 'who is' in query:
-            reg_ex = re.search('who is (.*)', query)
-            if reg_ex:
-                topic = reg_ex.group(1)
-                ny = wikipedia.summary(topic, sentences=2)
-                speak('According to Wikipedia')
-                print(ny)
-                speak(ny)
-                
-
-        elif 'game' in query and 'start' in query:
-                    if 'tic' in query or 'tac' in query or 'toe' in query:
-
-                        tictactoe()
-                        continue
-
 
         if 'play' in query:
             song = query.replace('play', '')
