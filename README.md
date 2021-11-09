@@ -1,6 +1,7 @@
 # Olivia-A-Personal-Virtual-Assistant
+
 - [Olivia-A-Personal-Virtual-Assistant](#olivia-a-personal-virtual-assistant)
-    - [Features](#features)
+  - [Features](#features)
     - [Assistant skills](#assistant-skills)
     - [In progress features](#in-progress-features)
   - [Installation instruction](#installation-instruction)
@@ -8,47 +9,48 @@
   - [How to use the application](#how-to-use-the-application)
 - [Precautions while using the software in the application](#precautions-while-using-the-software-in-the-application)
 - [Libraries used in the software](#libraries-used-in-the-software)
-### Features
 
-  
-  1.  Fully customizable
-  2.  A lot of features
-  3.  Built-in voice recognition
-  4.  Dynamic voice recognition
-  5.  Easy to use
-  6.  Great UI
-  7.  Intuitive
-  8.  Just a bit of magic
-  9.  Keyboard-controlled
-  10. Lightweight
-  11. Minimal
-  12. No need for a database
-  13. Open source
-  14. Powerful
-  15. Quick
-  16. Simple
-  17. Transparent
-  18. User-friendly
-  19. Voice-controlled
-  20. Speech synthesis
-  21. Speech recognition
-  22. Natural language processing
-  23. Intuitive interface
-  24. Customizable
-  25. Open source
-  26. Free to use
-  27. Free to modify
-  28. Free to redistribute
-### Assistant skills 
+## Features
 
-1. Give description of anything according to Wikipedia just say "what is (the name of the thing) according to Wikipedia".
-2. Give the CPU usage of the computer just say "CPU usage" or "CPU usage of the computer" or "usage of the CPU".
-3. Present with the RAM usage of the computer just say "RAM usage" or "RAM usage of the computer" or "RAM usage of the computer".
-4. Give the disk usage of the computer just say "disk usage" or "disk usage of the computer" or "disk usage of the computer".
-6. Give the battery usage of the computer just say "battery usage" or "battery usage of the computer" or "battery usage of the computer".
-7. Search in chrome just say "search in chrome".
-8. Tell you the time by saying "time" or "what time is it" or "what is the time" or "tell me the time".
-9. Tell you the date by saying "date" or "what date is it" or "what is the date" or "tell me the date".
+1. Fully customizable
+2. A lot of features
+3. Built-in voice recognition
+4. Dynamic voice recognition
+5. Easy to use
+6. Great UI
+7. Intuitive
+8. Just a bit of magic
+9. Keyboard-controlled
+10. Lightweight
+11. Minimal
+12. No need for a database
+13. Open source
+14. Powerful
+15. Quick
+16. Simple
+17. Transparent
+18. User-friendly
+19. Voice-controlled
+20. Speech synthesis
+21. Speech recognition
+22. Natural language processing
+23. Intuitive interface
+24. Customizable
+25. Open source
+26. Free to use
+27. Free to modify
+28. Free to redistribute
+
+### Assistant skills
+
+01. Give description of anything according to Wikipedia just say "what is (the name of the thing) according to Wikipedia".
+02. Give the CPU usage of the computer just say "CPU usage" or "CPU usage of the computer" or "usage of the CPU".
+03. Present with the RAM usage of the computer just say "RAM usage" or "RAM usage of the computer" or "RAM usage of the 0computer".
+04. Give the disk usage of the computer just say "disk usage" or "disk usage of the computer" or "disk usage of the computer".
+06. Give the battery usage of the computer just say "battery usage" or "battery usage of the computer" or "battery usage of 0the computer".
+07. Search in chrome just say "search in chrome".
+08. Tell you the time by saying "time" or "what time is it" or "what is the time" or "tell me the time".
+09. Tell you the date by saying "date" or "what date is it" or "what is the date" or "tell me the date".
 10. Generate a random password by saying "generate a password" or "generate a random password".
 11. Generate a random number by saying "generate a number" or "generate a random number".
 12. Change your name by saying "change my name to (your name)" or "call me (your name)".
@@ -68,7 +70,7 @@
 26. Send WhatsApp message by saying "send WhatsApp message to (your number)" or "send message".
 27. Tell location of a place by saying "where is (the name of the place)" or "where is (the name of the place) now" or "where is (the name of the place) now" etc. Example "where is Ghaziabad" will tell you the location of Ghaziabad by open the location of Ghaziabad in Google Maps.
 28. Open word by saying "open word" or "open word now" and then type your document by saying "yes" or "no" when asked if "do you want me to type" and stop typing by saying "stop typing".
-29. Launch an application by saying "launch (the name of the application)" or "launch (the name of the application) now" or "launch (the name of the application) now" 
+29. Launch an application by saying "launch (the name of the application)" or "launch (the name of the application) now" or "launch (the name of the application) now"
     1. Launch chrome just say "launch chrome" or "launch chrome now".
     2. Launch notepad just say "launch notepad" or "launch notepad now".
     3. Open word just say "launch word" or "launch word now".
@@ -92,8 +94,7 @@
     7. Start a video on how to make a cake just say "play a video on how to make a cake" or "play how to make a cake video" or "play how to make a cake".
     8. Play a video on python just say "play a video on python" or "play python video" or "play python".
 
-
-32.  Play any song of your choice by saying "play (name of the song(maybe with the name of the singer if there are two or more song by the same name there will be no confusion.)) Examples are as follows:
+32. Play any song of your choice by saying "play (name of the song(maybe with the name of the singer if there are two or more song by the same name there will be no confusion.)) Examples are as follows:
 
     - Play lonely by the Beatles just say "play lonely by the Beatles" or "play the song lonely by the Beatles".
     - Play lonely by Justin Bieber just say "play lonely by Justin Bieber" or "play the song lonely by Justin Bieber".
@@ -101,19 +102,18 @@
     - Open peaches just say "play peaches" or "play the song peaches".
     - I hope you understand now.
 
-33. You can control the video by saying "pause", "play","volume up", "volume down", "next". Saying "pause" pauses the video in the web browser, Saying "play" plays the video in        
-
+33. You can control the video by saying "pause", "play","volume up", "volume down", "next". Saying "pause" pauses the video in the web browser, Saying "play" plays the video in
 
 34. Open any website just say "open (the name of the website)" or "open (the name of the website) now" or "open (the name of the website) now" e.g.
-     1. Open the Amazon website by saying "open Amazon" or "open Amazon website".
-     2. Open the Bing website by saying "open Bing" or "open Bing website".
-     3. Likewise, Open the code forces website by saying "open code forces" or "open code forces website".
-     4. Furthermore, Open the code wars website by saying "open code wars" or "open code wars website".
-     5. Open the DuckDuckGo website by saying "open DuckDuckGo" or "open DuckDuckGo website".
-     6. Open the Facebook website by saying "open Facebook" or "open Facebook website".
-     7. Likewise, Open the Flipkart website by saying "open Flipkart" or "open Flipkart website".
-     8. Open the freeCodeCamp website by saying "open freeCodeCamp" or "open freeCodeCamp website".
-     9. Open the GitHub website by saying "open GitHub" or "open GitHub website".
+     01. Open the Amazon website by saying "open Amazon" or "open Amazon website".
+     02. Open the Bing website by saying "open Bing" or "open Bing website".
+     03. Likewise, Open the code forces website by saying "open code forces" or "open code forces website".
+     04. Furthermore, Open the code wars website by saying "open code wars" or "open code wars website".
+     05. Open the DuckDuckGo website by saying "open DuckDuckGo" or "open DuckDuckGo website".
+     06. Open the Facebook website by saying "open Facebook" or "open Facebook website".
+     07. Likewise, Open the Flipkart website by saying "open Flipkart" or "open Flipkart website".
+     08. Open the freeCodeCamp website by saying "open freeCodeCamp" or "open freeCodeCamp website".
+     09. Open the GitHub website by saying "open GitHub" or "open GitHub website".
      10. Likewise, Open the Gmail website by saying "open Gmail" or "open Gmail website".
      11. Open the Google Maps website by saying "open Google Maps" or "open Google Maps website".
      12. Open the Google website by saying "open google" or "open google website".
@@ -182,9 +182,7 @@
     - If you want to search for "Python" on Google Maps, you can say "search Python on Google Maps".
     - If you want to search for "Python" on Google Scholar, you can say "search Python on Google Scholar".
 
-
-
-36.  Translate the English to many other languages just saying "translate (the sentence you want to translate) to (the language to which you want to translate the sentence)" example "translate hello to Spanish" will translate the English sentence "hello" to Spanish. The supported languages are :
+36. Translate the English to many other languages just saying "translate (the sentence you want to translate) to (the language to which you want to translate the sentence)" example "translate hello to Spanish" will translate the English sentence "hello" to Spanish. The supported languages are :
         - Arabic
         - Bengali
         - Bulgarian
@@ -220,12 +218,12 @@
         - Swedish
         - And many more.
 
-37. Answer to many questions like :- 
+37. Answer to many questions like :-
     1. What is your name?
     2. What is your age?
     3. Who is your favorite animal?
     4. What is your job?
-    5. What is your favorite color?   
+    5. What is your favorite color?
     6. How is your favorite food?
     7. Who is your favorite actress?
     8. What is your favorite movie?
@@ -233,23 +231,21 @@
     10. Who is your favorite singer?
     11. What is your favorite game?
     12. What is your favorite book?
-    13. Who is your favorite songwriter? 
+    13. Who is your favorite songwriter?
     14. Who is your favorite cartoon?
     15. What is your favorite cartoon character?
     16. Who is your favorite actor?
     17. And many more...
 
+38. Type by saying "start typing" and then start typing by the instruction given.
+39. Press many key by saying "press (the key you want to press) key" example "press space key" will press the space key on your keyboard or "press enter key" will press the enter key on your keyboard, "press tab key" will press the tab key on your keyboard and so on.
 
-38.  Type by saying "start typing" and then start typing by the instruction given.
-39.  Press many key by saying "press (the key you want to press) key" example "press space key" will press the space key on your keyboard or "press enter key" will press the enter key on your keyboard, "press tab key" will press the tab key on your keyboard and so on.
-   
 40. Exit the application just by saying "exit the application" or "exit" or "goodbye" or "bye".
 41. If the Virtual assistant Don't know the answer to any of your questions, Olivia will ask you if he or she wants to search the query in google or YouTube or Wikipedia. If you say yes, then it will ask in which of these websites you want to search the query like if you YouTube it will search the query on YouTube. In last, If you say no, then it will do nothing and just say 'ok. Anything else sir?'
 
-
 ### In progress features
 
-1. Tell you your operating system by saying "my operating system" or "my operating system is" or "my operating system is" or "my operating system is". 
+1. Tell you your operating system by saying "my operating system" or "my operating system is" or "my operating system is" or "my operating system is".
 1. Give you a random fact by saying "fact" or "tell me a fact" or "tell me a random fact".
 1. Give a list of all the commands by saying "commands" or "help" or "what are the commands".
 1. Tell you the temperature by saying "temperature" or "what is the temperature" or "tell me the temperature" or "tell me the weather forecast".
@@ -266,21 +262,20 @@
 1. Install Python.
 1. To start open CMD in the directory then run the code below!
 
-`pip install -r requirements.txt`<br>
+`pip install -r requirements.txt`
 
 1. Run the .py file in any IDE.
 
-### If You Get `No Module Named pyaudio` Error!
+### If You Get `No Module Named pyaudio` Error
 
 Open CMD in the directory then run the code below!
 
-```
+```bash
 pip install pipwin
 pipwin install pyaudio
 ```
 
-- Be sure to change the application paths on script.py otherwise it won't open Google Chrome and other Apps. <br>
-
+- Be sure to change the application paths on script.py otherwise it won't open Google Chrome and other Apps. (If you don't know how to change the application paths, please refer to the [Installation instruction](#installation-instruction) section.)
 
 ## How to use the application
 
@@ -288,19 +283,18 @@ pipwin install pyaudio
 2. Just open the software.
 3. Here the software is the best for some with disability.
 
-
-# Precautions while using the software in the application
+## Precautions while using the software in the application
 
 1. Do not use the software in the application if you are not in the comfort of your own.
 2. Please do not forget to say "close" after playing a video on YouTube.
 3. Do not use it for bad purposes.
   
-# Libraries used in the software  
+## Libraries used in the software  
 
 Clipboard library: [Clipboard](https://pypi.python.org/pypi/clipboard)
 Ctypes library: [ctypes](https://pypi.python.org/pypi/ctypes)
 Date and time library: [datetime](https://pypi.python.org/pypi/datetime)
-Json library: [json](https://pypi.python.org/pypi/json)
+JSON library: [JSON](https://pypi.python.org/pypi/json)
 Math library: [math](https://pypi.python.org/pypi/math)
 Numpy library: [numpy](https://pypi.python.org/pypi/numpy)
 Os library: [os](https://pypi.python.org/pypi/os)
@@ -320,14 +314,11 @@ Time library: [time](https://pypi.python.org/pypi/time)
 Tkinter library: [tkinter](https://pypi.python.org/pypi/tkinter)
 Urlopen library: [urlopen](https://pypi.python.org/pypi/urlopen)
 Webbrowser library: [webbrowser](https://pypi.python.org/pypi/webbrowser)
-Wikipedia library: [wikipedia](https://pypi.python.org/pypi/wikipedia)
+Wikipedia library: [Wikipedia](https://pypi.python.org/pypi/wikipedia)
 Win32com library: [win32com](https://pypi.python.org/pypi/win32com)
 Winshell library: [winshell](https://pypi.python.org/pypi/winshell)
 
-
-
-# Technologies used in the software
-
+## Technologies used in the software
 
 1. Python 3.7.3
 2. Tkinter
