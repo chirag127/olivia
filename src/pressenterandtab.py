@@ -35,7 +35,7 @@ if __name__ == '__main__':
 
         presskey('enter')
 
-        time.sleep(1)
+        time.sleep(2)
 
         presskey('tab')
 

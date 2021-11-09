@@ -1,12 +1,13 @@
-from pyowm import OWM # import the library owm from pyowm for weather api 
-from bs4 import BeautifulSoup   #   BeautifulSoup is used for web scraping
-from googletrans import Translator  # googletrans is used for translation and google translate is used for language detection
+from pyowm import OWM  # import the library owm from pyowm for weather api
+from bs4 import BeautifulSoup  # BeautifulSoup is used for web scraping
+# googletrans is used for translation and google translate is used for language detection
+from googletrans import Translator
 from tkinter import *
 import clipboard  # clipboard is used to read the text from the clipboard
-import ctypes   #   ctypes is used maniplulate the data types
-import datetime  #  date and time module is for timezones
-import json  #  json library is used for reading and writing json files obtained by apis
-import math  #  math library provides math fuctions .
+import ctypes  # ctypes is used maniplulate the data types
+import datetime  # date and time module is for timezones
+import json  # json library is used for reading and writing json files obtained by apis
+import math  # math library provides math fuctions .
 import numpy as np
 import os  # os library is used to open the system and open the specified file
 import psutil  # pip install psutil # psutil is used to get the cpu usage and ram usage and disk usage and battery usage
@@ -18,7 +19,8 @@ import re  # regular expression library is used for regular expressions
 import requests  # requests library is used to make http requests to apis
 import shutil  # shutil is used to copy files and folders from one location to another location or for archiving files and folders
 import smtplib  # smtplib is used for sending emails
-import speech_recognition as sr # spech_recognition library is used for speech recognition and google translate is used for language detection
+# spech_recognition library is used for speech recognition and google translate is used for language detection
+import speech_recognition as sr
 import subprocess  # subprocess is used to run the command line commands for screen capture
 import sys  # sys library is used to exit the program
 import time  # time library is used for timezones
@@ -150,6 +152,7 @@ def wishMe():
 
 # It will take microphone input from the user and return string output
 
+
 def tictactoe():
     size_of_board = 600
     symbol_size = (size_of_board / 3 - size_of_board / 8) / 2
@@ -158,7 +161,6 @@ def tictactoe():
     symbol_O_color = '#0492CF'
     Green_color = '#7BC043'
 
-
     class Tic_Tac_Toe():
         # ------------------------------------------------------------------
         # Initialization Functions:
@@ -166,7 +168,8 @@ def tictactoe():
         def __init__(self):
             self.window = Tk()
             self.window.title('Tic-Tac-Toe')
-            self.canvas = Canvas(self.window, width=size_of_board, height=size_of_board)
+            self.canvas = Canvas(
+                self.window, width=size_of_board, height=size_of_board)
             self.canvas.pack()
             # Input from user in form of clicks
             self.window.bind('<Button-1>', self.click)
@@ -191,10 +194,12 @@ def tictactoe():
 
         def initialize_board(self):
             for i in range(2):
-                self.canvas.create_line((i + 1) * size_of_board / 3, 0, (i + 1) * size_of_board / 3, size_of_board)
+                self.canvas.create_line(
+                    (i + 1) * size_of_board / 3, 0, (i + 1) * size_of_board / 3, size_of_board)
 
             for i in range(2):
-                self.canvas.create_line(0, (i + 1) * size_of_board / 3, size_of_board, (i + 1) * size_of_board / 3)
+                self.canvas.create_line(
+                    0, (i + 1) * size_of_board / 3, size_of_board, (i + 1) * size_of_board / 3)
 
         def play_again(self):
             self.initialize_board()
@@ -211,13 +216,15 @@ def tictactoe():
             logical_position = np.array(logical_position)
             # logical_position = grid value on the board
             # grid_position = actual pixel values of the center of the grid
-            grid_position = self.convert_logical_to_grid_position(logical_position)
+            grid_position = self.convert_logical_to_grid_position(
+                logical_position)
             self.canvas.create_oval(grid_position[0] - symbol_size, grid_position[1] - symbol_size,
                                     grid_position[0] + symbol_size, grid_position[1] + symbol_size, width=symbol_thickness,
                                     outline=symbol_O_color)
 
         def draw_X(self, logical_position):
-            grid_position = self.convert_logical_to_grid_position(logical_position)
+            grid_position = self.convert_logical_to_grid_position(
+                logical_position)
             self.canvas.create_line(grid_position[0] - symbol_size, grid_position[1] - symbol_size,
                                     grid_position[0] + symbol_size, grid_position[1] + symbol_size, width=symbol_thickness,
                                     fill=symbol_X_color)
@@ -241,7 +248,8 @@ def tictactoe():
                 color = 'gray'
 
             self.canvas.delete("all")
-            self.canvas.create_text(size_of_board / 2, size_of_board / 3, font="cmr 60 bold", fill=color, text=text)
+            self.canvas.create_text(
+                size_of_board / 2, size_of_board / 3, font="cmr 60 bold", fill=color, text=text)
 
             score_text = 'Scores \n'
             self.canvas.create_text(size_of_board / 2, 5 * size_of_board / 8, font="cmr 40 bold", fill=Green_color,
@@ -326,24 +334,23 @@ def tictactoe():
 
             return gameover
 
-
-
-
-
         def click(self, event):
             grid_position = [event.x, event.y]
-            logical_position = self.convert_grid_to_logical_position(grid_position)
+            logical_position = self.convert_grid_to_logical_position(
+                grid_position)
 
             if not self.reset_board:
                 if self.player_X_turns:
                     if not self.is_grid_occupied(logical_position):
                         self.draw_X(logical_position)
-                        self.board_status[logical_position[0]][logical_position[1]] = -1
+                        self.board_status[logical_position[0]
+                                          ][logical_position[1]] = -1
                         self.player_X_turns = not self.player_X_turns
                 else:
                     if not self.is_grid_occupied(logical_position):
                         self.draw_O(logical_position)
-                        self.board_status[logical_position[0]][logical_position[1]] = 1
+                        self.board_status[logical_position[0]
+                                          ][logical_position[1]] = 1
                         self.player_X_turns = not self.player_X_turns
 
                 # Check if game is concluded
@@ -355,12 +362,9 @@ def tictactoe():
                 self.play_again()
                 self.reset_board = False
 
-
     game_instance = Tic_Tac_Toe()
     game_instance.mainloop()
 
-
-        
 
 def cpu():
     usage = psutil.cpu_percent()
@@ -585,9 +589,7 @@ def username():
     speak("How can i Help you, Sir")
 
 
-
-## asdfjkl;
-
+# asdfjkl;
 
 
 if __name__ == "__main__":
@@ -628,19 +630,19 @@ if __name__ == "__main__":
                 w = obs.get_weather()
                 k = w.get_status()
                 x = w.get_temperature(unit='celsius')
-                speak('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (city, k, x['temp_max'], x['temp_min']))
+                speak('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (
+                    city, k, x['temp_max'], x['temp_min']))
 
         elif 'tell me about' in query:
-                reg_ex = re.search('tell me about (.*)', query)
-                try:
-                    if reg_ex:
-                        topic = reg_ex.group(1)
-                        ny = wikipedia.page(topic)
-                        speak(ny.content[:500].encode('utf-8'))
-                except Exception as e:
-                        speak(e)
+            reg_ex = re.search('tell me about (.*)', query)
+            try:
+                if reg_ex:
+                    topic = reg_ex.group(1)
+                    ny = wikipedia.page(topic)
+                    speak(ny.content[:500].encode('utf-8'))
+            except Exception as e:
+                speak(e)
 
-            
         elif 'news' in query:
             if 'news' in query:
                 NewsFromBBC()
@@ -649,9 +651,6 @@ if __name__ == "__main__":
 
         elif 'where are you?' in query:
             speak("I am here in the main loop. sir")
-
-
-
 
         elif 'usage' in query:
 
@@ -702,7 +701,6 @@ if __name__ == "__main__":
             if 'tic' in query or 'tac' in query or 'toe' in query:
                 tictactoe()
                 continue
-           
 
         # type the text in the current window if 'type' is in query
         elif 'typing' in query:
@@ -734,34 +732,14 @@ if __name__ == "__main__":
             os.system('notepad')
 
         # press the key specified in the query if 'press' is in query
-        elif 'press' in query:
-            if 'key' in query:
-                if 'enter' in query:
-                    pyautogui.press('enter')
+        elif 'press ' in query:
+            reg_ex = re.search('press (.*)', query)
+            if reg_ex:
+                key = reg_ex.group(1)
+                presspress(key)
 
-                elif 'backspace' in query:
-                    pyautogui.press('backspace')
 
-                elif 'tab' in query:
-                    pyautogui.press('tab')
 
-                elif 'space' in query:
-                    pyautogui.press('space')
-
-                elif 'esc' in query:
-                    pyautogui.press('esc')
-
-                elif 'up' in query:
-                    pyautogui.press('up')
-
-                elif 'down' in query:
-                    pyautogui.press('down')
-
-                elif 'left' in query:
-                    pyautogui.press('left')
-
-                elif 'right' in query:
-                    pyautogui.press('right')
 
 
 # give the current date and time if 'date' is in query
@@ -911,7 +889,6 @@ if __name__ == "__main__":
                         presskey('f2')
                         # sp('Decreased the brightness')
 
-            
         elif 'tab' in query or 'tabs' in query:
             if 'next' in query:
                 presshotkey('ctrl', 'tab')
@@ -920,7 +897,8 @@ if __name__ == "__main__":
                 presshotkey('shift', 't')
 
             elif 'quit' in query:
-                presshotkey('alt', 'f4')
+                presshotkey('ctrl', 'w')
+                # sp('Quited the tab')
 
             elif 'restart' in query or 'reload' in query or 'refresh' in query or 'reboot' in query:
                 presshotkey('ctrl', 'r')
@@ -928,19 +906,20 @@ if __name__ == "__main__":
             elif 'new' in query:
                 presshotkey('ctrl', 't')
 
-        elif 'close tab' in query or 'close this tab' or 'close all tabs' in query or 'close this window' in query:
-            presshotkey('ctrl', 'w')
+            elif 'close' in query:
+                presshotkey('ctrl', 'w')
+
+            else:
 
         elif 'close' in query or 'exit' in query:
-
-            if 'page' in query: 
+            if 'page' in query:
                 presshotkey('ctrl', 'w')
                # sp('Closed')
 
             elif 'tab' in query:
                 presshotkey('ctrl', 'w')
                 # sp('Closed')
- 
+
             elif 'window' in query:
                 presshotkey('alt', 'f4')
 
@@ -984,7 +963,7 @@ if __name__ == "__main__":
                 sp('closing notepad')
                 os.system('TASKKILL /F /IM notepad.exe')
             elif 'this' in query:
-                
+
                 if 'app' in query or 'application' in query or 'program' in query or 'process' in query or 'window' in query or 'all tabs' in query:
                     presshotkey('alt', 'f4')
                     # sp('Closed')

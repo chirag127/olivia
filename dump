@@ -412,7 +412,112 @@ from tkinter import *
 import numpy as np
 
 */ comment end */
+                elif 'f1' in query:
+                    pyautogui.press('f1')
 
+                elif 'f2' in query:
+
+                    pyautogui.press('f2')
+
+                elif 'f3' in query:
+
+                    pyautogui.press('f3')
+
+                elif 'f4' in query:
+
+                    pyautogui.press('f4')
+
+                elif 'f5' in query:
+
+                    pyautogui.press('f5')
+
+                elif 'f6' in query:
+                        
+                        pyautogui.press('f6')
+
+                elif 'f7' in query:
+
+                    pyautogui.press('f7')
+
+                elif 'f8' in query:
+                        
+                        pyautogui.press('f8')
+
+                elif 'f9' in query:
+
+
+                    pyautogui.press('f9')
+
+                elif 'f10' in query:
+                        
+                        pyautogui.press('f10')
+
+                elif 'f11' in query:
+                        
+                        pyautogui.press('f11')
+
+                elif 'f12' in query:
+
+                    pyautogui.press('f12')
+
+                elif 'ctrl' in query:
+                    pyautogui.press('ctrl')
+
+                elif 'shift' in query:
+                    pyautogui.press('shift')
+
+                elif 'alt' in query:
+                    pyautogui.press('alt')
+
+                elif 'win' in query:
+                    pyautogui.press('win')
+
+                elif 'ctrl' in query:
+                    pyautogui.press('ctrl')
+
+                elif 'a' in query:
+                    pyautogui.press('a')
+
+                        
+                elif 'b' in query:
+                    pyautogui.press('b')
+
+                elif 'c' in query:
+                    pyautogui.press('c')
+
+                elif 'd' in query:
+                    pyautogui.press('d')
+
+                elif 'e' in query:
+                    pyautogui.press('e')
+
+                elif 'f' in query:
+                    pyautogui.press('f')
+
+                elif 'g' in query:
+
+                    pyautogui.press('g')
+
+                elif 'h' in query:
+                        
+                        pyautogui.press('h')
+
+                elif 'i' in query:
+                    pyautogui.press('i')
+
+                elif 'j' in query:
+                    pyautogui.press('j')
+
+                elif 'k' in query:
+                    pyautogui.press('k')
+
+                elif 'l' in query:
+                    pyautogui.press('l')
+
+                elif 'm' in query:
+
+                    pyautogui.press('m')
+                    
 
 1. Speech recognition library: [PyAudio](https://people.csail.mit.edu/hubert/pyaudio/)
 2. BeutyifulSoup library: [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/)
