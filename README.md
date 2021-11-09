@@ -298,17 +298,17 @@ pipwin install pyaudio
 # Libraries used in the software  
 
 /* comment start 
-
-#  BeautifulSoup is used for web scraping
-from bs4 import BeautifulSoup
-# google trans is used for translation and Google Translate is used for language detection
-from googletrans import Translator
-# ctypes is used maniplulate the data types
-import ctypes
-import datetime  # date and time module is for timezones
-import json  # json library is used for reading and writing json files obtained by apis
-import math  # math library provides math fuctions .
+from bs4 import BeautifulSoup   #   BeautifulSoup is used for web scraping
+from googletrans import Translator  # googletrans is used for translation and google translate is used for language detection
+from tkinter import *
+import clipboard  # clipboard is used to read the text from the clipboard
+import ctypes   #   ctypes is used maniplulate the data types
+import datetime  #  date and time module is for timezones
+import json  #  json library is used for reading and writing json files obtained by apis
+import math  #  math library provides math fuctions .
+import numpy as np
 import os  # os library is used to open the system and open the specified file
+import psutil  # pip install psutil # psutil is used to get the cpu usage and ram usage and disk usage and battery usage
 import pyautogui  # pyaoautogui is used for mouse and keyboard control
 import pyttsx3  # pyttx3 is used for text to speech
 import pywhatkit  # pywhatkit is used for playing the youtube videos
@@ -317,44 +317,47 @@ import re  # regular expression library is used for regular expressions
 import requests  # requests library is used to make http requests to apis
 import shutil  # shutil is used to copy files and folders from one location to another location or for archiving files and folders
 import smtplib  # smtplib is used for sending emails
-# spech_recognition library is used for speech recognition and google translate is used for language detection
-import speech_recognition as sr
+import speech_recognition as sr # spech_recognition library is used for speech recognition and google translate is used for language detection
 import subprocess  # subprocess is used to run the command line commands for screen capture
 import sys  # sys library is used to exit the program
 import time  # time library is used for timezones
+import tkinter as tk
 import urlopen  # used to open url
 import webbrowser  # webbrowser is used to open the url in the default browser
 import wikipedia  # get article from wikipedia
 import win32com.client as wincl
 import winshell
-import clipboard  # clipboard is used to read the text from the clipboard
-import psutil  # pip install psutil # psutil is used to get the cpu usage and ram usage and disk usage and battery usage
-import tkinter as tk
-# I was getting error so i install pyaudio
-# error in that too so i googled it on the stackover flow.
-from tkinter import *
-import numpy as np
-
 */ comment end */
 
 
-Speech recognition library: [PyAudio](https://people.csail.mit.edu/hubert/pyaudio/)
-BeutyifulSoup library: [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/)
-Google Translate library for translation of the text: [Google Translate](https://pypi.python.org/pypi/gT/)
-PyAudio library: [PyAudio](https://people.csail.mit.edu/hubert/pyaudio/)
-Tkinter library: [Tkinter](https://docs.python.org/3/library/tkinter.html)
-Pygame library: [Pygame](https://www.pygame.org/)
-Pyttsx library: [Pyttsx](https://pypi.python.org/pypi/pyttsx3/)
- Datetime library: [Datetime](https://docs.python.org/3/library/datetime.html)
- Numpy library: [Numpy](https://www.numpy.org/)
- Pygame library: [Pygame](https://www.pygame.org/)
- Pywhatkit library: [Pywhatkit](https://pypi.python.org/pypi/pywhatkit/)
- WMI library: [WMI](https://pypi.python.org/pypi/wmi/)
- Win32com library: [Win32com](https://docs.python.org/3/library/win32com.client.html)
- WinShell library: [WinShell](https://pypi.python.org/pypi/winshell/)
- Psutil library: [Psutil](https://pypi.python.org/pypi/psutil/)
- Clipboard library: [Clipboard](https://pypi.python.org/pypi/clipboard)
- Wikipedia library: [Wikipedia](https://pypi.python.org/pypi/wikipedia/)
- Pyautogui library: [Pyautogui](https://pypi.python.org/pypi/pyautogui/)
- Webbrowser library: [Webbrowser](https://pypi.python.org/pypi/webbrowser/)
- 
+Clipboard library: [Clipboard](https://pypi.python.org/pypi/clipboard)
+Ctypes library: [ctypes](https://pypi.python.org/pypi/ctypes)
+Date and time library: [datetime](https://pypi.python.org/pypi/datetime)
+Json library: [json](https://pypi.python.org/pypi/json)
+Math library: [math](https://pypi.python.org/pypi/math)
+Numpy library: [numpy](https://pypi.python.org/pypi/numpy)
+Os library: [os](https://pypi.python.org/pypi/os)
+Psutil library: [psutil](https://pypi.python.org/pypi/psutil)
+Pyautogui library: [pyautogui](https://pypi.python.org/pypi/pyautogui)
+Pyttsx3 library: [pyttsx3](https://pypi.python.org/pypi/pyttsx3)
+Pywhatkit library: [pywhatkit](https://pypi.python.org/pypi/pywhatkit)
+Random library: [random](https://pypi.python.org/pypi/random)
+Regular expression library: [re](https://pypi.python.org/pypi/re)
+Requests library: [requests](https://pypi.python.org/pypi/requests)
+Shutil library: [shutil](https://pypi.python.org/pypi/shutil)
+Smtplib library: [smtplib](https://pypi.python.org/pypi/smtplib)
+Speech recognition library: [speech_recognition](https://pypi.python.org/pypi/speech_recognition)
+Subprocess library: [subprocess](https://pypi.python.org/pypi/subprocess)
+Sys library: [sys](https://pypi.python.org/pypi/sys)
+Time library: [time](https://pypi.python.org/pypi/time)
+Tkinter library: [tkinter](https://pypi.python.org/pypi/tkinter)
+Urlopen library: [urlopen](https://pypi.python.org/pypi/urlopen)
+Webbrowser library: [webbrowser](https://pypi.python.org/pypi/webbrowser)
+Wikipedia library: [wikipedia](https://pypi.python.org/pypi/wikipedia)
+Win32com library: [win32com](https://pypi.python.org/pypi/win32com)
+Winshell library: [winshell](https://pypi.python.org/pypi/winshell)
+
+
+
+# Technologies used in the software
+

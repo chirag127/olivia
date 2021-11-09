@@ -1,13 +1,15 @@
-#  BeautifulSoup is used for web scraping
-from bs4 import BeautifulSoup
-# googletrans is used for translation and google translate is used for language detection
-from googletrans import Translator
-# ctypes is used maniplulate the data types
-import ctypes
-import datetime  # date and time module is for timezones
-import json  # json library is used for reading and writing json files obtained by apis
-import math  # math library provides math fuctions .
+# I was getting error so i install pyaudio
+from bs4 import BeautifulSoup   #   BeautifulSoup is used for web scraping
+from googletrans import Translator  # googletrans is used for translation and google translate is used for language detection
+from tkinter import *
+import clipboard  # clipboard is used to read the text from the clipboard
+import ctypes   #   ctypes is used maniplulate the data types
+import datetime  #  date and time module is for timezones
+import json  #  json library is used for reading and writing json files obtained by apis
+import math  #  math library provides math fuctions .
+import numpy as np
 import os  # os library is used to open the system and open the specified file
+import psutil  # pip install psutil # psutil is used to get the cpu usage and ram usage and disk usage and battery usage
 import pyautogui  # pyaoautogui is used for mouse and keyboard control
 import pyttsx3  # pyttx3 is used for text to speech
 import pywhatkit  # pywhatkit is used for playing the youtube videos
@@ -16,23 +18,17 @@ import re  # regular expression library is used for regular expressions
 import requests  # requests library is used to make http requests to apis
 import shutil  # shutil is used to copy files and folders from one location to another location or for archiving files and folders
 import smtplib  # smtplib is used for sending emails
-# spech_recognition library is used for speech recognition and google translate is used for language detection
-import speech_recognition as sr
+import speech_recognition as sr # spech_recognition library is used for speech recognition and google translate is used for language detection
 import subprocess  # subprocess is used to run the command line commands for screen capture
 import sys  # sys library is used to exit the program
 import time  # time library is used for timezones
+import tkinter as tk
 import urlopen  # used to open url
 import webbrowser  # webbrowser is used to open the url in the default browser
 import wikipedia  # get article from wikipedia
 import win32com.client as wincl
 import winshell
-import clipboard  # clipboard is used to read the text from the clipboard
-import psutil  # pip install psutil # psutil is used to get the cpu usage and ram usage and disk usage and battery usage
-import tkinter as tk
-# I was getting error so i install pyaudio
 # error in that too so i googled it on the stackover flow.
-from tkinter import *
-import numpy as np
 
 """
 # Text to Speech Engine
@@ -589,6 +585,11 @@ def username():
     speak("How can i Help you, Sir")
 
 
+
+## asdfjkl;
+
+
+
 if __name__ == "__main__":
     # wishMe()
     # clear the console on the start
@@ -617,6 +618,18 @@ if __name__ == "__main__":
             speak("According to Wikipedia")
             print(results)
             speak(results)
+
+        elif 'current weather' in query:
+            reg_ex = re.search('current weather in (.*)', query)
+            if reg_ex:
+                city = reg_ex.group(1)
+                owm = OWM(API_key='ab0d5e80e8dafb2cb81fa9e82431c1fa')
+                obs = owm.weather_at_place(city)
+                w = obs.get_weather()
+                k = w.get_status()
+                x = w.get_temperature(unit='celsius')
+                sofiaResponse('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (city, k, x['temp_max'], x['temp_min']))
+
 
         elif 'news' in query:
             if 'news' in query:
