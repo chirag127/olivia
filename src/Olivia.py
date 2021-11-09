@@ -606,53 +606,7 @@ if __name__ == "__main__":
         #  if 'olivia' in query:
         #     speak("Yes Sir")
 
-        # if the google recognition fails to recognize the query then the query is = none and we should just continue
-        # the while loop
-        if query == 'none':
-            continue
-
-        # search the wikipedia if 'wikipedia' is in query and speak first 2 sentences of the the wikipedia page
-
-        elif 'wikipedia' in query:
-            speak("Searching Wikipedia...")
-            query = query.replace("wikipedia", "")
-            results = wikipedia.summary(query, sentences=2)
-            speak("According to Wikipedia")
-            print(results)
-            speak(results)
-
-        elif 'current weather' in query:
-            reg_ex = re.search('current weather in (.*)', query)
-            if reg_ex:
-                city = reg_ex.group(1)
-                owm = OWM(API_key='ab0d5e80e8dafb2cb81fa9e82431c1fa')
-                obs = owm.weather_at_place(city)
-                w = obs.get_weather()
-                k = w.get_status()
-                x = w.get_temperature(unit='celsius')
-                speak('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (
-                    city, k, x['temp_max'], x['temp_min']))
-
-        elif 'tell me about' in query:
-            reg_ex = re.search('tell me about (.*)', query)
-            try:
-                if reg_ex:
-                    topic = reg_ex.group(1)
-                    ny = wikipedia.page(topic)
-                    speak(ny.content[:500].encode('utf-8'))
-            except Exception as e:
-                speak(e)
-
-        elif 'news' in query:
-            if 'news' in query:
-                NewsFromBBC()
-
-        # tell user the common usage of the command if 'usage' is in query
-
-        elif 'where are you?' in query:
-            speak("I am here in the main loop. sir")
-
-        elif 'usage' in query:
+        if 'usage' in query:
 
             # if 'usage' is in query and 'cpu' is in query give the usage of cpu
             if 'cpu' in query:
@@ -673,37 +627,41 @@ if __name__ == "__main__":
             elif 'disk' in query:
                 disk()
 
-            # if 'usage' is in query and 'network' is in query give the usage of network
 
-        # search in chrome when the query is 'search'
+        if 'desktop' in query or 'computer' in query or 'system' in query:
+                if 'shutdown' in query:
+                    speak("Hold On ! Your system is on its way to shut down")
+                    os.system('shutdown /s /f')
+                    running = False
+                    sys.exit()
 
-        elif 'search in chrome' in query:
-            speak("What should i search for sir")
-            chromepath = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
-            search = takeCommand().lower()
-            webbrowser.get(chromepath).open(
-                'https://www.google.com/search?q=' + search)
+                elif "restart" in query or "reboot" in query:
+                    subprocess.call(["shutdown", "/r"])
 
-        # if 'time' is in query then tell the time
+                elif "hibernate" in query or "sleep" in query:
+                    speak("Hibernating")
+                    subprocess.call("shutdown / h")
 
-        elif 'time' in query:
-            ctime()
+                elif "log off" in query or "sign out" in query or "signout" in query or 'logout' in query:
+                    speak("Make sure all the application are closed before sign-out")
+                    time.sleep(5)
+                    speak("Signing out")
+                    subprocess.call("shutdown / l")
+        # press the key specified in the query if 'press' is in query
+        if 'press ' in query:
+            reg_ex = re.search('press (.*)', query)
+            if reg_ex:
+                key = reg_ex.group(1)
+                presskey(key)
 
-        # if 'joke' is in query then tell the random joke
-
-        # Read the copied text from clipboard and speak it if 'read' is in query and 'aloud' is in query
-        elif 'read' in query:
-            if 'aloud' in query:
-                text2speech()
-
-        # play tictactoe game if 'tictactoe' is in query
-        elif 'game' in query:
-            if 'tic' in query or 'tac' in query or 'toe' in query:
-                tictactoe()
-                continue
+# give the current date and time if 'date' is in query
+        if 'date' in query:
+            now = datetime.datetime.now()
+            speak("The current date is")
+            speak(now.strftime("%d-%m-%Y"))
 
         # type the text in the current window if 'type' is in query
-        elif 'typing' in query:
+        if 'typing' in query:
             if 'start' in query:
                 speak("What should i type sir")
                 while True:
@@ -727,31 +685,10 @@ if __name__ == "__main__":
                         else:
                             pyautogui.typewrite(type_sentence)
 
-        # if 'open' is in query and 'notepad' is in query then open notepad
-        elif 'open notepad' in query:
-            os.system('notepad')
-
-        # press the key specified in the query if 'press' is in query
-        elif 'press ' in query:
-            reg_ex = re.search('press (.*)', query)
-            if reg_ex:
-                key = reg_ex.group(1)
-                presspress(key)
-
-
-
-
-
-# give the current date and time if 'date' is in query
-        elif 'date' in query:
-            now = datetime.datetime.now()
-            speak("The current date is")
-            speak(now.strftime("%d-%m-%Y"))
-
 # play the video on the youtube. e.g. play the video on youtube of the song 'song name'
 # example: play lonely by justin bieber will play the video of the song 'lonely by justin bieber'
 
-        elif 'play' in query and 'music play' in query or 'playlist' in query:
+        if 'play' in query and 'music play' in query or 'playlist' in query:
             speak('ok sir enjoy your music')
             spotify_path = 'C:/Users/hp/AppData/Roaming/Spotify/Spotify.exe'
             os.startfile(spotify_path)
@@ -775,7 +712,124 @@ if __name__ == "__main__":
                     os.system('TASKKILL /F /IM Spotify.exe')
             speak('hello again sir')
 
-        elif 'play' in query:
+
+        if 'game' in query:
+            if 'tic' in query or 'tac' in query or 'toe' in query:
+                tictactoe()
+                continue
+
+
+        if "note" in query or "notes" in query:
+
+            if 'write' in query:
+
+                speak("What should I write down?")
+                note = takeCommand()
+                file = open('olivianote.txt', 'w')
+                speak("Sir, Should i include date and time")
+                snfm = takeCommand()
+                if 'yes' in snfm or 'sure' in snfm or 'ok' in snfm:
+                    file.write(datetime.datetime.now().strftime(
+                        "%d-%m-%Y %H:%M:%S") + '\n')
+                    file.write(note)
+                    speak("Note has been saved")
+                else:
+                    file.write(note)
+                    speak("Note has been saved")
+                file.close()
+                break
+
+            elif 'read' in query:
+                speak("Reading Note Sir")
+                file = open('olivianote.txt', 'r')
+                print(file.read())
+                speak(file.read(6))
+                file.close()
+                break
+
+            elif 'delete' in query:
+                speak("Deleting Note Sir")
+                os.remove('olivianote.txt')
+                speak("Note has been deleted")
+                break
+
+            elif 'open' in query or 'show' in query:
+                speak("Opening Note")
+                os.startfile('olivianote.txt')
+                break
+
+            elif 'close' in query:
+                speak("Closing Note")
+                os.system('TASKKILL /F /IM notepad.exe')
+                break
+
+            elif 'clear' in query or 'empty' in query:
+                speak("Emptying Note")
+                os.remove('olivianote.txt')
+                speak("Note has been deleted")
+                break
+
+            elif 'save' in query:
+                speak("Saving Note")
+                file = open('olivianote.txt', 'a')
+                file.write('\n')
+                file.close()
+                break
+
+
+        if "send" in query:
+            # send whatsapp message
+            if 'message' in query:
+                username = {
+                    'chirag': '+91 9999999999',
+                    'india': '+91 9999999998',
+                    'abhinav': '+91 9999999997',
+                    'ram': '+91 1234567891',
+                    'shivam': '+91 9999999995',
+                    'saurabh': '+91 9999999994',
+                    'sahil': '+91 9999999993',
+                    'siddharth': '+91 9999999992',
+                    'sagar': '+91 9999999991',
+                    'shubham': '+91 9999999990',
+                    'shivani': '+91 9999999989',
+                    'shivam': '+91 9999999988',
+                    'shubham': '+91 9999999987',
+                    'shivam': '+91 9999999986',
+                    'shivam': '+91 9999999985',
+                    'shivam': '+91 9999999984',
+                    'sourya': '+91 9999999983',
+                    'sourya': '+91 9999999982',
+                    'aryan': '+91 9999999981',
+                    'aviral': '+91 9999999980',
+                    'kushi': '+91 9999999979',
+                    'kushal': '+91 9999999978',
+                    'jatin': '+91 9999999977',
+
+
+                    'None': '+91 7428449707'  # if you want to add more contacts
+                    # 'None' : '+91 9999999995' # if you want to add more contacts
+                    # 'None' : '+91 9999999995' # if you want to default contact
+
+
+                }
+                try:
+                    speak("to whom should i send to?")
+                    name = takeCommand().lower()
+                    to = username[name]
+                    speak("What should i say?")
+                    content = takeCommand()
+                    send_whatapp(to, content)
+                    speak("Message has been sent")
+                    break
+            
+
+                except Exception as e:
+                    print(e)
+                    speak("Sorry Sir, I am not able to send this message")
+                    break
+
+
+        if 'play' in query:
             song = query.replace('play', '')
             sp('playing ')
             sp(song)
@@ -889,7 +943,11 @@ if __name__ == "__main__":
                         presskey('f2')
                         # sp('Decreased the brightness')
 
-        elif 'tab' in query or 'tabs' in query:
+        if 'news' in query:
+                NewsFromBBC()
+
+
+        if 'tab' in query:
             if 'next' in query:
                 presshotkey('ctrl', 'tab')
                 # sp('Gone to the next tab')
@@ -909,120 +967,228 @@ if __name__ == "__main__":
             elif 'close' in query:
                 presshotkey('ctrl', 'w')
 
-            else:
+        if 'fullform of abcdef' in query:
+            sp("Any body can dance")
 
-        elif 'close' in query or 'exit' in query:
-            if 'page' in query:
-                presshotkey('ctrl', 'w')
-               # sp('Closed')
+        # search the wikipedia if 'wikipedia' is in query and speak first 2 sentences of the the wikipedia page
 
-            elif 'tab' in query:
-                presshotkey('ctrl', 'w')
-                # sp('Closed')
+        elif 'wikipedia' in query:
+            speak("Searching Wikipedia...")
+            query = query.replace("wikipedia", "")
+            results = wikipedia.summary(query, sentences=2)
+            speak("According to Wikipedia")
+            print(results)
+            speak(results)
 
-            elif 'window' in query:
-                presshotkey('alt', 'f4')
+        elif 'current weather' in query:
+            reg_ex = re.search('current weather in (.*)', query)
+            if reg_ex:
+                city = reg_ex.group(1)
+                owm = OWM(API_key='ab0d5e80e8dafb2cb81fa9e82431c1fa')
+                obs = owm.weather_at_place(city)
+                w = obs.get_weather()
+                k = w.get_status()
+                x = w.get_temperature(unit='celsius')
+                speak('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (
+                    city, k, x['temp_max'], x['temp_min']))
 
-            elif 'chrome' in query:
-                sp('closing chrome')
-                os.system('TASKKILL /F /IM chrome.exe')
+        elif 'tell me about' in query:
+            reg_ex = re.search('tell me about (.*)', query)
+            try:
+                if reg_ex:
+                    topic = reg_ex.group(1)
+                    ny = wikipedia.page(topic)
+                    speak(ny.content[:500].encode('utf-8'))
+            except Exception as e:
+                speak(e)
 
-            elif 'spotify' in query:
-                sp('closing spotify')
-                os.system('TASKKILL /F /IM Spotify.exe')
 
-            elif 'youtube' in query:
-                sp('closing youtube ')
-                os.system('TASKKILL /F /IM chrome.exe')
+        # tell user the common usage of the command if 'usage' is in query
 
-            elif 'qbittorrent' in query or 'bittorrent' in query or 'torrent' in query:
-                sp('closing qbittorrent')
-                os.system('TASKKILL /F /IM qbittorrent.exe')
+        elif 'where are you?' in query:
+            speak("I am here in the main loop. sir")
 
-            elif 'vs code' in query:
-                sp('closing vs code')
-                os.system('TASKKILL /F /IM code.exe')
 
-            elif 'github desktop' in query:
-                sp('closing github desktop')
-                os.system('TASKKILL /F /IM GitHubDesktop.exe')
+            # if 'usage' is in query and 'network' is in query give the usage of network
 
-            elif 'telegram' in query:
-                sp('closing telegram')
-                os.system('TASKKILL /F /IM Telegram.exe')
+        # search in chrome when the query is 'search'
 
-            elif 'whatsapp' in query:
-                sp('closing whatsapp')
-                os.system('TASKKILL /F /IM WhatsApp.exe')
+        elif 'search in chrome' in query:
+            speak("What should i search for sir")
+            chromepath = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+            search = takeCommand().lower()
+            webbrowser.get(chromepath).open(
+                'https://www.google.com/search?q=' + search)
 
-            elif 'explorer' in query:
-                sp('closing explorer')
-                os.system('TASKKILL /F /IM explorer.exe')
+        # if 'time' is in query then tell the time
 
-            elif 'notepad' in query:
-                sp('closing notepad')
-                os.system('TASKKILL /F /IM notepad.exe')
-            elif 'this' in query:
+        elif 'time' in query:
+            ctime()
 
-                if 'app' in query or 'application' in query or 'program' in query or 'process' in query or 'window' in query or 'all tabs' in query:
-                    presshotkey('alt', 'f4')
-                    # sp('Closed')
-            # all the office apps should be closed before closing the office
+        # if 'joke' is in query then tell the random joke
 
-            # microsoft word
-            elif 'word' in query:
-                sp('closing word')
-                os.system('TASKKILL /F /IM WINWORD.EXE')
+        # Read the copied text from clipboard and speak it if 'read' is in query and 'aloud' is in query
+        elif 'read aloud' in query:
+                text2speech()
 
-            # writing code to close microsoft excel if microsoft excel is open and exists in query
-            elif 'excel' in query:
-                sp('closing excel')
-                os.system('TASKKILL /F /IM EXCEL.EXE')
 
-            # writing code to close microsoft powerpoint if microsoft powerpoint is open and exists in query
-            elif 'powerpoint' in query:
-                sp('closing powerpoint')
-                os.system('TASKKILL /F /IM POWERPNT.EXE')
+        # if 'open' is in query and 'notepad' is in query then open notepad
+        elif 'open notepad' in query:
+            os.system('notepad')
 
-            # writing code to close microsoft outlook if microsoft outlook is open and exists in query
-            elif 'outlook' in query:
-                sp('closing outlook')
-                os.system('TASKKILL /F /IM OUTLOOK.EXE')
 
-            # writing code to close microsoft onenote if microsoft onenote is open and exists in query
-            elif 'onenote' in query:
-                sp('closing onenote')
-                os.system('TASKKILL /F /IM ONENOTE.EXE')
+        elif "what is your name" in query:
+            speak("My name is Olivia")
 
-            # writing code to close microsoft onedrive if microsoft onedrive is open and exists in query
-            elif 'onedrive' in query:
-                sp('closing onedrive')
-                os.system('TASKKILL /F /IM OneDrive.exe')
+        elif "what is your age" in query:
+            speak("I am a computer program")
 
-            # writing code to close microsoft store if microsoft store is open and exists in query
-            elif 'store' in query:
-                sp('closing store')
-                os.system('TASKKILL /F /IM STORE.EXE')
+        elif "what is your job" in query:
+            speak("I am a Virtual assistant")
 
-            # writing code to close microsoft office if microsoft office is open and exists in query
-            elif 'office' in query:
-                sp('closing office')
-                os.system('TASKKILL /F /IM MICROSOFT.EXE')
+        elif "what is your favorite food" in query:
+            speak("I Like renewable electricity")
 
-            # writing code to close microsoft teams if microsoft teams is open and exists in query
-            elif 'teams' in query:
-                sp('closing teams')
-                os.system('TASKKILL /F /IM Teams.exe')
+        elif "what is your favorite animal" in query:
+            speak("I like dogs")
 
-            # writing code to close skype if skype is open and exists in query
-            elif 'skype' in query:
-                sp('closing skype')
-                os.system('TASKKILL /F /IM skype.exe')
+        elif "what is your favorite sport" in query:
+            speak("I like cricket")
 
-            # writing code to close microsoft edge if microsoft edge is open and exists in query\
-            elif 'edge' in query:
-                sp('closing edge')
-                os.system('TASKKILL /F /IM msedge.exe')
+        elif "what is your favorite color" in query:
+            speak("My favorite color is black")
+
+        elif "what is your favorite song" in query:
+            speak("My favorite song is the one by the Justin bieber")
+
+        elif "what is your favorite movie" in query:
+            speak("My favorite movie is the dead poet Society")
+
+        elif "what is your favorite actor" in query:
+            speak("My favorite actor is Alex Lawther")
+
+        elif "what is your favorite actress" in query:
+            speak("My favorite actress is Jessica Barden")
+
+        elif "what is your favorite cartoon" in query:
+            speak("My favorite cartoon is the one by the Tom and Jerry")
+
+        elif "what is your favorite cartoon character" in query:
+            speak("My favorite cartoon character is Jerry")
+
+        elif "what is your favorite book" in query:
+            speak("My favorite book is Automate the boring stuff")
+            speak("I also like the books by the author of the book The Alchemist")
+
+        elif "what is your favorite place" in query:
+            speak("My favorite place is Ghaziabad")
+
+        elif "what is Your dream" in query:
+            speak("My dream is to be a Software Engineer")
+
+        elif "thank you" in query:
+            speak("Welcome Sir")
+
+        elif "who are you" in query:
+            speak("I am a Virtual assistant")
+
+        elif "who made you" in query:
+            speak("I was created by Chirag singhal")
+
+        elif "who is your creator" in query:
+            speak("I was created by Chirag singhal")
+
+        elif "who made you" in query:
+            speak("I was made by Chirag singhal")
+
+        elif "what is your country of origin" in query:
+            speak("I was made in India")
+
+        elif "what is your language" in query:
+            speak("I am a computer program")
+
+        elif "what is your purpose" in query:
+
+            speak("I am a Virtual assistant")
+        elif query == "hello" or query == "hi" or query == "hey" or query == "hii":
+            speak("Hello Sir")  # Hello Sir
+            wishMe()
+
+        elif 'how are you' in query:
+            speak("i am fine")
+
+        elif 'what time is it' in query:
+            speak(ctime())
+
+        elif 'who are you' in query:
+            speak("i am olivia")
+
+        elif 'the time' in query:
+            strTime = datetime.datetime.now().strftime("%H:%M:%S")
+            speak(f"Sir, the time is {strTime}")
+
+        elif 'kill me' in query:
+            sp("I won't")
+
+        elif 'open word' in query:
+            speak('ok. opening word')
+            os.startfile(
+                'C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE')
+            speak('do you want me to type sir?')
+            typin = takeCommand()
+            if 'yes' in typin:
+                pyautogui.press('enter')
+                speak('sir you can start. say stop typing if I have to stop')
+                while True:
+                    type_sentence = takeCommand()
+                    if 'stop typing' in type_sentence:
+                        break
+                    elif 'enter' in type_sentence:
+                        pyautogui.press('enter')
+                    else:
+                        pyautogui.typewrite(type_sentence)
+                speak('stopped typing')
+            elif 'no' in typin:
+                speak('ok sir')
+        elif 'stop typing' in query:
+            speak('sir I already stopped typing')
+
+        elif 'your god' in query:
+            sp("chriag singhal is my god")
+
+        elif "who made you" in query or "who created you" in query or "who discovered you" in query:
+            speak("I was built by Chirag singhal")
+
+        elif 'what you can do' in query:
+            speak("I can do many things")
+
+        elif 'wish me' in query:
+            wishMe()
+
+        elif 'roll' in query and 'dice' in query:
+            r = random.randint(1, 6)
+            dice = str(r)
+            speak('you got ' + dice)
+
+        elif 'who is' in query:
+            query = query.replace("who is", "")
+            k = wikipedia.summary(query, sentences=2)
+            speak(k)
+        elif 'tell me about' in query:
+            query = query.replace("tell me about", "")
+            k = wikipedia.summary(query, sentences=2)
+            speak(k)
+
+        elif query == 'quit' or 'olivia quit' in query or 'olivia bye' in query or query == 'bye' or query == 'exit' or query == 'goodbye' or query == 'bye bye':
+            sp("Bye Sir")
+            exit()
+
+        # if the user wants to repeat the last command
+        elif 'repeat' in query and 'olivia' in query:
+            # telling the user that the program is repeating the last command
+            speak("repeating the last command")
+            # repeating the last command
+            sp(query)
 
         # writing code to fetch the news from the "https://news.google.com/news/rss" using webscraping and reading that news using beautiful soup
 
@@ -1047,6 +1213,7 @@ if __name__ == "__main__":
                 speak(
                     "Sorry my friend chirag sir. I am not able to send this email")
 
+
         elif 'screenshot' in query:
             takescreenshot()
 
@@ -1065,37 +1232,27 @@ if __name__ == "__main__":
         elif "change my name to" in query:
             query = query.replace("change my name to", "")
             uname = query
+
+
+
         elif "don't listen" in query or "stop listening" in query:
             speak("for how much time you want to stop olivia from listening commands")
             time.sleep(120)
             speak("Olivia is listening again")
 
-        elif 'clear' in query or 'empty' in query:
-            if 'trash' in query or 'recycle bin' in query:
+
+
+
+        elif 'recycle bin' in query:
+
+            if 'clear' in query or 'empty' in query:
+
                 speak("Emptying the recycle bin")
+
                 winshell.recycle_bin().empty(confirm=False, show_progress=False, sound=True)
+
                 speak("Recycle Bin Recycled")
 
-        elif 'desktop' in query or 'computer' in query or 'system' in query:
-            if 'the' in query:
-                if 'shutdown' in query:
-                    speak("Hold On ! Your system is on its way to shut down")
-                    os.system('shutdown /s /f')
-                    running = False
-                    sys.exit()
-
-                elif "restart" in query or "reboot" in query:
-                    subprocess.call(["shutdown", "/r"])
-
-                elif "hibernate" in query or "sleep" in query:
-                    speak("Hibernating")
-                    subprocess.call("shutdown / h")
-
-                elif "log off" in query or "sign out" in query or "signout" in query or 'logout' in query:
-                    speak("Make sure all the application are closed before sign-out")
-                    time.sleep(5)
-                    speak("Signing out")
-                    subprocess.call("shutdown / l")
 
         elif 'lock window' in query or 'lock screen' in query or 'lock the screen' in query:
             speak("locking the device")
@@ -1115,102 +1272,6 @@ if __name__ == "__main__":
             speak("You said me to remember that " + remember.read())
             remember.close()
 
-        elif "note" in query or "notes" in query:
-            if 'write' in query:
-                speak("What should I write down?")
-                note = takeCommand()
-                file = open('olivianote.txt', 'w')
-                speak("Sir, Should i include date and time")
-                snfm = takeCommand()
-                if 'yes' in snfm or 'sure' in snfm or 'ok' in snfm:
-                    file.write(datetime.datetime.now().strftime(
-                        "%d-%m-%Y %H:%M:%S") + '\n')
-                    file.write(note)
-                    speak("Note has been saved")
-                else:
-                    file.write(note)
-                    speak("Note has been saved")
-                file.close()
-
-            elif 'read' in query:
-                speak("Reading Note Sir")
-                file = open('olivianote.txt', 'r')
-                print(file.read())
-                speak(file.read(6))
-                file.close()
-
-            elif 'delete' in query:
-                speak("Deleting Note Sir")
-                os.remove('olivianote.txt')
-                speak("Note has been deleted")
-
-            elif 'open' in query or 'show' in query:
-                speak("Opening Note")
-                os.startfile('olivianote.txt')
-
-            elif 'close' in query:
-                speak("Closing Note")
-                os.system('TASKKILL /F /IM notepad.exe')
-
-            elif 'clear' in query or 'empty' in query:
-                speak("Emptying Note")
-                os.remove('olivianote.txt')
-                speak("Note has been deleted")
-
-            elif 'save' in query:
-                speak("Saving Note")
-                file = open('olivianote.txt', 'a')
-                file.write('\n')
-                file.close()
-
-        elif "send" in query:
-            # send whatsapp message
-            if 'message' in query:
-                username = {
-                    'chirag': '+91 9999999999',
-                    'india': '+91 9999999998',
-                    'abhinav': '+91 9999999997',
-                    'ram': '+91 1234567891',
-                    'shivam': '+91 9999999995',
-                    'saurabh': '+91 9999999994',
-                    'sahil': '+91 9999999993',
-                    'siddharth': '+91 9999999992',
-                    'sagar': '+91 9999999991',
-                    'shubham': '+91 9999999990',
-                    'shivani': '+91 9999999989',
-                    'shivam': '+91 9999999988',
-                    'shubham': '+91 9999999987',
-                    'shivam': '+91 9999999986',
-                    'shivam': '+91 9999999985',
-                    'shivam': '+91 9999999984',
-                    'sourya': '+91 9999999983',
-                    'sourya': '+91 9999999982',
-                    'aryan': '+91 9999999981',
-                    'aviral': '+91 9999999980',
-                    'kushi': '+91 9999999979',
-                    'kushal': '+91 9999999978',
-                    'jatin': '+91 9999999977',
-
-
-                    'None': '+91 7428449707'  # if you want to add more contacts
-                    # 'None' : '+91 9999999995' # if you want to add more contacts
-                    # 'None' : '+91 9999999995' # if you want to default contact
-
-
-                }
-                try:
-                    speak("to whom should i send to?")
-                    name = takeCommand().lower()
-                    to = username[name]
-                    speak("What should i say?")
-                    content = takeCommand()
-                    send_whatapp(to, content)
-                    speak("Message has been sent")
-
-                except Exception as e:
-                    print(e)
-                    speak("Sorry Sir, I am not able to send this message")
-
         elif "where is" in query:
             query = query.replace("where is", "")
             location = query
@@ -1221,8 +1282,7 @@ if __name__ == "__main__":
 
 
 # tell the stock price of the company using yahoo finance api and speak the result to the user using google speech api and print the result to the console
-        elif "stock" in query:
-            if 'price' in query:
+        elif "stock" in query and "price" in query:
                 speak("What company's stock price you want to check?")
                 company = takeCommand()
                 speak("Checking the stock price of " + company)
@@ -1240,8 +1300,7 @@ if __name__ == "__main__":
 
 
 # tell the weather of the city using openweathermap api and speak the result to the user using google speech api and print the result to the console
-        elif "weather" in query:
-            if 'today' in query:
+        elif "weather" in query and "today" in query:
                 speak("What city's weather you want to check?")
                 city = takeCommand()
                 speak("Checking the weather of " + city)
@@ -1258,7 +1317,8 @@ if __name__ == "__main__":
                     print(e)
                     speak("Sorry Sir, I am not able to fetch the weather")
 
-        elif "date" in query:
+        elif "date" in query and "curren" in query:
+
             speak("Sir, What date you want to check")
             date = takeCommand()
             speak("Checking the date of " + date)
@@ -1274,7 +1334,8 @@ if __name__ == "__main__":
                 print(e)
                 speak("Sorry Sir, I am not able to fetch the date")
 
-        elif "calculate" in query:
+        elif "calculate" in query and "square" in query:
+
             speak("Sir, What you want to calculate")
             query = takeCommand()
             speak("Calculating " + query)
@@ -1306,29 +1367,6 @@ if __name__ == "__main__":
             except Exception as e:
                 print(e)
                 speak("Sorry Sir, I am not able to fetch the time")
-
-        elif 'open word' in query:
-            speak('ok. opening word')
-            os.startfile(
-                'C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE')
-            speak('do you want me to type sir?')
-            typin = takeCommand()
-            if 'yes' in typin:
-                pyautogui.press('enter')
-                speak('sir you can start. say stop typing if I have to stop')
-                while True:
-                    type_sentence = takeCommand()
-                    if 'stop typing' in type_sentence:
-                        break
-                    elif 'enter' in type_sentence:
-                        pyautogui.press('enter')
-                    else:
-                        pyautogui.typewrite(type_sentence)
-                speak('stopped typing')
-            elif 'no' in typin:
-                speak('ok sir')
-        elif 'stop typing' in query:
-            speak('sir I already stopped typing')
 
         elif 'launch' in query:
             query = query.replace("launch", "")
@@ -2001,126 +2039,6 @@ if __name__ == "__main__":
             else:
                 webbrowser.open(
                     f"https://duckduckgo.com/?q=%21+{query}&ia=olivia")
-
-        elif "what is your name" in query:
-            speak("My name is Olivia")
-
-        elif "what is your age" in query:
-            speak("I am a computer program")
-
-        elif "what is your job" in query:
-            speak("I am a Virtual assistant")
-
-        elif "what is your favorite food" in query:
-            speak("I Like renewable electricity")
-
-        elif "what is your favorite animal" in query:
-            speak("I like dogs")
-
-        elif "what is your favorite sport" in query:
-            speak("I like cricket")
-
-        elif "what is your favorite color" in query:
-            speak("My favorite color is black")
-
-        elif "what is your favorite song" in query:
-            speak("My favorite song is the one by the Justin bieber")
-
-        elif "what is your favorite movie" in query:
-            speak("My favorite movie is the dead poet Society")
-
-        elif "what is your favorite actor" in query:
-            speak("My favorite actor is Alex Lawther")
-
-        elif "what is your favorite actress" in query:
-            speak("My favorite actress is Jessica Barden")
-
-        elif "what is your favorite cartoon" in query:
-            speak("My favorite cartoon is the one by the Tom and Jerry")
-
-        elif "what is your favorite cartoon character" in query:
-            speak("My favorite cartoon character is Jerry")
-
-        elif "what is your favorite book" in query:
-            speak("My favorite book is Automate the boring stuff")
-            speak("I also like the books by the author of the book The Alchemist")
-
-        elif "what is your favorite place" in query:
-            speak("My favorite place is Ghaziabad")
-
-        elif "what is Your dream" in query:
-            speak("My dream is to be a Software Engineer")
-
-        elif "thank you" in query:
-            speak("Welcome Sir")
-
-        elif "who are you" in query:
-            speak("I am a Virtual assistant")
-
-        elif "who made you" in query:
-            speak("I was created by Chirag singhal")
-
-        elif "who is your creator" in query:
-            speak("I was created by Chirag singhal")
-
-        elif "who made you" in query:
-            speak("I was made by Chirag singhal")
-
-        elif "what is your country of origin" in query:
-            speak("I was made in India")
-
-        elif "what is your language" in query:
-            speak("I am a computer program")
-
-        elif "what is your purpose" in query:
-
-            speak("I am a Virtual assistant")
-        elif query == "hello" or query == "hi" or query == "hey" or query == "hii":
-            speak("Hello Sir")  # Hello Sir
-            wishMe()
-
-        elif 'how are you' in query:
-            speak("i am fine")
-
-        elif 'what time is it' in query:
-            speak(ctime())
-
-        elif 'who are you' in query:
-            speak("i am olivia")
-
-        elif 'the time' in query:
-            strTime = datetime.datetime.now().strftime("%H:%M:%S")
-            speak(f"Sir, the time is {strTime}")
-
-        elif 'kill me' in query:
-            sp("I won't")
-
-        elif 'your god' in query:
-            sp("chriag singhal is my god")
-
-        elif "who made you" in query or "who created you" in query or "who discovered you" in query:
-            speak("I was built by Chirag singhal")
-        elif 'what you can do' in query:
-            speak("I can do many things")
-
-        elif 'wish me' in query:
-            wishMe()
-        elif 'roll' in query and 'dice' in query:
-            r = random.randint(1, 6)
-            dice = str(r)
-            speak('you got ' + dice)
-        elif 'who is' in query:
-            query = query.replace("who is", "")
-            k = wikipedia.summary(query, sentences=2)
-            speak(k)
-        elif 'tell me about' in query:
-            query = query.replace("tell me about", "")
-            k = wikipedia.summary(query, sentences=2)
-            speak(k)
-
-        elif query == 'quit' or 'olivia quit' in query or 'olivia bye' in query or query == 'bye' or query == 'exit' or query == 'goodbye' or query == 'bye bye':
-            sp("Bye Sir")
-            exit()
 
 
 # create a translate feature in the virutal assistant
@@ -3565,29 +3483,121 @@ if __name__ == "__main__":
                 result = translator.translate(query, dest='zu')
                 # speaking and printing the result
                 sp(result.text)
-            # if the user wants to exit the program
-            elif 'exit' in query:
-                # telling the user that the program is exiting
-                speak("exiting")
-                # exiting the program
-                exit()
-            # if the user wants to repeat the last command
-            elif 'repeat' in query:
-                # telling the user that the program is repeating the last command
-                speak("repeating the last command")
-                # repeating the last command
-                sp(query)
 
-        elif 'clear' in query:
-            clearConsole()
+        elif 'close' in query:
 
-        elif 'exit' in query:
-            exitcode()
+            if 'page' in query:
+                presshotkey('ctrl', 'w')
+               # sp('Closed')
 
-        elif 'username' in query:
-            username()
 
-"""
+            elif 'app' in query or 'application' in query or 'program' in query or 'process' in query or 'window' in query or 'all tabs' in query:
+                    presshotkey('alt', 'f4')
+                    # sp('Closed')
+
+            elif 'tab' in query:
+                presshotkey('ctrl', 'w')
+                # sp('Closed')
+
+            elif 'window' in query:
+                presshotkey('alt', 'f4')
+
+            elif 'chrome' in query:
+                sp('closing chrome')
+                os.system('TASKKILL /F /IM chrome.exe')
+
+            elif 'spotify' in query:
+                sp('closing spotify')
+                os.system('TASKKILL /F /IM Spotify.exe')
+
+            elif 'youtube' in query:
+                sp('closing youtube ')
+                os.system('TASKKILL /F /IM chrome.exe')
+
+            elif 'qbittorrent' in query or 'bittorrent' in query or 'torrent' in query:
+                sp('closing qbittorrent')
+                os.system('TASKKILL /F /IM qbittorrent.exe')
+
+            elif 'vs code' in query:
+                sp('closing vs code')
+                os.system('TASKKILL /F /IM code.exe')
+
+            elif 'github desktop' in query:
+                sp('closing github desktop')
+                os.system('TASKKILL /F /IM GitHubDesktop.exe')
+
+            elif 'telegram' in query:
+                sp('closing telegram')
+                os.system('TASKKILL /F /IM Telegram.exe')
+
+            elif 'whatsapp' in query:
+                sp('closing whatsapp')
+                os.system('TASKKILL /F /IM WhatsApp.exe')
+
+            elif 'explorer' in query:
+                sp('closing explorer')
+                os.system('TASKKILL /F /IM explorer.exe')
+
+            elif 'notepad' in query:
+                sp('closing notepad')
+                os.system('TASKKILL /F /IM notepad.exe')
+            # all the office apps should be closed before closing the office
+
+            # microsoft word
+            elif 'word' in query:
+                sp('closing word')
+                os.system('TASKKILL /F /IM WINWORD.EXE')
+
+            # writing code to close microsoft excel if microsoft excel is open and exists in query
+            elif 'excel' in query:
+                sp('closing excel')
+                os.system('TASKKILL /F /IM EXCEL.EXE')
+
+            # writing code to close microsoft powerpoint if microsoft powerpoint is open and exists in query
+            elif 'powerpoint' in query:
+                sp('closing powerpoint')
+                os.system('TASKKILL /F /IM POWERPNT.EXE')
+
+            # writing code to close microsoft outlook if microsoft outlook is open and exists in query
+            elif 'outlook' in query:
+                sp('closing outlook')
+                os.system('TASKKILL /F /IM OUTLOOK.EXE')
+
+            # writing code to close microsoft onenote if microsoft onenote is open and exists in query
+            elif 'onenote' in query:
+                sp('closing onenote')
+                os.system('TASKKILL /F /IM ONENOTE.EXE')
+
+            # writing code to close microsoft onedrive if microsoft onedrive is open and exists in query
+            elif 'onedrive' in query:
+                sp('closing onedrive')
+                os.system('TASKKILL /F /IM OneDrive.exe')
+
+            # writing code to close microsoft store if microsoft store is open and exists in query
+            elif 'store' in query:
+                sp('closing store')
+                os.system('TASKKILL /F /IM STORE.EXE')
+
+            # writing code to close microsoft office if microsoft office is open and exists in query
+            elif 'office' in query:
+                sp('closing office')
+                os.system('TASKKILL /F /IM MICROSOFT.EXE')
+
+            # writing code to close microsoft teams if microsoft teams is open and exists in query
+            elif 'teams' in query:
+                sp('closing teams')
+                os.system('TASKKILL /F /IM Teams.exe')
+
+            # writing code to close skype if skype is open and exists in query
+            elif 'skype' in query:
+                sp('closing skype')
+                os.system('TASKKILL /F /IM skype.exe')
+
+            # writing code to close microsoft edge if microsoft edge is open and exists in query\
+            elif 'edge' in query:
+                sp('closing edge')
+                os.system('TASKKILL /F /IM msedge.exe')
+
         else:
 
             print("else statement is executed")
@@ -3695,4 +3705,3 @@ if __name__ == "__main__":
 
                     # Asking user if he or she want olivia to do anything else.
                     speak('ok. anything else sir?')
-"""
