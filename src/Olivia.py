@@ -959,7 +959,6 @@ if __name__ == "__main__":
                         # sp('Decreased the brightness')
 
 
-
         elif 'news' in query:
                 NewsFromBBC()
 
@@ -983,8 +982,6 @@ if __name__ == "__main__":
 
             elif 'close' in query:
                 presshotkey('ctrl', 'w')
-
-
 
 
         # tell user the common usage of the command if 'usage' is in query
