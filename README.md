@@ -5,6 +5,9 @@
     - [In progress features](#in-progress-features)
   - [Installation instruction](#installation-instruction)
     - [If You Get `No Module Named pyaudio` Error!](#if-you-get-no-module-named-pyaudio-error)
+  - [How to use the application](#how-to-use-the-application)
+- [Precautions while using the software in the application](#precautions-while-using-the-software-in-the-application)
+- [Technologies used in the software](#technologies-used-in-the-software)
 ### Features
 
   
@@ -277,3 +280,19 @@ pipwin install pyaudio
 ```
 
 - Be sure to change the application paths on script.py otherwise it won't open Google Chrome and other Apps. <br>
+
+
+## How to use the application
+
+1. The recognition can be delayed if there is some background noise in the environment.
+2. Just open the software.
+3. Here the software is the best for some with disability.
+
+
+# Precautions while using the software in the application
+
+1. Do not use the software in the application if you are not in the comfort of your own.
+2. Please do not forget to say "close" after playing a video on YouTube.
+3. Do not use it for bad purposes.
+  
+# Technologies used in the software  
