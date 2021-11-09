@@ -531,3 +531,28 @@ import numpy as np
 10. Datetime library: [Datetime](https://docs.python.org/3/library/datetime.html)
 11. 
 
+
+        elif 'play' in query and 'music play' in query or 'playlist' in query:
+            speak('ok sir enjoy your music')
+            spotify_path = 'C:/Users/hp/AppData/Roaming/Spotify/Spotify.exe'
+            os.startfile(spotify_path)
+            time.sleep(1)
+            pyautogui.click(button='left')
+            pyautogui.press('space')
+            presshotkey('alt', 'f4')
+            while not 'wake up' in wakeup_txt:
+                wakeup_txt = time.sleep()
+                if wakeup_txt == 'quit':
+                    speak('bye bye sir. have a great day')
+                    running = False
+                    sys.exit()
+                elif 'pause' in wakeup_txt or 'play' in wakeup_txt:
+                    os.system('spotify')
+                    time.sleep(1)
+                    pyautogui.press('space')
+                    presshotkey('alt', 'f4')
+
+                elif 'close spotify' in wakeup_txt:
+                    os.system('TASKKILL /F /IM Spotify.exe')
+            speak('hello again sir')
+

@@ -594,7 +594,6 @@ def username():
 
 if __name__ == "__main__":
     # wishMe()
-    # clear the console on the start
 
     while True:
 
@@ -602,33 +601,8 @@ if __name__ == "__main__":
 
         query = takeCommand().lower()
 
-        # Logic for executing tasks based on query
-        #  if 'olivia' in query:
-        #     speak("Yes Sir")
-
-        if 'usage' in query:
-
-            # if 'usage' is in query and 'cpu' is in query give the usage of cpu
-            if 'cpu' in query:
-                cpu()
-
-            # if 'usage' is in query and 'ram' is in query give the usage of ram
-
-            elif 'ram' in query:
-                ram()
-
-            # if 'usage' is in query and 'battery' is in query give the usage of battery
-
-            elif 'battery' in query:
-                battery()
-
-            # if 'usage' is in query and 'disk' is in query give the usage of disk
-
-            elif 'disk' in query:
-                disk()
-
-
         if 'desktop' in query or 'computer' in query or 'system' in query:
+
                 if 'shutdown' in query:
                     speak("Hold On ! Your system is on its way to shut down")
                     os.system('shutdown /s /f')
@@ -647,79 +621,128 @@ if __name__ == "__main__":
                     time.sleep(5)
                     speak("Signing out")
                     subprocess.call("shutdown / l")
-        # press the key specified in the query if 'press' is in query
-        if 'press ' in query:
-            reg_ex = re.search('press (.*)', query)
-            if reg_ex:
-                key = reg_ex.group(1)
-                presskey(key)
 
-# give the current date and time if 'date' is in query
-        if 'date' in query:
+
+        # give the current date and time if 'date' is in query
+        if 'date' in query and "current" in query:
             now = datetime.datetime.now()
             speak("The current date is")
             speak(now.strftime("%d-%m-%Y"))
 
+
+        if 'fullform of abcdef' in query:
+            sp("Any body can dance")
+
+        # telling the cpu usage when the says a command that contains both cpu and usage.
+        elif 'usage' in query and 'cpu' in query:
+            speak("CPU is at " + str(psutil.cpu_percent()) + "%")
+
+        # telling the ram usage when the says a command that contains both ram and usage.
+        elif 'usage' in query and 'ram' in query:
+            speak("RAM is at " + str(psutil.virtual_memory()[2]) + "%")
+
+        # telling the disk usage when the says a command that contains both disk and usage.
+        elif 'usage' in query and 'disk' in query:
+            speak("Disk is at " + str(psutil.disk_usage('/')[3]) + "%")
+
+        # telling the battery usage when the says a command that contains both battery and usage.
+        elif 'usage' in query and 'battery' in query:
+            speak("Battery is at " + str(psutil.sensors_battery().percent) + "%")
+
+        # telling the battery status when the says a command that contains both battery and status.
+        elif 'status' in query and 'battery' in query:
+            if psutil.sensors_battery().power_plugged == True:
+
+                speak("Battery is charging")
+
+
+            if psutil.sensors_battery().power_plugged == False:
+                speak("Battery is discharging")
+
+
+        # telling the joke when the query of the user contains joke
+        elif 'joke' in query:
+            givejoke()
+
+
+
+        elif "send" in query and 'message' in query:
+                username = {
+                    'chirag': '+91 9999999999',
+                    'india': '+91 9999999998',
+                    'abhinav': '+91 9999999997',
+                    'ram': '+91 1234567891',
+                    'shivam': '+91 9999999995',
+                    'saurabh': '+91 9999999994',
+                    'sahil': '+91 9999999993',
+                    'siddharth': '+91 9999999992',
+                    'sagar': '+91 9999999991',
+                    'shubham': '+91 9999999990',
+                    'shivani': '+91 9999999989',
+                    'shivam': '+91 9999999988',
+                    'shubham': '+91 9999999987',
+                    'shivam': '+91 9999999986',
+                    'shivam': '+91 9999999985',
+                    'shivam': '+91 9999999984',
+                    'sourya': '+91 9999999983',
+                    'sourya': '+91 9999999982',
+                    'aryan': '+91 9999999981',
+                    'aviral': '+91 9999999980',
+                    'kushi': '+91 9999999979',
+                    'kushal': '+91 9999999978',
+                    'jatin': '+91 9999999977',
+
+
+                    'None': '+91 7428449707'  # if you want to add more contacts
+                    # 'None' : '+91 9999999995' # if you want to add more contacts
+                    # 'None' : '+91 9999999995' # if you want to default contact
+
+
+                }
+                try:
+                    speak("to whom should i send to?")
+                    name = takeCommand().lower()
+                    to = username[name]
+                    speak("What should i say?")
+                    content = takeCommand()
+                    send_whatapp(to, content)
+                    speak("Message has been sent")
+                    break
+            
+
+                except Exception as e:
+                    print(e)
+                    speak("Sorry Sir, I am not able to send this message")
+                    break
+
+        
         # type the text in the current window if 'type' is in query
-        if 'typing' in query:
-            if 'start' in query:
-                speak("What should i type sir")
-                while True:
-                    if query != 'none':
-                        type_sentence = takeCommand()
-                        if 'stop typing' in type_sentence:
-                            break
-                        elif 'enter' in type_sentence:
-                            pyautogui.press('enter')
-                        elif 'backspace' in type_sentence:
-                            presshotkey('ctrl', 'backspace')
-                        elif 'tab' in type_sentence:
-                            pyautogui.press('tab')
+        elif 'typing' in query and 'start' in query:
+            speak("Starting typing")
+            speak("What should i type sir")
+            while True:
+                if query != 'none':
+                    type_sentence = takeCommand()
+                    if 'stop typing' in type_sentence:
+                        break
+                    elif 'enter' in type_sentence:
+                        pyautogui.press('enter')
+                    elif 'backspace' in type_sentence:
+                        presshotkey('ctrl', 'backspace')
+                    elif 'tab' in type_sentence:
+                        pyautogui.press('tab')
 
-                        elif 'space' in type_sentence:
-                            pyautogui.press('space')
+                    elif 'space' in type_sentence:
+                        pyautogui.press('space')
 
-                        elif 'caps lock' in type_sentence:
-                            pyautogui.press('caps lock')
+                    elif 'caps lock' in type_sentence:
+                        pyautogui.press('caps lock')
 
-                        else:
-                            pyautogui.typewrite(type_sentence)
-
-# play the video on the youtube. e.g. play the video on youtube of the song 'song name'
-# example: play lonely by justin bieber will play the video of the song 'lonely by justin bieber'
-
-        if 'play' in query and 'music play' in query or 'playlist' in query:
-            speak('ok sir enjoy your music')
-            spotify_path = 'C:/Users/hp/AppData/Roaming/Spotify/Spotify.exe'
-            os.startfile(spotify_path)
-            time.sleep(1)
-            pyautogui.click(button='left')
-            pyautogui.press('space')
-            presshotkey('alt', 'f4')
-            while not 'wake up' in wakeup_txt:
-                wakeup_txt = time.sleep()
-                if wakeup_txt == 'quit':
-                    speak('bye bye sir. have a great day')
-                    running = False
-                    sys.exit()
-                elif 'pause' in wakeup_txt or 'play' in wakeup_txt:
-                    os.system('spotify')
-                    time.sleep(1)
-                    pyautogui.press('space')
-                    presshotkey('alt', 'f4')
-
-                elif 'close spotify' in wakeup_txt:
-                    os.system('TASKKILL /F /IM Spotify.exe')
-            speak('hello again sir')
+                    else:
+                        pyautogui.typewrite(type_sentence)
 
 
-        if 'game' in query:
-            if 'tic' in query or 'tac' in query or 'toe' in query:
-                tictactoe()
-                continue
-
-
-        if "note" in query or "notes" in query:
+        elif "note" in query or "notes" in query:
 
             if 'write' in query:
 
@@ -776,57 +799,47 @@ if __name__ == "__main__":
                 file.close()
                 break
 
+        elif 'current weather' in query:
+            reg_ex = re.search('current weather in (.*)', query)
+            if reg_ex:
+                city = reg_ex.group(1)
+                owm = OWM(API_key='ab0d5e80e8dafb2cb81fa9e82431c1fa')
+                obs = owm.weather_at_place(city)
+                w = obs.get_weather()
+                k = w.get_status()
+                x = w.get_temperature(unit='celsius')
+                speak('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (
+                    city, k, x['temp_max'], x['temp_min']))
 
-        if "send" in query:
-            # send whatsapp message
-            if 'message' in query:
-                username = {
-                    'chirag': '+91 9999999999',
-                    'india': '+91 9999999998',
-                    'abhinav': '+91 9999999997',
-                    'ram': '+91 1234567891',
-                    'shivam': '+91 9999999995',
-                    'saurabh': '+91 9999999994',
-                    'sahil': '+91 9999999993',
-                    'siddharth': '+91 9999999992',
-                    'sagar': '+91 9999999991',
-                    'shubham': '+91 9999999990',
-                    'shivani': '+91 9999999989',
-                    'shivam': '+91 9999999988',
-                    'shubham': '+91 9999999987',
-                    'shivam': '+91 9999999986',
-                    'shivam': '+91 9999999985',
-                    'shivam': '+91 9999999984',
-                    'sourya': '+91 9999999983',
-                    'sourya': '+91 9999999982',
-                    'aryan': '+91 9999999981',
-                    'aviral': '+91 9999999980',
-                    'kushi': '+91 9999999979',
-                    'kushal': '+91 9999999978',
-                    'jatin': '+91 9999999977',
+        elif 'tell me about' in query:
+
+            reg_ex = re.search('tell me about (.*)', query)
+
+            try:
+                if reg_ex:
+                    topic = reg_ex.group(1)
+                    ny = wikipedia.page(topic)
+                    speak(ny.content[:500].encode('utf-8'))
+            except Exception as e:
+                speak(e)
 
 
-                    'None': '+91 7428449707'  # if you want to add more contacts
-                    # 'None' : '+91 9999999995' # if you want to add more contacts
-                    # 'None' : '+91 9999999995' # if you want to default contact
+        # if the query contains 'who is (something)', then return the information of that person/organisation from the wikipedia using the information from the wikipedia library
+        elif 'who is' in query:
+            reg_ex = re.search('who is (.*)', query)
+            if reg_ex:
+                topic = reg_ex.group(1)
+                ny = wikipedia.summary(topic, sentences=2)
+                speak('According to Wikipedia')
+                print(ny)
+                speak(ny)
+                
 
+        elif 'game' in query and 'start' in query:
+                    if 'tic' in query or 'tac' in query or 'toe' in query:
 
-                }
-                try:
-                    speak("to whom should i send to?")
-                    name = takeCommand().lower()
-                    to = username[name]
-                    speak("What should i say?")
-                    content = takeCommand()
-                    send_whatapp(to, content)
-                    speak("Message has been sent")
-                    break
-            
-
-                except Exception as e:
-                    print(e)
-                    speak("Sorry Sir, I am not able to send this message")
-                    break
+                        tictactoe()
+                        continue
 
 
         if 'play' in query:
@@ -840,7 +853,9 @@ if __name__ == "__main__":
                 query = takeCommand().lower()
                 # pause the video if 'pause' is in query
                 if 'pause' in query or 'pass' in query:
+
                     presskey('space')
+
                    # sp('paused')
 
                 elif 'play' in query:
@@ -943,11 +958,13 @@ if __name__ == "__main__":
                         presskey('f2')
                         # sp('Decreased the brightness')
 
-        if 'news' in query:
+
+
+        elif 'news' in query:
                 NewsFromBBC()
 
 
-        if 'tab' in query:
+        elif 'tab' in query:
             if 'next' in query:
                 presshotkey('ctrl', 'tab')
                 # sp('Gone to the next tab')
@@ -967,40 +984,7 @@ if __name__ == "__main__":
             elif 'close' in query:
                 presshotkey('ctrl', 'w')
 
-        if 'fullform of abcdef' in query:
-            sp("Any body can dance")
 
-        # search the wikipedia if 'wikipedia' is in query and speak first 2 sentences of the the wikipedia page
-
-        elif 'wikipedia' in query:
-            speak("Searching Wikipedia...")
-            query = query.replace("wikipedia", "")
-            results = wikipedia.summary(query, sentences=2)
-            speak("According to Wikipedia")
-            print(results)
-            speak(results)
-
-        elif 'current weather' in query:
-            reg_ex = re.search('current weather in (.*)', query)
-            if reg_ex:
-                city = reg_ex.group(1)
-                owm = OWM(API_key='ab0d5e80e8dafb2cb81fa9e82431c1fa')
-                obs = owm.weather_at_place(city)
-                w = obs.get_weather()
-                k = w.get_status()
-                x = w.get_temperature(unit='celsius')
-                speak('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (
-                    city, k, x['temp_max'], x['temp_min']))
-
-        elif 'tell me about' in query:
-            reg_ex = re.search('tell me about (.*)', query)
-            try:
-                if reg_ex:
-                    topic = reg_ex.group(1)
-                    ny = wikipedia.page(topic)
-                    speak(ny.content[:500].encode('utf-8'))
-            except Exception as e:
-                speak(e)
 
 
         # tell user the common usage of the command if 'usage' is in query
@@ -1020,12 +1004,17 @@ if __name__ == "__main__":
             webbrowser.get(chromepath).open(
                 'https://www.google.com/search?q=' + search)
 
-        # if 'time' is in query then tell the time
+        
+  # if 'time' is in query and "current" is in the query then tell the time in very good manner for example we can say the current time is 2 pm and 28 minutes sir
+ # or the current time is 5 pm and 28 minutes sir . be polite.
 
-        elif 'time' in query:
+
+
+        elif 'time' in query and 'current' in query:
             ctime()
 
-        # if 'joke' is in query then tell the random joke
+
+    
 
         # Read the copied text from clipboard and speak it if 'read' is in query and 'aloud' is in query
         elif 'read aloud' in query:
@@ -1130,29 +1119,6 @@ if __name__ == "__main__":
         elif 'kill me' in query:
             sp("I won't")
 
-        elif 'open word' in query:
-            speak('ok. opening word')
-            os.startfile(
-                'C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE')
-            speak('do you want me to type sir?')
-            typin = takeCommand()
-            if 'yes' in typin:
-                pyautogui.press('enter')
-                speak('sir you can start. say stop typing if I have to stop')
-                while True:
-                    type_sentence = takeCommand()
-                    if 'stop typing' in type_sentence:
-                        break
-                    elif 'enter' in type_sentence:
-                        pyautogui.press('enter')
-                    else:
-                        pyautogui.typewrite(type_sentence)
-                speak('stopped typing')
-            elif 'no' in typin:
-                speak('ok sir')
-        elif 'stop typing' in query:
-            speak('sir I already stopped typing')
-
         elif 'your god' in query:
             sp("chriag singhal is my god")
 
@@ -1169,15 +1135,6 @@ if __name__ == "__main__":
             r = random.randint(1, 6)
             dice = str(r)
             speak('you got ' + dice)
-
-        elif 'who is' in query:
-            query = query.replace("who is", "")
-            k = wikipedia.summary(query, sentences=2)
-            speak(k)
-        elif 'tell me about' in query:
-            query = query.replace("tell me about", "")
-            k = wikipedia.summary(query, sentences=2)
-            speak(k)
 
         elif query == 'quit' or 'olivia quit' in query or 'olivia bye' in query or query == 'bye' or query == 'exit' or query == 'goodbye' or query == 'bye bye':
             sp("Bye Sir")
@@ -1198,8 +1155,6 @@ if __name__ == "__main__":
             elif 'number' in query:
                 sp(random.randint(0, 100))
 
-        elif 'joke' in query:
-            givejoke()
 
         elif 'email' in query:
             try:
@@ -3599,7 +3554,6 @@ if __name__ == "__main__":
                 os.system('TASKKILL /F /IM msedge.exe')
 
         else:
-
             print("else statement is executed")
             # writing code for the queries or the commands that are not in the above list of commands. so we will ask the user
             # if he or she wants to search the query in google or wikipedia or translate the query or open the query in browser
