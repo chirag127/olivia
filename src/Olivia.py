@@ -630,7 +630,17 @@ if __name__ == "__main__":
                 x = w.get_temperature(unit='celsius')
                 sofiaResponse('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (city, k, x['temp_max'], x['temp_min']))
 
+        elif 'tell me about' in query:
+                reg_ex = re.search('tell me about (.*)', query)
+                try:
+                    if reg_ex:
+                        topic = reg_ex.group(1)
+                        ny = wikipedia.page(topic)
+                        sofiaResponse(ny.content[:500].encode('utf-8'))
+                except Exception as e:
+                        sofiaResponse(e)
 
+            
         elif 'news' in query:
             if 'news' in query:
                 NewsFromBBC()
