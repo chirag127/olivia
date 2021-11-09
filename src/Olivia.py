@@ -109,7 +109,6 @@ def presskey(key):
 
 
 def presshotkey(key1, key2):
-
     pyautogui.hotkey(key1, key2)
 
 #  function to wish the user according to the time of the day and the day of the week
@@ -156,7 +155,6 @@ def wishMe():
 # It will take microphone input from the user and return string output
 
 def tictactoe():
-
     size_of_board = 600
     symbol_size = (size_of_board / 3 - size_of_board / 8) / 2
     symbol_thickness = 50
