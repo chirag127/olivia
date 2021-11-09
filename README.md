@@ -13,15 +13,15 @@
 
 ## Features
 
-01. Fully customizable
-02. A lot of features
-03. Built-in voice recognition
-04. Dynamic voice recognition
-05. Easy to use
-06. Great UI
-07. Intuitive
-08. Just a bit of magic
-09. Keyboard-controlled
+1. Fully customizable
+2. A lot of features
+3. Built-in voice recognition
+4. Dynamic voice recognition
+5. Easy to use
+6. Great UI
+7. Intuitive
+8. Just a bit of magic
+9. Keyboard-controlled
 10. Lightweight
 11. Minimal
 12. No need for a database
@@ -98,11 +98,11 @@
 
 32. Play any song of your choice by saying "play (name of the song(maybe with the name of the singer if there are two or more song by the same name there will be no confusion.)) Examples are as follows:
 
-    - Play lonely by the Beatles just say "play lonely by the Beatles" or "play the song lonely by the Beatles".
-    - Play lonely by Justin Bieber just say "play lonely by Justin Bieber" or "play the song lonely by Justin Bieber".
-    - Likewise, Play love yourself just say "play love yourself" or "play the song love yourself".
-    - Open peaches just say "play peaches" or "play the song peaches".
-    - I hope you understand now.
+    1. Play lonely by Justin Bieber just say "play lonely by Justin Bieber" or "play the song lonely by Justin Bieber".
+    2. Likewise, Play love yourself just say "play love yourself" or "play the song love yourself".
+    3. Open peaches just say "play peaches" or "play the song peaches".
+    4. I hope you understand now.
+    5. Play lonely by the Beatles just say "play lonely by the Beatles" or "play the song lonely by the Beatles".
 
 33. You can control the video by saying "pause", "play","volume up", "volume down", "next". Saying "pause" pauses the video in the web browser, Saying "play" plays the video in
 
@@ -177,48 +177,119 @@
      68. Likewise, Open the Amazon.com.au website by saying "open Amazon.com.au" or "open Amazon.com.au website".
 
 35. Search many websites like YouTube, Google (with Google Images, Google News etc.), Bing, Yahoo, DuckDuckGo, Wikipedia, Wiktionary, and many more just by saying "search (the name of the website) on (the thing you want to search on the website.). For example,
-    - If you want to search for "Python" on YouTube, you can say "search Python on YouTube".
-    - If you want to search for "Python" on Google, you can say "search Python on Google".
-    - If you want to search for "Python" on Google Images, you can say "search Python on Google Images".
-    - Weather you want to search for "Python" on Google News, you can say "search Python on Google News".
-    - If you want to search for "Python" on Google Maps, you can say "search Python on Google Maps".
-    - If you want to search for "Python" on Google Scholar, you can say "search Python on Google Scholar".
+    1. If you want to search for "Python" on YouTube, you can say "search Python on YouTube".
+    2. If you want to search for "Python" on Google, you can say "search Python on Google".
+    3. If you want to search for "Python" on Google Images, you can say "search Python on Google Images".
+    4. Weather you want to search for "Python" on Google News, you can say "search Python on Google News".
+    5. If you want to search for "Python" on Google Maps, you can say "search Python on Google Maps".
+    6. If you want to search for "Python" on Google Scholar, you can say "search Python on Google Scholar".
 
 36. Translate the English to many other languages just saying "translate (the sentence you want to translate) to (the language to which you want to translate the sentence)" example "translate hello to Spanish" will translate the English sentence "hello" to Spanish. The supported languages are :
-        - Arabic
-        - Bengali
-        - Bulgarian
-        - Catalan
-        - Chinese
-        - Croatian
-        - Czech
-        - Danish
-        - Dutch
-        - ESPAÑOL
-        - ESTONIAN
-        - FINNISH
-        - Greek
-        - Hebrew
-        - Hindi
-        - Hungarian
-        - Indonesian
-        - Italian
-        - Japanese
-        - Korean
-        - Latvian
-        - Lithuanian
-        - Malay
-        - Norwegian
-        - Persian
-        - Polish
-        - Portuguese
-        - Romanian
-        - Russian
-        - Serbian
-        - Slovak
-        - Spanish
-        - Swedish
-        - And many more.
+    1. Afrikaans
+    2. Albanian
+    3. Amharic
+    4. Arabic
+    5. Armenian
+    6. Azerbaijani
+    7. Basque
+    8. Belarusian
+    9. Bengali
+    10. Bosnian
+    11. Bulgarian
+    12. Catalan
+    13. Cebuano
+    14. Chichewa
+    15. Chinese (Simplified)
+    16. Chinese (Traditional)
+    17. Corsican
+    18. Croatian
+    19. Czech
+    20. Danish
+    21. Dutch
+    22. English
+    23. Esperanto
+    24. Estonian
+    25. Filipino
+    26. Finnish
+    27. French
+    28. Frisian
+    29. Galician
+    30. Georgian
+    31. German
+    32. Greek
+    33. Gujarati
+    34. Haitian Creole
+    35. Hausa
+    36. Hawaiian
+    37. Hebrew
+    38. Hindi
+    39. Hmong
+    40. Hungarian
+    41. Icelandic
+    42. Igbo
+    43. Indonesian
+    44. Irish
+    45. Italian
+    46. Japanese
+    47. Javanese
+    48. Kannada
+    49. Kazakh
+    50. Khmer
+    51. Korean
+    52. Kurdish (Kurmanji)
+    53. Kyrgyz
+    54. Lao
+    55. Latin
+    56. Latvian
+    57. Lithuanian
+    58. Luxembourgish
+    59. Macedonian
+    60. Malagasy
+    61. Malay
+    62. Malayalam
+    63. Maltese
+    64. Maori
+    65. Marathi
+    66. Mongolian
+    67. Myanmar (Burmese)
+    68. Nepali
+    69. Norwegian
+    70. Odia
+    71. Pashto
+    72. Persian
+    73. Polish
+    74. Portuguese
+    75. Punjabi
+    76. Romanian
+    77. Russian
+    78. Samoan
+    79. Scots Gaelic
+    80. Serbian
+    81. Sesotho
+    82. Shona
+    83. Sindhi
+    84. Sinhala
+    85. Slovak
+    86. Slovenian
+    87. Somali
+    88. Spanish
+    89. Sundanese
+    90. Swahili
+    91. Swedish
+    92. Tajik
+    93. Tamil
+    94. Telugu
+    95. Thai
+    96. Turkish
+    97. Ukrainian
+    98. Urdu
+    99. Uzbek
+    100. Vietnamese
+    101. Welsh
+    102. Xhosa
+    103. Yiddish
+    104. Yoruba
+    105. Zulu
 
 37. Answer to many questions like :-
     1. What is your name?
@@ -248,21 +319,21 @@
 ### In progress features
 
 1. Tell you your operating system by saying "my operating system" or "my operating system is" or "my operating system is" or "my operating system is".
-1. Give you a random fact by saying "fact" or "tell me a fact" or "tell me a random fact".
-1. Give a list of all the commands by saying "commands" or "help" or "what are the commands".
-1. Tell you the temperature by saying "temperature" or "what is the temperature" or "tell me the temperature" or "tell me the weather forecast".
-1. Tell you the current location by saying "location" or "what is the location" or "tell me the location" or "tell me the weather forecast".
-1. Turn on and off Wi-Fi.
-1. Stop music.
-1. Change color.
-1. Do calculation.
+2. Give you a random fact by saying "fact" or "tell me a fact" or "tell me a random fact".
+3. Give a list of all the commands by saying "commands" or "help" or "what are the commands".
+4. Tell you the temperature by saying "temperature" or "what is the temperature" or "tell me the temperature" or "tell me the weather forecast".
+5. Tell you the current location by saying "location" or "what is the location" or "tell me the location" or "tell me the weather forecast".
+6. Turn on and off Wi-Fi.
+7. Stop music.
+8. Change color.
+9. Do calculation.
 
 > Please tell me the features you want me to add by creating an issue.
 
 ## Installation instruction
 
 1. Install Python.
-1. To start open CMD in the directory then run the code below!
+2. To start open CMD in the directory then run the code below!
 
 `pip install -r requirements.txt`
 

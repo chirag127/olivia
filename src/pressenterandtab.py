@@ -35,10 +35,15 @@ if __name__ == '__main__':
 
         presskey('enter')
 
-        time.sleep(4)
+        time.sleep(1)
 
         presskey('tab')
 
 
 
 
+        
+
+
+
+        

@@ -44,3 +44,10 @@ Winshell
 winshell
 
 
+Igbo
+Luxembourgish
+Kyrgyz
+Odia
+Shona
+Sinhala
+Tajik

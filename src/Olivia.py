@@ -647,6 +647,12 @@ if __name__ == "__main__":
 
         # tell user the common usage of the command if 'usage' is in query
 
+        elif 'where are you?' in query:
+            speak("I am here in the main loop. sir")
+
+
+
+
         elif 'usage' in query:
 
             # if 'usage' is in query and 'cpu' is in query give the usage of cpu
@@ -921,7 +927,7 @@ if __name__ == "__main__":
             elif 'new' in query:
                 presshotkey('ctrl', 't')
 
-        elif 'close' in query:
+        elif 'close' in query or 'exit' in query:
             if 'page' in query:
                 presshotkey('ctrl', 'w')
                # sp('Closed')
@@ -946,7 +952,7 @@ if __name__ == "__main__":
                 os.system('TASKKILL /F /IM Spotify.exe')
 
             elif 'youtube' in query:
-                sp('closing youtube')
+                sp('closing youtube ')
                 os.system('TASKKILL /F /IM chrome.exe')
 
             elif 'qbittorrent' in query or 'bittorrent' in query or 'torrent' in query:
