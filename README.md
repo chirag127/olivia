@@ -98,6 +98,7 @@
     - Open peaches just say "play peaches" or "play the song peaches".
     - I hope you understand now.
 
+33. You can control the video by saying "pause", "play","volume up", "volume down", "next". Saying "pause" pauses hte video in the web browser, Saying "play" plays the video in        
 
 
 34. Open any website just say "open (the name of the website)" or "open (the name of the website) now" or "open (the name of the website) now" e.g.
@@ -216,7 +217,7 @@
         - Swedish
         - And many more.
 
-36. Answer to many questions like :- 
+37. Answer to many questions like :- 
     1. What is your name?
     2. What is your age?
     3. Who is your favorite animal?
@@ -236,8 +237,8 @@
     17. And many more...
 
 
-37.  Type by saying "start typing" and then start typing by the instruction given.
-38.  Press many key by saying "press (the key you want to press) key" example "press space key" will press the space key on your keyboard or "press enter key" will press the enter key on your keyboard, "press tab key" will press the tab key on your keyboard and so on.
+38.  Type by saying "start typing" and then start typing by the instruction given.
+39.  Press many key by saying "press (the key you want to press) key" example "press space key" will press the space key on your keyboard or "press enter key" will press the enter key on your keyboard, "press tab key" will press the tab key on your keyboard and so on.
    
 40. Exit the application just by saying "exit the application" or "exit" or "goodbye" or "bye".
 41. If the Virtual assistant Don't know the answer to any of your questions, Olivia will ask you if he or she wants to search the query in google or YouTube or Wikipedia. If you say yes, then it will ask in which of these websites you want to search the query like if you YouTube it will search the query on YouTube. In last, If you say no, then it will do nothing and just say 'ok. Anything else sir?'

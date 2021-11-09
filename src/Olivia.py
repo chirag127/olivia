@@ -1179,7 +1179,7 @@ if __name__ == "__main__":
                     'jatin': '+91 9999999977',
 
 
-                    'None': '+91 9999999995'  # if you want to add more contacts
+                    'None': '+91 7428449707'  # if you want to add more contacts
                     # 'None' : '+91 9999999995' # if you want to add more contacts
                     # 'None' : '+91 9999999995' # if you want to default contact
 
