@@ -928,6 +928,7 @@ if __name__ == "__main__":
                 presshotkey('ctrl', 't')
 
         elif 'close' in query or 'exit' in query:
+
             if 'page' in query:
                 presshotkey('ctrl', 'w')
                # sp('Closed')
@@ -938,7 +939,7 @@ if __name__ == "__main__":
                     # sp('Closed')
 
             elif 'tab' in query:
-                presshotkey('ctrl', 'w')
+                pyautogui.hotkey('ctrl', 'w')
 
             elif 'window' in query:
                 presshotkey('alt', 'f4')
