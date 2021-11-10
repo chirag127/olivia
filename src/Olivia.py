@@ -1,52 +1,33 @@
 from bs4 import BeautifulSoup      # The BeautifulSoup is used for web scraping
-# The googletrans is used for translation and google translate is used for language detection
 from googletrans import Translator
-# The import the library owm from pyowm for weather api
 from pyowm import OWM
-# The tkinter is used for GUI and tkinter is used for creating GUI in python and tkinter is used for creating GUI in python
 from tkinter import *
-# The clipboard is used to read the text from the clipboard
 import clipboard
 import ctypes                      # The ctypes is used maniplulate the data types
 import datetime                    # The date and time module is for timezones
-# The json library is used for reading and writing json files obtained by apis
 import json
 import math                        # The math library provides math fuctions .
-# The Numpy library is used for mathematical calculations and mathematical operations
 import numpy as np
-# The os library is used to open the system and open the specified file
 import os
-# The psutil is used to get the cpu usage and ram usage and disk usage and battery usage
 import psutil
-# The pyaoautogui is used for mouse and keyboard control
 import pyautogui
 import pyttsx3                     # The pyttx3 is used for text to speech
-# The pywhatkit is used for playing the youtube videos
 import pywhatkit
-# The random library is used for random number generation
 import random
-# The regular expression library is used for regular expressions
 import re
-# The requests library is used to make http requests to apis
 import requests
-# The shutil is used to copy files and folders from one location to another location or for archiving files and folders
 import shutil
 import smtplib                     # The smtplib is used for sending emails
-# The spech_recognition library is used for speech recognition and google translate is used for language detection
 import speech_recognition as sr
-# The subprocess is used to run the command line commands for screen capture
 import subprocess
 import sys                         # The sys library is used to exit the program
 import time                        # The time library is used for timezones
 import tkinter as tk               # The tkinter is used for gui
 import urlopen                     # The used to open url
-# The webbrowser is used to open the url in the default browser
 import webbrowser
 import wikipedia                   # The get article from wikipedia
-# The win32com.client is used to open the specified file and return the result to the user
 import win32com.client as wincl
 import winshell                    # The use winshell for opening the specified file
-
 # create a wonderful virtual voice assistant named olivia and she will help you in your daily life with her amazing features like text to speech, voice to text, google search, wikipedia search, youtube search, news search, weather search, time search, date search, screenshot, email, jokes, ip address, and many more.
 # olivia is a virtual voice assistant and she will help you in your daily life with her amazing features like text to speech, voice to text, google search, wikipedia search, youtube search, news search, weather search, time search, date search, screenshot, email, jokes, ip address, and many more.
 # Olivia is created by chirag singhal.
@@ -998,12 +979,7 @@ if __name__ == "__main__":
                 # if the query contains not this then check next elif statement
 
                 elif 'full screen' in query or 'full mode' in query:
-
                     pyautogui.press('f')
-
-
-
-
 
         elif 'news' in query:
             NewsFromBBC()
@@ -1069,135 +1045,187 @@ if __name__ == "__main__":
 
         # if 'open' is in query and 'notepad' is in query then open notepad
         elif 'open notepad' in query:
+
             os.system('notepad')
 
         elif "what is your name" in query:
+
             speak("My name is Olivia")
 
         elif "what is your age" in query:
+
             speak("I am a computer program")
 
         elif "what is your job" in query:
+
             speak("I am a Virtual assistant")
 
         elif "what is your favorite food" in query:
+
             speak("I Like renewable electricity")
 
         elif "what is your favorite animal" in query:
+
             speak("I like dogs")
 
         elif "what is your favorite sport" in query:
+
             speak("I like cricket")
 
         elif "what is your favorite color" in query:
+
             speak("My favorite color is black")
 
         elif "what is your favorite song" in query:
+
             speak("My favorite song is the one by the Justin bieber")
 
         elif "what is your favorite movie" in query:
+
             speak("My favorite movie is the dead poet Society")
 
         elif "what is your favorite actor" in query:
+
             speak("My favorite actor is Alex Lawther")
 
         elif "what is your favorite actress" in query:
+
             speak("My favorite actress is Jessica Barden")
 
         elif "what is your favorite cartoon" in query:
+
             speak("My favorite cartoon is the one by the Tom and Jerry")
 
         elif "what is your favorite cartoon character" in query:
+
             speak("My favorite cartoon character is Jerry")
 
         elif "what is your favorite book" in query:
+
             speak("My favorite book is Automate the boring stuff")
+
             speak("I also like the books by the author of the book The Alchemist")
 
         elif "what is your favorite place" in query:
+
             speak("My favorite place is Ghaziabad")
 
         elif "what is Your dream" in query:
-            speak("My dream is to be a Software Engineer")
+
+            speak("My dream is to be the most influential person in the world")
 
         elif "thank you" in query:
+
             speak("Welcome Sir")
 
         elif "who are you" in query:
+
             speak("I am a Virtual assistant")
 
         elif "who made you" in query:
+
             speak("I was created by Chirag singhal")
 
         elif "who is your creator" in query:
+
             speak("I was created by Chirag singhal")
 
         elif "who made you" in query:
+
             speak("I was made by Chirag singhal")
 
         elif "what is your country of origin" in query:
+
             speak("I was made in India")
 
         elif "what is your language" in query:
+
             speak("I am a computer program")
 
         elif "what is your purpose" in query:
 
             speak("I am a Virtual assistant")
+
         elif query == "hello" or query == "hi" or query == "hey" or query == "hii":
+
             speak("Hello Sir")  # Hello Sir
+
             wishMe()
 
         elif 'how are you' in query:
+
             speak("i am fine")
 
         elif 'what time is it' in query:
+
             speak(ctime())
 
         elif 'who are you' in query:
+
             speak("i am olivia")
 
         elif 'the time' in query:
+
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
+
             speak(f"Sir, the time is {strTime}")
 
         elif 'kill me' in query:
+
             sp("I won't")
 
         elif 'your god' in query:
+
             sp("chriag singhal is my god")
 
         elif "who made you" in query or "who created you" in query or "who discovered you" in query:
+
             speak("I was built by Chirag singhal")
 
         elif 'what you can do' in query:
+
             speak("I can do many things")
 
         elif 'wish me' in query:
+
             wishMe()
 
         elif 'roll' in query and 'dice' in query:
+
             r = random.randint(1, 6)
+
             dice = str(r)
+
             speak('you got ' + dice)
 
         elif query == 'quit' or 'olivia quit' in query or 'olivia bye' in query or query == 'bye' or query == 'exit' or query == 'goodbye' or query == 'bye bye':
+
             sp("Bye Sir")
+
             exit()
 
         # if the user wants to repeat the last command
+
         elif 'repeat' in query and 'olivia' in query:
+
             # telling the user that the program is repeating the last command
+
             speak("repeating the last command")
+
             # repeating the last command
+
             sp(query)
 
         # writing code to fetch the news from the "https://news.google.com/news/rss" using webscraping and reading that news using beautiful soup
 
         elif 'generate' in query:
+
             if 'password' in query:
+
                 generate_random_password()
+
             elif 'number' in query:
+
                 sp(random.randint(0, 100))
 
         elif 'email' in query:
@@ -3059,6 +3087,8 @@ if __name__ == "__main__":
                 result = translator.translate(query, dest='pt')
                 # speaking and printing the result
                 sp(result.text)
+
+
             # translate to the punjabi
             elif 'punjabi' in query:
                 # telling the user that we are translating the text to the punjabi
@@ -3072,6 +3102,7 @@ if __name__ == "__main__":
                 # speaking and printing the result
                 sp(result.text)
 
+
             # translate to the romanian
             elif 'romanian' in query:
                 # telling the user that we are translating the text to the romanian
@@ -3084,6 +3115,7 @@ if __name__ == "__main__":
                 result = translator.translate(query, dest='ro')
                 # speaking and printing the result
                 sp(result.text)
+                
 
             # translate to the russian
             elif 'russian' in query:
