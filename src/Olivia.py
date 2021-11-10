@@ -35,15 +35,13 @@ import winshell                    # The use winshell for opening the specified 
 # chirag singhal made this virtual voice assistant for his mini-project in his college.
 
 
-# reqiured engines
-
+# reqiured engine for text to speech
 
 engine = pyttsx3.init('sapi5')
 
 # sapi5 is the default voice engine of windows and it is installed by default in windows
 
 # getproperties is used to get the properties of the engine like rate, volume, pitch, etc.
-
 
 voices = engine.getProperty('voices')
 
@@ -63,8 +61,8 @@ def speak(audio):
 
     engine.runAndWait()
 
-# defining the function to take command from the user
 
+# defining the function to take command from the user
 
 def takeCommand():
 
@@ -563,6 +561,36 @@ def sp(text):
     speak(text)
 
 
+# KEYBOARD_KEYS is attribute of pyautogui
+# KEYBOARD_KEYS is a list of all the keys on the keyboard
+# The full list of key names is in pyautogui.KEYBOARD_KEYS
+
+# The following are the valid strings to pass to the press(), keyDown(), keyUp(), and hotkey() functions:
+
+
+# ['\t', '\n', '\r', ' ', '!', '"', '#', '$', '%', '&', "'", '(',
+# ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7',
+# '8', '9', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`',
+# 'a', 'b', 'c', 'd', 'e','f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
+# 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}', '~',
+# 'accept', 'add', 'alt', 'altleft', 'altright', 'apps', 'backspace',
+# 'browserback', 'browserfavorites', 'browserforward', 'browserhome',
+# 'browserrefresh', 'browsersearch', 'browserstop', 'capslock', 'clear',
+# 'convert', 'ctrl', 'ctrlleft', 'ctrlright', 'decimal', 'del', 'delete',
+# 'divide', 'down', 'end', 'enter', 'esc', 'escape', 'execute', 'f1', 'f10',
+# 'f11', 'f12', 'f13', 'f14', 'f15', 'f16', 'f17', 'f18', 'f19', 'f2', 'f20',
+# 'f21', 'f22', 'f23', 'f24', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9',
+# 'final', 'fn', 'hanguel', 'hangul', 'hanja', 'help', 'home', 'insert', 'junja',
+# 'kana', 'kanji', 'launchapp1', 'launchapp2', 'launchmail',
+# 'launchmediaselect', 'left', 'modechange', 'multiply', 'nexttrack',
+# 'nonconvert', 'num0', 'num1', 'num2', 'num3', 'num4', 'num5', 'num6',
+# 'num7', 'num8', 'num9', 'numlock', 'pagedown', 'pageup', 'pause', 'pgdn',
+# 'pgup', 'playpause', 'prevtrack', 'print', 'printscreen', 'prntscrn',
+# 'prtsc', 'prtscr', 'return', 'right', 'scrolllock', 'select', 'separator',
+# 'shift', 'shiftleft', 'shiftright', 'sleep', 'space', 'stop', 'subtract', 'tab',
+# 'up', 'volumedown', 'volumemute', 'volumeup', 'win', 'winleft', 'winright', 'yen',
+# 'command', 'option', 'optionleft', 'optionright']
+
 def greeting(text):
     # Greeting inputs
     GREETING_INPUTS = ['hi', 'hey', 'hola', 'wassup', 'hello']
@@ -774,6 +802,154 @@ if __name__ == "__main__":
 
             if psutil.sensors_battery().power_plugged == False:
                 speak("Battery is discharging")
+
+        elif 'open word' in query:
+
+            speak('ok. opening word')
+
+            os.startfile(
+                'C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE')
+
+            speak('do you want me to type sir?')
+
+            typin = takeCommand().lower()
+
+            if 'yes' in typin:
+
+                pyautogui.press('enter')
+
+                speak('sir you can start. say stop typing if I have to stop')
+
+                while True:
+
+                    type_sentence = takeCommand().lower()
+
+                    if 'stop typing' in type_sentence:
+
+                        break
+
+                    elif 'enter' in type_sentence:
+
+                        pyautogui.press('enter')
+
+                    # press tab by pressing the tab key
+                    # when the type sentence contains backspace and press
+                    # backspace, the program will press backspace
+                    elif 'backspace' in type_sentence and 'press' in type_sentence:
+
+                        pyautogui.press('backspace')
+
+                    # press space by pressing the space key
+                    # when the type sentence contains space and press
+                    # space, the program will press space
+                    elif 'space' in type_sentence and 'press' in type_sentence:
+
+                        pyautogui.press('space')
+
+                    # press left arrow by pressing the left arrow key
+                    # when the type sentence contains left arrow and press
+                    # left arrow, the program will press left arrow
+                    elif 'left arrow' in type_sentence and 'press' in type_sentence:
+
+                        pyautogui.press('left')
+
+                    # press right arrow by pressing the right arrow key
+                    # when the type sentence contains right arrow and press
+                    # right arrow, the program will press right arrow
+                    elif 'right arrow' in type_sentence and 'press' in type_sentence:
+
+                        pyautogui.press('right')
+
+                    # press up arrow by pressing the up arrow key
+                    # when the type sentence contains up arrow and press
+                    # up arrow, the program will press up arrow
+                    elif 'up arrow' in type_sentence and 'press' in type_sentence:
+
+                        pyautogui.press('up')
+
+                    # press down arrow by pressing the down arrow key
+                    # when the type sentence contains down arrow and press
+                    # down arrow, the program will press down arrow
+                    elif 'down arrow' in type_sentence and 'press' in type_sentence:
+
+                        pyautogui.press('down')
+
+                    # press home by pressing the home key
+                    # when the type sentence contains home and press
+                    # home, the program will press home
+                    elif 'home' in type_sentence and 'press' in type_sentence:
+
+                        pyautogui.press('home')
+
+                    # press end by pressing the end key
+                    # when the type sentence contains end and press
+                    # end, the program will press end
+                    elif 'end' in type_sentence and 'press' in type_sentence:
+
+                        pyautogui.press('end')
+
+                    # press page up by pressing the page up key
+                    # when the type sentence contains page up and press
+                    # page up, the program will press page up
+                    elif 'page up' in type_sentence and 'press' in type_sentence:
+
+                        pyautogui.press('pageup')
+
+                    # press page down by pressing the page down key
+                    # when the type sentence contains page down and press
+                    # page down, the program will press page down
+                    elif 'page down' in type_sentence and 'press' in type_sentence:
+
+                        pyautogui.press('pagedown')
+
+                    # press insert by pressing the insert key
+                    # when the type sentence contains insert and press
+                    # insert, the program will press insert
+
+                    elif 'insert' in type_sentence and 'press' in type_sentence:
+
+                        pyautogui.press('insert')
+
+                    # press delete by pressing the delete key
+                    # when the type sentence contains delete and press
+                    # delete, the program will press delete
+                    elif 'delete' in type_sentence and 'press' in type_sentence:
+
+                        pyautogui.press('delete')
+
+                    # automating the operation on the word file
+                    # when the type sentence contains file
+                    elif 'file' in type_sentence:
+                        # save the file by pressing the hotkey ctrl+s
+                        # save the file if the type sentence contains save
+                        if 'save' in type_sentence:
+                            pyautogui.hotkey('ctrl', 's')
+                            time.sleep(1)
+                            pyautogui.press('enter')
+                            speak('file has been saved')
+
+                        # close the file by pressing the hotkey alt+f4
+                        # close the file if the type sentence contains close
+                        elif 'close' in type_sentence:
+                            pyautogui.hotkey('alt', 'f4')
+
+                            pyautogui.press('enter')
+
+                            speak('file has been closed')
+
+                else:
+
+                    pyautogui.typewrite(type_sentence)
+
+                speak('stopped typing')
+
+            elif 'no' in typin:
+
+                speak('ok sir')
+
+        elif 'stop typing' in query:
+
+            speak('sir I already stopped typing')
 
         # type the text in the current window if 'type' is in query
         elif 'typing' in query and 'start' in query:
@@ -1048,147 +1224,65 @@ if __name__ == "__main__":
 
             os.system('notepad')
 
-        elif "what is your name" in query:
-
-            speak("My name is Olivia")
-
-        elif "what is your age" in query:
-
-            speak("I am a computer program")
-
-        elif "what is your job" in query:
-
-            speak("I am a Virtual assistant")
-
-        elif "what is your favorite food" in query:
-
-            speak("I Like renewable electricity")
-
-        elif "what is your favorite animal" in query:
-
-            speak("I like dogs")
-
-        elif "what is your favorite sport" in query:
-
-            speak("I like cricket")
-
-        elif "what is your favorite color" in query:
-
-            speak("My favorite color is black")
-
-        elif "what is your favorite song" in query:
-
-            speak("My favorite song is the one by the Justin bieber")
-
-        elif "what is your favorite movie" in query:
-
-            speak("My favorite movie is the dead poet Society")
-
-        elif "what is your favorite actor" in query:
-
-            speak("My favorite actor is Alex Lawther")
-
-        elif "what is your favorite actress" in query:
-
-            speak("My favorite actress is Jessica Barden")
-
-        elif "what is your favorite cartoon" in query:
-
-            speak("My favorite cartoon is the one by the Tom and Jerry")
-
-        elif "what is your favorite cartoon character" in query:
-
-            speak("My favorite cartoon character is Jerry")
-
-        elif "what is your favorite book" in query:
-
-            speak("My favorite book is Automate the boring stuff")
-
-            speak("I also like the books by the author of the book The Alchemist")
-
-        elif "what is your favorite place" in query:
-
-            speak("My favorite place is Ghaziabad")
-
-        elif "what is Your dream" in query:
-
-            speak("My dream is to be the most influential person in the world")
-
-        elif "thank you" in query:
-
-            speak("Welcome Sir")
-
-        elif "who are you" in query:
-
-            speak("I am a Virtual assistant")
-
-        elif "who made you" in query:
-
-            speak("I was created by Chirag singhal")
-
-        elif "who is your creator" in query:
-
-            speak("I was created by Chirag singhal")
-
-        elif "who made you" in query:
-
-            speak("I was made by Chirag singhal")
-
-        elif "what is your country of origin" in query:
-
-            speak("I was made in India")
-
-        elif "what is your language" in query:
-
-            speak("I am a computer program")
-
-        elif "what is your purpose" in query:
-
-            speak("I am a Virtual assistant")
-
-        elif query == "hello" or query == "hi" or query == "hey" or query == "hii":
-
-            speak("Hello Sir")  # Hello Sir
-
-            wishMe()
-
-        elif 'how are you' in query:
-
-            speak("i am fine")
-
-        elif 'what time is it' in query:
-
-            speak(ctime())
-
-        elif 'who are you' in query:
-
-            speak("i am olivia")
-
-        elif 'the time' in query:
-
-            strTime = datetime.datetime.now().strftime("%H:%M:%S")
-
-            speak(f"Sir, the time is {strTime}")
-
-        elif 'kill me' in query:
-
-            sp("I won't")
-
-        elif 'your god' in query:
-
-            sp("chriag singhal is my god")
-
-        elif "who made you" in query or "who created you" in query or "who discovered you" in query:
-
-            speak("I was built by Chirag singhal")
-
-        elif 'what you can do' in query:
-
-            speak("I can do many things")
-
-        elif 'wish me' in query:
-
-            wishMe()
+        elif 'screenshot' in query:
+            takescreenshot()
+
+        elif 'joke' in query:
+            givejoke()
+
+        elif 'ip address' in query:
+            giveip()
+
+        elif 'call me' in query:
+            speak('What is your name?')
+            query = query.replace("call me", "")
+            uname = query
+            speak('Hello ' + uname + ' How may I help you?')
+
+        elif "change my name to" in query:
+            query = query.replace("change my name to", "")
+            uname = query
+
+        elif "don't listen" in query or "stop listening" in query:
+            speak("for how much time you want to stop olivia from listening commands")
+            time.sleep(120)
+            speak("Olivia is listening again")
+
+        elif 'recycle bin' in query:
+
+            if 'clear' in query or 'empty' in query:
+
+                speak("Emptying the recycle bin")
+
+                winshell.recycle_bin().empty(confirm=False, show_progress=False, sound=True)
+
+                speak("Recycle Bin Recycled")
+
+        elif 'lock window' in query or 'lock screen' in query or 'lock the screen' in query:
+            speak("locking the device")
+            ctypes.windll.user32.LockWorkStation()
+
+        elif 'remember that' in query:
+            speak("What should i remember?")
+            data = takeCommand()
+            speak("You said me to remember that " + data)
+            remember = open('data.txt', 'w')
+            remember.write(data)
+            remember.close()
+            speak("I have remembered that")
+
+        elif 'do you know anything' in query:
+            remember = open('data.txt', 'r')
+            speak("You said me to remember that " + remember.read())
+            remember.close()
+
+        elif "where is" in query:
+            query = query.replace("where is", "")
+            location = query
+            sp("User asked to Locate")
+            sp(location)
+            webbrowser.open(
+                "https://www.google.com / maps / place/" + location + "")
 
         elif 'roll' in query and 'dice' in query:
 
@@ -3088,7 +3182,6 @@ if __name__ == "__main__":
                 # speaking and printing the result
                 sp(result.text)
 
-
             # translate to the punjabi
             elif 'punjabi' in query:
                 # telling the user that we are translating the text to the punjabi
@@ -3102,7 +3195,6 @@ if __name__ == "__main__":
                 # speaking and printing the result
                 sp(result.text)
 
-
             # translate to the romanian
             elif 'romanian' in query:
                 # telling the user that we are translating the text to the romanian
@@ -3115,7 +3207,6 @@ if __name__ == "__main__":
                 result = translator.translate(query, dest='ro')
                 # speaking and printing the result
                 sp(result.text)
-                
 
             # translate to the russian
             elif 'russian' in query:
@@ -3624,6 +3715,149 @@ if __name__ == "__main__":
             else:
                 sp('Sorry, I could not find that')
                 sp('what you want to close')
+
+        elif "what is your name" in query:
+
+            speak("My name is Olivia")
+
+        elif "what is your age" in query:
+
+            speak("I am a computer program")
+
+        elif "what is your job" in query:
+
+            speak("I am a Virtual assistant")
+
+        elif "what is your favorite food" in query:
+
+            speak("I Like renewable electricity")
+
+        elif "what is your favorite animal" in query:
+
+            speak("I like dogs")
+
+        elif "what is your favorite sport" in query:
+
+            speak("I like cricket")
+
+        elif "what is your favorite color" in query:
+
+            speak("My favorite color is black")
+
+        elif "what is your favorite song" in query:
+
+            speak("My favorite song is the one by the Justin bieber")
+
+        elif "what is your favorite movie" in query:
+
+            speak("My favorite movie is the dead poet Society")
+
+        elif "what is your favorite actor" in query:
+
+            speak("My favorite actor is Alex Lawther")
+
+        elif "what is your favorite actress" in query:
+
+            speak("My favorite actress is Jessica Barden")
+
+        elif "what is your favorite cartoon" in query:
+
+            speak("My favorite cartoon is the one by the Tom and Jerry")
+
+        elif "what is your favorite cartoon character" in query:
+
+            speak("My favorite cartoon character is Jerry")
+
+        elif "what is your favorite book" in query:
+
+            speak("My favorite book is Automate the boring stuff")
+
+            speak("I also like the books by the author of the book The Alchemist")
+
+        elif "what is your favorite place" in query:
+
+            speak("My favorite place is Ghaziabad")
+
+        elif "what is Your dream" in query:
+
+            speak("My dream is to be the most influential person in the world")
+
+        elif "thank you" in query:
+
+            speak("Welcome Sir")
+
+        elif "who are you" in query:
+
+            speak("I am a Virtual assistant")
+
+        elif "who made you" in query:
+
+            speak("I was created by Chirag singhal")
+
+        elif "who is your creator" in query:
+
+            speak("I was created by Chirag singhal")
+
+        elif "who made you" in query:
+
+            speak("I was made by Chirag singhal")
+
+        elif "what is your country of origin" in query:
+
+            speak("I was made in India")
+
+        elif "what is your language" in query:
+
+            speak("I am a computer program")
+
+        elif "what is your purpose" in query:
+
+            speak("I am a Virtual assistant")
+
+        elif query == "hello" or query == "hi" or query == "hey" or query == "hii":
+
+            speak("Hello Sir")  # Hello Sir
+
+            wishMe()
+
+        elif 'how are you' in query:
+
+            speak("i am fine")
+
+        elif 'what time is it' in query:
+
+            speak(ctime())
+
+        elif 'who are you' in query:
+
+            speak("i am olivia")
+
+        elif 'the time' in query:
+
+            strTime = datetime.datetime.now().strftime("%H:%M:%S")
+
+            speak(f"Sir, the time is {strTime}")
+
+        elif 'kill me' in query:
+
+            sp("I won't")
+
+        elif 'your god' in query:
+
+            sp("chriag singhal is my god")
+
+        elif "who made you" in query or "who created you" in query or "who discovered you" in query:
+
+            speak("I was built by Chirag singhal")
+
+        elif 'what you can do' in query:
+
+            speak("I can do many things")
+
+        elif 'wish me' in query:
+
+            wishMe()
+
         else:
             print("else statement is executed")
             # writing code for the queries or the commands that are not in the above list of commands. so we will ask the user
