@@ -937,9 +937,12 @@ if __name__ == "__main__":
 
                             speak('file has been closed')
 
-                else:
+                            break
 
-                    pyautogui.typewrite(type_sentence)
+                    else:
+                        if query != 'none':
+
+                            pyautogui.typewrite(type_sentence)
 
                 speak('stopped typing')
 
