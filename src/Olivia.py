@@ -151,6 +151,14 @@ def NewsFromBBC():
         print(i + 1, results[i])
         speak(results[i])
 
+def sp(text):
+    print(text)
+    speak(text)
+
+def text2speech():
+    text = clipboard.paste()
+    print(text)
+    speak(text)
 
 def wishMe():
     hour = int(datetime.datetime.now().hour)
@@ -556,9 +564,6 @@ def clearConsole():
     os.system(command)
 
 
-def sp(text):
-    print(text)
-    speak(text)
 
 
 # KEYBOARD_KEYS is attribute of pyautogui
