@@ -1,32 +1,50 @@
 from bs4 import BeautifulSoup      # The BeautifulSoup is used for web scraping
-from googletrans import Translator # The googletrans is used for translation and google translate is used for language detection
-from pyowm import OWM              # The import the library owm from pyowm for weather api
-from tkinter import *              # The tkinter is used for GUI and tkinter is used for creating GUI in python and tkinter is used for creating GUI in python
-import clipboard                   # The clipboard is used to read the text from the clipboard
+# The googletrans is used for translation and google translate is used for language detection
+from googletrans import Translator
+# The import the library owm from pyowm for weather api
+from pyowm import OWM
+# The tkinter is used for GUI and tkinter is used for creating GUI in python and tkinter is used for creating GUI in python
+from tkinter import *
+# The clipboard is used to read the text from the clipboard
+import clipboard
 import ctypes                      # The ctypes is used maniplulate the data types
 import datetime                    # The date and time module is for timezones
-import json                        # The json library is used for reading and writing json files obtained by apis
+# The json library is used for reading and writing json files obtained by apis
+import json
 import math                        # The math library provides math fuctions .
-import numpy as np                 # The Numpy library is used for mathematical calculations and mathematical operations
-import os                          # The os library is used to open the system and open the specified file
-import psutil                      # The psutil is used to get the cpu usage and ram usage and disk usage and battery usage
-import pyautogui                   # The pyaoautogui is used for mouse and keyboard control
+# The Numpy library is used for mathematical calculations and mathematical operations
+import numpy as np
+# The os library is used to open the system and open the specified file
+import os
+# The psutil is used to get the cpu usage and ram usage and disk usage and battery usage
+import psutil
+# The pyaoautogui is used for mouse and keyboard control
+import pyautogui
 import pyttsx3                     # The pyttx3 is used for text to speech
-import pywhatkit                   # The pywhatkit is used for playing the youtube videos
-import random                      # The random library is used for random number generation
-import re                          # The regular expression library is used for regular expressions
-import requests                    # The requests library is used to make http requests to apis
-import shutil                      # The shutil is used to copy files and folders from one location to another location or for archiving files and folders
+# The pywhatkit is used for playing the youtube videos
+import pywhatkit
+# The random library is used for random number generation
+import random
+# The regular expression library is used for regular expressions
+import re
+# The requests library is used to make http requests to apis
+import requests
+# The shutil is used to copy files and folders from one location to another location or for archiving files and folders
+import shutil
 import smtplib                     # The smtplib is used for sending emails
-import speech_recognition as sr    # The spech_recognition library is used for speech recognition and google translate is used for language detection
-import subprocess                  # The subprocess is used to run the command line commands for screen capture
+# The spech_recognition library is used for speech recognition and google translate is used for language detection
+import speech_recognition as sr
+# The subprocess is used to run the command line commands for screen capture
+import subprocess
 import sys                         # The sys library is used to exit the program
 import time                        # The time library is used for timezones
 import tkinter as tk               # The tkinter is used for gui
 import urlopen                     # The used to open url
-import webbrowser                  # The webbrowser is used to open the url in the default browser
+# The webbrowser is used to open the url in the default browser
+import webbrowser
 import wikipedia                   # The get article from wikipedia
-import win32com.client as wincl    # The win32com.client is used to open the specified file and return the result to the user
+# The win32com.client is used to open the specified file and return the result to the user
+import win32com.client as wincl
 import winshell                    # The use winshell for opening the specified file
 
 # create a wonderful virtual voice assistant named olivia and she will help you in your daily life with her amazing features like text to speech, voice to text, google search, wikipedia search, youtube search, news search, weather search, time search, date search, screenshot, email, jokes, ip address, and many more.
@@ -59,7 +77,6 @@ engine.setProperty('voice', voices[1].id)
 
 
 def speak(audio):
-
 
     engine.say(audio)
 
@@ -112,7 +129,6 @@ def takeCommand():
 
         query = r.recognize_google(audio, language='en-in')
 
-
         # print the user's voice to the console
 
         print(f"User said: {query}\n")
@@ -132,20 +148,6 @@ def takeCommand():
     # return the function to takeCommand()
 
     return query
-
-
-# fuction of press the specified key
-
-
-def presskey(key):
-
-    pyautogui.press(key)
-
-
-def presshotkey(key1, key2):
-    pyautogui.hotkey(key1, key2)
-
-#  function to wish the user according to the time of the day and the day of the week
 
 
 def NewsFromBBC():
@@ -639,25 +641,24 @@ if __name__ == "__main__":
 
         if 'desktop' in query or 'computer' in query or 'system' in query:
 
-                if 'shutdown' in query:
-                    speak("Hold On ! Your system is on its way to shut down")
-                    os.system('shutdown /s /f')
-                    running = False
-                    sys.exit()
+            if 'shutdown' in query:
+                speak("Hold On ! Your system is on its way to shut down")
+                os.system('shutdown /s /f')
+                running = False
+                sys.exit()
 
-                elif "restart" in query or "reboot" in query:
-                    subprocess.call(["shutdown", "/r"])
+            elif "restart" in query or "reboot" in query:
+                subprocess.call(["shutdown", "/r"])
 
-                elif "hibernate" in query or "sleep" in query:
-                    speak("Hibernating")
-                    subprocess.call("shutdown / h")
+            elif "hibernate" in query or "sleep" in query:
+                speak("Hibernating")
+                subprocess.call("shutdown / h")
 
-                elif "log off" in query or "sign out" in query or "signout" in query or 'logout' in query:
-                    speak("Make sure all the application are closed before sign-out")
-                    time.sleep(5)
-                    speak("Signing out")
-                    subprocess.call("shutdown / l")
-
+            elif "log off" in query or "sign out" in query or "signout" in query or 'logout' in query:
+                speak("Make sure all the application are closed before sign-out")
+                time.sleep(5)
+                speak("Signing out")
+                subprocess.call("shutdown / l")
 
         # give the current date and time if 'date' is in query
         if 'date' in query and "current" in query:
@@ -665,10 +666,8 @@ if __name__ == "__main__":
             speak("The current date is")
             speak(now.strftime("%d-%m-%Y"))
 
-
         if 'fullform of abcdef' in query:
             sp("Any body can dance")
-
 
         elif 'current weather' in query:
             reg_ex = re.search('current weather in (.*)', query)
@@ -682,21 +681,28 @@ if __name__ == "__main__":
                 speak('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (
                     city, k, x['temp_max'], x['temp_min']))
 
+        # if the query contains 'tell me about (something)', then return the information of that person/organisation from the wikipedia using the information from the wikipedia library
         elif 'tell me about' in query:
 
             reg_ex = re.search('tell me about (.*)', query)
 
             try:
-                if reg_ex:
-                    topic = reg_ex.group(1)
-                    ny = wikipedia.page(topic)
-                    speak(ny.content[:500].encode('utf-8'))
-            except Exception as e:
-                speak(e)
 
+                if reg_ex:
+
+                    topic = reg_ex.group(1)
+
+                    ny = wikipedia.page(topic)
+
+                    speak(ny.content[:500].encode('utf-8'))
+
+            except Exception as e:
+
+                speak(e)
 
         # if the query contains 'who is (something)', then return the information of that person/organisation from the wikipedia using the information from the wikipedia library
         elif 'who is' in query:
+
             reg_ex = re.search('who is (.*)', query)
             if reg_ex:
                 topic = reg_ex.group(1)
@@ -704,68 +710,64 @@ if __name__ == "__main__":
                 speak('According to Wikipedia')
                 print(ny)
                 speak(ny)
-                
 
         elif 'game' in query and 'start' in query:
-                    if 'tic' in query or 'tac' in query or 'toe' in query:
+            if 'tic' in query or 'tac' in query or 'toe' in query:
 
-                        tictactoe()
-                        continue
-
-
+                tictactoe()
+                continue
 
         # telling the joke when the query of the user contains joke
         elif 'joke' in query:
             givejoke()
 
         elif "send" in query and 'message' in query:
-                username = {
-                    'chirag': '+91 9999999999',
-                    'india': '+91 9999999998',
-                    'abhinav': '+91 9999999997',
-                    'ram': '+91 1234567891',
-                    'shivam': '+91 9999999995',
-                    'saurabh': '+91 9999999994',
-                    'sahil': '+91 9999999993',
-                    'siddharth': '+91 9999999992',
-                    'sagar': '+91 9999999991',
-                    'shubham': '+91 9999999990',
-                    'shivani': '+91 9999999989',
-                    'shivam': '+91 9999999988',
-                    'shubham': '+91 9999999987',
-                    'shivam': '+91 9999999986',
-                    'shivam': '+91 9999999985',
-                    'shivam': '+91 9999999984',
-                    'sourya': '+91 9999999983',
-                    'sourya': '+91 9999999982',
-                    'aryan': '+91 9999999981',
-                    'aviral': '+91 9999999980',
-                    'kushi': '+91 9999999979',
-                    'kushal': '+91 9999999978',
-                    'jatin': '+91 9999999977',
+            username = {
+                'chirag': '+91 9999999999',
+                'india': '+91 9999999998',
+                'abhinav': '+91 9999999997',
+                'ram': '+91 1234567891',
+                'shivam': '+91 9999999995',
+                'saurabh': '+91 9999999994',
+                'sahil': '+91 9999999993',
+                'siddharth': '+91 9999999992',
+                'sagar': '+91 9999999991',
+                'shubham': '+91 9999999990',
+                'shivani': '+91 9999999989',
+                'shivam': '+91 9999999988',
+                'shubham': '+91 9999999987',
+                'shivam': '+91 9999999986',
+                'shivam': '+91 9999999985',
+                'shivam': '+91 9999999984',
+                'sourya': '+91 9999999983',
+                'sourya': '+91 9999999982',
+                'aryan': '+91 9999999981',
+                'aviral': '+91 9999999980',
+                'kushi': '+91 9999999979',
+                'kushal': '+91 9999999978',
+                'jatin': '+91 9999999977',
 
 
-                    'None': '+91 7428449707'  # if you want to add more contacts
-                    # 'None' : '+91 9999999995' # if you want to add more contacts
-                    # 'None' : '+91 9999999995' # if you want to default contact
+                'None': '+91 7428449707'  # if you want to add more contacts
+                # 'None' : '+91 9999999995' # if you want to add more contacts
+                # 'None' : '+91 9999999995' # if you want to default contact
 
 
-                }
-                try:
-                    speak("to whom should i send to?")
-                    name = takeCommand().lower()
-                    to = username[name]
-                    speak("What should i say?")
-                    content = takeCommand()
-                    send_whatapp(to, content)
-                    speak("Message has been sent")
-                    break
-            
+            }
+            try:
+                speak("to whom should i send to?")
+                name = takeCommand().lower()
+                to = username[name]
+                speak("What should i say?")
+                content = takeCommand()
+                send_whatapp(to, content)
+                speak("Message has been sent")
+                break
 
-                except Exception as e:
-                    print(e)
-                    speak("Sorry Sir, I am not able to send this message")
-                    break
+            except Exception as e:
+                print(e)
+                speak("Sorry Sir, I am not able to send this message")
+                break
 
         # telling the cpu usage when the says a command that contains both cpu and usage.
         elif 'usage' in query and 'cpu' in query:
@@ -789,12 +791,9 @@ if __name__ == "__main__":
 
                 speak("Battery is charging")
 
-
             if psutil.sensors_battery().power_plugged == False:
                 speak("Battery is discharging")
 
-
-        
         # type the text in the current window if 'type' is in query
         elif 'typing' in query and 'start' in query:
             speak("Starting typing")
@@ -807,7 +806,7 @@ if __name__ == "__main__":
                     elif 'enter' in type_sentence:
                         pyautogui.press('enter')
                     elif 'backspace' in type_sentence:
-                        presshotkey('ctrl', 'backspace')
+                        pyautogui.hotkey('ctrl', 'backspace')
                     elif 'tab' in type_sentence:
                         pyautogui.press('tab')
 
@@ -820,213 +819,234 @@ if __name__ == "__main__":
                     else:
                         pyautogui.typewrite(type_sentence)
 
+        # if the query contains "write" and "note" in the query then write the note in the file named src/notes.txt and then tell the user that the note has been written
+        # also ask if the user wants to include the date and time in the note
+        elif 'write' in query and 'note' in query:
+            speak("What should i write sir")
+            note = takeCommand()
+            file = open("src/notes.txt", "w")
+            speak("Do you want to add the date and time in the note?")
+            note_date = takeCommand()
+            if 'yes' in note_date:
+                file.write(str(datetime.datetime.now()) + " : " + note)
+                speak("Note has been written")
+            elif 'no' in note_date:
+                file.write(note)
+                speak("Note has been written")
+            file.close()
 
-        elif "note" in query or "notes" in query:
+        # if the query contains "read" and "note" in the query then read the note from the file named src/notes.txt and then tell the user that the note has been read
+        elif 'read' in query and 'note' in query:
+            file = open("src/notes.txt", "r")
+            speak("Here is your note")
+            print(file.read())
+            speak(file.read())
+            file.close()
 
-            if 'write' in query:
+        # if the query contains "open" and "note" in the query then open the note from the file named src/notes.txt and then tell the user that the note has been opened
+        elif 'open' in query and 'note' in query:
+            os.system("src/notes.txt")
+            speak("Note has been opened")
 
-                speak("What should I write down?")
-                note = takeCommand()
-                file = open('olivianote.txt', 'w')
-                speak("Sir, Should i include date and time")
-                snfm = takeCommand()
-                if 'yes' in snfm or 'sure' in snfm or 'ok' in snfm:
-                    file.write(datetime.datetime.now().strftime(
-                        "%d-%m-%Y %H:%M:%S") + '\n')
-                    file.write(note)
-                    speak("Note has been saved")
-                else:
-                    file.write(note)
-                    speak("Note has been saved")
-                file.close()
-                break
+        # if the query contains "delete" and "note" in the query then delete the note from the file named src/notes.txt
+        # and then tell the user that the note has been deleted
+        elif 'delete' in query and 'note' in query:
+            os.remove("src/notes.txt")
+            speak("Note has been deleted")
 
-            elif 'read' in query:
-                speak("Reading Note Sir")
-                file = open('olivianote.txt', 'r')
-                print(file.read())
-                speak(file.read(6))
-                file.close()
-                break
+        # if the query contains "show" and "note" in the query then show the note from the file named src/notes.txt
+        elif 'show' in query and 'note' in query:
+            os.system("src/notes.txt")
+            sp("Note has been shown")
 
-            elif 'delete' in query:
-                speak("Deleting Note Sir")
-                os.remove('olivianote.txt')
-                speak("Note has been deleted")
-                break
+        # play the video if the query contains "play".
+        # the query should be like "play (topic of the video user want to play on youtube)"
+        # then the video should be played on youtube
+        # the user should be able to pause and resume the video by saying "pause" and "resume"
+        # the user should be able to stop the video by saying "stop"
+        # the user should be able to skip the video by saying "skip"
+        # the user should be able to change the video by saying "change"
+        # the user should be able to increase the volume by saying "increase volume" or "increase volume by (number)" or "volume up"
+        # the user should be able to decrease the volume by saying "decrease volume" or "decrease volume by (number)" or "volume down"
+        # the user should be able to mute the video by saying "mute"
+        # the user should be able to unmute the video by saying "unmute"
+        # the user should be able to increase the speed of the video by saying "increase speed" or "increase speed by (number)" or "speed up"
+        # the user should be able to decrease the speed of the video by saying "decrease speed" or "decrease speed by (number)" or "speed down"
+        # the user should be able to close the video by saying "close"
+        # the user should be able to exit the video by saying "exit"
+        # the user should be able to next the video by saying "next"
+        # the user should be able to go back to the video by saying "back"
+        # the user should be able to go to the video by saying "go to (number)"
+        # the user should be able to go to the video by saying "go to (number)"
+        # the user should be able to go to the next tab by saying "next tab"
+        # the user should be able to go to the previous tab by saying "previous tab"
 
-            elif 'open' in query or 'show' in query:
-                speak("Opening Note")
-                os.startfile('olivianote.txt')
-                break
-
-            elif 'close' in query:
-                speak("Closing Note")
-                os.system('TASKKILL /F /IM notepad.exe')
-                break
-
-            elif 'clear' in query or 'empty' in query:
-                speak("Emptying Note")
-                os.remove('olivianote.txt')
-                speak("Note has been deleted")
-                break
-
-            elif 'save' in query:
-                speak("Saving Note")
-                file = open('olivianote.txt', 'a')
-                file.write('\n')
-                file.close()
-                break
-
-        if 'play' in query:
-            song = query.replace('play', '')
-            sp('playing ')
-            sp(song)
-            pywhatkit.playonyt(song)
-            query = query.replace('play', '')
+        elif 'play' in query:
+            song_name = query.replace("play ", "")
+            speak("Playing " + song_name)
+            print(song_name)
+            pywhatkit.playonyt(song_name)
 
             while True:
                 query = takeCommand().lower()
+
                 # pause the video if 'pause' is in query
-                if 'pause' in query or 'pass' in query:
 
-                    presskey('space')
+                if 'pause' in query or 'pass' in query or 'stop' in query:
 
-                   # sp('paused')
+                    pyautogui.press('space')
 
-                elif 'play' in query:
-                    presskey('space')
-                   # sp('playing')
+                # resume the video if 'resume' is in query
 
-                elif 'stop' in query:
-                    presskey('space')
-                    # sp('stopped')
+                elif 'resume' in query or 'continue' in query:
+
+                    pyautogui.press('space')
+
+                # skip the video if 'skip' is in query
+
+                elif 'skip' in query:
+
+                    pyautogui.press('space')
+
+                # go the next tab if 'next' is in query and 'tab' is in query
+                # go next video if 'next' is in query.
 
                 elif 'next' in query:
+
+                    # if 'tabs' is in query then go to the next tab by pressing control + tab
 
                     if 'tab' in query:
 
                         pyautogui.hotkey('ctrl', 'tab')
 
-                        time.sleep(1)
                     else:
 
-                        presshotkey('shift', 'n')
+                        # if the query does not contain 'tab' then go to the next video by pressing space
 
-                    # sp('next song')
-                   # sp('Gone to the next video')
+                        pyautogui.hotkey('shift', 'n')
 
-                # previous the video if 'previous' is in query
+                # go the previous video by pressing alt + left arrow
+                # do this only if the query contains 'back' or previous video .
+                # if the query contains 'back' then go to the previous video by pressing alt + left arrow
+                # if the query contains 'previous' then go to the previous video by pressing alt + left arrow
+
                 elif 'previous' in query:
-                    presskey('p')
-                   # sp('Gone to the previous video')
 
-                # Increase the speed if 'faster' is in query or increase the speed if 'speed up' is in query or 'increase speed' is in query
-                elif 'faster' in query or 'speed up' in query or 'increase speed' in query:
-                    presshotkey('shift', '.')
-                    # sp('speed increased')
+                    pyautogui.press('altleft')
 
-                # Decrease the speed if 'slower' is in query or decrease the speed if 'slow down' is in query or 'decrease speed' is in query
-                elif 'slower' in query or 'slow down' in query or 'decrease speed' in query:
-                    presshotkey('shift', ',')
-                    # sp('decreased the speed of the video')
+                # reload the video by pressing control + r if the
+                # query contains 'reload' or 'refresh' or 'reload' or 'restart' or 'reboot'
+                # if the query contains not this then check next elif statement
+                elif 'reload' in query or 'refresh' in query or 'reload' in query or 'restart' in query or 'reboot' in query:
 
-                    # Increase the volume if 'volume up' is in query or increase the volume if 'increase volume' is in query or 'louder' is in query
-                elif 'volume up' in query or 'increase volume' in query or 'louder' in query:
-                    presskey('up')
-                 # sp('increased the volume')
+                    pyautogui.hotkey('ctrl', 'r')
 
-                # Decrease the volume if 'volume down' is in query
-                elif 'volume down' in query or 'decrease volume' in query or 'quieter' in query:
-                    presskey('down')
-                    # sp('decreased the volume')
+                # mute the video by pressing control + m if the query contains 'mute' or 'unmute' or 'mute' or 'unmute'
+                # if the query contains not this then check next elif statement
+                elif 'mute' in query or 'unmute' in query:
 
-                # mute the video if 'mute' is in query
-                elif 'mute' in query:
-                    presskey('m')
-                  #  sp('muted the video')
+                    pyautogui.hotkey('ctrl', 'm')
 
-                # unmute the video if 'unmute' is in query
-                elif 'unmute' in query:
-                    presskey('m')
-                    # sp('unmuted the video')
+                # increase the volume by pressing control + up arrow
+                # if the query contains 'increase volume' or 'volume up' or 'louder'
+                # if the query contains not this then check next elif statement
+                elif 'increase volume' in query or 'volume up' in query or 'louder' in query:
 
-                # close the video if 'close' is in query
+                    pyautogui.hotkey('ctrl', 'up')
+
+                # decrease the volume by pressing control + down arrow
+                # if the query contains 'decrease volume' or 'volume down' or 'quieter'
+                # if the query contains not this then check next elif statement
+                elif 'decrease volume' in query or 'volume down' in query or 'quieter' in query:
+
+                    pyautogui.hotkey('ctrl', 'down')
+
+                # increase the speed of the video by pressing control + up arrow
+                # if the query contains 'increase speed' or 'speed up' or 'faster'
+                # if the query contains not this then check next elif statement
+
+                elif 'increase speed' in query or 'speed up' in query or 'faster' in query:
+
+                    pyautogui.hotkey('shift', '.')
+
+                # decrease the speed of the video by pressing control + down arrow
+                # if the query contains 'decrease speed' or 'speed down' or 'slower'
+                # if the query contains not this then check next elif statement
+                elif 'decrease speed' in query or 'speed down' in query or 'slower' in query:
+
+                    pyautogui.hotkey('shift', ',')
+
+                # close the video by pressing control + w
+                # if the query contains 'close'
+                # if the query contains not this then check next elif statement
+
                 elif 'close' in query:
-                    presshotkey('ctrl', 'w')
-                    # sp('Closed the video')
+
+                    pyautogui.hotkey('ctrl', 'w')
                     break
 
-                # if 'exit' is in query then exit the video
-                elif 'exit' in query:
-                    presshotkey('alt', 'f4')
-                    # sp('Exited the video')
+                # exit the video by pressing alt + f4
+                # if the query contains 'exit' or 'quit'
+                # if the query contains not this then check next elif statement
+                elif 'exit' in query or 'quit' in query:
+
+                    pyautogui.hotkey('alt', 'f4')
                     break
 
-                # if 'quit' is in query then quit pro
-                elif 'quit' in query:
-                    presshotkey('alt', 'f4')
-                    # sp('Quited the video')
-                    break
+                # move to full screen mode by pressing f
+                # if the query contains 'full screen' or 'full mode' or 'full screen mode'
+                # if the query contains not this then check next elif statement
 
-                # if 'restart' is in query then restart the video
-                elif 'restart' in query or 'reload' in query or 'refresh' in query or 'reboot' in query:
-                    presshotkey('ctrl', 'r')
-                    # sp('Restarted the video')
+                elif 'full screen' in query or 'full mode' in query:
 
-                # if 'full screen' is in query then make the video full screen
-                elif 'full screen' in query:
-                    presshotkey('f')
-                    # sp('Made the video full screen')
+                    pyautogui.press('f')
 
-                # if 'exit full screen' is in query then exit the full screen
-                elif 'exit full screen' in query:
-                    presskey('f')
-                    # sp('Exited the full screen')
 
-                # if 'brightness' is in query then show the brightness
-                elif 'brightness' in query:
-                    if 'increase' in query:
-                        presskey('f3')
-                        # sp('Increased the brightness')
 
-                    elif 'decrease' in query:
-                        presskey('f2')
-                        # sp('Decreased the brightness')
 
 
         elif 'news' in query:
-                NewsFromBBC()
+            NewsFromBBC()
 
+        elif 'press' in query:
+            reg_ex = re.search('press (.*)', query)
+            if reg_ex:
+                query = reg_ex.group(1)
+                pyautogui.press(query)
 
         elif 'tab' in query:
             if 'next' in query:
-                presshotkey('ctrl', 'tab')
+                pyautogui.hotkey('ctrl', 'tab')
                 # sp('Gone to the next tab')
             elif 'previous' in query:
-                presshotkey('shift', 't')
+                pyautogui.hotkey('shift', 't')
 
             elif 'quit' in query:
-                presshotkey('ctrl', 'w')
+                pyautogui.hotkey('ctrl', 'w')
                 # sp('Quited the tab')
 
             elif 'restart' in query or 'reload' in query or 'refresh' in query or 'reboot' in query:
-                presshotkey('ctrl', 'r')
+                pyautogui.hotkey('ctrl', 'r')
 
             elif 'new' in query:
-                presshotkey('ctrl', 't')
+                pyautogui.hotkey('ctrl', 't')
 
             elif 'close' in query:
-                presshotkey('ctrl', 'w')
-
+                pyautogui.hotkey('ctrl', 'w')
 
         # tell user the common usage of the command if 'usage' is in query
 
         elif 'where are you?' in query:
             speak("I am here in the main loop. sir")
 
+        elif 'who are you?' in query:
+            speak("I am your personal assistant. sir")
 
-            # if 'usage' is in query and 'network' is in query give the usage of network
+        elif 'who made you?' in query:
+            speak("I was made by a programmer. sir")
+
+        elif 'who is your creator?' in query:
+            speak("I was made by a programmer namesd Chirag Singhal. sir")
 
         # search in chrome when the query is 'search'
 
@@ -1037,27 +1057,19 @@ if __name__ == "__main__":
             webbrowser.get(chromepath).open(
                 'https://www.google.com/search?q=' + search)
 
-        
   # if 'time' is in query and "current" is in the query then tell the time in very good manner for example we can say the current time is 2 pm and 28 minutes sir
  # or the current time is 5 pm and 28 minutes sir . be polite.
-
-
 
         elif 'time' in query and 'current' in query:
             ctime()
 
-
-    
-
         # Read the copied text from clipboard and speak it if 'read' is in query and 'aloud' is in query
         elif 'read aloud' in query:
-                text2speech()
-
+            text2speech()
 
         # if 'open' is in query and 'notepad' is in query then open notepad
         elif 'open notepad' in query:
             os.system('notepad')
-
 
         elif "what is your name" in query:
             speak("My name is Olivia")
@@ -1188,7 +1200,6 @@ if __name__ == "__main__":
             elif 'number' in query:
                 sp(random.randint(0, 100))
 
-
         elif 'email' in query:
             try:
                 speak("What should I say?")
@@ -1200,7 +1211,6 @@ if __name__ == "__main__":
                 print(e)
                 speak(
                     "Sorry my friend chirag sir. I am not able to send this email")
-
 
         elif 'screenshot' in query:
             takescreenshot()
@@ -1221,15 +1231,10 @@ if __name__ == "__main__":
             query = query.replace("change my name to", "")
             uname = query
 
-
-
         elif "don't listen" in query or "stop listening" in query:
             speak("for how much time you want to stop olivia from listening commands")
             time.sleep(120)
             speak("Olivia is listening again")
-
-
-
 
         elif 'recycle bin' in query:
 
@@ -1240,7 +1245,6 @@ if __name__ == "__main__":
                 winshell.recycle_bin().empty(confirm=False, show_progress=False, sound=True)
 
                 speak("Recycle Bin Recycled")
-
 
         elif 'lock window' in query or 'lock screen' in query or 'lock the screen' in query:
             speak("locking the device")
@@ -1271,39 +1275,39 @@ if __name__ == "__main__":
 
 # tell the stock price of the company using yahoo finance api and speak the result to the user using google speech api and print the result to the console
         elif "stock" in query and "price" in query:
-                speak("What company's stock price you want to check?")
-                company = takeCommand()
-                speak("Checking the stock price of " + company)
-                try:
-                    url = "https://in.finance.yahoo.com/quote/" + company + "?p=" + company
-                    page = requests.get(url)
-                    soup = BeautifulSoup(page.content, 'html.parser')
-                    price = soup.find(
-                        "div", {"class": "My(6px) Pos(r) smartphone_Mt(6px)"}).find("span").get_text()
-                    sp(price)
-                    print(price)
-                except Exception as e:
-                    print(e)
-                    speak("Sorry Sir, I am not able to fetch the stock price")
+            speak("What company's stock price you want to check?")
+            company = takeCommand()
+            speak("Checking the stock price of " + company)
+            try:
+                url = "https://in.finance.yahoo.com/quote/" + company + "?p=" + company
+                page = requests.get(url)
+                soup = BeautifulSoup(page.content, 'html.parser')
+                price = soup.find(
+                    "div", {"class": "My(6px) Pos(r) smartphone_Mt(6px)"}).find("span").get_text()
+                sp(price)
+                print(price)
+            except Exception as e:
+                print(e)
+                speak("Sorry Sir, I am not able to fetch the stock price")
 
 
 # tell the weather of the city using openweathermap api and speak the result to the user using google speech api and print the result to the console
         elif "weather" in query and "today" in query:
-                speak("What city's weather you want to check?")
-                city = takeCommand()
-                speak("Checking the weather of " + city)
-                try:
-                    url = "https://openweathermap.org/data/2.5/weather?q=" + \
-                        city + "&appid=b6907d289e10d714a6e88b30761fae22"
-                    page = requests.get(url)
-                    soup = BeautifulSoup(page.content, 'html.parser')
-                    weather = soup.find(
-                        "div", {"class": "weather-widget__container"}).find("p").get_text()
-                    sp(weather)
-                    print(weather)
-                except Exception as e:
-                    print(e)
-                    speak("Sorry Sir, I am not able to fetch the weather")
+            speak("What city's weather you want to check?")
+            city = takeCommand()
+            speak("Checking the weather of " + city)
+            try:
+                url = "https://openweathermap.org/data/2.5/weather?q=" + \
+                    city + "&appid=b6907d289e10d714a6e88b30761fae22"
+                page = requests.get(url)
+                soup = BeautifulSoup(page.content, 'html.parser')
+                weather = soup.find(
+                    "div", {"class": "weather-widget__container"}).find("p").get_text()
+                sp(weather)
+                print(weather)
+            except Exception as e:
+                print(e)
+                speak("Sorry Sir, I am not able to fetch the weather")
 
         elif "date" in query and "curren" in query:
 
@@ -3475,20 +3479,19 @@ if __name__ == "__main__":
         elif 'close' in query:
 
             if 'page' in query:
-                presshotkey('ctrl', 'w')
+                pyautogui.hotkey('ctrl', 'w')
                # sp('Closed')
 
-
             elif 'app' in query or 'application' in query or 'program' in query or 'process' in query or 'window' in query or 'all tabs' in query:
-                    presshotkey('alt', 'f4')
-                    # sp('Closed')
+                pyautogui.hotkey('alt', 'f4')
+                # sp('Closed')
 
             elif 'tab' in query:
-                presshotkey('ctrl', 'w')
+                pyautogui.hotkey('ctrl', 'w')
                 # sp('Closed')
 
             elif 'window' in query:
-                presshotkey('alt', 'f4')
+                pyautogui.hotkey('alt', 'f4')
 
             elif 'chrome' in query:
                 sp('closing chrome')
@@ -3586,6 +3589,9 @@ if __name__ == "__main__":
                 sp('closing edge')
                 os.system('TASKKILL /F /IM msedge.exe')
 
+            else:
+                sp('Sorry, I could not find that')
+                sp('what you want to close')
         else:
             print("else statement is executed")
             # writing code for the queries or the commands that are not in the above list of commands. so we will ask the user

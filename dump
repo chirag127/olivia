@@ -539,7 +539,7 @@ import numpy as np
             time.sleep(1)
             pyautogui.click(button='left')
             pyautogui.press('space')
-            presshotkey('alt', 'f4')
+            pyautogui.hotkey('alt', 'f4')
             while not 'wake up' in wakeup_txt:
                 wakeup_txt = time.sleep()
                 if wakeup_txt == 'quit':
@@ -550,7 +550,7 @@ import numpy as np
                     os.system('spotify')
                     time.sleep(1)
                     pyautogui.press('space')
-                    presshotkey('alt', 'f4')
+                    pyautogui.hotkey('alt', 'f4')
 
                 elif 'close spotify' in wakeup_txt:
                     os.system('TASKKILL /F /IM Spotify.exe')
