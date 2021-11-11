@@ -1165,8 +1165,10 @@ if __name__ == "__main__":
                 elif 'full screen' in query or 'full mode' in query:
                     pyautogui.press('f')
 
-        elif 'news' in query:
+        elif 'news' in query and 'latest' in query:
+            
             NewsFromBBC()
+
 
         elif 'press' in query:
             reg_ex = re.search('press (.*)', query)
