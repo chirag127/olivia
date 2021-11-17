@@ -1276,13 +1276,13 @@ if __name__ == "__main__":
             speak("What should i remember?")
             data = takeCommand()
             speak("You said me to remember that " + data)
-            remember = open('data.txt', 'w')
+            remember = open('src/notes.txt', 'w')
             remember.write(data)
             remember.close()
             speak("I have remembered that")
 
         elif 'do you know anything' in query:
-            remember = open('data.txt', 'r')
+            remember = open('src/notes.txt', 'r')
             speak("You said me to remember that " + remember.read())
             remember.close()
 
