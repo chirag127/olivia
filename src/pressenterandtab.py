@@ -6,27 +6,6 @@ def presskey(key):
     pyautogui.press(key)
 
 
-def pressenter():
-    print("Pressing enter: ")
-    pyautogui.press('enter')
-    pyautogui.press('enter')
-    pyautogui.press('enter')
-    pyautogui.press('enter')
-    pyautogui.press('enter')
-    pyautogui.press('enter')
-    pyautogui.press('enter')
-    pyautogui.press('enter')
-    pyautogui.press('enter')
-    pyautogui.press('enter')
-    pyautogui.press('enter')
-    pyautogui.press('enter')
-    pyautogui.press('enter')
-    pyautogui.press('enter')
-    pyautogui.press('enter')
-    pyautogui.press('enter')
-    pyautogui.press('enter')
-
-
 if __name__ == '__main__':
 
     time.sleep(5)
