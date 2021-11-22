@@ -9,7 +9,7 @@ import json
 import math                        # The math library provides math fuctions .
 import numpy as np
 import os
-import psutil
+import psutil 
 import pyautogui
 import pyttsx3                     # The pyttx3 is used for text to speech
 import pywhatkit
