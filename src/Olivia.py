@@ -28,6 +28,7 @@ import webbrowser
 import wikipedia                   # The get article from wikipedia
 import win32com.client as wincl
 import winshell                    # The use winshell for opening the specified file
+from jokes import neutral_joke
 # create a wonderful virtual voice assistant named olivia and she will help you in your daily life with her amazing features like text to speech, voice to text, google search, wikipedia search, youtube search, news search, weather search, time search, date search, screenshot, email, jokes, ip address, and many more.
 # olivia is a virtual voice assistant and she will help you in your daily life with her amazing features like text to speech, voice to text, google search, wikipedia search, youtube search, news search, weather search, time search, date search, screenshot, email, jokes, ip address, and many more.
 # Olivia is created by chirag singhal.
@@ -1238,7 +1239,14 @@ if __name__ == "__main__":
             takescreenshot()
 
         elif 'joke' in query:
-            givejoke()
+
+            if 'nuetral' in query:
+
+                sp(nueutral_jokes())
+
+            else:
+
+                givejoke()
 
         elif 'ip address' in query:
             giveip()

@@ -73,6 +73,7 @@
 27. Tell location of a place by saying "where is (the name of the place)" or "where is (the name of the place) now" or "where is (the name of the place) now" etc. Example "where is Ghaziabad" will tell you the location of Ghaziabad by open the location of Ghaziabad in Google Maps.
 28. Open word by saying "open word" or "open word now" and then type your document by saying "yes" or "no" when asked if "do you want me to type" and stop typing by saying "stop typing".
 29. Launch an application by saying "launch (the name of the application)" or "launch (the name of the application) now" or "launch (the name of the application) now"
+
     1. Launch chrome just say "launch chrome" or "launch chrome now".
     2. Launch notepad just say "launch notepad" or "launch notepad now".
     3. Open word just say "launch word" or "launch word now".
@@ -107,76 +108,78 @@
 33. You can control the video by saying "pause", "play","volume up", "volume down", "next". Saying "pause" pauses the video in the web browser, Saying "play" plays the video in
 
 34. Open any website just say "open (the name of the website)" or "open (the name of the website) now" or "open (the name of the website) now" e.g.
-     1. Open the Amazon website by saying "open Amazon" or "open Amazon website".
-     2. Open the Bing website by saying "open Bing" or "open Bing website".
-     3. Likewise, Open the code forces website by saying "open code forces" or "open code forces website".
-     4. Furthermore, Open the code wars website by saying "open code wars" or "open code wars website".
-     5. Open the DuckDuckGo website by saying "open DuckDuckGo" or "open DuckDuckGo website".
-     6. Open the Facebook website by saying "open Facebook" or "open Facebook website".
-     7. Likewise, Open the Flipkart website by saying "open Flipkart" or "open Flipkart website".
-     8. Open the freeCodeCamp website by saying "open freeCodeCamp" or "open freeCodeCamp website".
-     9. Open the GitHub website by saying "open GitHub" or "open GitHub website".
-     10. Likewise, Open the Gmail website by saying "open Gmail" or "open Gmail website".
-     11. Open the Google Maps website by saying "open Google Maps" or "open Google Maps website".
-     12. Open the Google website by saying "open google" or "open google website".
-     13. Likewise, Open the hacker earth website by saying "open hacker earth" or "open hacker earth website".
-     14. Open the hacker rank website by saying "open hacker rank" or "open hacker rank website".
-     15. Open the Instagram website by saying "open Instagram" or "open Instagram website".
-     16. Likewise, Open the gaggle website by saying "open gaggle" or "open gaggle website".
-     17. Open the LinkedIn website by saying "open LinkedIn" or "open LinkedIn website".
-     18. Open the outlook express website by saying "open outlook express" or "open outlook express website".
-     19. Likewise, Open the Outlook web app website by saying "open Outlook web app" or "open Outlook web app website"
-     20. Open the Outlook website by saying "open outlook" or "open Outlook website".
-     21. Open the Pinterest website by saying "open Pinterest" or "open Pinterest website".
-     22. Open the Quora website by saying "open Quora" or "open Quora website".
-     23. Likewise, Open the Reddit website by saying "open Reddit" or "open Reddit website".
-     24. Open the Skype website by saying "open skype" or "open skype website".
-     25. Open the snap deal website by saying "open snap deal" or "open snap deal website".
-     26. Likewise, Open the stack overflow website by saying "open stack overflow" or "open stack overflow website".
-     27. Open the telegram website by saying "open telegram" or "open telegram website".
-     28. Open the tinder website by saying "open tinder" or "open tinder website".
-     29. Likewise, Open the Twitter website by saying "open twitter" or "open Twitter website".
-     30. Open the WhatsApp website by saying "open WhatsApp" or "open WhatsApp website".
-     31. Open the yahoo website by saying "open yahoo" or "open yahoo website".
-     32. Likewise, Open the YouTube website by saying "open YouTube" or "open YouTube website".
-     33. Open the Zomato website by saying "open Zomato" or "open Zomato website".
-     34. Open the Wikipedia website by saying "open Wikipedia" or "open Wikipedia website".
-     35. Likewise, Open the YouTube Music website by saying "open YouTube Music" or "open YouTube Music website".
-     36. Open the Tmall website by saying "open Tmall" or "open Tmall website".
-     37. Open the Amazon Prime website by saying "open Amazon Prime" or "open Amazon Prime website".
-     38. Likewise, Open the Baidu website by saying "open Baidu" or "open Baidu website".
-     39. Open The New York Times website by saying "open The New York Times" or "open The New York Times website".
-     40. Open the Facebook Messenger website by saying "open Facebook Messenger" or "open Facebook Messenger website".
-     41. Likewise, Open the Google Drive website by saying "open Google Drive" or "open Google Drive website".
-     42. Open the Google Photos website by saying "open Google Photos" or "open Google Photos website".
-     43. Open the Google Photos Sync website by saying "open Google Photos Sync" or "open Google Photos Sync website".
-     44. Likewise, Open the QQ website by saying "open QQ" or "open QQ website".
-     45. Open the Shutterstock website by saying "open Shutterstock" or "open Shutterstock website".
-     46. Open the TaoBao website by saying "open TaoBao" or "open TaoBao website".
-     47. Likewise, Open 360.cn website by saying "open 360.cn" or "open 360.cn website".
-     48. Open jingdong.com website by saying "open jingdong.com" or "open jingdong.com website".
-     49. Open the Amazon.in website by saying "open Amazon.in" or "open Amazon.in website".
-     50. Likewise, Open the Alibaba website by saying "open Alibaba" or "open Alibaba website".
-     51. Open the Alibaba.com website by saying "open Alibaba.com" or "open Alibaba.com website".
-     52. Open the zhihu.com website by saying "open zhihu.com" or "open zhihu.com website".
-     53. Likewise, Open the weibo.com website by saying "open weibo.com" or "open weibo.com website".
-     54. Open the Douban.com website by saying "open Douban.com" or "open Douban.com website".
-     55. Open the Amazon.co.uk website by saying "open Amazon.co.uk" or "open Amazon.co.uk website".
-     56. Likewise, Open the zoom website by saying "open zoom" or "open zoom website".
-     57. Open the Google.com.hk website by saying "open Google.com.hk" or "open Google.com.hk website".
-     58. Open the sina website by saying "open sina" or "open sina website".
-     59. Likewise, Open Xinhua website by saying "open xinhua" or "open xinhua website".
-     60. Open the Amazon.de website by saying "open Amazon.de" or "open Amazon.de website".
-     61. Open the Amazon.fr website by saying "open Amazon.fr" or "open Amazon.fr website".
-     62. Likewise, Open the Amazon.es website by saying "open Amazon.es" or "open Amazon.es website".
-     63. Open the Amazon.it website by saying "open Amazon.it" or "open Amazon.it website".
-     64. Open the Amazon.co.jp website by saying "open Amazon.co.jp" or "open Amazon.co.jp website".
-     65. Likewise, Open the Amazon.ca website by saying "open Amazon.ca" or "open Amazon.ca website".
-     66. Open the Amazon.com.mx website by saying "open Amazon.com.mx" or "open Amazon.com.mx website".
-     67. Open the Amazon.com.br website by saying "open Amazon.com.br" or "open Amazon.com.br website".
-     68. Likewise, Open the Amazon.com.au website by saying "open Amazon.com.au" or "open Amazon.com.au website".
+
+    1. Open the Amazon website by saying "open Amazon" or "open Amazon website".
+    2. Open the Bing website by saying "open Bing" or "open Bing website".
+    3. Likewise, Open the code forces website by saying "open code forces" or "open code forces website".
+    4. Furthermore, Open the code wars website by saying "open code wars" or "open code wars website".
+    5. Open the DuckDuckGo website by saying "open DuckDuckGo" or "open DuckDuckGo website".
+    6. Open the Facebook website by saying "open Facebook" or "open Facebook website".
+    7. Likewise, Open the Flipkart website by saying "open Flipkart" or "open Flipkart website".
+    8. Open the freeCodeCamp website by saying "open freeCodeCamp" or "open freeCodeCamp website".
+    9. Open the GitHub website by saying "open GitHub" or "open GitHub website".
+    10. Likewise, Open the Gmail website by saying "open Gmail" or "open Gmail website".
+    11. Open the Google Maps website by saying "open Google Maps" or "open Google Maps website".
+    12. Open the Google website by saying "open google" or "open google website".
+    13. Likewise, Open the hacker earth website by saying "open hacker earth" or "open hacker earth website".
+    14. Open the hacker rank website by saying "open hacker rank" or "open hacker rank website".
+    15. Open the Instagram website by saying "open Instagram" or "open Instagram website".
+    16. Likewise, Open the gaggle website by saying "open gaggle" or "open gaggle website".
+    17. Open the LinkedIn website by saying "open LinkedIn" or "open LinkedIn website".
+    18. Open the outlook express website by saying "open outlook express" or "open outlook express website".
+    19. Likewise, Open the Outlook web app website by saying "open Outlook web app" or "open Outlook web app website"
+    20. Open the Outlook website by saying "open outlook" or "open Outlook website".
+    21. Open the Pinterest website by saying "open Pinterest" or "open Pinterest website".
+    22. Open the Quora website by saying "open Quora" or "open Quora website".
+    23. Likewise, Open the Reddit website by saying "open Reddit" or "open Reddit website".
+    24. Open the Skype website by saying "open skype" or "open skype website".
+    25. Open the snap deal website by saying "open snap deal" or "open snap deal website".
+    26. Likewise, Open the stack overflow website by saying "open stack overflow" or "open stack overflow website".
+    27. Open the telegram website by saying "open telegram" or "open telegram website".
+    28. Open the tinder website by saying "open tinder" or "open tinder website".
+    29. Likewise, Open the Twitter website by saying "open twitter" or "open Twitter website".
+    30. Open the WhatsApp website by saying "open WhatsApp" or "open WhatsApp website".
+    31. Open the yahoo website by saying "open yahoo" or "open yahoo website".
+    32. Likewise, Open the YouTube website by saying "open YouTube" or "open YouTube website".
+    33. Open the Zomato website by saying "open Zomato" or "open Zomato website".
+    34. Open the Wikipedia website by saying "open Wikipedia" or "open Wikipedia website".
+    35. Likewise, Open the YouTube Music website by saying "open YouTube Music" or "open YouTube Music website".
+    36. Open the Tmall website by saying "open Tmall" or "open Tmall website".
+    37. Open the Amazon Prime website by saying "open Amazon Prime" or "open Amazon Prime website".
+    38. Likewise, Open the Baidu website by saying "open Baidu" or "open Baidu website".
+    39. Open The New York Times website by saying "open The New York Times" or "open The New York Times website".
+    40. Open the Facebook Messenger website by saying "open Facebook Messenger" or "open Facebook Messenger website".
+    41. Likewise, Open the Google Drive website by saying "open Google Drive" or "open Google Drive website".
+    42. Open the Google Photos website by saying "open Google Photos" or "open Google Photos website".
+    43. Open the Google Photos Sync website by saying "open Google Photos Sync" or "open Google Photos Sync website".
+    44. Likewise, Open the QQ website by saying "open QQ" or "open QQ website".
+    45. Open the Shutterstock website by saying "open Shutterstock" or "open Shutterstock website".
+    46. Open the TaoBao website by saying "open TaoBao" or "open TaoBao website".
+    47. Likewise, Open 360.cn website by saying "open 360.cn" or "open 360.cn website".
+    48. Open jingdong.com website by saying "open jingdong.com" or "open jingdong.com website".
+    49. Open the Amazon.in website by saying "open Amazon.in" or "open Amazon.in website".
+    50. Likewise, Open the Alibaba website by saying "open Alibaba" or "open Alibaba website".
+    51. Open the Alibaba.com website by saying "open Alibaba.com" or "open Alibaba.com website".
+    52. Open the zhihu.com website by saying "open zhihu.com" or "open zhihu.com website".
+    53. Likewise, Open the weibo.com website by saying "open weibo.com" or "open weibo.com website".
+    54. Open the Douban.com website by saying "open Douban.com" or "open Douban.com website".
+    55. Open the Amazon.co.uk website by saying "open Amazon.co.uk" or "open Amazon.co.uk website".
+    56. Likewise, Open the zoom website by saying "open zoom" or "open zoom website".
+    57. Open the Google.com.hk website by saying "open Google.com.hk" or "open Google.com.hk website".
+    58. Open the sina website by saying "open sina" or "open sina website".
+    59. Likewise, Open Xinhua website by saying "open xinhua" or "open xinhua website".
+    60. Open the Amazon.de website by saying "open Amazon.de" or "open Amazon.de website".
+    61. Open the Amazon.fr website by saying "open Amazon.fr" or "open Amazon.fr website".
+    62. Likewise, Open the Amazon.es website by saying "open Amazon.es" or "open Amazon.es website".
+    63. Open the Amazon.it website by saying "open Amazon.it" or "open Amazon.it website".
+    64. Open the Amazon.co.jp website by saying "open Amazon.co.jp" or "open Amazon.co.jp website".
+    65. Likewise, Open the Amazon.ca website by saying "open Amazon.ca" or "open Amazon.ca website".
+    66. Open the Amazon.com.mx website by saying "open Amazon.com.mx" or "open Amazon.com.mx website".
+    67. Open the Amazon.com.br website by saying "open Amazon.com.br" or "open Amazon.com.br website".
+    68. Likewise, Open the Amazon.com.au website by saying "open Amazon.com.au" or "open Amazon.com.au website".
 
 35. Search many websites like YouTube, Google (with Google Images, Google News etc.), Bing, Yahoo, DuckDuckGo, Wikipedia, Wiktionary, and many more just by saying "search (the name of the website) on (the thing you want to search on the website.). For example,
+
     1. If you want to search for "Python" on YouTube, you can say "search Python on YouTube".
     2. If you want to search for "Python" on Google, you can say "search Python on Google".
     3. If you want to search for "Python" on Google Images, you can say "search Python on Google Images".
@@ -185,6 +188,7 @@
     6. If you want to search for "Python" on Google Scholar, you can say "search Python on Google Scholar".
 
 36. Translate the English to many other languages just saying "translate (the sentence you want to translate) to (the language to which you want to translate the sentence)" example "translate hello to Spanish" will translate the English sentence "hello" to Spanish. The supported languages are :
+
     1. Afrikaans
     2. Albanian
     3. Amharic
@@ -292,6 +296,7 @@
     105. Zulu
 
 37. Answer to many questions like :-
+
     1. What is your name?
     2. What is your age?
     3. Who is your favorite animal?
@@ -361,8 +366,8 @@ pipwin install pyaudio
 1. Do not use the software in the application if you are not in the comfort of your own.
 2. Please do not forget to say "close" after playing a video on YouTube.
 3. Do not use it for bad purposes.
-  
-## Libraries used in the software  
+
+## Libraries used in the software
 
 Clipboard library: [Clipboard](https://pypi.python.org/pypi/clipboard)
 Ctypes library: [ctypes](https://pypi.python.org/pypi/ctypes)
