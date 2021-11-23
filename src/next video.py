@@ -12,4 +12,3 @@ while True:
     pyautogui.press('end')
 
     time.sleep(5)
-

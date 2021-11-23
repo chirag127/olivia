@@ -9,7 +9,7 @@ import json
 import math                        # The math library provides math fuctions .
 import numpy as np
 import os
-import psutil 
+import psutil
 import pyautogui
 import pyttsx3                     # The pyttx3 is used for text to speech
 import pywhatkit
@@ -151,14 +151,17 @@ def NewsFromBBC():
         print(i + 1, results[i])
         speak(results[i])
 
+
 def sp(text):
     print(text)
     speak(text)
+
 
 def text2speech():
     text = clipboard.paste()
     print(text)
     speak(text)
+
 
 def wishMe():
     hour = int(datetime.datetime.now().hour)
@@ -562,8 +565,6 @@ def clearConsole():
     if os.name in ('nt', 'dos'):
         command = 'cls'
     os.system(command)
-
-
 
 
 # KEYBOARD_KEYS is attribute of pyautogui
@@ -1166,9 +1167,8 @@ if __name__ == "__main__":
                     pyautogui.press('f')
 
         elif 'news' in query and 'latest' in query:
-            
-            NewsFromBBC()
 
+            NewsFromBBC()
 
         elif 'press' in query:
             reg_ex = re.search('press (.*)', query)
