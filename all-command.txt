@@ -1,19 +1,18 @@
 pip install Pillow
+pip install auto-py-to-exe
 pip install autopep8
-pip install beautifulsoup4
 pip install beautifulsoup4
 pip install clipboard
 pip install googletrans
 pip install psutil
 pip install pyautogui
 pip install pyjokes
+pip install pyowm
 pip install pyttsx3
 pip install pywhatkit
 pip install requests
 pip install speechRecognition
 pip install speedtest-cli
-pip install urlopen
 pip install wikipedia
 pip install winshell
-pip install pyowm
-
+pip install numpy

@@ -1,4 +1,5 @@
 {
   "cSpell.words": ["ctypes", "pipwin", "pyttsx"],
-  "files.autoSave": "afterDelay"
+  "files.autoSave": "afterDelay",
+  "python.pythonPath": "C:\\Users\\hp\\AppData\\Local\\Microsoft\\WindowsApps\\python3.9.exe"
 }

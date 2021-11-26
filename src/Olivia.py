@@ -23,7 +23,6 @@ import subprocess
 import sys                         # The sys library is used to exit the program
 import time                        # The time library is used for timezones
 import tkinter as tk               # The tkinter is used for gui
-import urlopen                     # The used to open url
 import webbrowser
 import wikipedia                   # The get article from wikipedia
 import win32com.client as wincl
@@ -1260,7 +1259,7 @@ if __name__ == "__main__":
 
             if 'nuetral' in query:
 
-                sp(nueutral_jokes())
+                sp(neutral_joke())
 
             else:
 
