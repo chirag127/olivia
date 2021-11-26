@@ -1498,22 +1498,22 @@ if __name__ == "__main__":
 #                 print(e)
 #                 speak("Sorry Sir, I am not able to fetch the result")
 
-# tell the user the current time using datetime module and speak the result to the user using google speech api and print the result to the console
-        elif "current time" in query:
-            speak("Sir, What time you want to check")
-            time = takeCommand()
-            speak("Checking the time of " + time)
-            try:
-                url = "https://www.timeanddate.com/worldclock/fixedtime.html?msg=" + time + "&iso=&p1=150"
-                page = requests.get(url)
-                soup = BeautifulSoup(page.content, 'html.parser')
-                time = soup.find(
-                    "div", {"class": "time-date"}).find("p").get_text()
-                sp(time)
-                print(time)
-            except Exception as e:
-                print(e)
-                speak("Sorry Sir, I am not able to fetch the time")
+# # tell the user the current time using datetime module and speak the result to the user using google speech api and print the result to the console
+#         elif "current time" in query:
+#             speak("Sir, What time you want to check")
+#             time = takeCommand()
+#             speak("Checking the time of " + time)
+#             try:
+#                 url = "https://www.timeanddate.com/worldclock/fixedtime.html?msg=" + time + "&iso=&p1=150"
+#                 page = requests.get(url)
+#                 soup = BeautifulSoup(page.content, 'html.parser')
+#                 time = soup.find(
+#                     "div", {"class": "time-date"}).find("p").get_text()
+#                 sp(time)
+#                 print(time)
+#             except Exception as e:
+#                 print(e)
+#                 speak("Sorry Sir, I am not able to fetch the time")
 
         elif 'launch' in query:
             query = query.replace("launch", "")
