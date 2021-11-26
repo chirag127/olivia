@@ -25,7 +25,6 @@ import time                        # The time library is used for timezones
 import tkinter as tk               # The tkinter is used for gui
 import webbrowser
 import wikipedia                   # The get article from wikipedia
-import win32com.client as wincl
 import winshell                    # The use winshell for opening the specified file
 from jokes import neutral_joke
 # create a wonderful virtual voice assistant named olivia and she will help you in your daily life with her amazing features like text to speech, voice to text, google search, wikipedia search, youtube search, news search, weather search, time search, date search, screenshot, email, jokes, ip address, and many more.
