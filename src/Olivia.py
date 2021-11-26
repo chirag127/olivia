@@ -3897,6 +3897,8 @@ if __name__ == "__main__":
         else:
             if query != 'none':
                 sp("Sorry, I could not do that")
+                sp("Please try again")
+                
         #     # print("else statement is executed")
         #     # writing code for the queries or the commands that are not in the above list of commands. so we will ask the user
         #     # if he or she wants to search the query in google or wikipedia or translate the query or open the query in browser

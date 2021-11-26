@@ -1,5 +1,5 @@
 {
   "cSpell.words": ["ctypes", "pipwin", "pyttsx"],
   "files.autoSave": "afterDelay",
-  "python.pythonPath": "C:\\Users\\hp\\AppData\\Local\\Microsoft\\WindowsApps\\python3.9.exe"
+  "python.pythonPath": "C:\\msys64\\mingw64\\bin\\python.exe"
 }
