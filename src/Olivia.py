@@ -1,4 +1,3 @@
-from bs4 import BeautifulSoup      # The BeautifulSoup is used for web scraping
 from googletrans import Translator
 from pyowm import OWM
 from tkinter import *
@@ -1430,74 +1429,74 @@ if __name__ == "__main__":
 
 
 # tell the stock price of the company using yahoo finance api and speak the result to the user using google speech api and print the result to the console
-        elif "stock" in query and "price" in query:
-            speak("What company's stock price you want to check?")
-            company = takeCommand()
-            speak("Checking the stock price of " + company)
-            try:
-                url = "https://in.finance.yahoo.com/quote/" + company + "?p=" + company
-                page = requests.get(url)
-                soup = BeautifulSoup(page.content, 'html.parser')
-                price = soup.find(
-                    "div", {"class": "My(6px) Pos(r) smartphone_Mt(6px)"}).find("span").get_text()
-                sp(price)
-                print(price)
-            except Exception as e:
-                print(e)
-                speak("Sorry Sir, I am not able to fetch the stock price")
+#         elif "stock" in query and "price" in query:
+#             speak("What company's stock price you want to check?")
+#             company = takeCommand()
+#             speak("Checking the stock price of " + company)
+#             try:
+#                 url = "https://in.finance.yahoo.com/quote/" + company + "?p=" + company
+#                 page = requests.get(url)
+#                 soup = BeautifulSoup(page.content, 'html.parser')
+#                 price = soup.find(
+#                     "div", {"class": "My(6px) Pos(r) smartphone_Mt(6px)"}).find("span").get_text()
+#                 sp(price)
+#                 print(price)
+#             except Exception as e:
+#                 print(e)
+#                 speak("Sorry Sir, I am not able to fetch the stock price")
 
 
-# tell the weather of the city using openweathermap api and speak the result to the user using google speech api and print the result to the console
-        elif "weather" in query and "today" in query:
-            speak("What city's weather you want to check?")
-            city = takeCommand()
-            speak("Checking the weather of " + city)
-            try:
-                url = "https://openweathermap.org/data/2.5/weather?q=" + \
-                    city + "&appid=b6907d289e10d714a6e88b30761fae22"
-                page = requests.get(url)
-                soup = BeautifulSoup(page.content, 'html.parser')
-                weather = soup.find(
-                    "div", {"class": "weather-widget__container"}).find("p").get_text()
-                sp(weather)
-                print(weather)
-            except Exception as e:
-                print(e)
-                speak("Sorry Sir, I am not able to fetch the weather")
+# # tell the weather of the city using openweathermap api and speak the result to the user using google speech api and print the result to the console
+#         elif "weather" in query and "today" in query:
+#             speak("What city's weather you want to check?")
+#             city = takeCommand()
+#             speak("Checking the weather of " + city)
+#             try:
+#                 url = "https://openweathermap.org/data/2.5/weather?q=" + \
+#                     city + "&appid=b6907d289e10d714a6e88b30761fae22"
+#                 page = requests.get(url)
+#                 soup = BeautifulSoup(page.content, 'html.parser')
+#                 weather = soup.find(
+#                     "div", {"class": "weather-widget__container"}).find("p").get_text()
+#                 sp(weather)
+#                 print(weather)
+#             except Exception as e:
+#                 print(e)
+#                 speak("Sorry Sir, I am not able to fetch the weather")
 
-        elif "date" in query and "curren" in query:
+#         elif "date" in query and "curren" in query:
 
-            speak("Sir, What date you want to check")
-            date = takeCommand()
-            speak("Checking the date of " + date)
-            try:
-                url = "https://www.timeanddate.com/worldclock/fixedtime.html?msg=" + date + "&iso=&p1=150"
-                page = requests.get(url)
-                soup = BeautifulSoup(page.content, 'html.parser')
-                date = soup.find(
-                    "div", {"class": "time-date"}).find("p").get_text()
-                sp(date)
-                print(date)
-            except Exception as e:
-                print(e)
-                speak("Sorry Sir, I am not able to fetch the date")
+#             speak("Sir, What date you want to check")
+#             date = takeCommand()
+#             speak("Checking the date of " + date)
+#             try:
+#                 url = "https://www.timeanddate.com/worldclock/fixedtime.html?msg=" + date + "&iso=&p1=150"
+#                 page = requests.get(url)
+#                 soup = BeautifulSoup(page.content, 'html.parser')
+#                 date = soup.find(
+#                     "div", {"class": "time-date"}).find("p").get_text()
+#                 sp(date)
+#                 print(date)
+#             except Exception as e:
+#                 print(e)
+#                 speak("Sorry Sir, I am not able to fetch the date")
 
-        elif "calculate" in query and "square" in query:
+#         elif "calculate" in query and "square" in query:
 
-            speak("Sir, What you want to calculate")
-            query = takeCommand()
-            speak("Calculating " + query)
-            try:
-                url = "https://www.google.com/search?q=" + query
-                page = requests.get(url)
-                soup = BeautifulSoup(page.content, 'html.parser')
-                result = soup.find(
-                    "div", {"class": "kno-ecr-pt"}).find("span").get_text()
-                sp(result)
-                print(result)
-            except Exception as e:
-                print(e)
-                speak("Sorry Sir, I am not able to fetch the result")
+#             speak("Sir, What you want to calculate")
+#             query = takeCommand()
+#             speak("Calculating " + query)
+#             try:
+#                 url = "https://www.google.com/search?q=" + query
+#                 page = requests.get(url)
+#                 soup = BeautifulSoup(page.content, 'html.parser')
+#                 result = soup.find(
+#                     "div", {"class": "kno-ecr-pt"}).find("span").get_text()
+#                 sp(result)
+#                 print(result)
+#             except Exception as e:
+#                 print(e)
+#                 speak("Sorry Sir, I am not able to fetch the result")
 
 # tell the user the current time using datetime module and speak the result to the user using google speech api and print the result to the console
         elif "current time" in query:
