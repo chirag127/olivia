@@ -10,6 +10,9 @@
   - [Precautions while using the software in the application](#precautions-while-using-the-software-in-the-application)
   - [Libraries used in the software](#libraries-used-in-the-software)
   - [Technologies used in the software](#technologies-used-in-the-software)
+  - [Requirements](#requirements)
+  - [Consecuences of bad internet connection.](#consecuences-of-bad-internet-connection)
+  - [Consecuences of background noise](#consecuences-of-background-noise)
 
 ## Features
 
@@ -48,7 +51,7 @@
 2. Give the CPU usage of the computer just say "CPU usage" or "CPU usage of the computer" or "usage of the CPU".
 3. Present with the RAM usage of the computer just say "RAM usage" or "RAM usage of the computer" or "RAM usage of the 0computer".
 4. Give the disk usage of the computer just say "disk usage" or "disk usage of the computer" or "disk usage of the computer".
-5. Give the battery usage of the computer just say "battery usage" or "battery usage of the computer" or "battery usage of 0the computer".\
+5. Give the battery usage of the computer just say "battery usage" or "battery usage of the computer" or "battery usage of 0the computer".
 6. Give the current weather of the city just say "current weather" or "current weather of the city".
 7. Search in chrome just say "search in chrome".
 8. Tell you the time by saying "time" or "what time is it" or "what is the time" or "tell me the time".
@@ -404,3 +407,27 @@ Winshell library: [winshell](https://pypi.python.org/pypi/winshell)
 4. Google Translate
 5. Pyautogui
 6. Pyttsx3
+
+
+## Requirements 
+
+1. Good internet connections 
+
+    - Atleast 1 Mbps
+    - ping should less than 100 ms
+    - jitter should be less.
+  
+2. Silent background.
+
+## Consecuences of bad internet connection.
+
+1. Starting will take time.
+2. Recogning will take time.
+3. The program may fail to connect to the server.
+4. The program may fail to Recogning the speaked saying.
+
+## Consecuences of background noise
+
+1. Background Noise may make the program fail to connect to the server.
+2. Background noise may make the program fail to Recognise the speaked command or query.
+
