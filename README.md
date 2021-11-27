@@ -463,3 +463,14 @@ Battery function: To get the battery usage.
 Disk function: To get the disk usage.
 Give joke functions: To give a joke.
 Give Ip: To get the IP address.
+Generate_password function: To generate a password.
+send_email function: To send an email.
+query day function: To get the day of the week.
+query date function: To get the date.
+send whatsapp message function: To send a message on whatsapp.
+exit function: To exit the software.
+clear function: To clear the screen.
+Greeting function: To greet the user according to the time of the day.
+clear_screen function: To clear the screen.
+open_chrome function: To open Google Chrome.
+username function: change   the username.

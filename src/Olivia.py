@@ -598,9 +598,7 @@ def exitcode():
 def clearConsole():
     command = 'clear'
     speak("Clearing the console")
-    if os.name in ('nt', 'dos'):
-        command = 'cls'
-    os.system(command)
+    os.system('cls')
 
 
 # KEYBOARD_KEYS is attribute of pyautogui
