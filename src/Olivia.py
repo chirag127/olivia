@@ -157,6 +157,7 @@ def sp(text):
 
 def text2speech():
     text = clipboard.paste()
+
     print(text)
     speak(text)
 
@@ -193,14 +194,17 @@ def tictactoe():
         # ------------------------------------------------------------------
         def __init__(self):
             self.window = Tk()
+
             self.window.title('Tic-Tac-Toe')
             self.canvas = Canvas(
                 self.window, width=size_of_board, height=size_of_board)
             self.canvas.pack()
+
             # Input from user in form of clicks
             self.window.bind('<Button-1>', self.click)
 
             self.initialize_board()
+
             self.player_X_turns = True
             self.board_status = np.zeros(shape=(3, 3))
 
@@ -229,6 +233,7 @@ def tictactoe():
 
         def play_again(self):
             self.initialize_board()
+
             self.player_X_starts = not self.player_X_starts
             self.player_X_turns = self.player_X_starts
             self.board_status = np.zeros(shape=(3, 3))
@@ -382,18 +387,22 @@ def tictactoe():
                 # Check if game is concluded
                 if self.is_gameover():
                     self.display_gameover()
+
                     # print('Done')
             else:  # Play Again
                 self.canvas.delete("all")
                 self.play_again()
+
                 self.reset_board = False
 
     game_instance = Tic_Tac_Toe()
+
     game_instance.mainloop()
 
 
 def cpu():
     usage = psutil.cpu_percent()
+
     print("CPU is at")
     print(usage)
     speak("CPU is at")
@@ -403,6 +412,7 @@ def cpu():
 
 def ram():
     usage = psutil.virtual_memory()
+
     print("RAM is at")
     print(usage)
     speak("RAM is at")
@@ -467,6 +477,7 @@ def generate_random_password():
                 case = random.randint(0, 1)
                 if case == 1:
                     character = character.upper()
+
             password.append(character)
 
     # alpha password
@@ -496,10 +507,12 @@ def takescreenshot():
     # save screenshot to file in image forma
     img = pyautogui.screenshot(name)
     img.show()
+
     print('Screenshot taken')
 
     # make a gui using tkinter library to display the screenshot and take a screenshot of a specific area
     root = tk.Tk()
+
     root.title('Screenshot')
 
     frame = tk.Frame(root, bg='#80c1ff')
@@ -518,7 +531,9 @@ def takescreenshot():
 def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
+
     server.starttls()
+
     server.login('chriagsinghal@gmail.com', 'my password')
     server.sendmail('chiragsinghal@gmail.com', to, content)
     server.close()
@@ -526,6 +541,7 @@ def sendEmail(to, content):
 
 def query_day():
     day = datetime.datetime.today()
+
     # print the day of the week
     weekday = day.weekday()
 
@@ -549,6 +565,7 @@ def send_whatapp(to, content):
 
 def text2speech():
     text = clipboard.paste()
+
     print(text)
     speak(text)
 
@@ -622,6 +639,7 @@ def open_chrome():
 
 def ctime():
     now = datetime.datetime.now()
+
     speak("The current time is")
     speak(now.strftime("%I:%M:%S"))
 
@@ -629,6 +647,7 @@ def ctime():
 def username():
     speak("What should i call you sir")
     uname = takeCommand()
+
     speak("Welcome Mister")
     speak(uname)
     columns = shutil.get_terminal_size().columns
@@ -644,8 +663,8 @@ def username():
 
 
 if __name__ == "__main__":
-    # wishMe()
 
+    # wishMe()
 
     running = True
 
@@ -667,21 +686,21 @@ if __name__ == "__main__":
             # restart the computer if the query contains 'restart'
             elif 'restart' in query:
                 speak("Hold On ! Your system is on its way to restart")
-                os.system('shutdown', '/r ')
+                os.system('shutdown /r ')
                 running = False
                 sys.exit()
 
             # logout the user if the query contains 'logout'
             elif 'logout' in query:
                 speak("Hold On ! Your system is on its way to logout")
-                os.system('shutdown', '/l')
+                os.system('shutdown /l')
                 running = False
                 sys.exit()
 
             # hibernate the computer if the query contains 'hibernate'
             elif 'hibernate' in query:
                 speak("Hold On ! Your system is on its way to hibernate")
-                os.system('shutdown', '/h')
+                os.system('shutdown /h')
                 running = False
                 sys.exit()
 
@@ -695,6 +714,7 @@ if __name__ == "__main__":
         # give the current date and time if 'date' is in query
         if 'date' in query and "current" in query:
             now = datetime.datetime.now()
+
             speak("The current date is")
             speak(now.strftime("%d-%m-%Y"))
 
@@ -708,7 +728,9 @@ if __name__ == "__main__":
                 owm = OWM(API_key='ab0d5e80e8dafb2cb81fa9e82431c1fa')
                 obs = owm.weather_at_place(city)
                 w = obs.get_weather()
+
                 k = w.get_status()
+
                 x = w.get_temperature(unit='celsius')
                 speak('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (
                     city, k, x['temp_max'], x['temp_min']))
@@ -747,6 +769,7 @@ if __name__ == "__main__":
             if 'tic' in query or 'tac' in query or 'toe' in query:
 
                 tictactoe()
+
                 continue
 
         # telling the joke when the query of the user contains joke
@@ -789,9 +812,11 @@ if __name__ == "__main__":
             try:
                 speak("to whom should i send to?")
                 name = takeCommand().lower()
+
                 to = username[name]
                 speak("What should i say?")
                 content = takeCommand()
+
                 send_whatapp(to, content)
                 speak("Message has been sent")
                 break
@@ -973,49 +998,77 @@ if __name__ == "__main__":
 
                 speak('ok sir')
 
-        elif 'stop typing' in query:
-
-            speak('sir I already stopped typing')
-
         # type the text in the current window if 'type' is in query
         elif 'typing' in query and 'start' in query:
+
             speak("Starting typing")
+
             speak("What should i type sir")
+
             while True:
+
+                type_sentence = takeCommand().lower()
+
                 if query != 'none':
-                    type_sentence = takeCommand()
+
                     if 'stop typing' in type_sentence:
+
+                        sp('stopped typing')
+
                         break
                     elif 'enter' in type_sentence:
+
                         pyautogui.press('enter')
+
                     elif 'backspace' in type_sentence:
+
                         pyautogui.hotkey('ctrl', 'backspace')
+
                     elif 'tab' in type_sentence:
                         pyautogui.press('tab')
 
                     elif 'space' in type_sentence:
+
                         pyautogui.press('space')
 
                     elif 'caps lock' in type_sentence:
+
                         pyautogui.press('caps lock')
 
                     else:
+
                         pyautogui.typewrite(type_sentence)
+
+        elif 'stop typing' in query:
+
+            speak('sir I already stopped typing')
 
         # if the query contains "write" and "note" in the query then write the note in the file named src/notes.txt and then tell the user that the note has been written
         # also ask if the user wants to include the date and time in the note
         elif 'write' in query and 'note' in query:
+
             speak("What should i write sir")
+
             note = takeCommand()
+
             file = open("src/notes.txt", "w")
+
             speak("Do you want to add the date and time in the note?")
+
             note_date = takeCommand()
+
             if 'yes' in note_date:
+
                 file.write(str(datetime.datetime.now()) + " : " + note)
+
                 speak("Note has been written")
+
             elif 'no' in note_date:
+
                 file.write(note)
+
                 speak("Note has been written")
+
             file.close()
 
         # if the query contains "read" and "note" in the query then read the note from the file named src/notes.txt and then tell the user that the note has been read
@@ -1233,6 +1286,7 @@ if __name__ == "__main__":
             speak("What should i search for sir")
             chromepath = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
             search = takeCommand().lower()
+
             webbrowser.get(chromepath).open(
                 'https://www.google.com/search?q=' + search)
 
@@ -1299,10 +1353,12 @@ if __name__ == "__main__":
         elif 'remember that' in query:
             speak("What should i remember?")
             data = takeCommand()
+
             speak("You said me to remember that " + data)
             remember = open('src/notes.txt', 'w')
             remember.write(data)
             remember.close()
+
             speak("I have remembered that")
 
         elif 'do you know anything' in query:
@@ -1360,6 +1416,7 @@ if __name__ == "__main__":
             try:
                 speak("What should I say?")
                 content = takeCommand().lower()
+
                 to = "chriagsinghal@gmail.com"
                 sendEmail(to, content)
                 speak("Email has been sent!")
@@ -1407,24 +1464,41 @@ if __name__ == "__main__":
             ctypes.windll.user32.LockWorkStation()
 
         elif 'remember that' in query:
-            speak("What should i remember?")
-            data = takeCommand()
-            speak("You said me to remember that " + data)
-            remember = open('data.txt', 'w')
-            remember.write(data)
-            remember.close()
-            speak("I have remembered that")
+
+            while True:
+
+                speak("What should i remember?")
+
+                data = takeCommand()
+
+                speak("You said me to remember that " + data)
+
+                remember = open('data.txt', 'w')
+
+                remember.write(data)
+
+                remember.close()
+
+                speak("I have remembered that")
 
         elif 'do you know anything' in query:
+
             remember = open('data.txt', 'r')
+
             speak("You said me to remember that " + remember.read())
+
             remember.close()
 
         elif "where is" in query:
+
             query = query.replace("where is", "")
+
             location = query
+
             sp("User asked to Locate")
+
             sp(location)
+
             webbrowser.open(
                 "https://www.google.com / maps / place/" + location + "")
 
@@ -1433,6 +1507,7 @@ if __name__ == "__main__":
 #         elif "stock" in query and "price" in query:
 #             speak("What company's stock price you want to check?")
 #             company = takeCommand()
+
 #             speak("Checking the stock price of " + company)
 #             try:
 #                 url = "https://in.finance.yahoo.com/quote/" + company + "?p=" + company
@@ -1440,6 +1515,7 @@ if __name__ == "__main__":
 #                 soup = BeautifulSoup(page.content, 'html.parser')
 #                 price = soup.find(
 #                     "div", {"class": "My(6px) Pos(r) smartphone_Mt(6px)"}).find("span").get_text()
+
 #                 sp(price)
 #                 print(price)
 #             except Exception as e:
@@ -1451,6 +1527,7 @@ if __name__ == "__main__":
 #         elif "weather" in query and "today" in query:
 #             speak("What city's weather you want to check?")
 #             city = takeCommand()
+
 #             speak("Checking the weather of " + city)
 #             try:
 #                 url = "https://openweathermap.org/data/2.5/weather?q=" + \
@@ -1459,6 +1536,7 @@ if __name__ == "__main__":
 #                 soup = BeautifulSoup(page.content, 'html.parser')
 #                 weather = soup.find(
 #                     "div", {"class": "weather-widget__container"}).find("p").get_text()
+
 #                 sp(weather)
 #                 print(weather)
 #             except Exception as e:
@@ -1469,6 +1547,7 @@ if __name__ == "__main__":
 
 #             speak("Sir, What date you want to check")
 #             date = takeCommand()
+
 #             speak("Checking the date of " + date)
 #             try:
 #                 url = "https://www.timeanddate.com/worldclock/fixedtime.html?msg=" + date + "&iso=&p1=150"
@@ -1476,6 +1555,7 @@ if __name__ == "__main__":
 #                 soup = BeautifulSoup(page.content, 'html.parser')
 #                 date = soup.find(
 #                     "div", {"class": "time-date"}).find("p").get_text()
+
 #                 sp(date)
 #                 print(date)
 #             except Exception as e:
@@ -1486,6 +1566,7 @@ if __name__ == "__main__":
 
 #             speak("Sir, What you want to calculate")
 #             query = takeCommand()
+
 #             speak("Calculating " + query)
 #             try:
 #                 url = "https://www.google.com/search?q=" + query
@@ -1493,6 +1574,7 @@ if __name__ == "__main__":
 #                 soup = BeautifulSoup(page.content, 'html.parser')
 #                 result = soup.find(
 #                     "div", {"class": "kno-ecr-pt"}).find("span").get_text()
+
 #                 sp(result)
 #                 print(result)
 #             except Exception as e:
@@ -1503,6 +1585,7 @@ if __name__ == "__main__":
 #         elif "current time" in query:
 #             speak("Sir, What time you want to check")
 #             time = takeCommand()
+
 #             speak("Checking the time of " + time)
 #             try:
 #                 url = "https://www.timeanddate.com/worldclock/fixedtime.html?msg=" + time + "&iso=&p1=150"
@@ -1510,6 +1593,7 @@ if __name__ == "__main__":
 #                 soup = BeautifulSoup(page.content, 'html.parser')
 #                 time = soup.find(
 #                     "div", {"class": "time-date"}).find("p").get_text()
+
 #                 sp(time)
 #                 print(time)
 #             except Exception as e:
@@ -2313,6 +2397,7 @@ if __name__ == "__main__":
                 query = query.replace("to afrikaans", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the afrikaans and storing the result in a variable named result
                 result = translator.translate(query, dest='af')
                 # speaking and printing the result
@@ -2327,6 +2412,7 @@ if __name__ == "__main__":
                 query = query.replace("to albanian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the albanian and storing the result in a variable named result
                 result = translator.translate(query, dest='sq')
                 # speaking and printing the result
@@ -2341,6 +2427,7 @@ if __name__ == "__main__":
                 query = query.replace("to amharic", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the amharic and storing the result in a variable named result
                 result = translator.translate(query, dest='am')
                 # speaking and printing the result
@@ -2355,6 +2442,7 @@ if __name__ == "__main__":
                 query = query.replace("to arabic", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the arabic and storing the result in a variable named result
                 result = translator.translate(query, dest='ar')
                 # speaking and printing the result
@@ -2369,6 +2457,7 @@ if __name__ == "__main__":
                 query = query.replace("to armenian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the armenian and storing the result in a variable named result
                 result = translator.translate(query, dest='hy')
                 # speaking and printing the result
@@ -2384,6 +2473,7 @@ if __name__ == "__main__":
                 query = query.replace("to azerbaijani", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the azerbaijani and storing the result in a variable named result
                 result = translator.translate(query, dest='az')
                 # speaking and printing the result
@@ -2398,6 +2488,7 @@ if __name__ == "__main__":
                 query = query.replace("to basque", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the basque and storing the result in a variable named result
                 result = translator.translate(query, dest='eu')
                 # speaking and printing the result
@@ -2412,6 +2503,7 @@ if __name__ == "__main__":
                 query = query.replace("to bengali", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the bengali and storing the result in a variable named result
                 result = translator.translate(query, dest='bn')
                 # speaking and printing the result
@@ -2426,6 +2518,7 @@ if __name__ == "__main__":
                 query = query.replace("to bosnian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the bosnian and storing the result in a variable named result
                 result = translator.translate(query, dest='bs')
                 # speaking and printing the result
@@ -2439,6 +2532,7 @@ if __name__ == "__main__":
                 query = query.replace("to bulgarian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the bulgarian and storing the result in a variable named result
                 result = translator.translate(query, dest='bg')
                 # speaking and printing the result
@@ -2452,6 +2546,7 @@ if __name__ == "__main__":
                 query = query.replace("to catalan", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the catalan and storing the result in a variable named result
                 result = translator.translate(query, dest='ca')
                 # speaking and printing the result
@@ -2465,6 +2560,7 @@ if __name__ == "__main__":
                 query = query.replace("to cebuano", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the cebuano and storing the result in a variable named result
                 result = translator.translate(query, dest='ceb')
                 # speaking and printing the result
@@ -2478,6 +2574,7 @@ if __name__ == "__main__":
                 query = query.replace("to chinese", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the chinese and storing the result in a variable named result
                 result = translator.translate(query, dest='zh-CN')
                 # speaking and printing the result
@@ -2491,6 +2588,7 @@ if __name__ == "__main__":
                 query = query.replace("to croatian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the croatian and storing the result in a variable named result
                 result = translator.translate(query, dest='hr')
                 # speaking and printing the result
@@ -2504,6 +2602,7 @@ if __name__ == "__main__":
                 query = query.replace("to czech", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the czech and storing the result in a variable named result
                 result = translator.translate(query, dest='cs')
                 # speaking and printing the result
@@ -2517,6 +2616,7 @@ if __name__ == "__main__":
                 query = query.replace("to danish", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the danish and storing the result in a variable named result
                 result = translator.translate(query, dest='da')
                 # speaking and printing the result
@@ -2530,6 +2630,7 @@ if __name__ == "__main__":
                 query = query.replace("to dutch", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the dutch and storing the result in a variable named result
                 result = translator.translate(query, dest='nl')
                 # speaking and printing the result
@@ -2543,6 +2644,7 @@ if __name__ == "__main__":
                 query = query.replace("to english", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the english and storing the result in a variable named result
                 result = translator.translate(query, dest='en')
                 # speaking and printing the result
@@ -2556,6 +2658,7 @@ if __name__ == "__main__":
                 query = query.replace("to esperanto", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the esperanto and storing the result in a variable named result
                 result = translator.translate(query, dest='eo')
                 # speaking and printing the result
@@ -2569,6 +2672,7 @@ if __name__ == "__main__":
                 query = query.replace("to estonian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the estonian and storing the result in a variable named result
                 result = translator.translate(query, dest='et')
                 # speaking and printing the result
@@ -2582,6 +2686,7 @@ if __name__ == "__main__":
                 query = query.replace("to filipino", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the filipino and storing the result in a variable named result
                 result = translator.translate(query, dest='tl')
                 # speaking and printing the result
@@ -2595,6 +2700,7 @@ if __name__ == "__main__":
                 query = query.replace("to finnish", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the finnish and storing the result in a variable named result
                 result = translator.translate(query, dest='fi')
                 # speaking and printing the result
@@ -2608,6 +2714,7 @@ if __name__ == "__main__":
                 query = query.replace("to french", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the french and storing the result in a variable named result
                 result = translator.translate(query, dest='fr')
                 # speaking and printing the result
@@ -2621,6 +2728,7 @@ if __name__ == "__main__":
                 query = query.replace("to frisian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the frisian and storing the result in a variable named result
                 result = translator.translate(query, dest='fy')
                 # speaking and printing the result
@@ -2634,6 +2742,7 @@ if __name__ == "__main__":
                 query = query.replace("to galician", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the galician and storing the result in a variable named result
                 result = translator.translate(query, dest='gl')
                 # speaking and printing the result
@@ -2648,6 +2757,7 @@ if __name__ == "__main__":
                 query = query.replace("to georgian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the georgian and storing the result in a variable named result
                 result = translator.translate(query, dest='ka')
                 # speaking and printing the result
@@ -2661,6 +2771,7 @@ if __name__ == "__main__":
                 query = query.replace("to german", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the german and storing the result in a variable named result
                 result = translator.translate(query, dest='de')
                 # speaking and printing the result
@@ -2674,6 +2785,7 @@ if __name__ == "__main__":
                 query = query.replace("to greek", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the greek and storing the result in a variable named result
                 result = translator.translate(query, dest='el')
                 # speaking and printing the result
@@ -2687,6 +2799,7 @@ if __name__ == "__main__":
                 query = query.replace("to gujarati", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the gujarati and storing the result in a variable named result
                 result = translator.translate(query, dest='gu')
                 # speaking and printing the result
@@ -2700,6 +2813,7 @@ if __name__ == "__main__":
                 query = query.replace("to haitian creole", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the haitian creole and storing the result in a variable named result
                 result = translator.translate(query, dest='ht')
                 # speaking and printing the result
@@ -2714,6 +2828,7 @@ if __name__ == "__main__":
                 query = query.replace("to hausa", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the hausa and storing the result in a variable named result
                 result = translator.translate(query, dest='ha')
                 # speaking and printing the result
@@ -2727,6 +2842,7 @@ if __name__ == "__main__":
                 query = query.replace("to hawaiian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the hawaiian and storing the result in a variable named result
                 result = translator.translate(query, dest='haw')
                 # speaking and printing the result
@@ -2740,6 +2856,7 @@ if __name__ == "__main__":
                 query = query.replace("to hebrew", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the hebrew and storing the result in a variable named result
                 result = translator.translate(query, dest='he')
                 # speaking and printing the result
@@ -2753,6 +2870,7 @@ if __name__ == "__main__":
                 query = query.replace("to hindi", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the hindi and storing the result in a variable named result
                 result = translator.translate(query, dest='hi')
                 # speaking and printing the result
@@ -2766,6 +2884,7 @@ if __name__ == "__main__":
                 query = query.replace("to hungarian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the hungarian and storing the result in a variable named result
                 result = translator.translate(query, dest='hu')
                 # speaking and printing the result
@@ -2779,6 +2898,7 @@ if __name__ == "__main__":
                 query = query.replace("to icelandic", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the icelandic and storing the result in a variable named result
                 result = translator.translate(query, dest='is')
                 # speaking and printing the result
@@ -2792,6 +2912,7 @@ if __name__ == "__main__":
                 query = query.replace("to igbo", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the igbo and storing the result in a variable named result
                 result = translator.translate(query, dest='ig')
                 # speaking and printing the result
@@ -2805,6 +2926,7 @@ if __name__ == "__main__":
                 query = query.replace("to indonesian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the indonesian and storing the result in a variable named result
                 result = translator.translate(query, dest='id')
                 # speaking and printing the result
@@ -2818,6 +2940,7 @@ if __name__ == "__main__":
                 query = query.replace("to irish", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the irish and storing the result in a variable named result
                 result = translator.translate(query, dest='ga')
                 # speaking and printing the result
@@ -2831,6 +2954,7 @@ if __name__ == "__main__":
                 query = query.replace("to italian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the italian and storing the result in a variable named result
                 result = translator.translate(query, dest='it')
                 # speaking and printing the result
@@ -2845,6 +2969,7 @@ if __name__ == "__main__":
                 query = query.replace("to japanese", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the japanese and storing the result in a variable named result
                 result = translator.translate(query, dest='ja')
                 # speaking and printing the result
@@ -2858,6 +2983,7 @@ if __name__ == "__main__":
                 query = query.replace("to javanese", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the javanese and storing the result in a variable named result
                 result = translator.translate(query, dest='jw')
                 # speaking and printing the result
@@ -2871,6 +2997,7 @@ if __name__ == "__main__":
                 query = query.replace("to kannada", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the kannada and storing the result in a variable named result
                 result = translator.translate(query, dest='kn')
                 # speaking and printing the result
@@ -2884,6 +3011,7 @@ if __name__ == "__main__":
                 query = query.replace("to kazakh", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the kazakh and storing the result in a variable named result
                 result = translator.translate(query, dest='kk')
                 # speaking and printing the result
@@ -2898,6 +3026,7 @@ if __name__ == "__main__":
                 query = query.replace("to khmer", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the khmer and storing the result in a variable named result
                 result = translator.translate(query, dest='km')
                 # speaking and printing the result
@@ -2911,6 +3040,7 @@ if __name__ == "__main__":
                 query = query.replace("to korean", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the korean and storing the result in a variable named result
                 result = translator.translate(query, dest='ko')
                 # speaking and printing the result
@@ -2924,6 +3054,7 @@ if __name__ == "__main__":
                 query = query.replace("to kyrgyz", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the kyrgyz and storing the result in a variable named result
                 result = translator.translate(query, dest='ky')
                 # speaking and printing the result
@@ -2937,6 +3068,7 @@ if __name__ == "__main__":
                 query = query.replace("to lao", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the lao and storing the result in a variable named result
                 result = translator.translate(query, dest='lo')
                 # speaking and printing the result
@@ -2950,6 +3082,7 @@ if __name__ == "__main__":
                 query = query.replace("to latin", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the latin and storing the result in a variable named result
                 result = translator.translate(query, dest='la')
                 # speaking and printing the result
@@ -2964,6 +3097,7 @@ if __name__ == "__main__":
                 query = query.replace("to latvian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the latvian and storing the result in a variable named result
                 result = translator.translate(query, dest='lv')
                 # speaking and printing the result
@@ -2977,6 +3111,7 @@ if __name__ == "__main__":
                 query = query.replace("to lithuanian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the lithuanian and storing the result in a variable named result
                 result = translator.translate(query, dest='lt')
                 # speaking and printing the result
@@ -2990,6 +3125,7 @@ if __name__ == "__main__":
                 query = query.replace("to luxembourgish", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the luxembourgish and storing the result in a variable named result
                 result = translator.translate(query, dest='lb')
                 # speaking and printing the result
@@ -3003,6 +3139,7 @@ if __name__ == "__main__":
                 query = query.replace("to macedonian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the macedonian and storing the result in a variable named result
                 result = translator.translate(query, dest='mk')
                 # speaking and printing the result
@@ -3016,6 +3153,7 @@ if __name__ == "__main__":
                 query = query.replace("to malagasy", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the malagasy and storing the result in a variable named result
                 result = translator.translate(query, dest='mg')
                 # speaking and printing the result
@@ -3029,6 +3167,7 @@ if __name__ == "__main__":
                 query = query.replace("to malay", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the malay and storing the result in a variable named result
                 result = translator.translate(query, dest='ms')
                 # speaking and printing the result
@@ -3042,6 +3181,7 @@ if __name__ == "__main__":
                 query = query.replace("to malayalam", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the malayalam and storing the result in a variable named result
                 result = translator.translate(query, dest='ml')
                 # speaking and printing the result
@@ -3055,6 +3195,7 @@ if __name__ == "__main__":
                 query = query.replace("to maltese", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the maltese and storing the result in a variable named result
                 result = translator.translate(query, dest='mt')
                 # speaking and printing the result
@@ -3068,6 +3209,7 @@ if __name__ == "__main__":
                 query = query.replace("to maori", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the maori and storing the result in a variable named result
                 result = translator.translate(query, dest='mi')
                 # speaking and printing the result
@@ -3081,6 +3223,7 @@ if __name__ == "__main__":
                 query = query.replace("to marathi", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the marathi and storing the result in a variable named result
                 result = translator.translate(query, dest='mr')
                 # speaking and printing the result
@@ -3094,6 +3237,7 @@ if __name__ == "__main__":
                 query = query.replace("to mongolian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the mongolian and storing the result in a variable named result
                 result = translator.translate(query, dest='mn')
                 # speaking and printing the result
@@ -3107,6 +3251,7 @@ if __name__ == "__main__":
                 query = query.replace("to myanmar", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the myanmar and storing the result in a variable named result
                 result = translator.translate(query, dest='my')
                 # speaking and printing the result
@@ -3120,6 +3265,7 @@ if __name__ == "__main__":
                 query = query.replace("to burmese", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the burmese and storing the result in a variable named result
                 result = translator.translate(query, dest='my')
                 # speaking and printing the result
@@ -3133,6 +3279,7 @@ if __name__ == "__main__":
                 query = query.replace("to nepali", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the nepali and storing the result in a variable named result
                 result = translator.translate(query, dest='ne')
                 # speaking and printing the result
@@ -3146,6 +3293,7 @@ if __name__ == "__main__":
                 query = query.replace("to norwegian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the norwegian and storing the result in a variable named result
                 result = translator.translate(query, dest='no')
                 # speaking and printing the result
@@ -3159,6 +3307,7 @@ if __name__ == "__main__":
                 query = query.replace("to odia", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the odia and storing the result in a variable named result
                 result = translator.translate(query, dest='or')
                 # speaking and printing the result
@@ -3172,6 +3321,7 @@ if __name__ == "__main__":
                 query = query.replace("to pashto", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the pashto and storing the result in a variable named result
                 result = translator.translate(query, dest='ps')
                 # speaking and printing the result
@@ -3185,6 +3335,7 @@ if __name__ == "__main__":
                 query = query.replace("to persian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the persian and storing the result in a variable named result
                 result = translator.translate(query, dest='fa')
                 # speaking and printing the result
@@ -3198,6 +3349,7 @@ if __name__ == "__main__":
                 query = query.replace("to polish", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the polish and storing the result in a variable named result
                 result = translator.translate(query, dest='pl')
                 # speaking and printing the result
@@ -3211,6 +3363,7 @@ if __name__ == "__main__":
                 query = query.replace("to portuguese", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the portuguese and storing the result in a variable named result
                 result = translator.translate(query, dest='pt')
                 # speaking and printing the result
@@ -3224,6 +3377,7 @@ if __name__ == "__main__":
                 query = query.replace("to punjabi", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the punjabi and storing the result in a variable named result
                 result = translator.translate(query, dest='pa')
                 # speaking and printing the result
@@ -3237,6 +3391,7 @@ if __name__ == "__main__":
                 query = query.replace("to romanian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the romanian and storing the result in a variable named result
                 result = translator.translate(query, dest='ro')
                 # speaking and printing the result
@@ -3250,6 +3405,7 @@ if __name__ == "__main__":
                 query = query.replace("to russian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the russian and storing the result in a variable named result
                 result = translator.translate(query, dest='ru')
                 # speaking and printing the result
@@ -3263,6 +3419,7 @@ if __name__ == "__main__":
                 query = query.replace("to samoan", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the samoan and storing the result in a variable named result
                 result = translator.translate(query, dest='sm')
                 # speaking and printing the result
@@ -3276,6 +3433,7 @@ if __name__ == "__main__":
                 query = query.replace("to scots gaelic", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the scots gaelic and storing the result in a variable named result
                 result = translator.translate(query, dest='gd')
                 # speaking and printing the result
@@ -3289,6 +3447,7 @@ if __name__ == "__main__":
                 query = query.replace("to serbian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the serbian and storing the result in a variable named result
                 result = translator.translate(query, dest='sr')
                 # speaking and printing the result
@@ -3302,6 +3461,7 @@ if __name__ == "__main__":
                 query = query.replace("to sesotho", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the sesotho and storing the result in a variable named result
                 result = translator.translate(query, dest='st')
                 # speaking and printing the result
@@ -3315,6 +3475,7 @@ if __name__ == "__main__":
                 query = query.replace("to shona", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the shona and storing the result in a variable named result
                 result = translator.translate(query, dest='sn')
                 # speaking and printing the result
@@ -3328,6 +3489,7 @@ if __name__ == "__main__":
                 query = query.replace("to sindhi", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the sindhi and storing the result in a variable named result
                 result = translator.translate(query, dest='sd')
                 # speaking and printing the result
@@ -3341,6 +3503,7 @@ if __name__ == "__main__":
                 query = query.replace("to sinhala", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the sinhala and storing the result in a variable named result
                 result = translator.translate(query, dest='si')
                 # speaking and printing the result
@@ -3354,6 +3517,7 @@ if __name__ == "__main__":
                 query = query.replace("to slovak", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the slovak and storing the result in a variable named result
                 result = translator.translate(query, dest='sk')
                 # speaking and printing the result
@@ -3367,6 +3531,7 @@ if __name__ == "__main__":
                 query = query.replace("to slovenian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the slovenian and storing the result in a variable named result
                 result = translator.translate(query, dest='sl')
                 # speaking and printing the result
@@ -3380,6 +3545,7 @@ if __name__ == "__main__":
                 query = query.replace("to somali", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the somali and storing the result in a variable named result
                 result = translator.translate(query, dest='so')
                 # speaking and printing the result
@@ -3394,6 +3560,7 @@ if __name__ == "__main__":
                 query = query.replace("to spanish", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the spanish and storing the result in a variable named result
                 result = translator.translate(query, dest='es')
                 # speaking and printing the result
@@ -3407,6 +3574,7 @@ if __name__ == "__main__":
                 query = query.replace("to sundanese", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the sundanese and storing the result in a variable named result
                 result = translator.translate(query, dest='su')
                 # speaking and printing the result
@@ -3420,6 +3588,7 @@ if __name__ == "__main__":
                 query = query.replace("to swahili", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the swahili and storing the result in a variable named result
                 result = translator.translate(query, dest='sw')
                 # speaking and printing the result
@@ -3433,6 +3602,7 @@ if __name__ == "__main__":
                 query = query.replace("to swedish", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the swedish and storing the result in a variable named result
                 result = translator.translate(query, dest='sv')
                 # speaking and printing the result
@@ -3446,6 +3616,7 @@ if __name__ == "__main__":
                 query = query.replace("to tajik", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the tajik and storing the result in a variable named result
                 result = translator.translate(query, dest='tg')
                 # speaking and printing the result
@@ -3459,6 +3630,7 @@ if __name__ == "__main__":
                 query = query.replace("to tamil", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the tamil and storing the result in a variable named result
                 result = translator.translate(query, dest='ta')
                 # speaking and printing the result
@@ -3472,6 +3644,7 @@ if __name__ == "__main__":
                 query = query.replace("to telugu", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the telugu and storing the result in a variable named result
                 result = translator.translate(query, dest='te')
                 # speaking and printing the result
@@ -3485,6 +3658,7 @@ if __name__ == "__main__":
                 query = query.replace("to thai", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the thai and storing the result in a variable named result
                 result = translator.translate(query, dest='th')
                 # speaking and printing the result
@@ -3498,6 +3672,7 @@ if __name__ == "__main__":
                 query = query.replace("to turkish", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the turkish and storing the result in a variable named result
                 result = translator.translate(query, dest='tr')
                 # speaking and printing the result
@@ -3511,6 +3686,7 @@ if __name__ == "__main__":
                 query = query.replace("to ukrainian", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the ukrainian and storing the result in a variable named result
                 result = translator.translate(query, dest='uk')
                 # speaking and printing the result
@@ -3524,6 +3700,7 @@ if __name__ == "__main__":
                 query = query.replace("to urdu", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the urdu and storing the result in a variable named result
                 result = translator.translate(query, dest='ur')
                 # speaking and printing the result
@@ -3537,6 +3714,7 @@ if __name__ == "__main__":
                 query = query.replace("to uyghur", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the uyghur and storing the result in a variable named result
                 result = translator.translate(query, dest='ug')
                 # speaking and printing the result
@@ -3550,6 +3728,7 @@ if __name__ == "__main__":
                 query = query.replace("to uzbek", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the uzbek and storing the result in a variable named result
                 result = translator.translate(query, dest='uz')
                 # speaking and printing the result
@@ -3563,6 +3742,7 @@ if __name__ == "__main__":
                 query = query.replace("to vietnamese", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the vietnamese and storing the result in a variable named result
                 result = translator.translate(query, dest='vi')
                 # speaking and printing the result
@@ -3576,6 +3756,7 @@ if __name__ == "__main__":
                 query = query.replace("to welsh", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the welsh and storing the result in a variable named result
                 result = translator.translate(query, dest='cy')
                 # speaking and printing the result
@@ -3589,6 +3770,7 @@ if __name__ == "__main__":
                 query = query.replace("to xhosa", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the xhosa and storing the result in a variable named result
                 result = translator.translate(query, dest='xh')
                 # speaking and printing the result
@@ -3602,6 +3784,7 @@ if __name__ == "__main__":
                 query = query.replace("to yiddish", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the yiddish and storing the result in a variable named result
                 result = translator.translate(query, dest='yi')
                 # speaking and printing the result
@@ -3615,6 +3798,7 @@ if __name__ == "__main__":
                 query = query.replace("to yoruba", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the yoruba and storing the result in a variable named result
                 result = translator.translate(query, dest='yo')
                 # speaking and printing the result
@@ -3628,6 +3812,7 @@ if __name__ == "__main__":
                 query = query.replace("to zulu", "")
                 # using the goslate library to translate the text
                 translator = Translator()
+
                 # translating the text to the zulu and storing the result in a variable named result
                 result = translator.translate(query, dest='zu')
                 # speaking and printing the result
@@ -3899,109 +4084,112 @@ if __name__ == "__main__":
             if query != 'none':
                 sp("Sorry, I could not do that")
                 sp("Please try again")
-                
-        #     # print("else statement is executed")
-        #     # writing code for the queries or the commands that are not in the above list of commands. so we will ask the user
-        #     # if he or she wants to search the query in google or wikipedia or translate the query or open the query in browser
-        #     # or open the query in youtube or open the query in stackoverflow or open the query in github or open the query in
-        #     # facebook or open the query in instagram or open the query in twitter or open the query in linkedin or open the query in
-        #     # gmail or open the query in whatsapp or open the query in skype or open the query in snapchat or open the query in
-        #     # pinterest or open the query in tinder or open the query in reddit or open the query in quora or open the query in
-        #     # stackoverflow or open the query in amazon or open the query in flipkart or open the query in gmail or open the query in
-        #     # yahoo or open the query in google or open the query in wikipedia or open the query in youtube or open the query in
-        #     # stackoverflow or open the query in github or open the query in facebook or open the query in instagram or open the
-        #     # query in twitter or open the query in linkedin or open the query in gmail or open the query in whatsapp or open the
-        #     # query in skype or open the query in snapchat or open the query in pinterest or open the query in tinder or open the
-        #     # query in reddit or open the query in quora or open the query in stackoverflow or open the query in amazon or open the
-        #     # query in flipkart or open the query in gmail or open the query in yahoo or open the query in google or open the query in
-        #     # wikipedia or open the query in youtube or open the query in stackoverflow or open the query in github or open the query
-        #     # in facebook or open the query in instagram or open the query in twitter or open the query in linkedin or open the query
-        #     # in gmail or open the query in whatsapp or open the query in skype or open the query in snapchat or open the query in
-        #     # pinterest or open the query in tinder or open the query in reddit or open the query in quora or open the query in
-        #     # stackoverflow or open the query in amazon or open the query in flipkart or open the query in gmail or open the query
-        #     # in yahoo or open the query in google or open the query in wikipedia or open the query in youtube or open the query in
-        #     # stackoverflow or open the query in github or open the query in facebook or open the query in instagram or open the query
-        #     # in twitter or open the query in linkedin or open the query in gmail or open the query in whatsapp or open the query in
-        #     # skype or open the query in snapchat or open the query in pinterest or open the query in tinder or open the query in
-        #     if query != 'none':
-        #         speak(
-        #             'sorry sir that is not assigned. do you want to search for ' + query + '?')
-        #         print('\n')
-        #         # asking the user to confirm the query or not
-        #         print('say yes or no. normal command will not work.')
-        #         print('\n')
 
-        #         confirmation = takeCommand().lower()  # taking the input from the user
-        #         # if the user says yes or yep or something similar then we will search the query in google
-        #         if 'yes' in confirmation or 'yep' in confirmation or 'sure' in confirmation or 'yeah' in confirmation or 'absolutely' in confirmation or 'fine' in confirmation or 'looks good' in confirmation or 'okay' in confirmation:
-        #             print('\n')
-        #             # asking the user to search in which website
-        #             speak(
-        #                 'do you want me to search in google, wikipedia or youtube sir?')
-        #             # taking the input from the user and converting it to lower case and storing it in answer4
-        #             answer4 = takeCommand().lower()
-        #             # if the user says google then we will search the query in google
-        #             if 'google' in answer4:
-        #                 # telling the user that we are searching the query in google
-        #                 speak('searching for ' + query + ' in google')
-        #                 # opening the query in google
-        #                 webbrowser.open('www.google.com/search?gx&q=' + query)
-        #             # if the user says wikipedia then we will search the query in wikipedia
-        #             elif 'Wikipedia' in answer4:
-        #                 # asking the user to narrate or open the webpage
-        #                 speak('do you want me to narrate or open webpage sir?')
-        #                 # taking the input from the user and converting it to lower case and storing it in answer2
-        #                 answer2 = takeCommand().lower()
-        #                 # if the user says narrate or direct then we will narrate the query
-        #                 if 'narrate' in answer2 or 'direct' in answer2:
-        #                     # getting the summary of the query
-        #                     results = wikipedia.summary(
-        #                         query, sentences=1, auto_suggest=False)
-        #                     # narrating the summary of the query
-        #                     speak('according to wikipedia ' + results)
-        #                 # if the user says web page or website or webpage then we will open the query in browser
-        #                 elif 'web page' in answer2 or 'website' in answer2 or 'webpage' in answer2:
-        #                     # getting the page of the query
-        #                     page1 = wikipedia.page(query, auto_suggest=False)
-        #                     print(page1)  # printing the page of the query
-        #                     page2 = page1.url  # getting the url of the query
-        #                     print(page2)  # printing the url of the query
-        #                     # telling the user that we are redirecting to the webpage
-        #                     speak('redirecting to webpage')
-        #                     webbrowser.get().open_new_tab(page2)  # opening the webpage of the query
-        #                     print(page2)  # printing the url of the query
-        #             elif 'youtube' in answer4:  # if the user says youtube then we will search the query in youtube
-        #                 # telling the user that we are searching the query in youtube
-        #                 speak('searching for ' + query + 'in youtube')
-        #                 webbrowser.get().open_new_tab('https://www.youtube.com/results?search_query=' +
-        #                                               query)  # opening the query in youtube
+            # print("else statement is executed")
+            # writing code for the queries or the commands that are not in the above list of commands. so we will ask the user
+            # if he or she wants to search the query in google or wikipedia or translate the query or open the query in browser
+            # or open the query in youtube or open the query in stackoverflow or open the query in github or open the query in
+            # facebook or open the query in instagram or open the query in twitter or open the query in linkedin or open the query in
+            # gmail or open the query in whatsapp or open the query in skype or open the query in snapchat or open the query in
+            # pinterest or open the query in tinder or open the query in reddit or open the query in quora or open the query in
+            # stackoverflow or open the query in amazon or open the query in flipkart or open the query in gmail or open the query in
+            # yahoo or open the query in google or open the query in wikipedia or open the query in youtube or open the query in
+            # stackoverflow or open the query in github or open the query in facebook or open the query in instagram or open the
+            # query in twitter or open the query in linkedin or open the query in gmail or open the query in whatsapp or open the
+            # query in skype or open the query in snapchat or open the query in pinterest or open the query in tinder or open the
+            # query in reddit or open the query in quora or open the query in stackoverflow or open the query in amazon or open the
+            # query in flipkart or open the query in gmail or open the query in yahoo or open the query in google or open the query in
+            # wikipedia or open the query in youtube or open the query in stackoverflow or open the query in github or open the query
+            # in facebook or open the query in instagram or open the query in twitter or open the query in linkedin or open the query
+            # in gmail or open the query in whatsapp or open the query in skype or open the query in snapchat or open the query in
+            # pinterest or open the query in tinder or open the query in reddit or open the query in quora or open the query in
+            # stackoverflow or open the query in amazon or open the query in flipkart or open the query in gmail or open the query
+            # in yahoo or open the query in google or open the query in wikipedia or open the query in youtube or open the query in
+            # stackoverflow or open the query in github or open the query in facebook or open the query in instagram or open the query
+            # in twitter or open the query in linkedin or open the query in gmail or open the query in whatsapp or open the query in
+            # skype or open the query in snapchat or open the query in pinterest or open the query in tinder or open the query in
+            if query != 'none':
+                speak(
+                    'sorry sir that is not assigned. do you want to search for ' + query + '?')
+                print('\n')
+                # asking the user to confirm the query or not
+                print('say yes or no. normal command will not work.')
+                print('\n')
 
-        #             elif 'stackoverflow' in answer4:  # if the user says stackoverflow then we will search the query in stackoverflow
-        #                 # telling the user that we are searching the query in stackoverflow
-        #                 speak('searching for ' + query + 'in stackoverflow')
-        #                 webbrowser.get().open_new_tab(
-        #                     'https://stackoverflow.com/search?q=' + query)  # opening the query in stackoverflow
+                confirmation = takeCommand().lower()  # taking the input from the user
+                # if the user says yes or yep or something similar then we will search the query in google
+                if 'yes' in confirmation or 'yep' in confirmation or 'sure' in confirmation or 'yeah' in confirmation or 'absolutely' in confirmation or 'fine' in confirmation or 'looks good' in confirmation or 'okay' in confirmation:
+                    print('\n')
+                    # asking the user to search in which website
+                    speak(
+                        'do you want me to search in google, wikipedia or youtube sir?')
+                    # taking the input from the user and converting it to lower case and storing it in answer4
+                    answer4 = takeCommand().lower()
 
-        #         elif 'no' in query or 'not' in query or 'negative' in query:
+                    # if the user says google then we will search the query in google
+                    if 'google' in answer4:
+                        # telling the user that we are searching the query in google
+                        speak('searching for ' + query + ' in google')
+                        # opening the query in google
+                        webbrowser.open('www.google.com/search?gx&q=' + query)
+                    # if the user says wikipedia then we will search the query in wikipedia
+                    elif 'Wikipedia' in answer4:
+                        # asking the user to narrate or open the webpage
+                        speak('do you want me to narrate or open webpage sir?')
+                        # taking the input from the user and converting it to lower case and storing it in answer2
+                        answer2 = takeCommand().lower()
 
-        #             # asking the user if he wants to get rick rolled
-        #             speak('do you want to get rick rolled sir?')
-        #             # taking the input from the user and converting it to lower case and storing it in answer5
-        #             answer5 = takeCommand().lower()
-        #             # if the user says yes or yep or something similar then we will get rick rolled
+                        # if the user says narrate or direct then we will narrate the query
+                        if 'narrate' in answer2 or 'direct' in answer2:
+                            # getting the summary of the query
+                            results = wikipedia.summary(
+                                query, sentences=1, auto_suggest=False)
+                            # narrating the summary of the query
+                            speak('according to wikipedia ' + results)
+                        # if the user says web page or website or webpage then we will open the query in browser
+                        elif 'web page' in answer2 or 'website' in answer2 or 'webpage' in answer2:
+                            # getting the page of the query
+                            page1 = wikipedia.page(query, auto_suggest=False)
+                            print(page1)  # printing the page of the query
+                            page2 = page1.url  # getting the url of the query
+                            print(page2)  # printing the url of the query
+                            # telling the user that we are redirecting to the webpage
+                            speak('redirecting to webpage')
+                            webbrowser.get().open_new_tab(page2)  # opening the webpage of the query
+                            print(page2)  # printing the url of the query
+                    elif 'youtube' in answer4:  # if the user says youtube then we will search the query in youtube
+                        # telling the user that we are searching the query in youtube
+                        speak('searching for ' + query + 'in youtube')
+                        webbrowser.get().open_new_tab('https://www.youtube.com/results?search_query=' +
+                                                      query)  # opening the query in youtube
 
-        #             if 'yes' in answer5 or 'yep' in answer5 or 'sure' in answer5 or 'yeah' in answer5 or 'absolutely' in answer5 or 'fine' in answer5 or 'looks good' in answer5 or 'okay' in answer5:
-        #                 # telling the user that we are rick rolling
-        #                 speak('sir i am rick rolling you')
+                    elif 'stackoverflow' in answer4:  # if the user says stackoverflow then we will search the query in stackoverflow
+                        # telling the user that we are searching the query in stackoverflow
+                        speak('searching for ' + query + 'in stackoverflow')
+                        webbrowser.get().open_new_tab(
+                            'https://stackoverflow.com/search?q=' + query)  # opening the query in stackoverflow
 
-        #                 # opening the rick roll video in the browser
-        #                 webbrowser.get().open_new_tab(
-        #                     'https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+                elif 'no' in query or 'not' in query or 'negative' in query:
 
-        #                 speak('sir i am rick rolling you')
-        #                 # opening the rick roll video in the browser
+                    # asking the user if he wants to get rick rolled
+                    speak('do you want to get rick rolled sir?')
+                    # taking the input from the user and converting it to lower case and storing it in answer5
+                    answer5 = takeCommand().lower()
 
-        #         else:
+                    # if the user says yes or yep or something similar then we will get rick rolled
 
-        #             # Asking user if he or she want olivia to do anything else.
-        #             speak('ok. anything else sir?')
+                    if 'yes' in answer5 or 'yep' in answer5 or 'sure' in answer5 or 'yeah' in answer5 or 'absolutely' in answer5 or 'fine' in answer5 or 'looks good' in answer5 or 'okay' in answer5:
+                        # telling the user that we are rick rolling
+                        speak('sir i am rick rolling you')
+
+                        # opening the rick roll video in the browser
+                        webbrowser.get().open_new_tab(
+                            'https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+
+                        speak('sir i am rick rolling you')
+                        # opening the rick roll video in the browser
+
+                else:
+
+                    # Asking user if he or she want olivia to do anything else.
+                    speak('ok. anything else sir?')

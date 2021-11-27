@@ -1,6 +1,15 @@
 # Olivia-A-Personal-Virtual-Assistant
 
+## Abstract
+
+Personal Assistants Virtual Assistant that reinvent a new way for individuals to interact with computers.A Personal Virtual Assistant allows a user to simply ask questions in the same manner that they would address a human, and are even capable of doing some basic tasks like opening apps,reading out news, taking notes, Playing video and pausing and play them etc., with just a voice command.
+Personal Assistants using Artificial intelligence, Machine Learning and Natural Language Processing in Text to speech and speech to Text in speech recognition.
+
+## Table of Contents of the Sypnosis
+
 - [Olivia-A-Personal-Virtual-Assistant](#olivia-a-personal-virtual-assistant)
+  - [Abstract](#abstract)
+  - [Table of Contents of the Sypnosis](#table-of-contents-of-the-sypnosis)
   - [Features](#features)
     - [Assistant skills](#assistant-skills)
     - [In progress features](#in-progress-features)
@@ -72,10 +81,9 @@
 23. Read a note by saying "read a note" or "read note" or "read a note now" or "read note now".
 24. Delete a note by saying "delete a note" or "delete note" or "delete a note now" or "delete note now".
 25. Show all notes by saying "show all notes" or "show all notes now" or "show all notes now".
-26. Send WhatsApp message by saying "send WhatsApp message to (your number)" or "send message".
-27. Tell location of a place by saying "where is (the name of the place)" or "where is (the name of the place) now" or "where is (the name of the place) now" etc. Example "where is Ghaziabad" will tell you the location of Ghaziabad by open the location of Ghaziabad in Google Maps.
-28. Open word by saying "open word" or "open word now" and then type your document by saying "yes" or "no" when asked if "do you want me to type" and stop typing by saying "stop typing".
-29. Launch an application by saying "launch (the name of the application)" or "launch (the name of the application) now" or "launch (the name of the application) now"
+26. Tell location of a place by saying "where is (the name of the place)" or "where is (the name of the place) now" or "where is (the name of the place) now" etc. Example "where is Ghaziabad" will tell you the location of Ghaziabad by open the location of Ghaziabad in Google Maps.
+27. Open word by saying "open word" or "open word now" and then type your document by saying "yes" or "no" when asked if "do you want me to type" and stop typing by saying "stop typing".
+28. Launch an application by saying "launch (the name of the application)" or "launch (the name of the application) now" or "launch (the name of the application) now"
 
     1. Launch chrome just say "launch chrome" or "launch chrome now".
     2. Launch notepad just say "launch notepad" or "launch notepad now".
@@ -88,8 +96,8 @@
     9. Open task manager just say "launch task manager" or "launch task manager now".
     10. Launch paint just say "launch paint" or "launch paint now".
 
-30. Play a song by saying "play a song" or "play song" or "play a song now".
-31. Play any a video on a specific topic by saying "play a video on (the name of the topic)" or "play (the name of the topic) video" or "play (the name of the topic)". Example are as following:
+29. Play a song by saying "play a song" or "play song" or "play a song now".
+30. Play any a video on a specific topic by saying "play a video on (the name of the topic)" or "play (the name of the topic) video" or "play (the name of the topic)". Example are as following:
 
     1. Play a video on cricket just say "play a video on cricket" or "play cricket video" or "play cricket".
     2. Play a video on football just say "play a video on football" or "play football video" or "play football".
@@ -100,7 +108,7 @@
     7. Start a video on how to make a cake just say "play a video on how to make a cake" or "play how to make a cake video" or "play how to make a cake".
     8. Play a video on python just say "play a video on python" or "play python video" or "play python".
 
-32. Play any song of your choice by saying "play (name of the song(maybe with the name of the singer if there are two or more song by the same name there will be no confusion.)) Examples are as follows:
+31. Play any song of your choice by saying "play (name of the song(maybe with the name of the singer if there are two or more song by the same name there will be no confusion.)) Examples are as follows:
 
     1. Play lonely by Justin Bieber just say "play lonely by Justin Bieber" or "play the song lonely by Justin Bieber".
     2. Likewise, Play love yourself just say "play love yourself" or "play the song love yourself".
@@ -108,9 +116,9 @@
     4. I hope you understand now.
     5. Play lonely by the Beatles just say "play lonely by the Beatles" or "play the song lonely by the Beatles".
 
-33. You can control the video by saying "pause", "play","volume up", "volume down", "next". Saying "pause" pauses the video in the web browser, Saying "play" plays the video in
+32. You can control the video by saying "pause", "play","volume up", "volume down", "next". Saying "pause" pauses the video in the web browser, Saying "play" plays the video in
 
-34. Open any website just say "open (the name of the website)" or "open (the name of the website) now" or "open (the name of the website) now" e.g.
+33. Open any website just say "open (the name of the website)" or "open (the name of the website) now" or "open (the name of the website) now" e.g.
 
     1. Open the Amazon website by saying "open Amazon" or "open Amazon website".
     2. Open the Bing website by saying "open Bing" or "open Bing website".
@@ -181,7 +189,7 @@
     67. Open the Amazon.com.br website by saying "open Amazon.com.br" or "open Amazon.com.br website".
     68. Likewise, Open the Amazon.com.au website by saying "open Amazon.com.au" or "open Amazon.com.au website".
 
-35. Search many websites like YouTube, Google (with Google Images, Google News etc.), Bing, Yahoo, DuckDuckGo, Wikipedia, Wiktionary, and many more just by saying "search (the name of the website) on (the thing you want to search on the website.). For example,
+34. Search many websites like YouTube, Google (with Google Images, Google News etc.), Bing, Yahoo, DuckDuckGo, Wikipedia, Wiktionary, and many more just by saying "search (the name of the website) on (the thing you want to search on the website.). For example,
 
     1. If you want to search for "Python" on YouTube, you can say "search Python on YouTube".
     2. If you want to search for "Python" on Google, you can say "search Python on Google".
@@ -190,7 +198,7 @@
     5. If you want to search for "Python" on Google Maps, you can say "search Python on Google Maps".
     6. If you want to search for "Python" on Google Scholar, you can say "search Python on Google Scholar".
 
-36. Translate the English to many other languages just saying "translate (the sentence you want to translate) to (the language to which you want to translate the sentence)" example "translate hello to Spanish" will translate the English sentence "hello" to Spanish. The supported languages are :
+35. Translate the English to many other languages just saying "translate (the sentence you want to translate) to (the language to which you want to translate the sentence)" example "translate hello to Spanish" will translate the English sentence "hello" to Spanish. The supported languages are :
 
     1. Afrikaans
     2. Albanian
@@ -298,7 +306,7 @@
     104. Yoruba
     105. Zulu
 
-37. Answer to many questions like :-
+36. Answer to many questions like :-
 
     1. What is your name?
     2. What is your age?
@@ -318,11 +326,12 @@
     16. Who is your favorite actor?
     17. And many more...
 
-38. Type by saying "start typing" and then start typing by the instruction given.
-39. Press many key by saying "press (the key you want to press) key" example "press space key" will press the space key on your keyboard or "press enter key" will press the enter key on your keyboard, "press tab key" will press the tab key on your keyboard and so on.
+37. Type by saying "start typing" and then start typing by the instruction given.
+38. Press many key by saying "press (the key you want to press) key" example "press space key" will press the space key on your keyboard or "press enter key" will press the enter key on your keyboard, "press tab key" will press the tab key on your keyboard and so on.
 
-40. Exit the application just by saying "exit the application" or "exit" or "goodbye" or "bye".
-41. If the Virtual assistant Don't know the answer to any of your questions, Olivia will ask you if he or she wants to search the query in google or YouTube or Wikipedia. If you say yes, then it will ask in which of these websites you want to search the query like if you YouTube it will search the query on YouTube. In last, If you say no, then it will do nothing and just say 'ok. Anything else sir?'
+39. Exit the application just by saying "exit the application" or "exit" or "goodbye" or "bye".
+40. If the Virtual assistant Don't know the answer to any of your questions, Olivia will ask you if he or she wants to search the query in google or YouTube or Wikipedia. If you say yes, then it will ask in which of these websites you want to search the query like if you YouTube it will search the query on YouTube. In last, If you say no, then it will do nothing and just say 'ok. Anything else sir?
+41. Send whatsapp messages.
 
 ### In progress features
 
@@ -408,15 +417,14 @@ Winshell library: [winshell](https://pypi.python.org/pypi/winshell)
 5. Pyautogui
 6. Pyttsx3
 
+## Requirements
 
-## Requirements 
+1. Good internet connections
 
-1. Good internet connections 
+   - Atleast 1 Mbps
+   - ping should less than 100 ms
+   - jitter should be less.
 
-    - Atleast 1 Mbps
-    - ping should less than 100 ms
-    - jitter should be less.
-  
 2. Silent background.
 
 ## Consecuences of bad internet connection.
@@ -430,4 +438,3 @@ Winshell library: [winshell](https://pypi.python.org/pypi/winshell)
 
 1. Background Noise may make the program fail to connect to the server.
 2. Background noise may make the program fail to Recognise the speaked command or query.
-
