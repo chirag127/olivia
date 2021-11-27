@@ -20,7 +20,7 @@ Personal Assistants using Artificial intelligence, Machine Learning and Natural 
   - [Libraries used in the software](#libraries-used-in-the-software)
   - [Technologies used in the software](#technologies-used-in-the-software)
   - [Requirements](#requirements)
-  - [Consecuences of bad internet connection.](#consecuences-of-bad-internet-connection)
+  - [Consecuences of bad internet connection](#consecuences-of-bad-internet-connection)
   - [Consecuences of background noise](#consecuences-of-background-noise)
 
 ## Features
@@ -427,7 +427,7 @@ Winshell library: [winshell](https://pypi.python.org/pypi/winshell)
 
 2. Silent background.
 
-## Consecuences of bad internet connection.
+## Consecuences of bad internet connection
 
 1. Starting will take time.
 2. Recogning will take time.

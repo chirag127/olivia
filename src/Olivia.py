@@ -26,6 +26,8 @@ import webbrowser
 import wikipedia                   # The get article from wikipedia
 import winshell                    # The use winshell for opening the specified file
 from jokes import neutral_joke
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
+
 # create a wonderful virtual voice assistant named olivia and she will help you in your daily life with her amazing features like text to speech, voice to text, google search, wikipedia search, youtube search, news search, weather search, time search, date search, screenshot, email, jokes, ip address, and many more.
 # olivia is a virtual voice assistant and she will help you in your daily life with her amazing features like text to speech, voice to text, google search, wikipedia search, youtube search, news search, weather search, time search, date search, screenshot, email, jokes, ip address, and many more.
 # Olivia is created by chirag singhal.
@@ -179,6 +181,23 @@ def wishMe():
 
 # It will take microphone input from the user and return string output
 
+def pick_card():
+    cards = ["Diamonds", "Spades", "Hearts", "Clubs"]
+
+    ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10,
+                "Jack", "Queen", "King", "Ace"]
+
+
+    def pick_a_card():
+
+        card = random.choices(cards)
+
+        rank = random.choices(ranks)
+
+        return(f"The {rank} of {card}")
+
+
+    sp(pick_a_card())
 
 def tictactoe():
     size_of_board = 600
@@ -765,14 +784,24 @@ if __name__ == "__main__":
                 print(ny)
                 speak(ny)
 
+            elif 'pick' in query and 'card' in query:
+
+                pick_card()
+
+
+
         elif 'game' in query and 'start' in query:
             if 'tic' in query or 'tac' in query or 'toe' in query:
 
                 tictactoe()
 
-                continue
+            elif 'guess' in query:
+                pass
+                
 
-        # telling the joke when the query of the user contains joke
+
+
+                # telling the joke when the query of the user contains joke
         elif 'joke' in query:
             givejoke()
 
