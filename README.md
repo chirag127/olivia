@@ -22,6 +22,8 @@ Personal Assistants using Artificial intelligence, Machine Learning and Natural 
   - [Requirements](#requirements)
   - [Consecuences of bad internet connection](#consecuences-of-bad-internet-connection)
   - [Consecuences of background noise](#consecuences-of-background-noise)
+  - [User Manual](#user-manual)
+  - [User defined functions](#user-defined-functions)
 
 ## Features
 
@@ -438,3 +440,26 @@ Winshell library: [winshell](https://pypi.python.org/pypi/winshell)
 
 1. Background Noise may make the program fail to connect to the server.
 2. Background noise may make the program fail to Recognise the speaked command or query.
+
+
+## User Manual
+
+just click on the software icon in the taskbar to open the software (If you don't know how to open the software, please refer to the [Installation instruction](#installation-instruction) section.)
+
+## User defined functions
+
+Speak function: To speak the text  ( Text to speak ).
+sp function: To speak the text and also print the text.
+tictactoe function: To play tic tac toe.
+take_screenshot function: To take a screenshot.
+take_command function: To take the command and Convert the speech to text.
+NewsFromBBC function: To get the news from BBC.
+text2speech function: To convert the text to speech from the clipboard.
+Wish me function: To wish the user according to the time of the day.
+Pickcard function: To pick a card from the deck.
+Cpu function: To get the CPU usage.
+Ram function: To get the RAM usage.
+Battery function: To get the battery usage.
+Disk function: To get the disk usage.
+Give joke functions: To give a joke.
+Give Ip: To get the IP address.
