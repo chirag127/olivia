@@ -441,14 +441,13 @@ Winshell library: [winshell](https://pypi.python.org/pypi/winshell)
 1. Background Noise may make the program fail to connect to the server.
 2. Background noise may make the program fail to Recognise the speaked command or query.
 
-
 ## User Manual
 
 just click on the software icon in the taskbar to open the software (If you don't know how to open the software, please refer to the [Installation instruction](#installation-instruction) section.)
 
 ## User defined functions
 
-Speak function: To speak the text  ( Text to speak ).
+Speak function: To speak the text ( Text to speak ).
 sp function: To speak the text and also print the text.
 tictactoe function: To play tic tac toe.
 take_screenshot function: To take a screenshot.
@@ -473,4 +472,4 @@ clear function: To clear the screen.
 Greeting function: To greet the user according to the time of the day.
 clear_screen function: To clear the screen.
 open_chrome function: To open Google Chrome.
-username function: change   the username.
+username function: change the username.

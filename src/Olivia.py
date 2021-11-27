@@ -1,3 +1,5 @@
+
+
 from googletrans import Translator
 from pyowm import OWM
 from tkinter import *
