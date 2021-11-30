@@ -10,6 +10,12 @@ Personal Assistants using Artificial intelligence, Machine Learning and Natural 
 - [Olivia-A-Personal-Virtual-Assistant](#olivia-a-personal-virtual-assistant)
   - [Abstract](#abstract)
   - [Table of Contents of the Sypnosis](#table-of-contents-of-the-sypnosis)
+  - [Declaration](#declaration)
+    - [Date](#date)
+    - [Approved By](#approved-by)
+      - [Signature of Mini-Project Co-Ordinator](#signature-of-mini-project-co-ordinator)
+    - [Counter sign By](#counter-sign-by)
+      - [Signature of HOD](#signature-of-hod)
   - [Visions](#visions)
     - [VISION OF THE INSTITUTE](#vision-of-the-institute)
     - [VISION OF THE DEPARTMENT](#vision-of-the-department)
@@ -26,7 +32,15 @@ Personal Assistants using Artificial intelligence, Machine Learning and Natural 
     - [PO5: Modern tool usage](#po5-modern-tool-usage)
     - [PO6: The engineer and society](#po6-the-engineer-and-society)
     - [PO7: Environment and sustainability](#po7-environment-and-sustainability)
-    - [PO8: Ethics and responsibilities](#po8-ethics-and-responsibilities)
+    - [PO8: Ethics](#po8-ethics)
+    - [PO9: Individual and teamwork](#po9-individual-and-teamwork)
+    - [PO10: Communication](#po10-communication)
+    - [PO11: Project management and finance](#po11-project-management-and-finance)
+    - [PO12: Life-long learning](#po12-life-long-learning)
+  - [PROGRAM SPECIFIC OUTCOMES (PSOs)](#program-specific-outcomes-psos)
+    - [PSO1](#pso1)
+    - [PSO2](#pso2)
+  - [COURSE OUTCOMES (COs)](#course-outcomes-cos)
   - [Features](#features)
     - [Assistant skills](#assistant-skills)
     - [In progress features](#in-progress-features)
@@ -41,6 +55,35 @@ Personal Assistants using Artificial intelligence, Machine Learning and Natural 
   - [Consecuences of background noise](#consecuences-of-background-noise)
   - [User Manual](#user-manual)
   - [User defined functions](#user-defined-functions)
+
+## Declaration
+
+This is to certify that Mini Project Entitled “CHATBOT IN PYTHON” which is submitted in
+partial fulfillment of the requirement for the award of degree B.Tech. in Computer Science and
+Engineering to R.K.G.I.T, Ghaziabad, Dr. A.P.J. Abdul Kalam Technical University, Lucknow
+comprises only original work and studies carried out by students himself. The matter embodied
+in this synopsis has not been submitted for the award of any other degree.
+
+### Date
+
+### Approved By
+
+#### Signature of Mini-Project Co-Ordinator
+
+Mrs. Sonam kumari
+(Assistant Professor)
+Mini-Project Co-Ordinator(2nd Year)
+CSE Department
+RKGIT, Ghaziabad
+
+### Counter sign By
+
+#### Signature of HOD
+
+Dr. Sachi Gupta
+(Professor)
+HOD, CSE Department
+RKGIT, Ghaziabad
 
 ## Visions
 
@@ -125,9 +168,65 @@ consequent responsibilities relevant to the professional engineering practice.
 Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the
 knowledge of, and need for sustainable development.
 
-### PO8: Ethics and responsibilities
+### PO8: Ethics
 
-Demonstrate ethical principles in professional.
+Apply ethical principles and commit to professional ethics and
+responsibilities and norms of the engineering practice.
+
+### PO9: Individual and teamwork
+
+Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.
+
+### PO10: Communication
+
+Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to
+comprehend and write effective reports and design documentation, make effective
+presentations, and give and receive clear instructions.
+
+### PO11: Project management and finance
+
+Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s
+own work, as a member and leader in a team, to manage projects and in multidisciplinary
+environments.
+
+### PO12: Life-long learning
+
+Recognize the need for and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological
+change.
+
+## PROGRAM SPECIFIC OUTCOMES (PSOs)
+
+### PSO1
+
+The ability to use standard practices and suitable programming environments to develop software solutions.
+
+### PSO2
+
+The ability to employ latest computer languages and platforms in creating innovative career opportunities
+
+## COURSE OUTCOMES (COs)
+
+Course Outcomes (CO) |Bloom’s Knowledge Level(KL)
+CO 1 Students acquire a ' real' working environment and get acquainted with the
+organization structure, business operations and administrative functions.
+K6
+CO 2
+Students develop hands-on experience in the student’s related field so that they can
+relate and reinforce what has been taught at the institute.
+K1, K2, K3
+CO 3
+Students acquire knowledge of cooperation and to develop synergetic collaboration
+between industry and the institute in promoting a knowledgeable society.
+K1, K6
+CO 4
+Students get a stage for the future recruitment by the potential employers and get
+awareness of the social, cultural, global and environmental responsibility as an
+engineer.
+K5, K6
+CO 5
+Students acquire presentation and demonstration skills to effectively communicate
+the progress of the work to peers and superiors using audio/video, software tools.
+K3
 
 ## Features
 
