@@ -16,14 +16,14 @@ Personal Assistants using Artificial intelligence, Machine Learning and Natural 
       - [Signature of Mini-Project Co-Ordinator](#signature-of-mini-project-co-ordinator)
     - [Counter sign By](#counter-sign-by)
       - [Signature of HOD](#signature-of-hod)
-  - [Visions](#visions)
-    - [VISION OF THE INSTITUTE](#vision-of-the-institute)
-    - [VISION OF THE DEPARTMENT](#vision-of-the-department)
-    - [MISSION OF THE DEPARTMENT](#mission-of-the-department)
-      - [PEO 1: Learning: Our graduates to be competent with sound knowledge in the field of](#peo-1-learning-our-graduates-to-be-competent-with-sound-knowledge-in-the-field-of)
-      - [PEO 2: Employable: To develop the ability among students to synthesize data and](#peo-2-employable-to-develop-the-ability-among-students-to-synthesize-data-and)
-      - [PEO 3: Innovative: To develop research oriented analytical ability among students to](#peo-3-innovative-to-develop-research-oriented-analytical-ability-among-students-to)
-      - [PEO 4: Entrepreneur / Contribution: To develop excellent leadership quality among](#peo-4-entrepreneur--contribution-to-develop-excellent-leadership-quality-among)
+  - [VISION OF THE INSTITUTE](#vision-of-the-institute)
+  - [VISION OF THE DEPARTMENT](#vision-of-the-department)
+  - [MISSION OF THE DEPARTMENT](#mission-of-the-department)
+  - [PROGRAM EDUCATIONAL OUTCOMES (PEOs)](#program-educational-outcomes-peos)
+    - [PEO 1: Learning: Our graduates to be competent with sound knowledge in the field of](#peo-1-learning-our-graduates-to-be-competent-with-sound-knowledge-in-the-field-of)
+    - [PEO 2: Employable: To develop the ability among students to synthesize data and](#peo-2-employable-to-develop-the-ability-among-students-to-synthesize-data-and)
+    - [PEO 3: Innovative: To develop research oriented analytical ability among students to](#peo-3-innovative-to-develop-research-oriented-analytical-ability-among-students-to)
+    - [PEO 4: Entrepreneur / Contribution: To develop excellent leadership quality among](#peo-4-entrepreneur--contribution-to-develop-excellent-leadership-quality-among)
   - [PROGRAM OUTCOMES (POs)](#program-outcomes-pos)
     - [PO1: Engineering knowledge](#po1-engineering-knowledge)
     - [PO2: Problem analysis](#po2-problem-analysis)
@@ -41,6 +41,8 @@ Personal Assistants using Artificial intelligence, Machine Learning and Natural 
     - [PSO1](#pso1)
     - [PSO2](#pso2)
   - [COURSE OUTCOMES (COs)](#course-outcomes-cos)
+  - [CO-PO MAPPING](#co-po-mapping)
+  - [CO-PSO MAPPING](#co-pso-mapping)
   - [Features](#features)
     - [Assistant skills](#assistant-skills)
     - [In progress features](#in-progress-features)
@@ -85,9 +87,7 @@ Dr. Sachi Gupta
 HOD, CSE Department
 RKGIT, Ghaziabad
 
-## Visions
-
-### VISION OF THE INSTITUTE
+## VISION OF THE INSTITUTE
 
 To continually develop excellent professionals capable of providing sustainable solutions
 to challenging problems in their fields and prove responsible global citizens.
@@ -95,35 +95,37 @@ MISSION OF THE INSTITUTE
 We wish to serve the nation by becoming a reputed deemed university for providing
 value based professional education.
 
-### VISION OF THE DEPARTMENT
+## VISION OF THE DEPARTMENT
 
 To be recognized globally for delivering high quality education in the ever-changing
 field of computer science & engineering, both of value & relevance to the communities
 we serve.
 
-### MISSION OF THE DEPARTMENT
+## MISSION OF THE DEPARTMENT
 
 1. To provide quality education in both the theoretical and applied foundations of Computer
    Science and train students to effectively apply this education to solve real world
    problems.
 2. To amplify their potential for lifelong high-quality careers and give them a competitive
    advantage in the challenging global work environment.
-   PROGRAM EDUCATIONAL OUTCOMES (PEOs)
 
-#### PEO 1: Learning: Our graduates to be competent with sound knowledge in the field of
+
+## PROGRAM EDUCATIONAL OUTCOMES (PEOs)
+
+### PEO 1: Learning: Our graduates to be competent with sound knowledge in the field of
 
 Computer Science & Engineering.
 
-#### PEO 2: Employable: To develop the ability among students to synthesize data and
+### PEO 2: Employable: To develop the ability among students to synthesize data and
 
 technical concepts for application to software product design for successful
 careers that meet the needs of Indian and multinational companies.
 
-#### PEO 3: Innovative: To develop research oriented analytical ability among students to
+### PEO 3: Innovative: To develop research oriented analytical ability among students to
 
 prepare them for making technical contributions to the society.
 
-#### PEO 4: Entrepreneur / Contribution: To develop excellent leadership quality among
+### PEO 4: Entrepreneur / Contribution: To develop excellent leadership quality among
 
 students which they can use at different levels according to their experience and
 contribute for progress and development in the society.
@@ -214,7 +216,18 @@ The ability to employ latest computer languages and platforms in creating innova
 | CO 4 | Students get a stage for the future recruitment by the potential employers and get awareness of the social, cultural, global and environmental responsibility as an engineer. | K5, K6                      |
 | CO 5 | Students acquire presentation and demonstration skills to effectively communicate the progress of the work to peers and superiors using audio/video, software tools.          | K3                          |
 
+## CO-PO MAPPING
 
+| CO     | PO1 | PO2 | PO3 | PO4 | PO5 | PO6 | PO7 | PO8 | PO9 | PO10 | PO11 | PO12 |
+| ------ | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---- | ---- | ---- |
+| C209.1 | 3   | 2   | 2   | 2   | 3   | 3   |     |     | 3   | 2    | 2    | 3    |
+| C209.2 | 3   | 3   | 2   | 3   | 3   | 3   | 3   | 3   | 2   | 2    | 2    | 3    |
+| C209.3 | 3   | 3   | 2   | 2   | 3   | 3   |     | 3   | 2   | 2    | 2    | 3    |
+| C209.4 | 3   | 3   | 3   | 2   |     | 3   | 3   |     | 2   | 2    |      | 3    |
+| C209.5 | 3   | 2   | 2   |     | 3   |     |     | 3   | 3   |      | 2    |      |
+| C209   | 3   | 3   | 2   | 2   | 3   | 3   | 3   | 3   | 3   | 2    | 2    | 3    |
+
+## CO-PSO MAPPING
 
 | CO     | PSO1 | PSO2 |
 | ------ | ---- | ---- |
@@ -225,8 +238,6 @@ The ability to employ latest computer languages and platforms in creating innova
 | C209.5 | 3    | 3    |
 | C209   | 3    | 3    |
 
-CO PO1 PO2 PO3 PO4 PO5 PO6 PO7 PO8 PO9 PO10 PO11 PO12
-one
 ## Features
 
 1. Fully customizable
