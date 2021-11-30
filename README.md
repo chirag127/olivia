@@ -20,7 +20,7 @@ Mrs. Sonam kumari
 (Assistant Professor)
 Mini-Project Coordinator(2nd Year)
 CSE Department
-Raj Kumar Goel Institute Of Technology, Ghaziabad 
+Raj Kumar Goel Institute Of Technology, Ghaziabad
 
 ### Countersign By
 
@@ -31,7 +31,7 @@ Raj Kumar Goel Institute Of Technology, Ghaziabad
 Dr. Sachi Gupta
 (Professor)
 HOD, CSE Department
-Raj Kumar Goel Institute Of Technology, Ghaziabad 
+Raj Kumar Goel Institute Of Technology, Ghaziabad
 
 ## VISION OF THE INSTITUTE
 
@@ -84,7 +84,7 @@ Apply the knowledge of mathematics, science, engineering fundamentals, and an en
 
 ### PO2: Problem analysis
 
-Identify, formulate, review research literature, andanalyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.
+Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.
 
 ### PO3: Design/development of solutions
 
@@ -96,7 +96,7 @@ Use research-based knowledge and research methods including design of experiment
 
 ### PO5: Modern tool usage
 
-Create, select, and apply appropriate techniques, resources, a n d modern engineering and IT tools including prediction and modelling to complex engineering activities with an understanding of the limitations.
+Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modelling to complex engineering activities with an understanding of the limitations.
 
 ### PO6: The engineer and society
 
@@ -128,7 +128,7 @@ Demonstrate knowledge and understanding of the engineering and management princi
 Recognize the need for and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological
 change.
 
-## PROGRAM SPECIFIC OUTCOMES (PSOs)
+## PROGRAM SPECIFIC OUTCOMES
 
 ### PSO1
 
@@ -136,13 +136,13 @@ The ability to use standard practices and suitable programming environments to d
 
 ### PSO2
 
-The ability to employ latest computer languages and platforms in creating innovative career opportunities
+The ability to employ the latest computer languages and platforms in creating innovative career opportunities
 
-## COURSE OUTCOMES (COs)
+## COURSE OUTCOMES
 
 | CO   | Course Outcomes                                                                                                                                                               | Bloom’s Knowledge Level(KL) |
 | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
-| CO 1 | Students acquire a ' real' working environment and get acquainted with the organization structure, business operations and administrative functions.                          | K6                          |
+| CO 1 | Students acquire a 'real' working environment and get acquainted with the organization structure, business operations and administrative functions.                           | K6                          |
 | CO 2 | Students develop hands-on experience in the student’s related field so that they can relate and reinforce what has been taught at the institute.                              | K1, K2, K3                  |
 | CO 3 | Students acquire knowledge of cooperation and to develop synergetic collaboration between industry and the institute in promoting a knowledgeable society.                    | K1, K6                      |
 | CO 4 | Students get a stage for the future recruitment by the potential employers and get awareness of the social, cultural, global and environmental responsibility as an engineer. | K5, K6                      |
@@ -172,10 +172,10 @@ The ability to employ latest computer languages and platforms in creating innova
 
 ## Abstract
 
-Personal Assistants Virtual Assistant that reinvent a new way for individuals to interact with computers.A Personal Virtual Assistant allows a user to simply ask questions in the same manner that they would address a human, and are even capable of doing some basic tasks like opening apps,reading out news, taking notes, Playing video and pausing and play them etc., with just a voice command.
+Personal Assistants Virtual Assistant that reinvent a new way for individuals to interact with computers. A Personal Virtual Assistant allows a user to simply ask questions in the same manner that they would address a human, and are even capable of doing some basic tasks like opening apps, reading out news, taking notes, Playing video and pausing and play them etc., with just a voice command.
 Personal Assistants using Artificial intelligence, Machine Learning and Natural Language Processing in Text to speech and speech to Text in speech recognition.
 
-## Table of Contents of the Sypnosis
+## Table of Contents of the Synopsis
 
 - [Olivia-A-Personal-Virtual-Assistant](#olivia-a-personal-virtual-assistant)
   - [Declaration](#declaration)
@@ -206,14 +206,14 @@ Personal Assistants using Artificial intelligence, Machine Learning and Natural 
     - [PO10: Communication](#po10-communication)
     - [PO11: Project management and finance](#po11-project-management-and-finance)
     - [PO12: Life-long learning](#po12-life-long-learning)
-  - [PROGRAM SPECIFIC OUTCOMES (PSOs)](#program-specific-outcomes-psos)
+  - [PROGRAM SPECIFIC OUTCOMES](#program-specific-outcomes)
     - [PSO1](#pso1)
     - [PSO2](#pso2)
-  - [COURSE OUTCOMES (COs)](#course-outcomes-cos)
+  - [COURSE OUTCOMES](#course-outcomes)
   - [CO-PO MAPPING](#co-po-mapping)
   - [CO-PSO MAPPING](#co-pso-mapping)
   - [Abstract](#abstract)
-  - [Table of Contents of the Sypnosis](#table-of-contents-of-the-sypnosis)
+  - [Table of Contents of the Synopsis](#table-of-contents-of-the-synopsis)
   - [Features](#features)
     - [Assistant skills](#assistant-skills)
     - [In progress features](#in-progress-features)
@@ -224,8 +224,8 @@ Personal Assistants using Artificial intelligence, Machine Learning and Natural 
   - [Libraries used in the software](#libraries-used-in-the-software)
   - [Technologies used in the software](#technologies-used-in-the-software)
   - [Requirements](#requirements)
-  - [Consecuences of bad internet connection](#consecuences-of-bad-internet-connection)
-  - [Consecuences of background noise](#consecuences-of-background-noise)
+  - [Consequences of bad internet connection](#consequences-of-bad-internet-connection)
+  - [Consequences of background noise](#consequences-of-background-noise)
   - [User Manual](#user-manual)
   - [User defined functions](#user-defined-functions)
 
@@ -267,7 +267,7 @@ Personal Assistants using Artificial intelligence, Machine Learning and Natural 
 3. Present with the RAM usage of the computer just say "RAM usage" or "RAM usage of the computer" or "RAM usage of the 0computer".
 4. Give the disk usage of the computer just say "disk usage" or "disk usage of the computer" or "disk usage of the computer".
 5. Give the battery usage of the computer just say "battery usage" or "battery usage of the computer" or "battery usage of 0the computer".
-6. Give the current weather of the city just say "current weather" or "current weather of the city".
+6. Similarly, Give the current weather of the city just say "current weather" or "current weather of the city".
 7. Search in chrome just say "search in chrome".
 8. Tell you the time by saying "time" or "what time is it" or "what is the time" or "tell me the time".
 9. Tell you the date by saying "date" or "what date is it" or "what is the date" or "tell me the date".
@@ -292,7 +292,7 @@ Personal Assistants using Artificial intelligence, Machine Learning and Natural 
 28. Launch an application by saying "launch (the name of the application)" or "launch (the name of the application) now" or "launch (the name of the application) now"
 
     1. Launch chrome just say "launch chrome" or "launch chrome now".
-    2. Launch notepad just say "launch notepad" or "launch notepad now".
+    2. Likewise, Launch notepad just say "launch notepad" or "launch notepad now".
     3. Open word just say "launch word" or "launch word now".
     4. Launch PowerPoint just say "launch PowerPoint" or "launch PowerPoint now".
     5. Launch Microsoft Excel just say "launch excel" or "launch excel now".
@@ -327,7 +327,7 @@ Personal Assistants using Artificial intelligence, Machine Learning and Natural 
 33. Open any website just say "open (the name of the website)" or "open (the name of the website) now" or "open (the name of the website) now" e.g.
 
     1. Open the Amazon website by saying "open Amazon" or "open Amazon website".
-    2. Open the Bing website by saying "open Bing" or "open Bing website".
+    2. Furthermore, Open the Bing website by saying "open Bing" or "open Bing website".
     3. Likewise, Open the code forces website by saying "open code forces" or "open code forces website".
     4. Furthermore, Open the code wars website by saying "open code wars" or "open code wars website".
     5. Open the DuckDuckGo website by saying "open DuckDuckGo" or "open DuckDuckGo website".
@@ -399,7 +399,7 @@ Personal Assistants using Artificial intelligence, Machine Learning and Natural 
 
     1. If you want to search for "Python" on YouTube, you can say "search Python on YouTube".
     2. If you want to search for "Python" on Google, you can say "search Python on Google".
-    3. If you want to search for "Python" on Google Images, you can say "search Python on Google Images".
+    3. Likewise, If you want to search for "Python" on Google Images, you can say "search Python on Google Images".
     4. Weather you want to search for "Python" on Google News, you can say "search Python on Google News".
     5. If you want to search for "Python" on Google Maps, you can say "search Python on Google Maps".
     6. If you want to search for "Python" on Google Scholar, you can say "search Python on Google Scholar".
@@ -537,7 +537,7 @@ Personal Assistants using Artificial intelligence, Machine Learning and Natural 
 
 39. Exit the application just by saying "exit the application" or "exit" or "goodbye" or "bye".
 40. If the Virtual assistant Don't know the answer to any of your questions, Olivia will ask you if he or she wants to search the query in google or YouTube or Wikipedia. If you say yes, then it will ask in which of these websites you want to search the query like if you YouTube it will search the query on YouTube. In last, If you say no, then it will do nothing and just say 'ok. Anything else sir?
-41. Send whatsapp messages.
+41. Send WhatsApp messages.
 
 ### In progress features
 
@@ -627,23 +627,23 @@ Winshell library: [winshell](https://pypi.python.org/pypi/winshell)
 
 1. Good internet connections
 
-   - Atleast 1 Mbps
+   - At least 1 Mbps
    - ping should less than 100 ms
    - jitter should be less.
 
 2. Silent background.
 
-## Consecuences of bad internet connection
+## Consequences of bad internet connection
 
 1. Starting will take time.
-2. Recogning will take time.
+2. Recognizing will take time.
 3. The program may fail to connect to the server.
-4. The program may fail to Recogning the speaked saying.
+4. The program may fail to Recognizing the spoke saying.
 
-## Consecuences of background noise
+## Consequences of background noise
 
 1. Background Noise may make the program fail to connect to the server.
-2. Background noise may make the program fail to Recognise the speaked command or query.
+2. Background noise may make the program fail to Recognize the spoke command or query.
 
 ## User Manual
 
@@ -651,29 +651,29 @@ just click on the software icon in the taskbar to open the software (If you don'
 
 ## User defined functions
 
-Speak function: To speak the text ( Text to speak ).
-sp function: To speak the text and also print the text.
-tictactoe function: To play tic tac toe.
-take_screenshot function: To take a screenshot.
-take_command function: To take the command and Convert the speech to text.
+Speak function: To speak the text (Text to speak).
+Sp function: To speak the text and also print the text.
+Ticktacktoe function: To play tic-tac-toe.
+Take_screenshot function: To take a screenshot.
+Take_command function: To take the command and Convert the speech to text.
 NewsFromBBC function: To get the news from BBC.
-text2speech function: To convert the text to speech from the clipboard.
+Text2speech function: To convert the text to speech from the clipboard.
 Wish me function: To wish the user according to the time of the day.
-Pickcard function: To pick a card from the deck.
-Cpu function: To get the CPU usage.
+Pick card function: To pick a card from the deck.
+CPU function: To get the CPU usage.
 Ram function: To get the RAM usage.
 Battery function: To get the battery usage.
 Disk function: To get the disk usage.
 Give joke functions: To give a joke.
-Give Ip: To get the IP address.
+Give IP: To get the IP address.
 Generate_password function: To generate a password.
-send_email function: To send an email.
-query day function: To get the day of the week.
-query date function: To get the date.
-send whatsapp message function: To send a message on whatsapp.
-exit function: To exit the software.
-clear function: To clear the screen.
+Send_email function: To send an email.
+Query day function: To get the day of the week.
+Query date function: To get the date.
+Send WhatsApp message function: To send a message on WhatsApp.
+Exit function: To exit the software.
+Clear function: To clear the screen.
 Greeting function: To greet the user according to the time of the day.
-clear_screen function: To clear the screen.
-open_chrome function: To open Google Chrome.
-username function: change the username.
+Clear_screen function: To clear the screen.
+Open_chrome function: To open Google Chrome.
+Username function: change the username.
