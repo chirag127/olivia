@@ -202,6 +202,8 @@ def pick_card():
 
     sp(pick_a_card())
 
+def contactmanager
+
 
 def tictactoe():
     size_of_board = 600
@@ -441,6 +443,7 @@ def ram():
     speak("RAM is at")
     speak(usage)
 
+def 
 
 def disk():
     usage = psutil.disk_usage('/')

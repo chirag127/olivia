@@ -10,6 +10,23 @@ Personal Assistants using Artificial intelligence, Machine Learning and Natural 
 - [Olivia-A-Personal-Virtual-Assistant](#olivia-a-personal-virtual-assistant)
   - [Abstract](#abstract)
   - [Table of Contents of the Sypnosis](#table-of-contents-of-the-sypnosis)
+  - [Visions](#visions)
+    - [VISION OF THE INSTITUTE](#vision-of-the-institute)
+    - [VISION OF THE DEPARTMENT](#vision-of-the-department)
+    - [MISSION OF THE DEPARTMENT](#mission-of-the-department)
+      - [PEO 1: Learning: Our graduates to be competent with sound knowledge in the field of](#peo-1-learning-our-graduates-to-be-competent-with-sound-knowledge-in-the-field-of)
+      - [PEO 2: Employable: To develop the ability among students to synthesize data and](#peo-2-employable-to-develop-the-ability-among-students-to-synthesize-data-and)
+      - [PEO 3: Innovative: To develop research oriented analytical ability among students to](#peo-3-innovative-to-develop-research-oriented-analytical-ability-among-students-to)
+      - [PEO 4: Entrepreneur / Contribution: To develop excellent leadership quality among](#peo-4-entrepreneur--contribution-to-develop-excellent-leadership-quality-among)
+  - [PROGRAM OUTCOMES (POs)](#program-outcomes-pos)
+    - [PO1: Engineering knowledge](#po1-engineering-knowledge)
+    - [PO2: Problem analysis](#po2-problem-analysis)
+    - [PO3: Design/development of solutions](#po3-designdevelopment-of-solutions)
+    - [PO4: Conduct investigations of complex problems](#po4-conduct-investigations-of-complex-problems)
+    - [PO5: Modern tool usage](#po5-modern-tool-usage)
+    - [PO6: The engineer and society](#po6-the-engineer-and-society)
+    - [PO7: Environment and sustainability](#po7-environment-and-sustainability)
+    - [PO8: Ethics and responsibilities](#po8-ethics-and-responsibilities)
   - [Features](#features)
     - [Assistant skills](#assistant-skills)
     - [In progress features](#in-progress-features)
@@ -24,6 +41,93 @@ Personal Assistants using Artificial intelligence, Machine Learning and Natural 
   - [Consecuences of background noise](#consecuences-of-background-noise)
   - [User Manual](#user-manual)
   - [User defined functions](#user-defined-functions)
+
+## Visions
+
+### VISION OF THE INSTITUTE
+
+To continually develop excellent professionals capable of providing sustainable solutions
+to challenging problems in their fields and prove responsible global citizens.
+MISSION OF THE INSTITUTE
+We wish to serve the nation by becoming a reputed deemed university for providing
+value based professional education.
+
+### VISION OF THE DEPARTMENT
+
+To be recognized globally for delivering high quality education in the ever-changing
+field of computer science & engineering, both of value & relevance to the communities
+we serve.
+
+### MISSION OF THE DEPARTMENT
+
+1. To provide quality education in both the theoretical and applied foundations of Computer
+   Science and train students to effectively apply this education to solve real world
+   problems.
+2. To amplify their potential for lifelong high-quality careers and give them a competitive
+   advantage in the challenging global work environment.
+   PROGRAM EDUCATIONAL OUTCOMES (PEOs)
+
+#### PEO 1: Learning: Our graduates to be competent with sound knowledge in the field of
+
+Computer Science & Engineering.
+
+#### PEO 2: Employable: To develop the ability among students to synthesize data and
+
+technical concepts for application to software product design for successful
+careers that meet the needs of Indian and multinational companies.
+
+#### PEO 3: Innovative: To develop research oriented analytical ability among students to
+
+prepare them for making technical contributions to the society.
+
+#### PEO 4: Entrepreneur / Contribution: To develop excellent leadership quality among
+
+students which they can use at different levels according to their experience and
+contribute for progress and development in the society.
+
+## PROGRAM OUTCOMES (POs)
+
+Engineering Graduates will be able to:
+
+### PO1: Engineering knowledge
+
+Apply the knowledge of mathematics, science,engineering fundamentals, and an engineering specialization to the solution of
+complex engineering problems.
+
+### PO2: Problem analysis
+
+Identify, formulate, review research literature, andanalyze complex engineering problems reaching substantiated conclusions using first
+principles of mathematics, natural sciences, and engineering sciences.
+
+### PO3: Design/development of solutions
+
+Design solutions for complex engineering problems and design system components or processes that meet the
+specified needs with appropriate consideration for the public health and safety, and
+the cultural, societal, and environmental considerations.
+
+### PO4: Conduct investigations of complex problems
+
+Use research-based knowledge and research methods including design of experiments, analysis and
+interpretation of data, and synthesis of the information to provide valid conclusions.
+
+### PO5: Modern tool usage
+
+Create, select, and apply appropriate techniques,resources, a n d modern engineering and IT tools including prediction and modelling to
+complex engineering activities with an understanding of the limitations.
+
+### PO6: The engineer and society
+
+Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the
+consequent responsibilities relevant to the professional engineering practice.
+
+### PO7: Environment and sustainability
+
+Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the
+knowledge of, and need for sustainable development.
+
+### PO8: Ethics and responsibilities
+
+Demonstrate ethical principles in professional.
 
 ## Features
 
