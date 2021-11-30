@@ -206,28 +206,27 @@ The ability to employ latest computer languages and platforms in creating innova
 
 ## COURSE OUTCOMES (COs)
 
-Course Outcomes (CO) |Bloom’s Knowledge Level(KL)
-CO 1 Students acquire a ' real' working environment and get acquainted with the
-organization structure, business operations and administrative functions.
-K6
-CO 2
-Students develop hands-on experience in the student’s related field so that they can
-relate and reinforce what has been taught at the institute.
-K1, K2, K3
-CO 3
-Students acquire knowledge of cooperation and to develop synergetic collaboration
-between industry and the institute in promoting a knowledgeable society.
-K1, K6
-CO 4
-Students get a stage for the future recruitment by the potential employers and get
-awareness of the social, cultural, global and environmental responsibility as an
-engineer.
-K5, K6
-CO 5
-Students acquire presentation and demonstration skills to effectively communicate
-the progress of the work to peers and superiors using audio/video, software tools.
-K3
+| CO   | Course Outcomes                                                                                                                                                               | Bloom’s Knowledge Level(KL) |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
+| CO 1 | Students acquire a ' real' working environment and get acquainted with the organization structure, business operations and administrative functions.                          | K6                          |
+| CO 2 | Students develop hands-on experience in the student’s related field so that they can relate and reinforce what has been taught at the institute.                              | K1, K2, K3                  |
+| CO 3 | Students acquire knowledge of cooperation and to develop synergetic collaboration between industry and the institute in promoting a knowledgeable society.                    | K1, K6                      |
+| CO 4 | Students get a stage for the future recruitment by the potential employers and get awareness of the social, cultural, global and environmental responsibility as an engineer. | K5, K6                      |
+| CO 5 | Students acquire presentation and demonstration skills to effectively communicate the progress of the work to peers and superiors using audio/video, software tools.          | K3                          |
 
+
+
+| CO     | PSO1 | PSO2 |
+| ------ | ---- | ---- |
+| C209.1 | 3    | 3    |
+| C209.2 | 3    | 3    |
+| C209.3 | 3    | 3    |
+| C209.4 | 3    | 3    |
+| C209.5 | 3    | 3    |
+| C209   | 3    | 3    |
+
+CO PO1 PO2 PO3 PO4 PO5 PO6 PO7 PO8 PO9 PO10 PO11 PO12
+one
 ## Features
 
 1. Fully customizable
