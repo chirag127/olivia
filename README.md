@@ -172,8 +172,7 @@ The ability to employ the latest computer languages and platforms in creating in
 
 ## Abstract
 
-Personal Assistants Virtual Assistant that reinvent a new way for individuals to interact with computers. A Personal Virtual Assistant allows a user to simply ask questions in the same manner that they would address a human, and are even capable of doing some basic tasks like opening apps, reading out news, taking notes, Playing video and pausing and play them etc., with just a voice command.
-Personal Assistants using Artificial intelligence, Machine Learning and Natural Language Processing in Text to speech and speech to Text in speech recognition.
+Personal Assistants Virtual Assistant that reinvent a new way for individuals to interact with computers. A Personal Virtual Assistant allows a user to simply ask questions in the same manner that they would address a human, and are even capable of doing some basic tasks like opening apps, reading out news, taking notes, Playing video and pausing and play them etc., with just a voice command. Personal Assistants using Artificial intelligence, Machine Learning and Natural Language Processing in Text to speech and speech to Text in speech recognition. The Artificial Intelligence, Machine Learning and The Natural Language Processing is used to understand the user’s text and convert it into voice.
 
 ## Table of Contents of the Synopsis
 

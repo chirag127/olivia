@@ -171,17 +171,18 @@ def text2speech():
 def wishMe():
     hour = int(datetime.datetime.now().hour)
     if hour >= 0 and hour < 12:
-        speak("Good Morning!")
+        return "Good Morning"
         # if time is between 0 and 12 then say good morning
 
     elif hour >= 12 and hour < 18:  # if time is between 12 and 18 then say good afternoon
-        speak("Good Afternoon!")
+        return "Good Afternoon"
 
     else:  # if time is between 18 and 24 then say good evening
-        speak("Good Evening!")
+
+        return "Good Evening"
 
     # tell the user how may i help you
-    speak("I am olivia Sir. Please tell me how may I help you")
+    return "I am olivia Sir. Please tell me how may I help you"
 
 # It will take microphone input from the user and return string output
 
@@ -202,7 +203,29 @@ def pick_card():
 
     sp(pick_a_card())
 
-def contactmanager
+
+def contactmanager():
+
+    import tkinter as tk
+    import tkinter.messagebox as tkMessageBox
+    import tkinter.simpledialog as tkSimpleDialog
+
+    root = tk.Tk()
+    root.wm_title("Contact Manager")
+
+    # create a toplevel menu
+    menubar = tk.Menu(root)
+
+    # create a pulldown menu, and add it to the menu bar
+    filemenu = tk.Menu(menubar, tearoff=0)
+    filemenu.add_command(label="Open", command=donothing)
+    filemenu.add_command(label="Save", command=donothing)
+    filemenu.add_separator()
+    filemenu.add_command(label="Exit", command=root.quit)
+    menubar.add_cascade(label="File", menu=filemenu)
+    
+
+
 
 
 def tictactoe():
@@ -443,7 +466,6 @@ def ram():
     speak("RAM is at")
     speak(usage)
 
-def 
 
 def disk():
     usage = psutil.disk_usage('/')
@@ -688,7 +710,26 @@ def username():
 
 if __name__ == "__main__":
 
-    # wishMe()
+
+    print("""                                                                    
+    ,----..                                                         
+   /   /   \    ,--,                                                
+  /   .     : ,--.'|     ,--,            ,--,                       
+ .   /   ;.  \|  | :   ,--.'|          ,--.'|                       
+.   ;   /  ` ;:  : '   |  |,      .---.|  |,                        
+;   |  ; \ ; ||  ' |   `--'_    /.  ./|`--'_      ,--.--.           
+|   :  | ; | ''  | |   ,' ,'| .-' . ' |,' ,'|    /       \          
+.   |  ' ' ' :|  | :   '  | |/___/ \: |'  | |   .--.  .-. |         
+'   ;  \; /  |'  : |__ |  | :.   \  ' .|  | :    \__\/: . .         
+ \   \  ',  / |  | '.'|'  : |_\   \   ''  : |__  ," .--.; |         
+  ;   :    /  ;  :    ;|  | '.'\   \   |  | '.'|/  /  ,.  |         
+   \   \ .'   |  ,   / ;  :    ;\   \ |;  :    ;  :   .'   \        
+    `---`      ---`-'  |  ,   /  '---" |  ,   /|  ,     .-./        
+                        ---`-'          ---`-'  `--`---'            
+""")
+
+    print(wishMe())
+
 
     running = True
 
