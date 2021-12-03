@@ -20,6 +20,7 @@ Personal Assistants Virtual Assistant that reinvent a new way for individuals to
   - [Consequences of background noise](#consequences-of-background-noise)
   - [User Manual](#user-manual)
   - [User defined functions](#user-defined-functions)
+  - [Application of the software](#application-of-the-software)
 
 ## Features
 
@@ -469,3 +470,11 @@ Greeting function: To greet the user according to the time of the day.
 Clear_screen function: To clear the screen.
 Open_chrome function: To open Google Chrome.
 Username function: change the username.
+
+## Application of the software
+
+1. The main task of a voice assistant is to minimize the use of input devices like keyboard, mouse, touch pens, etc. Thiswill reduce both the hardware cost and space taken by it.
+2. The software is designed to be very useful for people with visual disabilities.
+3. The software is designed to be very useful for people with physical disabilities like hand movements, hand-eye coordination, hand loss, etc.
+4. The software is designed to be very useful for people with speech disabilities like hearing loss too.
+5. The software is designed to be very useful for people with cognitive disabilities like autism, autism spectrum disorder, autism spectrum disorder, etc.
