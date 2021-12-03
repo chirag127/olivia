@@ -1,10 +1,217 @@
 # Olivia-A-Personal-Virtual-Assistant
 
+## Declaration
+
+This is to certify that Mini Project Entitled “CHATBOT IN PYTHON” which is submitted in
+partial fulfillment of the requirement for the award of degree Bachelor of Technology (B. Tech) in Computer Science and
+Engineering to R.K.G.I.T, Ghaziabad, Dr. A.P.J. Abdul Kalam Technical University, Lucknow
+comprises only original work and studies carried out by students himself. The matter embodied
+in this synopsis has not been submitted for the award of any other degree.
+
+### Date
+
+### Approved By
+
+&nbsp;
+
+#### Signature of Mini-Project Coordinator
+
+Mrs. Sonam kumari
+(Assistant Professor)
+Mini-Project Coordinator(2nd Year)
+CSE Department
+Raj Kumar Goel Institute Of Technology, Ghaziabad
+
+### Countersign By
+
+&nbsp;
+
+#### Signature of HOD
+
+Dr. Sachi Gupta
+(Professor)
+HOD, CSE Department
+Raj Kumar Goel Institute Of Technology, Ghaziabad
+
+## VISION OF THE INSTITUTE
+
+To continually develop excellent professionals capable of providing sustainable solutions to challenging problems in their fields and prove responsible global citizens.
+
+## MISSION OF THE INSTITUTE
+
+We wish to serve the nation by becoming a reputed deemed university for providing
+value based professional education.
+
+## VISION OF THE DEPARTMENT
+
+To be recognized globally for delivering high quality education in the ever-changing
+field of computer science & engineering, both of value & relevance to the communities
+we serve.
+
+## MISSION OF THE DEPARTMENT
+
+1. To provide quality education in both the theoretical and applied foundations of Computer
+   Science and train students to effectively apply this education to solve real world
+   problems.
+2. To amplify their potential for lifelong high-quality careers and give them a competitive
+   advantage in the challenging global work environment.
+
+## PROGRAM EDUCATIONAL OUTCOMES
+
+### PEO 1: Learning
+
+Our graduates to be competent with sound knowledge in the field of Computer Science & Engineering.
+
+### PEO 2: Employable
+
+To develop the ability among students to synthesize data and technical concepts for application to software product design for successful careers that meet the needs of Indian and multinational companies.
+
+### PEO 3: Innovative
+
+To develop research oriented analytical ability among students to prepare them for making technical contributions to the society.
+
+### PEO 4: Entrepreneur / Contribution
+
+To develop excellent leadership quality among students which they can use at different levels according to their experience and contribute for progress and development in the society.
+
+## PROGRAM OUTCOMES
+
+Engineering Graduates will be able to:
+
+### PO1: Engineering knowledge
+
+Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.
+
+### PO2: Problem analysis
+
+Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.
+
+### PO3: Design/development of solutions
+
+Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.
+
+### PO4: Conduct investigations of complex problems
+
+Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.
+
+### PO5: Modern tool usage
+
+Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modelling to complex engineering activities with an understanding of the limitations.
+
+### PO6: The engineer and society
+
+Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.
+
+### PO7: Environment and sustainability
+
+Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.
+
+### PO8: Ethics
+
+Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.
+
+### PO9: Individual and teamwork
+
+Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.
+
+### PO10: Communication
+
+Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective
+presentations, and give and receive clear instructions.
+
+### PO11: Project management and finance
+
+Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.
+
+### PO12: Life-long learning
+
+Recognize the need for and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological
+change.
+
+## PROGRAM SPECIFIC OUTCOMES
+
+### PSO1
+
+The ability to use standard practices and suitable programming environments to develop software solutions.
+
+### PSO2
+
+The ability to employ the latest computer languages and platforms in creating innovative career opportunities
+
+## COURSE OUTCOMES
+
+| CO   | Course Outcomes                                                                                                                                                               | Bloom’s Knowledge Level(KL) |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
+| CO 1 | Students acquire a 'real' working environment and get acquainted with the organization structure, business operations and administrative functions.                           | K6                          |
+| CO 2 | Students develop hands-on experience in the student’s related field so that they can relate and reinforce what has been taught at the institute.                              | K1, K2, K3                  |
+| CO 3 | Students acquire knowledge of cooperation and to develop synergetic collaboration between industry and the institute in promoting a knowledgeable society.                    | K1, K6                      |
+| CO 4 | Students get a stage for the future recruitment by the potential employers and get awareness of the social, cultural, global and environmental responsibility as an engineer. | K5, K6                      |
+| CO 5 | Students acquire presentation and demonstration skills to effectively communicate the progress of the work to peers and superiors using audio/video, software tools.          | K3                          |
+
+## CO-PO MAPPING
+
+| CO     | PO1 | PO2 | PO3 | PO4 | PO5 | PO6 | PO7 | PO8 | PO9 | PO10 | PO11 | PO12 |
+| ------ | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---- | ---- | ---- |
+| C209.1 | 3   | 2   | 2   | 2   | 3   | 3   |     |     | 3   | 2    | 2    | 3    |
+| C209.2 | 3   | 3   | 2   | 3   | 3   | 3   | 3   | 3   | 2   | 2    | 2    | 3    |
+| C209.3 | 3   | 3   | 2   | 2   | 3   | 3   |     | 3   | 2   | 2    | 2    | 3    |
+| C209.4 | 3   | 3   | 3   | 2   |     | 3   | 3   |     | 2   | 2    |      | 3    |
+| C209.5 | 3   | 2   | 2   |     | 3   |     |     | 3   | 3   |      | 2    |      |
+| C209   | 3   | 3   | 2   | 2   | 3   | 3   | 3   | 3   | 3   | 2    | 2    | 3    |
+
+## CO-PSO MAPPING
+
+| CO     | PSO1 | PSO2 |
+| ------ | ---- | ---- |
+| C209.1 | 3    | 3    |
+| C209.2 | 3    | 3    |
+| C209.3 | 3    | 3    |
+| C209.4 | 3    | 3    |
+| C209.5 | 3    | 3    |
+| C209   | 3    | 3    |
+
+## Abstract
+
 Personal Assistants Virtual Assistant that reinvent a new way for individuals to interact with computers. A Personal Virtual Assistant allows a user to simply ask questions in the same manner that they would address a human, and are even capable of doing some basic tasks like opening apps, reading out news, taking notes, Playing video and pausing and play them etc., with just a voice command. Personal Assistants using Artificial intelligence, Machine Learning and Natural Language Processing in Text to speech and speech to Text in speech recognition. The Artificial Intelligence, Machine Learning and The Natural Language Processing is used to understand the user’s text and convert it into voice.
 
 ## Table of Contents of the Synopsis
 
 - [Olivia-A-Personal-Virtual-Assistant](#olivia-a-personal-virtual-assistant)
+  - [Declaration](#declaration)
+    - [Date](#date)
+    - [Approved By](#approved-by)
+      - [Signature of Mini-Project Coordinator](#signature-of-mini-project-coordinator)
+    - [Countersign By](#countersign-by)
+      - [Signature of HOD](#signature-of-hod)
+  - [VISION OF THE INSTITUTE](#vision-of-the-institute)
+  - [MISSION OF THE INSTITUTE](#mission-of-the-institute)
+  - [VISION OF THE DEPARTMENT](#vision-of-the-department)
+  - [MISSION OF THE DEPARTMENT](#mission-of-the-department)
+  - [PROGRAM EDUCATIONAL OUTCOMES](#program-educational-outcomes)
+    - [PEO 1: Learning](#peo-1-learning)
+    - [PEO 2: Employable](#peo-2-employable)
+    - [PEO 3: Innovative](#peo-3-innovative)
+    - [PEO 4: Entrepreneur / Contribution](#peo-4-entrepreneur--contribution)
+  - [PROGRAM OUTCOMES](#program-outcomes)
+    - [PO1: Engineering knowledge](#po1-engineering-knowledge)
+    - [PO2: Problem analysis](#po2-problem-analysis)
+    - [PO3: Design/development of solutions](#po3-designdevelopment-of-solutions)
+    - [PO4: Conduct investigations of complex problems](#po4-conduct-investigations-of-complex-problems)
+    - [PO5: Modern tool usage](#po5-modern-tool-usage)
+    - [PO6: The engineer and society](#po6-the-engineer-and-society)
+    - [PO7: Environment and sustainability](#po7-environment-and-sustainability)
+    - [PO8: Ethics](#po8-ethics)
+    - [PO9: Individual and teamwork](#po9-individual-and-teamwork)
+    - [PO10: Communication](#po10-communication)
+    - [PO11: Project management and finance](#po11-project-management-and-finance)
+    - [PO12: Life-long learning](#po12-life-long-learning)
+  - [PROGRAM SPECIFIC OUTCOMES](#program-specific-outcomes)
+    - [PSO1](#pso1)
+    - [PSO2](#pso2)
+  - [COURSE OUTCOMES](#course-outcomes)
+  - [CO-PO MAPPING](#co-po-mapping)
+  - [CO-PSO MAPPING](#co-pso-mapping)
+  - [Abstract](#abstract)
   - [Table of Contents of the Synopsis](#table-of-contents-of-the-synopsis)
   - [Features](#features)
     - [Assistant skills](#assistant-skills)
