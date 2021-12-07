@@ -4152,114 +4152,117 @@ if __name__ == "__main__":
 
         else:
             if query != 'none':
-                sp("Sorry, I could not do that")
-                sp("Please try again")
+                webbrowser.open(
+                    f"https://www.google.com/search?q={query}&sourceid=olivia")
+                    
+            #     sp("Sorry, I could not do that")
+            #     sp("Please try again")
 
-            # print("else statement is executed")
-            # writing code for the queries or the commands that are not in the above list of commands. so we will ask the user
-            # if he or she wants to search the query in google or wikipedia or translate the query or open the query in browser
-            # or open the query in youtube or open the query in stackoverflow or open the query in github or open the query in
-            # facebook or open the query in instagram or open the query in twitter or open the query in linkedin or open the query in
-            # gmail or open the query in whatsapp or open the query in skype or open the query in snapchat or open the query in
-            # pinterest or open the query in tinder or open the query in reddit or open the query in quora or open the query in
-            # stackoverflow or open the query in amazon or open the query in flipkart or open the query in gmail or open the query in
-            # yahoo or open the query in google or open the query in wikipedia or open the query in youtube or open the query in
-            # stackoverflow or open the query in github or open the query in facebook or open the query in instagram or open the
-            # query in twitter or open the query in linkedin or open the query in gmail or open the query in whatsapp or open the
-            # query in skype or open the query in snapchat or open the query in pinterest or open the query in tinder or open the
-            # query in reddit or open the query in quora or open the query in stackoverflow or open the query in amazon or open the
-            # query in flipkart or open the query in gmail or open the query in yahoo or open the query in google or open the query in
-            # wikipedia or open the query in youtube or open the query in stackoverflow or open the query in github or open the query
-            # in facebook or open the query in instagram or open the query in twitter or open the query in linkedin or open the query
-            # in gmail or open the query in whatsapp or open the query in skype or open the query in snapchat or open the query in
-            # pinterest or open the query in tinder or open the query in reddit or open the query in quora or open the query in
-            # stackoverflow or open the query in amazon or open the query in flipkart or open the query in gmail or open the query
-            # in yahoo or open the query in google or open the query in wikipedia or open the query in youtube or open the query in
-            # stackoverflow or open the query in github or open the query in facebook or open the query in instagram or open the query
-            # in twitter or open the query in linkedin or open the query in gmail or open the query in whatsapp or open the query in
-            # skype or open the query in snapchat or open the query in pinterest or open the query in tinder or open the query in
-            if query != 'none':
-                speak(
-                    'sorry sir that is not assigned. do you want to search for ' + query + '?')
-                print('\n')
-                # asking the user to confirm the query or not
-                print('say yes or no. normal command will not work.')
-                print('\n')
+            # # print("else statement is executed")
+            # # writing code for the queries or the commands that are not in the above list of commands. so we will ask the user
+            # # if he or she wants to search the query in google or wikipedia or translate the query or open the query in browser
+            # # or open the query in youtube or open the query in stackoverflow or open the query in github or open the query in
+            # # facebook or open the query in instagram or open the query in twitter or open the query in linkedin or open the query in
+            # # gmail or open the query in whatsapp or open the query in skype or open the query in snapchat or open the query in
+            # # pinterest or open the query in tinder or open the query in reddit or open the query in quora or open the query in
+            # # stackoverflow or open the query in amazon or open the query in flipkart or open the query in gmail or open the query in
+            # # yahoo or open the query in google or open the query in wikipedia or open the query in youtube or open the query in
+            # # stackoverflow or open the query in github or open the query in facebook or open the query in instagram or open the
+            # # query in twitter or open the query in linkedin or open the query in gmail or open the query in whatsapp or open the
+            # # query in skype or open the query in snapchat or open the query in pinterest or open the query in tinder or open the
+            # # query in reddit or open the query in quora or open the query in stackoverflow or open the query in amazon or open the
+            # # query in flipkart or open the query in gmail or open the query in yahoo or open the query in google or open the query in
+            # # wikipedia or open the query in youtube or open the query in stackoverflow or open the query in github or open the query
+            # # in facebook or open the query in instagram or open the query in twitter or open the query in linkedin or open the query
+            # # in gmail or open the query in whatsapp or open the query in skype or open the query in snapchat or open the query in
+            # # pinterest or open the query in tinder or open the query in reddit or open the query in quora or open the query in
+            # # stackoverflow or open the query in amazon or open the query in flipkart or open the query in gmail or open the query
+            # # in yahoo or open the query in google or open the query in wikipedia or open the query in youtube or open the query in
+            # # stackoverflow or open the query in github or open the query in facebook or open the query in instagram or open the query
+            # # in twitter or open the query in linkedin or open the query in gmail or open the query in whatsapp or open the query in
+            # # skype or open the query in snapchat or open the query in pinterest or open the query in tinder or open the query in
+            # if query != 'none':
+            #     speak(
+            #         'sorry sir that is not assigned. do you want to search for ' + query + '?')
+            #     print('\n')
+            #     # asking the user to confirm the query or not
+            #     print('say yes or no. normal command will not work.')
+            #     print('\n')
 
-                confirmation = takeCommand().lower()  # taking the input from the user
-                # if the user says yes or yep or something similar then we will search the query in google
-                if 'yes' in confirmation or 'yep' in confirmation or 'sure' in confirmation or 'yeah' in confirmation or 'absolutely' in confirmation or 'fine' in confirmation or 'looks good' in confirmation or 'okay' in confirmation:
-                    print('\n')
-                    # asking the user to search in which website
-                    speak(
-                        'do you want me to search in google, wikipedia or youtube sir?')
-                    # taking the input from the user and converting it to lower case and storing it in answer4
-                    answer4 = takeCommand().lower()
+            #     confirmation = takeCommand().lower()  # taking the input from the user
+            #     # if the user says yes or yep or something similar then we will search the query in google
+            #     if 'yes' in confirmation or 'yep' in confirmation or 'sure' in confirmation or 'yeah' in confirmation or 'absolutely' in confirmation or 'fine' in confirmation or 'looks good' in confirmation or 'okay' in confirmation:
+            #         print('\n')
+            #         # asking the user to search in which website
+            #         speak(
+            #             'do you want me to search in google, wikipedia or youtube sir?')
+            #         # taking the input from the user and converting it to lower case and storing it in answer4
+            #         answer4 = takeCommand().lower()
 
-                    # if the user says google then we will search the query in google
-                    if 'google' in answer4:
-                        # telling the user that we are searching the query in google
-                        speak('searching for ' + query + ' in google')
-                        # opening the query in google
-                        webbrowser.open('www.google.com/search?gx&q=' + query)
-                    # if the user says wikipedia then we will search the query in wikipedia
-                    elif 'Wikipedia' in answer4:
-                        # asking the user to narrate or open the webpage
-                        speak('do you want me to narrate or open webpage sir?')
-                        # taking the input from the user and converting it to lower case and storing it in answer2
-                        answer2 = takeCommand().lower()
+            #         # if the user says google then we will search the query in google
+            #         if 'google' in answer4:
+            #             # telling the user that we are searching the query in google
+            #             speak('searching for ' + query + ' in google')
+            #             # opening the query in google
+            #             webbrowser.open('www.google.com/search?gx&q=' + query)
+            #         # if the user says wikipedia then we will search the query in wikipedia
+            #         elif 'Wikipedia' in answer4:
+            #             # asking the user to narrate or open the webpage
+            #             speak('do you want me to narrate or open webpage sir?')
+            #             # taking the input from the user and converting it to lower case and storing it in answer2
+            #             answer2 = takeCommand().lower()
 
-                        # if the user says narrate or direct then we will narrate the query
-                        if 'narrate' in answer2 or 'direct' in answer2:
-                            # getting the summary of the query
-                            results = wikipedia.summary(
-                                query, sentences=1, auto_suggest=False)
-                            # narrating the summary of the query
-                            speak('according to wikipedia ' + results)
-                        # if the user says web page or website or webpage then we will open the query in browser
-                        elif 'web page' in answer2 or 'website' in answer2 or 'webpage' in answer2:
-                            # getting the page of the query
-                            page1 = wikipedia.page(query, auto_suggest=False)
-                            print(page1)  # printing the page of the query
-                            page2 = page1.url  # getting the url of the query
-                            print(page2)  # printing the url of the query
-                            # telling the user that we are redirecting to the webpage
-                            speak('redirecting to webpage')
-                            webbrowser.get().open_new_tab(page2)  # opening the webpage of the query
-                            print(page2)  # printing the url of the query
-                    elif 'youtube' in answer4:  # if the user says youtube then we will search the query in youtube
-                        # telling the user that we are searching the query in youtube
-                        speak('searching for ' + query + 'in youtube')
-                        webbrowser.get().open_new_tab('https://www.youtube.com/results?search_query=' +
-                                                      query)  # opening the query in youtube
+            #             # if the user says narrate or direct then we will narrate the query
+            #             if 'narrate' in answer2 or 'direct' in answer2:
+            #                 # getting the summary of the query
+            #                 results = wikipedia.summary(
+            #                     query, sentences=1, auto_suggest=False)
+            #                 # narrating the summary of the query
+            #                 speak('according to wikipedia ' + results)
+            #             # if the user says web page or website or webpage then we will open the query in browser
+            #             elif 'web page' in answer2 or 'website' in answer2 or 'webpage' in answer2:
+            #                 # getting the page of the query
+            #                 page1 = wikipedia.page(query, auto_suggest=False)
+            #                 print(page1)  # printing the page of the query
+            #                 page2 = page1.url  # getting the url of the query
+            #                 print(page2)  # printing the url of the query
+            #                 # telling the user that we are redirecting to the webpage
+            #                 speak('redirecting to webpage')
+            #                 webbrowser.get().open_new_tab(page2)  # opening the webpage of the query
+            #                 print(page2)  # printing the url of the query
+            #         elif 'youtube' in answer4:  # if the user says youtube then we will search the query in youtube
+            #             # telling the user that we are searching the query in youtube
+            #             speak('searching for ' + query + 'in youtube')
+            #             webbrowser.get().open_new_tab('https://www.youtube.com/results?search_query=' +
+            #                                           query)  # opening the query in youtube
 
-                    elif 'stackoverflow' in answer4:  # if the user says stackoverflow then we will search the query in stackoverflow
-                        # telling the user that we are searching the query in stackoverflow
-                        speak('searching for ' + query + 'in stackoverflow')
-                        webbrowser.get().open_new_tab(
-                            'https://stackoverflow.com/search?q=' + query)  # opening the query in stackoverflow
+            #         elif 'stackoverflow' in answer4:  # if the user says stackoverflow then we will search the query in stackoverflow
+            #             # telling the user that we are searching the query in stackoverflow
+            #             speak('searching for ' + query + 'in stackoverflow')
+            #             webbrowser.get().open_new_tab(
+            #                 'https://stackoverflow.com/search?q=' + query)  # opening the query in stackoverflow
 
-                elif 'no' in query or 'not' in query or 'negative' in query:
+            #     elif 'no' in query or 'not' in query or 'negative' in query:
 
-                    # asking the user if he wants to get rick rolled
-                    speak('do you want to get rick rolled sir?')
-                    # taking the input from the user and converting it to lower case and storing it in answer5
-                    answer5 = takeCommand().lower()
+            #         # asking the user if he wants to get rick rolled
+            #         speak('do you want to get rick rolled sir?')
+            #         # taking the input from the user and converting it to lower case and storing it in answer5
+            #         answer5 = takeCommand().lower()
 
-                    # if the user says yes or yep or something similar then we will get rick rolled
+            #         # if the user says yes or yep or something similar then we will get rick rolled
 
-                    if 'yes' in answer5 or 'yep' in answer5 or 'sure' in answer5 or 'yeah' in answer5 or 'absolutely' in answer5 or 'fine' in answer5 or 'looks good' in answer5 or 'okay' in answer5:
-                        # telling the user that we are rick rolling
-                        speak('sir i am rick rolling you')
+            #         if 'yes' in answer5 or 'yep' in answer5 or 'sure' in answer5 or 'yeah' in answer5 or 'absolutely' in answer5 or 'fine' in answer5 or 'looks good' in answer5 or 'okay' in answer5:
+            #             # telling the user that we are rick rolling
+            #             speak('sir i am rick rolling you')
 
-                        # opening the rick roll video in the browser
-                        webbrowser.get().open_new_tab(
-                            'https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+            #             # opening the rick roll video in the browser
+            #             webbrowser.get().open_new_tab(
+            #                 'https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 
-                        speak('sir i am rick rolling you')
-                        # opening the rick roll video in the browser
+            #             speak('sir i am rick rolling you')
+            #             # opening the rick roll video in the browser
 
-                else:
+            #     else:
 
-                    # Asking user if he or she want olivia to do anything else.
-                    speak('ok. anything else sir?')
+            #         # Asking user if he or she want olivia to do anything else.
+            #         speak('ok. anything else sir?')
