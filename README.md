@@ -473,7 +473,7 @@ Username function: change the username.
 
 ## Application of the software
 
-1. The main task of a voice assistant is to minimize the use of input devices like keyboard, mouse, touch pens, etc. Thiswill reduce both the hardware cost and space taken by it.
+1. The main task of a voice assistant is to minimize the use of input devices like keyboard, mouse, touch pens, etc. This will reduce both the hardware cost and space taken by it.
 2. The software is designed to be very useful for people with visual disabilities.
 3. The software is designed to be very useful for people with physical disabilities like hand movements, hand-eye coordination, hand loss, etc.
 4. The software is designed to be very useful for people with speech disabilities like hearing loss too.
