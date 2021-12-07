@@ -351,23 +351,9 @@ Personal Assistants Virtual Assistant that reinvent a new way for individuals to
 
 ## Installation instruction
 
-1. Install Python.
-2. To start open CMD in the directory then run the code below!
+Directly download the executable file from the link below and run it.
+[downlaod link](h
 
-`pip install -r requirements.txt`
-
-1. Run the .py file in any IDE.
-
-### If You Get `No Module Named pyaudio` Error
-
-Open CMD in the directory then run the code below!
-
-```bash
-pip install pipwin
-pipwin install pyaudio
-```
-
-- Be sure to change the application paths on script.py otherwise it won't open Google Chrome and other Apps. (If you don't know how to change the application paths, please refer to the [Installation instruction](#installation-instruction) section.)
 
 ## How to use the application
 
@@ -383,33 +369,33 @@ pipwin install pyaudio
 
 ## Libraries used in the software
 
-Clipboard library: [Clipboard](https://pypi.python.org/pypi/clipboard)
-Ctypes library: [ctypes](https://pypi.python.org/pypi/ctypes)
-Date and time library: [datetime](https://pypi.python.org/pypi/datetime)
-JSON library: [JSON](https://pypi.python.org/pypi/json)
-Math library: [math](https://pypi.python.org/pypi/math)
-Numpy library: [numpy](https://pypi.python.org/pypi/numpy)
-Os library: [os](https://pypi.python.org/pypi/os)
-Psutil library: [psutil](https://pypi.python.org/pypi/psutil)
-Pyautogui library: [pyautogui](https://pypi.python.org/pypi/pyautogui)
-Pyttsx3 library: [pyttsx3](https://pypi.python.org/pypi/pyttsx3)
-Pywhatkit library: [pywhatkit](https://pypi.python.org/pypi/pywhatkit)
-Random library: [random](https://pypi.python.org/pypi/random)
-Regular expression library: [re](https://pypi.python.org/pypi/re)
-Requests library: [requests](https://pypi.python.org/pypi/requests)
-Shutil library: [shutil](https://pypi.python.org/pypi/shutil)
-Smtplib library: [smtplib](https://pypi.python.org/pypi/smtplib)
-Speech recognition library: [speech_recognition](https://pypi.python.org/pypi/speech_recognition)
-Subprocess library: [subprocess](https://pypi.python.org/pypi/subprocess)
-Sys library: [sys](https://pypi.python.org/pypi/sys)
-Time library: [time](https://pypi.python.org/pypi/time)
-Tkinter library: [tkinter](https://pypi.python.org/pypi/tkinter)
-Urlopen library: [urlopen](https://pypi.python.org/pypi/urlopen)
-Webbrowser library: [webbrowser](https://pypi.python.org/pypi/webbrowser)
-Wikipedia library: [Wikipedia](https://pypi.python.org/pypi/wikipedia)
-Win32com library: [win32com](https://pypi.python.org/pypi/win32com)
-Winshell library: [winshell](https://pypi.python.org/pypi/winshell)
-
+1. Clipboard library: [Clipboard](https://pypi.python.org/pypi/clipboard)
+1. Ctypes library: [ctypes](https://pypi.python.org/pypi/ctypes) 
+1. Date and time library: [datetime](https://pypi.python.org/pypi/datetime) 
+1. JSON library: [JSON](https://pypi.python.org/pypi/json) 
+1. Math library: [math](https://pypi.python.org/pypi/math) 
+1. Numpy library: [numpy](https://pypi.python.org/pypi/numpy) 
+1. Os library: [os](https://pypi.python.org/pypi/os) 
+1. Psutil library: [psutil](https://pypi.python.org/pypi/psutil) 
+1. Pyautogui library: [pyautogui](https://pypi.python.org/pypi/pyautogui) 
+1. Pyttsx3 library: [pyttsx3](https://pypi.python.org/pypi/pyttsx3) 
+1. Pywhatkit library: [pywhatkit](https://pypi.python.org/pypi/pywhatkit) 
+1. Random library: [random](https://pypi.python.org/pypi/random) 
+1. Regular expression library: [re](https://pypi.python.org/pypi/re) 
+1. Requests library: [requests](https://pypi.python.org/pypi/requests) 
+1. Shutil library: [shutil](https://pypi.python.org/pypi/shutil) 
+1. Smtplib library: [smtplib](https://pypi.python.org/pypi/smtplib) 
+1. Speech recognition library: [speech_recognition](https://pypi.python.org/pypi/speech_recognition) 
+1. Subprocess library: [subprocess](https://pypi.python.org/pypi/subprocess) 
+1. Sys library: [sys](https://pypi.python.org/pypi/sys) 
+1. Time library: [time](https://pypi.python.org/pypi/time) 
+1. Tkinter library: [tkinter](https://pypi.python.org/pypi/tkinter) 
+1. Urlopen library: [urlopen](https://pypi.python.org/pypi/urlopen) 
+1. Webbrowser library: [webbrowser](https://pypi.python.org/pypi/webbrowser) 
+1. Wikipedia library: [Wikipedia](https://pypi.python.org/pypi/wikipedia) 
+1. Win32com library: [win32com](https://pypi.python.org/pypi/win32com) 
+1. Winshell library: [winshell](https://pypi.python.org/pypi/winshell) 
+1. 
 ## Technologies used in the software
 
 1. Python 3.7.3
