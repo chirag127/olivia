@@ -1,11 +1,10 @@
 # Olivia-A-Personal-Virtual-Assistant
 
-Personal Assistants Virtual Assistant that reinvent a new way for individuals to interact with computers. A Personal Virtual Assistant allows a user to simply ask questions in the same manner that they would address a human, and are even capable of doing some basic tasks like opening apps, reading out news, taking notes, Playing video and pausing and play them etc., with just a voice command. Personal Assistants using Artificial intelligence, Machine Learning and Natural Language Processing in Text to speech and speech to Text in speech recognition. The Artificial Intelligence, Machine Learning and The Natural Language Processing is used to understand the user’s text and convert it into voice.
-
 ## Table of Contents of the Synopsis
 
 - [Olivia-A-Personal-Virtual-Assistant](#olivia-a-personal-virtual-assistant)
   - [Table of Contents of the Synopsis](#table-of-contents-of-the-synopsis)
+  - [Abstract](#abstract)
   - [Features](#features)
     - [Assistant skills](#assistant-skills)
     - [In progress features](#in-progress-features)
@@ -21,6 +20,10 @@ Personal Assistants Virtual Assistant that reinvent a new way for individuals to
   - [User Manual](#user-manual)
   - [User defined functions](#user-defined-functions)
   - [Application of the software](#application-of-the-software)
+
+## Abstract
+
+Personal Assistants Virtual Assistant that reinvent a new way for individuals to interact with computers. A Personal Virtual Assistant allows a user to simply ask questions in the same manner that they would address a human, and are even capable of doing some basic tasks like opening apps, reading out news, taking notes, Playing video and pausing and play them etc., with just a voice command. Personal Assistants using Artificial intelligence, Machine Learning and Natural Language Processing in Text to speech and speech to Text in speech recognition. The Artificial Intelligence, Machine Learning and The Natural Language Processing is used to understand the user’s text and convert it into voice. The Personal Assistant help to minimize the time spent on the task and make the task more efficient. It also minimize the use of input devices like keyboard, mouse, touch pens, etc. This will reduce both the hardware cost and space taken by it. The Personal Assistants Virtual Assistant is designed to be very useful for people who are busy and don’t have time to spend on their daily tasks. The Personal Assistants Virtual Assistant is a free software and it is open source. It is developed by Chirag Singhal. It is available for free download from [GitHub](https://github.com/chirag127/Olivia-A-Personal-Virtual-Assistant) . It is also very useful for people who are not able to use the keyboard or mouse such as people with cognitive disabilities, listening disabilities, physical disabilities, visual disabilities etc.
 
 ## Features
 
@@ -476,5 +479,5 @@ Username function: change the username.
 1. The main task of a voice assistant is to minimize the use of input devices like keyboard, mouse, touch pens, etc. This will reduce both the hardware cost and space taken by it.
 2. The software is designed to be very useful for people with visual disabilities.
 3. The software is designed to be very useful for people with physical disabilities like hand movements, hand-eye coordination, hand loss, etc.
-4. The software is designed to be very useful for people with speech disabilities like hearing loss too.
+4. The software is designed to be very useful for people with listening disabilities like hearing loss too.
 5. The software is designed to be very useful for people with cognitive disabilities like autism, autism spectrum disorder, autism spectrum disorder, etc.
