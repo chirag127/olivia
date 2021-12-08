@@ -1,3 +1,4 @@
+from platform import platform
 from googletrans import Translator
 from pyowm import OWM
 from tkinter import *
@@ -202,25 +203,25 @@ def pick_card():
     sp(pick_a_card())
 
 
-def contactmanager():
+# def contactmanager():
 
-    import tkinter as tk
-    import tkinter.messagebox as tkMessageBox
-    import tkinter.simpledialog as tkSimpleDialog
+#     import tkinter as tk
+#     import tkinter.messagebox as tkMessageBox
+#     import tkinter.simpledialog as tkSimpleDialog
 
-    root = tk.Tk()
-    root.wm_title("Contact Manager")
+#     root = tk.Tk()
+#     root.wm_title("Contact Manager")
 
-    # create a toplevel menu
-    menubar = tk.Menu(root)
+#     # create a toplevel menu
+#     menubar = tk.Menu(root)
 
-    # create a pulldown menu, and add it to the menu bar
-    filemenu = tk.Menu(menubar, tearoff=0)
-    filemenu.add_command(label="Open", command=donothing)
-    filemenu.add_command(label="Save", command=donothing)
-    filemenu.add_separator()
-    filemenu.add_command(label="Exit", command=root.quit)
-    menubar.add_cascade(label="File", menu=filemenu)
+#     # create a pulldown menu, and add it to the menu bar
+#     filemenu = tk.Menu(menubar, tearoff=0)
+#     filemenu.add_command(label="Open", command=donothing)
+#     filemenu.add_command(label="Save", command=donothing)
+#     filemenu.add_separator()
+#     filemenu.add_command(label="Exit", command=root.quit)
+#     menubar.add_cascade(label="File", menu=filemenu)
 
 
 def tictactoe():
@@ -1198,6 +1199,21 @@ if __name__ == "__main__":
 
                     exit()
 
+                # close the video by pressing control + w
+
+                # if the query contains 'close'
+
+                # if the query contains not this then check next elif statement
+
+                elif 'close' in query:
+
+                    pyautogui.hotkey('ctrl', 'w')
+
+                    break
+
+
+
+
                 elif 'pause' in query or 'pass' in query or 'stop' in query:
 
                     pyautogui.press('space')
@@ -1276,18 +1292,6 @@ if __name__ == "__main__":
 
                     pyautogui.hotkey('shift', ',')
 
-                # close the video by pressing control + w
-
-                # if the query contains 'close'
-
-                # if the query contains not this then check next elif statement
-
-                elif 'close' in query:
-
-                    pyautogui.hotkey('ctrl', 'w')
-
-                    break
-
                 # exit the video by pressing alt + f4
 
                 # if the query contains 'exit' or 'quit'
@@ -1306,7 +1310,7 @@ if __name__ == "__main__":
 
                 # if the query contains not this then check next elif statement
 
-                elif 'full screen' in query or 'full mode' in query:
+                elif 'full' in query and 'screen' in query or 'mode' in query:
 
                     pyautogui.press('f')
 
@@ -1326,7 +1330,8 @@ if __name__ == "__main__":
 
                 # if the query contains not this then check next elif statement
 
-                elif 'next tab' in query:
+                elif 'next' in query or 'tab' in query:
+
                     pyautogui.hotkey('ctrl', 'tab')
 
                 # go to the previous tab by pressing control + shift + tab
@@ -1335,25 +1340,24 @@ if __name__ == "__main__":
 
                 # if the query contains not this then check next elif statement
 
-                elif 'previous tab' in query:
+                elif 'previous' in query or 'tab' in query:
+
 
                     pyautogui.hotkey('ctrl', 'shift', 'tab')
 
                 # go to the history page by pressing control + h
 
-
-                # if the query contains 'history' or 'history page'
-
+                # if the query contains 'history' and 'page'
 
                 # if the query contains not this then check next elif statement
 
-                elif 'history' in query or 'history page' in query:
+                elif 'history' in query and 'page' in query:
 
                     pyautogui.hotkey('ctrl', 'h')
 
                 # go to the bookmark page by pressing control + shift + o
 
-                # if the query contains 'bookmark' or 'bookmark page'
+                # if the query contains 'bookmark' and 'page'
 
                 # if the query contains not this then check next elif statement
 
@@ -1364,7 +1368,7 @@ if __name__ == "__main__":
                 # show the bookmark mark bar by pressing control + shift + b
 
                 # if the query contains 'bookmark bar' or 'bookmark bar'
-                
+
                 # if the query contains not this then check next elif statement
 
                 elif 'bookmark bar' in query:
