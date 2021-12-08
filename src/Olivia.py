@@ -1,5 +1,3 @@
-
-
 from googletrans import Translator
 from pyowm import OWM
 from tkinter import *
@@ -223,9 +221,6 @@ def contactmanager():
     filemenu.add_separator()
     filemenu.add_command(label="Exit", command=root.quit)
     menubar.add_cascade(label="File", menu=filemenu)
-    
-
-
 
 
 def tictactoe():
@@ -710,7 +705,6 @@ def username():
 
 if __name__ == "__main__":
 
-
     print("""                                                                    
     ,----..                                                         
    /   /   \    ,--,                                                
@@ -729,7 +723,6 @@ if __name__ == "__main__":
 """)
 
     print(wishMe())
-
 
     running = True
 
@@ -4154,7 +4147,7 @@ if __name__ == "__main__":
             if query != 'none':
                 webbrowser.open(
                     f"https://www.google.com/search?q={query}&sourceid=olivia")
-                    
+
             #     sp("Sorry, I could not do that")
             #     sp("Please try again")
 
