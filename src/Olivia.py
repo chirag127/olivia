@@ -1187,81 +1187,79 @@ if __name__ == "__main__":
             pywhatkit.playonyt(song_name)
 
             while True:
+
                 query = takeCommand().lower()
 
                 # pause the video if 'pause' is in query
 
-                if 'pause' in query or 'pass' in query or 'stop' in query:
+                if query == 'bye' or query == 'goodbye' or query == 'bye bye':
+
+                    sp("Bye Sir")
+
+                    exit()
+
+                elif 'pause' in query or 'pass' in query or 'stop' in query:
 
                     pyautogui.press('space')
 
-                # resume the video if 'resume' is in query
+                # resume the video
 
-                elif 'resume' in query or 'continue' in query:
+                # if 'resume' is in query or 'continue' is in query or 'play' is in query
 
-                    pyautogui.press('space')
-
-                # skip the video if 'skip' is in query
-
-                elif 'skip' in query:
+                elif 'resume' in query or 'continue' in query or 'play' in query:
 
                     pyautogui.press('space')
 
                 # go the next tab if 'next' is in query and 'tab' is in query
+
                 # go next video if 'next' is in query.
 
-                elif 'next' in query:
+                elif 'next' in query or 'skip' in query:
 
-                    # if 'tabs' is in query then go to the next tab by pressing control + tab
-
-                    if 'tab' in query:
-
-                        pyautogui.hotkey('ctrl', 'tab')
-
-                    else:
-
-                        # if the query does not contain 'tab' then go to the next video by pressing space
-
-                        pyautogui.hotkey('shift', 'n')
-
-                # go the previous video by pressing alt + left arrow
-                # do this only if the query contains 'back' or previous video .
-                # if the query contains 'back' then go to the previous video by pressing alt + left arrow
-                # if the query contains 'previous' then go to the previous video by pressing alt + left arrow
-
-                elif 'previous' in query:
-
-                    pyautogui.press('altleft')
+                    pyautogui.hotkey('shift', 'n')
 
                 # reload the video by pressing control + r if the
+
                 # query contains 'reload' or 'refresh' or 'reload' or 'restart' or 'reboot'
+
                 # if the query contains not this then check next elif statement
+
                 elif 'reload' in query or 'refresh' in query or 'reload' in query or 'restart' in query or 'reboot' in query:
 
                     pyautogui.hotkey('ctrl', 'r')
 
                 # mute the video by pressing control + m if the query contains 'mute' or 'unmute' or 'mute' or 'unmute'
+
                 # if the query contains not this then check next elif statement
+
                 elif 'mute' in query or 'unmute' in query:
 
                     pyautogui.hotkey('ctrl', 'm')
 
                 # increase the volume by pressing control + up arrow
+
                 # if the query contains 'increase volume' or 'volume up' or 'louder'
+
                 # if the query contains not this then check next elif statement
+
                 elif 'increase volume' in query or 'volume up' in query or 'louder' in query:
 
                     pyautogui.hotkey('ctrl', 'up')
 
                 # decrease the volume by pressing control + down arrow
+
                 # if the query contains 'decrease volume' or 'volume down' or 'quieter'
+
                 # if the query contains not this then check next elif statement
+
                 elif 'decrease volume' in query or 'volume down' in query or 'quieter' in query:
 
                     pyautogui.hotkey('ctrl', 'down')
 
                 # increase the speed of the video by pressing control + up arrow
+
                 # if the query contains 'increase speed' or 'speed up' or 'faster'
+
                 # if the query contains not this then check next elif statement
 
                 elif 'increase speed' in query or 'speed up' in query or 'faster' in query:
@@ -1269,35 +1267,111 @@ if __name__ == "__main__":
                     pyautogui.hotkey('shift', '.')
 
                 # decrease the speed of the video by pressing control + down arrow
+
                 # if the query contains 'decrease speed' or 'speed down' or 'slower'
+
                 # if the query contains not this then check next elif statement
+
                 elif 'decrease speed' in query or 'speed down' in query or 'slower' in query:
 
                     pyautogui.hotkey('shift', ',')
 
                 # close the video by pressing control + w
+
                 # if the query contains 'close'
+
                 # if the query contains not this then check next elif statement
 
                 elif 'close' in query:
 
                     pyautogui.hotkey('ctrl', 'w')
+
                     break
 
                 # exit the video by pressing alt + f4
+
                 # if the query contains 'exit' or 'quit'
+
                 # if the query contains not this then check next elif statement
+
                 elif 'exit' in query or 'quit' in query:
 
                     pyautogui.hotkey('alt', 'f4')
+
                     break
 
                 # move to full screen mode by pressing f
+
                 # if the query contains 'full screen' or 'full mode' or 'full screen mode'
+
                 # if the query contains not this then check next elif statement
 
                 elif 'full screen' in query or 'full mode' in query:
+
                     pyautogui.press('f')
+
+                # go to download page
+
+                # if the query contains 'download' or 'downloads' or 'download page' or 'downloads page'
+
+                # if the query contains not this then check next elif statement
+
+                elif 'download' in query or 'downloads' in query or 'download page' in query or 'downloads page' in query:
+
+                    pyautogui.hotkey('ctrl', 'j')
+
+                # go to the next tab by pressing control + tab
+
+                # if the query contains 'next tab' or 'next tab'
+
+                # if the query contains not this then check next elif statement
+
+                elif 'next tab' in query:
+                    pyautogui.hotkey('ctrl', 'tab')
+
+                # go to the previous tab by pressing control + shift + tab
+
+                # if the query contains 'previous tab' or 'previous tab'
+
+                # if the query contains not this then check next elif statement
+
+                elif 'previous tab' in query:
+
+                    pyautogui.hotkey('ctrl', 'shift', 'tab')
+
+                # go to the history page by pressing control + h
+
+
+                # if the query contains 'history' or 'history page'
+
+
+                # if the query contains not this then check next elif statement
+
+                elif 'history' in query or 'history page' in query:
+
+                    pyautogui.hotkey('ctrl', 'h')
+
+                # go to the bookmark page by pressing control + shift + o
+
+                # if the query contains 'bookmark' or 'bookmark page'
+
+                # if the query contains not this then check next elif statement
+
+                elif 'bookmark manager' in query or 'bookmark page' in query:
+
+                    pyautogui.hotkey('ctrl', 'shift', 'o')
+
+                # show the bookmark mark bar by pressing control + shift + b
+
+                # if the query contains 'bookmark bar' or 'bookmark bar'
+                
+                # if the query contains not this then check next elif statement
+
+                elif 'bookmark bar' in query:
+
+                    pyautogui.hotkey('ctrl', 'shift', 'b')
+
+                # show the bookmark mark bar by pressing control + shift + b
 
         elif 'news' in query and 'latest' in query:
 
