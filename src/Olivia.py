@@ -1211,9 +1211,6 @@ if __name__ == "__main__":
 
                     break
 
-
-
-
                 elif 'pause' in query or 'pass' in query or 'stop' in query:
 
                     pyautogui.press('space')
@@ -1226,7 +1223,6 @@ if __name__ == "__main__":
 
                     pyautogui.press('space')
 
-                    
                 # go to the next tab by pressing control + tab
 
                 # if the query contains 'next tab' or 'next tab'
@@ -1244,7 +1240,6 @@ if __name__ == "__main__":
                 # if the query contains not this then check next elif statement
 
                 elif 'previous' in query and 'tab' in query:
-
 
                     pyautogui.hotkey('ctrl', 'shift', 'tab')
 
@@ -1345,8 +1340,6 @@ if __name__ == "__main__":
                 elif 'download' in query or 'downloads' in query or 'download page' in query or 'downloads page' in query:
 
                     pyautogui.hotkey('ctrl', 'j')
-
-
 
                 # go to the history page by pressing control + h
 
