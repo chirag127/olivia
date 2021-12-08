@@ -3,7 +3,7 @@
 from googletrans import Translator
 from pyowm import OWM
 from tkinter import *
-import clipboard
+import pyperclip
 import ctypes                      # The ctypes is used maniplulate the data types
 import datetime                    # The date and time module is for timezones
 import json
@@ -162,7 +162,7 @@ def sp(text):
 
 
 def text2speech():
-    text = clipboard.paste()
+    text = pyperclip.paste()
 
     print(text)
     speak(text)
@@ -612,7 +612,7 @@ def send_whatapp(to, content):
 
 
 def text2speech():
-    text = clipboard.paste()
+    text = pyperclip.paste()
 
     print(text)
     speak(text)
