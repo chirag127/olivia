@@ -1226,6 +1226,28 @@ if __name__ == "__main__":
 
                     pyautogui.press('space')
 
+                    
+                # go to the next tab by pressing control + tab
+
+                # if the query contains 'next tab' or 'next tab'
+
+                # if the query contains not this then check next elif statement
+
+                elif 'next' in query and 'tab' in query:
+
+                    pyautogui.hotkey('ctrl', 'tab')
+
+                # go to the previous tab by pressing control + shift + tab
+
+                # if the query contains 'previous tab' or 'previous tab'
+
+                # if the query contains not this then check next elif statement
+
+                elif 'previous' in query and 'tab' in query:
+
+
+                    pyautogui.hotkey('ctrl', 'shift', 'tab')
+
                 # go the next tab if 'next' is in query and 'tab' is in query
 
                 # go next video if 'next' is in query.
@@ -1324,26 +1346,7 @@ if __name__ == "__main__":
 
                     pyautogui.hotkey('ctrl', 'j')
 
-                # go to the next tab by pressing control + tab
 
-                # if the query contains 'next tab' or 'next tab'
-
-                # if the query contains not this then check next elif statement
-
-                elif 'next' in query or 'tab' in query:
-
-                    pyautogui.hotkey('ctrl', 'tab')
-
-                # go to the previous tab by pressing control + shift + tab
-
-                # if the query contains 'previous tab' or 'previous tab'
-
-                # if the query contains not this then check next elif statement
-
-                elif 'previous' in query or 'tab' in query:
-
-
-                    pyautogui.hotkey('ctrl', 'shift', 'tab')
 
                 # go to the history page by pressing control + h
 
