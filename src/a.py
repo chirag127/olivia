@@ -1,3 +1,3 @@
-from stwl import e_s_to_wl
+import stwl
 
-e_s_to_wl()
+stwl.e_s_to_wl()
