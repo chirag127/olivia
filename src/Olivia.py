@@ -115,12 +115,27 @@ def takeCommand():
 
         print(f"User said: {query}\n")
 
-    # if the user does not say anything then the program will listen again
+    # if the user does not say anything then the program will listen again 
+    except sr.UnknownValueError:
+
+        print("Google Speech Recognition could not understand audio")
+        print("Say that again please...")
+        return "None"
+
+    except sr.RequestError as e:
+        print("Could not request results from Google Speech Recognition service; {0}".format(e))
+        print("Please Check your internet connection")
+        return "None"
+
+    except sr.WaitTimeoutError:
+        print("Wait timeout exceeded")
+        print("Please Check your internet connection")
+        return "None"
 
     except Exception as e:
 
         # print the error to the console
-
+        
         print("Say that again please...")
 
         # return the function to takeCommand()
@@ -131,6 +146,9 @@ def takeCommand():
 
     return query
 
+def sp(text):
+    print(text)
+    speak(text)
 
 def NewsFromBBC():
     query_params = {
@@ -155,9 +173,6 @@ def NewsFromBBC():
         speak(results[i])
 
 
-def sp(text):
-    print(text)
-    speak(text)
 
 
 def text2speech():
