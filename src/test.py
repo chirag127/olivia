@@ -3,7 +3,6 @@ from googletrans import Translator
 import speech_recognition as sr
 import pyttsx3
 
-
 # reqiured engine for text to speech
 
 engine = pyttsx3.init('sapi5')
