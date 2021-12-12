@@ -6,23 +6,23 @@
   - [Table of Contents of the Synopsis](#table-of-contents-of-the-synopsis)
   - [Abstract](#abstract)
   - [Features](#features)
+  - [Requirements](#requirements)
+    - [Hardware requirements](#hardware-requirements)
+    - [Software requirements](#software-requirements)
+    - [Other requirements](#other-requirements)
+  - [Consequences of bad internet connection](#consequences-of-bad-internet-connection)
+  - [Consequences of background noise](#consequences-of-background-noise)
+  - [User Manual](#user-manual)
+  - [Application of the software](#application-of-the-software)
     - [Assistant skills](#assistant-skills)
-    - [In progress features](#in-progress-features)
   - [Installation instruction](#installation-instruction)
   - [How to use the application](#how-to-use-the-application)
   - [Precautions while using the software in the application](#precautions-while-using-the-software-in-the-application)
   - [Libraries used in the software](#libraries-used-in-the-software)
-  - [Technologies used in the software](#technologies-used-in-the-software)
-  - [Requirements](#requirements)
-  - [Consequences of bad internet connection](#consequences-of-bad-internet-connection)
-  - [Consequences of background noise](#consequences-of-background-noise)
-  - [User Manual](#user-manual)
-  - [User defined functions](#user-defined-functions)
-  - [Application of the software](#application-of-the-software)
 
 ## Abstract
 
-Personal Assistants Virtual Assistant that reinvent a new way for individuals to interact with computers. A Personal Virtual Assistant allows a user to simply ask questions in the same manner that they would address a human, and are even capable of doing some basic tasks like opening apps, reading out news, taking notes, Playing video and pausing and play them etc., with just a voice command. Personal Assistants using Artificial intelligence, Machine Learning and Natural Language Processing in Text to speech and speech to Text in speech recognition. The Artificial Intelligence, Machine Learning and The Natural Language Processing is used to understand the user’s text and convert it into voice. The Personal Assistant help to minimize the time spent on the task and make the task more efficient. It also minimizes the use of input devices like keyboard, mouse, touch pens, etc. This will reduce both the hardware cost and space taken by it. The Personal Assistants Virtual Assistant is designed to be very useful for people who are busy and don’t have time to spend on their daily tasks. The Personal Assistants Virtual Assistant is a free software, and it is open source. It is developed by Chirag Singhal. It is available for free download from [GitHub](https://github.com/chirag127/Olivia-A-Personal-Virtual-Assistant). Furthermore, it is also very useful for people who are not able to use the keyboard or mouse such as people with cognitive disabilities, listening disabilities, physical disabilities, visual disabilities etc.The Personal Assistant is designed especially for such people who want to interact with their machines and systems using voice.
+Personal Assistants Virtual Assistant that reinvent a new way for individuals to interact with computers. A Personal Virtual Assistant allows a user to simply ask questions in the same manner that they would address a human, and are even capable of doing some basic tasks like opening apps, reading out news, taking notes, Playing video and pausing and play them etc., with just a voice command. Personal Assistants using Artificial intelligence, Machine Learning and Natural Language Processing in Text to speech and speech to Text in speech recognition. The Artificial Intelligence, Machine Learning and The Natural Language Processing is used to understand the user’s text and convert it into voice. The Personal Assistant help to minimize the time spent on the task and make the task more efficient. It also minimizes the use of input devices like keyboard, mouse, touch pens, etc. This will reduce both the hardware cost and space taken by it. The Personal Assistants Virtual Assistant is designed to be very useful for people who are busy and don’t have time to spend on their daily tasks. The Personal Assistants Virtual Assistant is a free software, and it is open source. It is developed by Chirag Singhal. It is available for free download from [GitHub](https://github.com/chirag127/Olivia-A-Personal-Virtual-Assistant). Furthermore, it is also very useful for people who are not able to use the keyboard or mouse such as people with cognitive disabilities, listening disabilities, physical disabilities, visual disabilities etc. The Personal Assistant is designed especially for such people who want to interact with their machines and systems using voice.
 
 ## Features
 
@@ -54,6 +54,56 @@ Personal Assistants Virtual Assistant that reinvent a new way for individuals to
 26. Free to use
 27. Free to modify
 28. Free to redistribute
+
+## Requirements
+
+### Hardware requirements
+
+1. Computer and processor - 1.6 GHz or faster, 2-core
+2. Memory - 1 GB RAM
+3. Hard disk space - 10 GB
+4. Display - 1280 x 720 or higher
+
+### Software requirements
+
+1. Operating system - Windows 11, Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016
+
+### Other requirements
+
+1. Internet connection - Speed of at least 1 Mbps
+2. Ping - At most 100 ms
+3. Jitter - At most 10 ms
+4. Signal strength - At most -90 dBm
+5. Noise - Silent or very low Background noise
+
+## Consequences of bad internet connection
+
+1. Starting will take time.
+2. Recognizing will take time.
+3. The program may fail to connect to the server.
+4. The program may fail to Recognizing the spoke saying.
+
+## Consequences of background noise
+
+1. Background Noise may make the program fail to connect to the server.
+2. Background noise may make the program fail to Recognize the spoke command or query.
+
+## User Manual
+
+just click on the software icon in the taskbar to open the software (If you don't know how to open the software, please refer to the [Installation instruction](#installation-instruction) section.)
+
+## Application of the software
+
+1. The main task of a voice assistant is to minimize the use of input devices like keyboard, mouse, touch pens, etc. This will reduce both the hardware cost and space taken by it.
+2. The Olivia Personal Assistant is a voice assistant that can be used to perform tasks like playing music, playing games, playing videos, taking screenshots, sending emails, sending WhatsApp messages, etc.
+3. The Olivia saves the user time and energy by providing a variety of functions.
+4. The software is designed to be very useful for people with visual disabilities.
+5. The software is designed to be very useful for people with physical disabilities like hand movements, hand-eye coordination, hand loss, etc.
+6. The software is designed to be very useful for people with listening disabilities like hearing loss too.
+7. The software is designed to be very useful for people with cognitive disabilities like autism, autism spectrum disorder, autism spectrum disorder, etc.
+8. The software is designed to be very useful for people with speech disabilities like stuttering, speech impairment, etc.
+9. The software is designed to be very useful for people with reading disabilities like dyslexia, etc.
+10. The software is designed to be very useful for people with language disabilities like aphasia, bilingualism, etc.
 
 ### Assistant skills
 
@@ -97,8 +147,7 @@ Personal Assistants Virtual Assistant that reinvent a new way for individuals to
     9. Open task manager just say "launch task manager" or "launch task manager now".
     10. Launch paint just say "launch paint" or "launch paint now".
 
-29. Play a song by saying "play a song" or "play song" or "play a song now".
-30. Play any a video on a specific topic by saying "play a video on (the name of the topic)" or "play (the name of the topic) video" or "play (the name of the topic)". Example are as following:
+29. Play any a video on a specific topic by saying "play a video on (the name of the topic)" or "play (the name of the topic) video" or "play (the name of the topic)". Example are as following:
 
     1. Play a video on cricket just say "play a video on cricket" or "play cricket video" or "play cricket".
     2. Play a video on football just say "play a video on football" or "play football video" or "play football".
@@ -109,7 +158,7 @@ Personal Assistants Virtual Assistant that reinvent a new way for individuals to
     7. Start a video on how to make a cake just say "play a video on how to make a cake" or "play how to make a cake video" or "play how to make a cake".
     8. Play a video on python just say "play a video on python" or "play python video" or "play python".
 
-31. Play any song of your choice by saying "play (name of the song(maybe with the name of the singer if there are two or more song by the same name there will be no confusion.)) Examples are as follows:
+30. Play any song of your choice by saying "play (name of the song(maybe with the name of the singer if there are two or more song by the same name there will be no confusion.)) Examples are as follows:
 
     1. Play lonely by Justin Bieber just say "play lonely by Justin Bieber" or "play the song lonely by Justin Bieber".
     2. Likewise, Play love yourself just say "play love yourself" or "play the song love yourself".
@@ -117,9 +166,9 @@ Personal Assistants Virtual Assistant that reinvent a new way for individuals to
     4. I hope you understand now.
     5. Play lonely by the Beatles just say "play lonely by the Beatles" or "play the song lonely by the Beatles".
 
-32. You can control the video by saying "pause", "play","volume up", "volume down", "next". Saying "pause" pauses the video in the web browser, Saying "play" plays the video in
+31. You can control the video by saying "pause", "play","volume up", "volume down", "next". Saying "pause" pauses the video in the web browser, Saying "play" plays the video in
 
-33. Open any website just say "open (the name of the website)" or "open (the name of the website) now" or "open (the name of the website) now" e.g.
+32. Open any website just say "open (the name of the website)" or "open (the name of the website) now" or "open (the name of the website) now" e.g.
 
     1. Open the Amazon website by saying "open Amazon" or "open Amazon website".
     2. Furthermore, Open the Bing website by saying "open Bing" or "open Bing website".
@@ -127,70 +176,8 @@ Personal Assistants Virtual Assistant that reinvent a new way for individuals to
     4. Furthermore, Open the code wars website by saying "open code wars" or "open code wars website".
     5. Open the DuckDuckGo website by saying "open DuckDuckGo" or "open DuckDuckGo website".
     6. Open the Facebook website by saying "open Facebook" or "open Facebook website".
-    7. Likewise, Open the Flipkart website by saying "open Flipkart" or "open Flipkart website".
-    8. Open the freeCodeCamp website by saying "open freeCodeCamp" or "open freeCodeCamp website".
-    9. Open the GitHub website by saying "open GitHub" or "open GitHub website".
-    10. Likewise, Open the Gmail website by saying "open Gmail" or "open Gmail website".
-    11. Open the Google Maps website by saying "open Google Maps" or "open Google Maps website".
-    12. Open the Google website by saying "open google" or "open google website".
-    13. Likewise, Open the hacker earth website by saying "open hacker earth" or "open hacker earth website".
-    14. Open the hacker rank website by saying "open hacker rank" or "open hacker rank website".
-    15. Open the Instagram website by saying "open Instagram" or "open Instagram website".
-    16. Likewise, Open the gaggle website by saying "open gaggle" or "open gaggle website".
-    17. Open the LinkedIn website by saying "open LinkedIn" or "open LinkedIn website".
-    18. Open the outlook express website by saying "open outlook express" or "open outlook express website".
-    19. Likewise, Open the Outlook web app website by saying "open Outlook web app" or "open Outlook web app website"
-    20. Open the Outlook website by saying "open outlook" or "open Outlook website".
-    21. Open the Pinterest website by saying "open Pinterest" or "open Pinterest website".
-    22. Open the Quora website by saying "open Quora" or "open Quora website".
-    23. Likewise, Open the Reddit website by saying "open Reddit" or "open Reddit website".
-    24. Open the Skype website by saying "open skype" or "open skype website".
-    25. Open the snap deal website by saying "open snap deal" or "open snap deal website".
-    26. Likewise, Open the stack overflow website by saying "open stack overflow" or "open stack overflow website".
-    27. Open the telegram website by saying "open telegram" or "open telegram website".
-    28. Open the tinder website by saying "open tinder" or "open tinder website".
-    29. Likewise, Open the Twitter website by saying "open twitter" or "open Twitter website".
-    30. Open the WhatsApp website by saying "open WhatsApp" or "open WhatsApp website".
-    31. Open the yahoo website by saying "open yahoo" or "open yahoo website".
-    32. Likewise, Open the YouTube website by saying "open YouTube" or "open YouTube website".
-    33. Open the Zomato website by saying "open Zomato" or "open Zomato website".
-    34. Open the Wikipedia website by saying "open Wikipedia" or "open Wikipedia website".
-    35. Likewise, Open the YouTube Music website by saying "open YouTube Music" or "open YouTube Music website".
-    36. Open the Tmall website by saying "open Tmall" or "open Tmall website".
-    37. Open the Amazon Prime website by saying "open Amazon Prime" or "open Amazon Prime website".
-    38. Likewise, Open the Baidu website by saying "open Baidu" or "open Baidu website".
-    39. Open The New York Times website by saying "open The New York Times" or "open The New York Times website".
-    40. Open the Facebook Messenger website by saying "open Facebook Messenger" or "open Facebook Messenger website".
-    41. Likewise, Open the Google Drive website by saying "open Google Drive" or "open Google Drive website".
-    42. Open the Google Photos website by saying "open Google Photos" or "open Google Photos website".
-    43. Open the Google Photos Sync website by saying "open Google Photos Sync" or "open Google Photos Sync website".
-    44. Likewise, Open the QQ website by saying "open QQ" or "open QQ website".
-    45. Open the Shutterstock website by saying "open Shutterstock" or "open Shutterstock website".
-    46. Open the TaoBao website by saying "open TaoBao" or "open TaoBao website".
-    47. Likewise, Open 360.cn website by saying "open 360.cn" or "open 360.cn website".
-    48. Open jingdong.com website by saying "open jingdong.com" or "open jingdong.com website".
-    49. Open the Amazon.in website by saying "open Amazon.in" or "open Amazon.in website".
-    50. Likewise, Open the Alibaba website by saying "open Alibaba" or "open Alibaba website".
-    51. Open the Alibaba.com website by saying "open Alibaba.com" or "open Alibaba.com website".
-    52. Open the zhihu.com website by saying "open zhihu.com" or "open zhihu.com website".
-    53. Likewise, Open the weibo.com website by saying "open weibo.com" or "open weibo.com website".
-    54. Open the Douban.com website by saying "open Douban.com" or "open Douban.com website".
-    55. Open the Amazon.co.uk website by saying "open Amazon.co.uk" or "open Amazon.co.uk website".
-    56. Likewise, Open the zoom website by saying "open zoom" or "open zoom website".
-    57. Open the Google.com.hk website by saying "open Google.com.hk" or "open Google.com.hk website".
-    58. Open the sina website by saying "open sina" or "open sina website".
-    59. Likewise, Open Xinhua website by saying "open xinhua" or "open xinhua website".
-    60. Open the Amazon.de website by saying "open Amazon.de" or "open Amazon.de website".
-    61. Open the Amazon.fr website by saying "open Amazon.fr" or "open Amazon.fr website".
-    62. Likewise, Open the Amazon.es website by saying "open Amazon.es" or "open Amazon.es website".
-    63. Open the Amazon.it website by saying "open Amazon.it" or "open Amazon.it website".
-    64. Open the Amazon.co.jp website by saying "open Amazon.co.jp" or "open Amazon.co.jp website".
-    65. Likewise, Open the Amazon.ca website by saying "open Amazon.ca" or "open Amazon.ca website".
-    66. Open the Amazon.com.mx website by saying "open Amazon.com.mx" or "open Amazon.com.mx website".
-    67. Open the Amazon.com.br website by saying "open Amazon.com.br" or "open Amazon.com.br website".
-    68. Likewise, Open the Amazon.com.au website by saying "open Amazon.com.au" or "open Amazon.com.au website".
 
-34. Search many websites like YouTube, Google (with Google Images, Google News etc.), Bing, Yahoo, DuckDuckGo, Wikipedia, Wiktionary, and many more just by saying "search (the name of the website) on (the thing you want to search on the website.). For example,
+33. Search many websites like YouTube, Google (with Google Images, Google News etc.), Bing, Yahoo, DuckDuckGo, Wikipedia, Wiktionary, and many more just by saying "search (the name of the website) on (the thing you want to search on the website.). For example,
 
     1. If you want to search for "Python" on YouTube, you can say "search Python on YouTube".
     2. If you want to search for "Python" on Google, you can say "search Python on Google".
@@ -199,7 +186,7 @@ Personal Assistants Virtual Assistant that reinvent a new way for individuals to
     5. If you want to search for "Python" on Google Maps, you can say "search Python on Google Maps".
     6. If you want to search for "Python" on Google Scholar, you can say "search Python on Google Scholar".
 
-35. Translate the English to many other languages just saying "translate (the sentence you want to translate) to (the language to which you want to translate the sentence)" example "translate hello to Spanish" will translate the English sentence "hello" to Spanish. The supported languages are :
+34. Translate the English to many other languages just saying "translate (the sentence you want to translate) to (the language to which you want to translate the sentence)" example "translate hello to Spanish" will translate the English sentence "hello" to Spanish. The supported languages are :
 
     1. Afrikaans
     2. Albanian
@@ -307,7 +294,7 @@ Personal Assistants Virtual Assistant that reinvent a new way for individuals to
     104. Yoruba
     105. Zulu
 
-36. Answer to many questions like :-
+35. Answer to many questions like :-
 
     1. What is your name?
     2. What is your age?
@@ -327,26 +314,12 @@ Personal Assistants Virtual Assistant that reinvent a new way for individuals to
     16. Who is your favorite actor?
     17. And many more...
 
-37. Type by saying "start typing" and then start typing by the instruction given.
-38. Press many key by saying "press (the key you want to press) key" example "press space key" will press the space key on your keyboard or "press enter key" will press the enter key on your keyboard, "press tab key" will press the tab key on your keyboard and so on.
+36. Type by saying "start typing" and then start typing by the instruction given.
+37. Press many key by saying "press (the key you want to press) key" example "press space key" will press the space key on your keyboard or "press enter key" will press the enter key on your keyboard, "press tab key" will press the tab key on your keyboard and so on.
 
-39. Exit the application just by saying "exit the application" or "exit" or "goodbye" or "bye".
-40. If the Virtual assistant Don't know the answer to any of your questions, Olivia will ask you if he or she wants to search the query in google or YouTube or Wikipedia. If you say yes, then it will ask in which of these websites you want to search the query like if you YouTube it will search the query on YouTube. In last, If you say no, then it will do nothing and just say 'ok. Anything else sir?
-41. Send WhatsApp messages.
-
-### In progress features
-
-1. Tell you your operating system by saying "my operating system" or "my operating system is" or "my operating system is" or "my operating system is".
-2. Give you a random fact by saying "fact" or "tell me a fact" or "tell me a random fact".
-3. Give a list of all the commands by saying "commands" or "help" or "what are the commands".
-4. Tell you the temperature by saying "temperature" or "what is the temperature" or "tell me the temperature" or "tell me the weather forecast".
-5. Tell you the current location by saying "location" or "what is the location" or "tell me the location" or "tell me the weather forecast".
-6. Turn on and off Wi-Fi.
-7. Stop music.
-8. Change color.
-9. Do calculation.
-
-> Please tell me the features you want me to add by creating an issue.
+38. Exit the application just by saying "exit the application" or "exit" or "goodbye" or "bye".
+39. If the Virtual assistant Don't know the answer to any of your questions, Olivia will ask you if he or she wants to search the query in google or YouTube or Wikipedia. If you say yes, then it will ask in which of these websites you want to search the query like if you YouTube it will search the query on YouTube. In last, If you say no, then it will do nothing and just say 'ok. Anything else sir?
+40. Send WhatsApp messages.
 
 ## Installation instruction
 
@@ -355,118 +328,38 @@ Directly download the executable file from the link below and run it.
 
 ## How to use the application
 
-1. The recognition can be delayed if there is some background noise in the environment.
-2. Just open the software.
-3. Here the software is the best for some with disability.
+1. Just open the software by double-clicking on the executable file.
+2. Then just give the command or query to the software.
 
 ## Precautions while using the software in the application
 
-1. Do not use the software in the application if you are not in the comfort of your own.
-2. Please do not forget to say "close" after playing a video on YouTube.
-3. Do not use it for bad purposes.
+1. Please do not forget to say "close" after playing a video on YouTube.
 
 ## Libraries used in the software
 
-Clipboard library: [Clipboard](https://pypi.python.org/pypi/clipboard)
-Ctypes library: [ctypes](https://pypi.python.org/pypi/ctypes)
-Date and time library: [datetime](https://pypi.python.org/pypi/datetime)
-JSON library: [JSON](https://pypi.python.org/pypi/json)
-Math library: [math](https://pypi.python.org/pypi/math)
-Numpy library: [numpy](https://pypi.python.org/pypi/numpy)
-Os library: [os](https://pypi.python.org/pypi/os)
-Psutil library: [psutil](https://pypi.python.org/pypi/psutil)
-Pyautogui library: [pyautogui](https://pypi.python.org/pypi/pyautogui)
-Pyttsx3 library: [pyttsx3](https://pypi.python.org/pypi/pyttsx3)
-Pywhatkit library: [pywhatkit](https://pypi.python.org/pypi/pywhatkit)
-Random library: [random](https://pypi.python.org/pypi/random)
-Regular expression library: [re](https://pypi.python.org/pypi/re)
-Requests library: [requests](https://pypi.python.org/pypi/requests)
-Shutil library: [shutil](https://pypi.python.org/pypi/shutil)
-Smtplib library: [smtplib](https://pypi.python.org/pypi/smtplib)
-Speech recognition library: [speech_recognition](https://pypi.python.org/pypi/speech_recognition)
-Subprocess library: [subprocess](https://pypi.python.org/pypi/subprocess)
-Sys library: [sys](https://pypi.python.org/pypi/sys)
-Time library: [time](https://pypi.python.org/pypi/time)
-Tkinter library: [tkinter](https://pypi.python.org/pypi/tkinter)
-Urlopen library: [urlopen](https://pypi.python.org/pypi/urlopen)
-Webbrowser library: [webbrowser](https://pypi.python.org/pypi/webbrowser)
-Wikipedia library: [Wikipedia](https://pypi.python.org/pypi/wikipedia)
-Win32com library: [win32com](https://pypi.python.org/pypi/win32com)
-Winshell library: [winshell](https://pypi.python.org/pypi/winshell)
-
-## Technologies used in the software
-
-1. Python 3.7.3
-2. Tkinter
-3. Speech Recognition
-4. Google Translate
-5. Pyautogui
-6. Pyttsx3
-
-## Requirements
-
-1. Good internet connections
-
-   - At least 1 Mbps
-   - ping should less than 100 ms
-   - jitter should be less.
-
-2. Silent background.
-
-## Consequences of bad internet connection
-
-1. Starting will take time.
-2. Recognizing will take time.
-3. The program may fail to connect to the server.
-4. The program may fail to Recognizing the spoke saying.
-
-## Consequences of background noise
-
-1. Background Noise may make the program fail to connect to the server.
-2. Background noise may make the program fail to Recognize the spoke command or query.
-
-## User Manual
-
-just click on the software icon in the taskbar to open the software (If you don't know how to open the software, please refer to the [Installation instruction](#installation-instruction) section.)
-
-## User defined functions
-
-Speak function: To speak the text (Text to speak).
-Sp function: To speak the text and also print the text.
-Ticktacktoe function: To play tic-tac-toe.
-Take_screenshot function: To take a screenshot.
-Take_command function: To take the command and Convert the speech to text.
-NewsFromBBC function: To get the news from BBC.
-Text2speech function: To convert the text to speech from the clipboard.
-Wish me function: To wish the user according to the time of the day.
-Pick card function: To pick a card from the deck.
-CPU function: To get the CPU usage.
-Ram function: To get the RAM usage.
-Battery function: To get the battery usage.
-Disk function: To get the disk usage.
-Give joke functions: To give a joke.
-Give IP: To get the IP address.
-Generate_password function: To generate a password.
-Send_email function: To send an email.
-Query day function: To get the day of the week.
-Query date function: To get the date.
-Send WhatsApp message function: To send a message on WhatsApp.
-Exit function: To exit the software.
-Clear function: To clear the screen.
-Greeting function: To greet the user according to the time of the day.
-Clear_screen function: To clear the screen.
-Open_chrome function: To open Google Chrome.
-Username function: change the username.
-
-## Application of the software
-
-1. The main task of a voice assistant is to minimize the use of input devices like keyboard, mouse, touch pens, etc. This will reduce both the hardware cost and space taken by it.
-2. The Olivia Personal Assistant is a voice assistant that can be used to perform tasks like playing music, playing games, playing videos, taking screenshots, sending emails, sending WhatsApp messages, etc.
-3. The Olivia saves the user time and energy by providing a variety of functions.
-4. The software is designed to be very useful for people with visual disabilities.
-5. The software is designed to be very useful for people with physical disabilities like hand movements, hand-eye coordination, hand loss, etc.
-6. The software is designed to be very useful for people with listening disabilities like hearing loss too.
-7. The software is designed to be very useful for people with cognitive disabilities like autism, autism spectrum disorder, autism spectrum disorder, etc.
-8. The software is designed to be very useful for people with speech disabilities like stuttering, speech impairment, etc.
-9. The software is designed to be very useful for people with reading disabilities like dyslexia, etc.
-10. The software is designed to be very useful for people with language disabilities like aphasia, bilingualism, etc.
+1. Clipboard library: [Clipboard](https://pypi.python.org/pypi/clipboard)
+2. Ctypes library: [ctypes](https://pypi.python.org/pypi/ctypes)
+3. Date and time library: [datetime](https://pypi.python.org/pypi/datetime)
+4. JSON library: [JSON](https://pypi.python.org/pypi/json)
+5. Math library: [math](https://pypi.python.org/pypi/math)
+6. Numpy library: [numpy](https://pypi.python.org/pypi/numpy)
+7. Os library: [os](https://pypi.python.org/pypi/os)
+8. Psutil library: [psutil](https://pypi.python.org/pypi/psutil)
+9. Pyautogui library: [pyautogui](https://pypi.python.org/pypi/pyautogui)
+10. Pyttsx3 library: [pyttsx3](https://pypi.python.org/pypi/pyttsx3)
+11. Pywhatkit library: [pywhatkit](https://pypi.python.org/pypi/pywhatkit)
+12. Random library: [random](https://pypi.python.org/pypi/random)
+13. Regular expression library: [re](https://pypi.python.org/pypi/re)
+14. Requests library: [requests](https://pypi.python.org/pypi/requests)
+15. Shutil library: [shutil](https://pypi.python.org/pypi/shutil)
+16. Smtplib library: [smtplib](https://pypi.python.org/pypi/smtplib)
+17. Speech recognition library: [speech_recognition](https://pypi.python.org/pypi/speech_recognition)
+18. Subprocess library: [subprocess](https://pypi.python.org/pypi/subprocess)
+19. Sys library: [sys](https://pypi.python.org/pypi/sys)
+20. Time library: [time](https://pypi.python.org/pypi/time)
+21. Tkinter library: [tkinter](https://pypi.python.org/pypi/tkinter)
+22. Urlopen library: [urlopen](https://pypi.python.org/pypi/urlopen)
+23. Webbrowser library: [webbrowser](https://pypi.python.org/pypi/webbrowser)
+24. Wikipedia library: [Wikipedia](https://pypi.python.org/pypi/wikipedia)
+25. Win32com library: [win32com](https://pypi.python.org/pypi/win32com)
+26. Winshell library: [winshell](https://pypi.python.org/pypi/winshell)
