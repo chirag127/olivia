@@ -252,7 +252,7 @@ The ability to employ the latest computer languages and platforms in creating in
 
 ## Abstract
 
-Personal Assistants Virtual Assistant that reinvent a new way for individuals to interact with computers. A Personal Virtual Assistant allows a user to simply ask questions in the same manner that they would address a human, and are even capable of doing some basic tasks like opening apps, reading out news, taking notes, Playing video and pausing and play them etc., with just a voice command. Personal Assistants using Artificial intelligence, Machine Learning and Natural Language Processing in Text to speech and speech to Text in speech recognition. The Artificial Intelligence, Machine Learning and The Natural Language Processing is used to understand the user’s text and convert it into voice. The Personal Assistant help to minimize the time spent on the task and make the task more efficient. It also minimizes the use of input devices like keyboard, mouse, touch pens, etc. This will reduce both the hardware cost and space taken by it. The Personal Assistants Virtual Assistant is designed to be very useful for people who are busy and don’t have time to spend on their daily tasks. The Personal Assistants Virtual Assistant is a free software, and it is open source. It is developed by Chirag Singhal. It is available for free download from [GitHub](https://github.com/chirag127/Olivia-A-Personal-Virtual-Assistant). Furthermore, it is also very useful for people who are not able to use the keyboard or mouse such as people with cognitive disabilities, listening disabilities, physical disabilities, visual disabilities etc.
+Personal Assistants Virtual Assistant that reinvent a new way for individuals to interact with computers. A Personal Virtual Assistant allows a user to simply ask questions in the same manner that they would address a human, and are even capable of doing some basic tasks like opening apps, reading out news, taking notes, Playing video and pausing and play them etc., with just a voice command. Personal Assistants using Artificial intelligence, Machine Learning and Natural Language Processing in Text to speech and speech to Text in speech recognition. The Artificial Intelligence, Machine Learning and The Natural Language Processing is used to understand the user’s text and convert it into voice. The Personal Assistant help to minimize the time spent on the task and make the task more efficient. It also minimizes the use of input devices like keyboard, mouse, touch pens, etc. This will reduce both the hardware cost and space taken by it. The Personal Assistants Virtual Assistant is designed to be very useful for people who are busy and don’t have time to spend on their daily tasks. The Personal Assistants Virtual Assistant is a free software, and it is open source. It is developed by Chirag Singhal. It is available for free download from [GitHub](https://github.com/chirag127/Olivia-A-Personal-Virtual-Assistant). Furthermore, it is also very useful for people who are not able to use the keyboard or mouse such as people with cognitive disabilities, listening disabilities, physical disabilities, visual disabilities etc. The Personal Assistant is designed especially for such people who want to interact with their machines and systems using voice.
 
 ## Features
 
@@ -397,7 +397,7 @@ Personal Assistants Virtual Assistant that reinvent a new way for individuals to
     44. Likewise, Open the QQ website by saying "open QQ" or "open QQ website".
     45. Open the Shutterstock website by saying "open Shutterstock" or "open Shutterstock website".
     46. Open the TaoBao website by saying "open TaoBao" or "open TaoBao website".
-    47. Likewise, Open 360.CN website by saying "open 360.cn" or "open 360.cn website".
+    47. Likewise, Open 360.cn website by saying "open 360.cn" or "open 360.cn website".
     48. Open jingdong.com website by saying "open jingdong.com" or "open jingdong.com website".
     49. Open the Amazon.in website by saying "open Amazon.in" or "open Amazon.in website".
     50. Likewise, Open the Alibaba website by saying "open Alibaba" or "open Alibaba website".
@@ -597,32 +597,32 @@ Directly download the executable file from the link below and run it.
 
 ## Libraries used in the software
 
-1. Clipboard library: [Clipboard](https://pypi.python.org/pypi/clipboard)
-2. Ctypes library: [ctypes](https://pypi.python.org/pypi/ctypes)
-3. Date and time library: [datetime](https://pypi.python.org/pypi/datetime)
-4. JSON library: [JSON](https://pypi.python.org/pypi/json)
-5. Math library: [math](https://pypi.python.org/pypi/math)
-6. Numpy library: [numpy](https://pypi.python.org/pypi/numpy)
-7. Os library: [os](https://pypi.python.org/pypi/os)
-8. Psutil library: [psutil](https://pypi.python.org/pypi/psutil)
-9. Pyautogui library: [pyautogui](https://pypi.python.org/pypi/pyautogui)
-10. Pyttsx3 library: [pyttsx3](https://pypi.python.org/pypi/pyttsx3)
-11. Pywhatkit library: [pywhatkit](https://pypi.python.org/pypi/pywhatkit)
-12. Random library: [random](https://pypi.python.org/pypi/random)
-13. Regular expression library: [re](https://pypi.python.org/pypi/re)
-14. Requests library: [requests](https://pypi.python.org/pypi/requests)
-15. Shutil library: [shutil](https://pypi.python.org/pypi/shutil)
-16. Smtplib library: [smtplib](https://pypi.python.org/pypi/smtplib)
-17. Speech recognition library: [speech_recognition](https://pypi.python.org/pypi/speech_recognition)
-18. Subprocess library: [subprocess](https://pypi.python.org/pypi/subprocess)
-19. Sys library: [sys](https://pypi.python.org/pypi/sys)
-20. Time library: [time](https://pypi.python.org/pypi/time)
-21. Tkinter library: [tkinter](https://pypi.python.org/pypi/tkinter)
-22. Urlopen library: [urlopen](https://pypi.python.org/pypi/urlopen)
-23. Webbrowser library: [webbrowser](https://pypi.python.org/pypi/webbrowser)
-24. Wikipedia library: [Wikipedia](https://pypi.python.org/pypi/wikipedia)
-25. Win32com library: [win32com](https://pypi.python.org/pypi/win32com)
-26. Winshell library: [winshell](https://pypi.python.org/pypi/winshell)
+Clipboard library: [Clipboard](https://pypi.python.org/pypi/clipboard)
+Ctypes library: [ctypes](https://pypi.python.org/pypi/ctypes)
+Date and time library: [datetime](https://pypi.python.org/pypi/datetime)
+JSON library: [JSON](https://pypi.python.org/pypi/json)
+Math library: [math](https://pypi.python.org/pypi/math)
+Numpy library: [numpy](https://pypi.python.org/pypi/numpy)
+Os library: [os](https://pypi.python.org/pypi/os)
+Psutil library: [psutil](https://pypi.python.org/pypi/psutil)
+Pyautogui library: [pyautogui](https://pypi.python.org/pypi/pyautogui)
+Pyttsx3 library: [pyttsx3](https://pypi.python.org/pypi/pyttsx3)
+Pywhatkit library: [pywhatkit](https://pypi.python.org/pypi/pywhatkit)
+Random library: [random](https://pypi.python.org/pypi/random)
+Regular expression library: [re](https://pypi.python.org/pypi/re)
+Requests library: [requests](https://pypi.python.org/pypi/requests)
+Shutil library: [shutil](https://pypi.python.org/pypi/shutil)
+Smtplib library: [smtplib](https://pypi.python.org/pypi/smtplib)
+Speech recognition library: [speech_recognition](https://pypi.python.org/pypi/speech_recognition)
+Subprocess library: [subprocess](https://pypi.python.org/pypi/subprocess)
+Sys library: [sys](https://pypi.python.org/pypi/sys)
+Time library: [time](https://pypi.python.org/pypi/time)
+Tkinter library: [tkinter](https://pypi.python.org/pypi/tkinter)
+Urlopen library: [urlopen](https://pypi.python.org/pypi/urlopen)
+Webbrowser library: [webbrowser](https://pypi.python.org/pypi/webbrowser)
+Wikipedia library: [Wikipedia](https://pypi.python.org/pypi/wikipedia)
+Win32com library: [win32com](https://pypi.python.org/pypi/win32com)
+Winshell library: [winshell](https://pypi.python.org/pypi/winshell)
 
 ## Technologies used in the software
 
@@ -697,3 +697,6 @@ Username function: change the username.
 5. The software is designed to be very useful for people with physical disabilities like hand movements, hand-eye coordination, hand loss, etc.
 6. The software is designed to be very useful for people with listening disabilities like hearing loss too.
 7. The software is designed to be very useful for people with cognitive disabilities like autism, autism spectrum disorder, autism spectrum disorder, etc.
+8. The software is designed to be very useful for people with speech disabilities like stuttering, speech impairment, etc.
+9. The software is designed to be very useful for people with reading disabilities like dyslexia, etc.
+10. The software is designed to be very useful for people with language disabilities like aphasia, bilingualism, etc.
