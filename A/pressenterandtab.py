@@ -1,6 +1,6 @@
 from tkinter.constants import W
 import pyautogui
-import time
+from time import sleep
 
 
 def presskey(key):

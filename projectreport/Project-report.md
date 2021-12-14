@@ -7,11 +7,8 @@
 <h3 align="center">Computer Science and Engineering</h3>
 <h3 align="center">Under the Supervision of</h3>
 <h3 align="center">Ms. Sonam kumari</h3>
-<h3 align="center">(Assistant Professor)</h3>
 <h3 align="center">and</h3>
 <h3 align="center">Ms. </h3>
-<h3 align="center">Shruti</h3>
-<h3 align="center">(Assistant Professor)</h3>
 <h3 align="center">By</h3>
 <h3 align="center">Chirag Singhal</h3>
 <h3 align="center">(2000330100084)</h3>
@@ -254,6 +251,8 @@ The ability to employ the latest computer languages and platforms in creating in
 - [How to use the application](#how-to-use-the-application)
 - [Precautions while using the software in the application](#precautions-while-using-the-software-in-the-application)
 - [Libraries used in the software](#libraries-used-in-the-software)
+
+<div style="page-break-after: always;"></div>
 
 ## Abstract
 

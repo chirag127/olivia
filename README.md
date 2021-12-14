@@ -22,7 +22,7 @@
 
 ## Abstract
 
-Personal Assistants Virtual Assistant that reinvent a new way for individuals to interact with computers. A Personal Virtual Assistant allows a user to simply ask questions in the same manner that they would address a human, and are even capable of doing some basic tasks like opening apps, reading out news, taking notes, Playing video and pausing and play them etc., with just a voice command. Personal Assistants using Artificial intelligence, Machine Learning and Natural Language Processing in Text to speech and speech to Text in speech recognition. The Artificial Intelligence, Machine Learning and The Natural Language Processing is used to understand the user’s text and convert it into voice. The Personal Assistant help to minimize the time spent on the task and make the task more efficient. It also minimizes the use of input devices like keyboard, mouse, touch pens, etc. This will reduce both the hardware cost and space taken by it. The Personal Assistants Virtual Assistant is designed to be very useful for people who are busy and don’t have time to spend on their daily tasks. The Personal Assistants Virtual Assistant is a free software, and it is open source. It is developed by Chirag Singhal. It is available for free download from [GitHub](https://github.com/chirag127/Olivia-A-Personal-Virtual-Assistant). Furthermore, it is also very useful for people who are not able to use the keyboard or mouse such as people with cognitive disabilities, listening disabilities, physical disabilities, visual disabilities etc. The Personal Assistant is designed especially for such people who want to interact with their machines and systems using voice.
+Personal Assistants Virtual Assistant that redesign a new way for us to interact with Computers. Computers have advanced so much from a simple calculator to a powerful tool for many people, but it is not always easy to use. This application is designed to help people to interact with computers in a more comfortable way. A Virtual Assistant allows a customer to ask for queries in the similar that they would have with a human, and are even capable of doing some basic tasks like opening apps, reading out news, taking notes, Playing video and pausing and play them etc., with just a voice command. Personal Assistants using Artificial intelligence, Machine Learning and Natural Language Processing in Text to speech and speech to Text in speech recognition. The Artificial Intelligence, Machine Learning and The Natural Language Processing is used to understand the user’s text and convert it into voice. The Personal Assistant help to minimize the time spent on the task and make the task more efficient. It also minimizes the use of input devices like keyboard, mouse, touch pens, etc. This will decrease the cost of the hardware and the space taken by it. The Personal Assistants Virtual Assistant is designed to be very useful for people who are busy and don’t have time to spend on their daily tasks. The Personal Assistants Virtual Assistant is a free software, and it is open source. It is developed by Chirag Singhal. It is available for free download from [GitHub](https://github.com/chirag127/Olivia-A-Personal-Virtual-Assistant). Furthermore, it is also very useful for people who are not able to use the keyboard or mouse such as people with cognitive disabilities, listening disabilities, physical disabilities, visual disabilities etc. The Personal Assistant is designed especially for such people who want to interact with their machines and systems using voice.
 
 ## Features
 
@@ -337,29 +337,29 @@ Directly download the executable file from the link below and run it.
 
 ## Libraries used in the software
 
-1. Clipboard library: [Clipboard](https://pypi.python.org/pypi/clipboard)
-2. Ctypes library: [ctypes](https://pypi.python.org/pypi/ctypes)
-3. Date and time library: [datetime](https://pypi.python.org/pypi/datetime)
-4. JSON library: [JSON](https://pypi.python.org/pypi/json)
-5. Math library: [math](https://pypi.python.org/pypi/math)
-6. Numpy library: [numpy](https://pypi.python.org/pypi/numpy)
-7. Os library: [os](https://pypi.python.org/pypi/os)
-8. Psutil library: [psutil](https://pypi.python.org/pypi/psutil)
-9. Pyautogui library: [pyautogui](https://pypi.python.org/pypi/pyautogui)
-10. Pyttsx3 library: [pyttsx3](https://pypi.python.org/pypi/pyttsx3)
-11. Pywhatkit library: [pywhatkit](https://pypi.python.org/pypi/pywhatkit)
-12. Random library: [random](https://pypi.python.org/pypi/random)
-13. Regular expression library: [re](https://pypi.python.org/pypi/re)
-14. Requests library: [requests](https://pypi.python.org/pypi/requests)
-15. Shutil library: [shutil](https://pypi.python.org/pypi/shutil)
-16. Smtplib library: [smtplib](https://pypi.python.org/pypi/smtplib)
-17. Speech recognition library: [speech_recognition](https://pypi.python.org/pypi/speech_recognition)
-18. Subprocess library: [subprocess](https://pypi.python.org/pypi/subprocess)
-19. Sys library: [sys](https://pypi.python.org/pypi/sys)
-20. Time library: [time](https://pypi.python.org/pypi/time)
-21. Tkinter library: [tkinter](https://pypi.python.org/pypi/tkinter)
-22. Urlopen library: [urlopen](https://pypi.python.org/pypi/urlopen)
-23. Webbrowser library: [webbrowser](https://pypi.python.org/pypi/webbrowser)
-24. Wikipedia library: [Wikipedia](https://pypi.python.org/pypi/wikipedia)
-25. Win32com library: [win32com](https://pypi.python.org/pypi/win32com)
-26. Winshell library: [winshell](https://pypi.python.org/pypi/winshell)
+1. [Ctypes library](https://docs.python.org/3/library/ctypes.html)
+2. [DateTime library](https://docs.python.org/3/library/datetime.html)
+3. [JSON library](https://docs.python.org/3/library/json.html)
+4. [Math library](https://docs.python.org/3/library/math.html)
+5. [OS library](https://docs.python.org/3/library/os.html)
+6. [Platform library](https://docs.python.org/3/library/platform.html)
+7. [Random library](https://docs.python.org/3/library/random.html)
+8. [Re library](https://docs.python.org/3/library/re.html)
+9. [Shutil library](https://docs.python.org/3/library/shutil.html)
+10. [Subprocess library](https://docs.python.org/3/library/subprocess.html)
+11. [Sys library](https://docs.python.org/3/library/sys.html)
+12. [Time library](https://docs.python.org/3/library/time.html)
+13. [Tkinter library](https://docs.python.org/3/library/tkinter.html)
+14. [Webbrowser library](https://docs.python.org/3/library/webbrowser.html)
+15. [Numpy library](https://docs.scipy.org/doc/numpy/reference/index.html)
+16. [Psutil library](https://pypi.org/project/psutil/)
+17. [PyAutoGui library](https://pyautogui.readthedocs.io/en/latest/)
+18. [Pyfiglet library](https://pypi.org/project/pyfiglet/)
+19. [Pyperclip library](https://pypi.org/project/pyperclip/)
+20. [Pyttsx3 library](https://pypi.org/project/pyttsx3/)
+21. [Pywhatkit library](https://pypi.org/project/pywhatkit/)
+22. [SpeechRecognition library](https://pypi.org/project/SpeechRecognition/)
+23. [Wikipedia library](https://pypi.org/project/wikipedia/)
+24. [Winshell library](https://pypi.org/project/winshell/)
+25. [Googletrans library](https://pypi.org/project/googletrans/)
+26. [Pyowm library](https://pypi.org/project/pyowm/)
