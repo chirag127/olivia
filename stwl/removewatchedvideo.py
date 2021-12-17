@@ -10,7 +10,7 @@ x = 0
 
 
 def open_youtube_watch_later_playlist():
-    webbrowser.open('https://www.youtube.com/playlist?list=WL')
+    webbrowser.open("https://www.youtube.com/playlist?list=WL")
 
 
 # define a function to click on the three dots button on the watch later playlist to remove watched videos

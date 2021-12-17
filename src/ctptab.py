@@ -4,24 +4,20 @@ import pyautogui
 
 
 def main():
-    pyautogui.press('enter')
+    pyautogui.press("enter")
 
     sleep(3)
 
-    pyautogui.press('tab')
+    pyautogui.press("tab")
 
 
-
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     while True:
-    
-        if keyboard.is_pressed('q'):
+
+        if keyboard.is_pressed("q"):
 
             while True:
-                    main()
+                main()
         else:
             sleep(0.1)
-    

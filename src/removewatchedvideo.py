@@ -7,7 +7,6 @@ import webbrowser
 from functions import close_tab
 
 
-
 x = 0
 
 # define a function to open the youtube watch later playlist url in the browser = https://www.youtube.com/playlist?list=WL
@@ -15,7 +14,7 @@ x = 0
 
 
 def open_youtube_watch_later_playlist():
-    webbrowser.open('https://www.youtube.com/playlist?list=WL')
+    webbrowser.open("https://www.youtube.com/playlist?list=WL")
 
 
 # define a function to click on the three dots button on the watch later playlist to remove watched videos
@@ -60,8 +59,6 @@ def main():
 
     sleep(0.5)
 
-    webbrowser.open('https://www.youtube.com/playlist?list=WL')
+    webbrowser.open("https://www.youtube.com/playlist?list=WL")
 
     sleep(0.5)
-
-

@@ -9,27 +9,26 @@ def record_audio(ask=False):
         if ask:
             print(ask)
         audio = take_command.listen(source)
-        voice_data = ''
+        voice_data = ""
         try:
             voice_data = take_command.recognize_google(audio)
         except sr.UnknownValueError:
-            print('Sorry, I did not get that')
+            print("Sorry, I did not get that")
         except sr.RequestError:
-            print('Sorry, my speech service is down')
+            print("Sorry, my speech service is down")
         return voice_data
 
 
-print('How can I help you?')
+print("How can I help you?")
 while True:
     query = record_audio()
-    print('You said: ' + query)
-
+    print("You said: " + query)
 
     query = query.replace("increase volume by", "")
     query = query.replace("volume up by", "")
     query = query.replace("louder", "")
 
-    if 'percent' in query or 'percentage' in query or '%' in query:
+    if "percent" in query or "percentage" in query or "%" in query:
         query = query.replace("percent", "")
         query = query.replace("percentage", "")
         query = query.replace("%", "")
@@ -46,5 +45,4 @@ while True:
 
         no_of_up_presses = int(percent / 5)
         for i in range(no_of_up_presses):
-            print('up')
-
+            print("up")
