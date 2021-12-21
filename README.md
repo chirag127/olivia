@@ -114,8 +114,8 @@ just click on the software icon in the taskbar to open the software (If you don'
 5. Give the battery usage of the computer just say "battery usage" or "battery usage of the computer" or "battery usage of 0the computer".
 6. Similarly, Give the current weather of the city just say "current weather" or "current weather of the city".
 7. Search in chrome just say "search in chrome".
-8. Tell you the time by saying "time" or "what time is it" or "what is the time" or "tell me the time".
-9. Tell you the date by saying "date" or "what date is it" or "what is the date" or "tell me the date".
+8. Tell you the time by saying "current time" or "what is the current time" or "time current".
+9. Tell you the date by saying "current date" or what is the current date" or date current just ensure that the query contains both "date" and "current".
 10. Generate a random password by saying "generate a password" or "generate a random password".
 11. Generate a random number by saying "generate a number" or "generate a random number".
 12. Change your name by saying "change my name to (your name)" or "call me (your name)".
@@ -132,7 +132,7 @@ just click on the software icon in the taskbar to open the software (If you don'
 23. Read a note by saying "read a note" or "read note" or "read a note now" or "read note now".
 24. Delete a note by saying "delete a note" or "delete note" or "delete a note now" or "delete note now".
 25. Show all notes by saying "show all notes" or "show all notes now" or "show all notes now".
-26. Tell location of a place by saying "where is (the name of the place)" or "where is (the name of the place) now" or "where is (the name of the place) now" etc. Example "where is Ghaziabad" will tell you the location of Ghaziabad by open the location of Ghaziabad in Google Maps.
+26. Tell location of a place by saying "
 27. Open word by saying "open word" or "open word now" and then type your document by saying "yes" or "no" when asked if "do you want me to type" and stop typing by saying "stop typing".
 28. Launch an application by saying "launch (the name of the application)" or "launch (the name of the application) now" or "launch (the name of the application) now"
 
