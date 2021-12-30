@@ -14,5 +14,6 @@ pip install wikipedia
 pip install winshell
 pip install numpy
 pip install pyperclip
-
 pip install keyboard
+pip install auto-py-to-exe
+

@@ -7,6 +7,27 @@ httpx==0.21.1 is available (you have 0.13.3)
 hyperframe==6.0.1 is available (you have 5.2.0)
 idna==3.3 is available
 
+
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+googletrans 3.1.0a0 requires httpx==0.13.3, but you have httpx 0.21.1 which is incompatible.
+black 21.12b0 requires tomli<2.0.0,>=0.2.6, but you have tomli 2.0.0 which is incompatible.
+auto-py-to-exe 2.13.0 requires Eel==0.12.4, but you have eel 0.14.0 which is incompatible.
+
+pip install googletrans==3.1.0a0
+pip install black==21.12b0
+pip install auto-py-to-exe==2.13.0
+
+chardet==4.0.0 is available (you have 3.0.4)
+Eel==0.14.0 is available (you have 0.12.4)
+h11==0.12.0 is available (you have 0.9.0)
+h2==4.1.0 is available (you have 3.2.0)
+hpack==4.0.0 is available (you have 3.0.0)
+httpcore==0.14.3 is available (you have 0.9.1)
+httpx==0.21.1 is available (you have 0.13.3)
+hyperframe==6.0.1 is available (you have 5.2.0)
+idna==3.3 is available (you have 2.10)
+tomli==2.0.0 is available (you have 1.2.3)
+
 pip install --upgrade pip
 pip install --upgrade setuptools
 pip install --upgrade wheel
@@ -24,3 +45,5 @@ pip install idna==3.3
 # install from requirements.txt
 pip install -r requirements.txt
     
+
+c:/Users/hp/OneDrive/Documents/GitHub/Olivia-A-Personal-Virtual-Assistant/env/Scripts/python.exe c:/Users/hp/OneDrive/Documents/GitHub/Olivia-A-Personal-Virtual-Assistant/src/Olivia.py
