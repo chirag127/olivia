@@ -1,6 +1,6 @@
 pip install wheel
 pip install autopep8
-pip install googletrans
+pip install googletrans==3.1.0a0
 pip install psutil
 pip install pyautogui
 pip install pyjokes
@@ -14,3 +14,4 @@ pip install wikipedia
 pip install winshell
 pip install numpy
 pip install pyperclip
+pip install keyboard
