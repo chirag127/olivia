@@ -95,7 +95,7 @@
     "zoya"
   ],
   "files.autoSave": "afterDelay",
-  "python.pythonPath": "c:\\Users\\hp\\OneDrive\\Documents\\GitHub\\Olivia-A-Personal-Virtual-Assistant\\oenv\\Scripts\\python.exe",
+  "python.pythonPath": "c:\\Users\\hp\\OneDrive\\Documents\\GitHub\\Olivia-A-Personal-Virtual-Assistant\\env\\Scripts\\python.exe",
   "code-runner.executorMap": {
     "python": "c:\\Users\\hp\\OneDrive\\Documents\\GitHub\\Olivia-A-Personal-Virtual-Assistant\\oenv\\Scripts\\python.exe"
   }
