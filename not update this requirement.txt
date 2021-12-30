@@ -1,0 +1,26 @@
+chardet==4.0.0 is available (you have 3.0.4)
+h11==0.12.0 is available (you have 0.9.0)
+h2==4.1.0 is available (you have 3.2.0)
+hpack==4.0.0 is available (you have 3.0.0)
+httpcore==0.14.3 is available (you have 0.9.1)
+httpx==0.21.1 is available (you have 0.13.3)
+hyperframe==6.0.1 is available (you have 5.2.0)
+idna==3.3 is available
+
+pip install --upgrade pip
+pip install --upgrade setuptools
+pip install --upgrade wheel
+pip install --upgrade requests
+
+pip install chardet==4.0.0
+pip install h11==0.12.0
+pip install h2==4.1.0
+pip install hpack==4.0.0
+pip install httpcore==0.14.3
+pip install httpx==0.21.1
+pip install hyperframe==6.0.1
+pip install idna==3.3
+
+# install from requirements.txt
+pip install -r requirements.txt
+    
