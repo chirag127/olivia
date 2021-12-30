@@ -18,31 +18,38 @@ def record_audio(ask=False):
             print("Sorry, my speech service is down")
         return voice_data
 
+import tkinter as tk
+import sys
+
+class PrintLogger(): # create file like object
+    def __init__(self, textbox): # pass reference to text widget
+        self.textbox = textbox # keep ref
+
+    def write(self, text):
+        self.textbox.insert(tk.END, text) # write text to textbox
+            # could also scroll to end of textbox here to make sure always visible
+
+    def flush(self): # needed for file like object
+        pass
+
 
 print("How can I help you?")
-while True:
-    query = record_audio()
-    print("You said: " + query)
 
-    query = query.replace("increase volume by", "")
-    query = query.replace("volume up by", "")
-    query = query.replace("louder", "")
+if __name__ == "__main__":
 
-    if "percent" in query or "percentage" in query or "%" in query:
-        query = query.replace("percent", "")
-        query = query.replace("percentage", "")
-        query = query.replace("%", "")
+    root = tk.Tk()
+    t = tk.Text()
+    t.pack()
+    # create instance of file like object
+    pl = PrintLogger(t)
 
-        # volume is increased by the number of percentage mentioned in the query
-        # volume is increased by 5 percentage by one up press
-        # volume is increased by 10 percentage by two up presses
-        # volume is increased by 15 percentage by three up presses
-        # volume is increased by 20 percentage by four up presses
-        # volume is increased by 25 percentage by five up presses
+    # replace sys.stdout with our object
+    sys.stdout = pl
 
-        query = query.replace(" ", "")
-        percent = int(query)
 
-        no_of_up_presses = int(percent / 5)
-        for i in range(no_of_up_presses):
-            print("up")
+    while True:
+
+        root.mainloop()
+        
+        query = record_audio()
+        print("You said: " + query)
