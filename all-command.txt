@@ -1,19 +1,19 @@
-pip install wheel
-pip install autopep8
-pip install googletrans==3.1.0a0
-pip install psutil
-pip install pyautogui
-pip install pyjokes
-pip install pyowm
-pip install pyttsx3
-pip install pywhatkit
-pip install requests
-pip install speechRecognition
-pip install speedtest-cli
-pip install wikipedia
-pip install winshell
-pip install numpy
-pip install pyperclip
-pip install keyboard
-pip install auto-py-to-exe
+pip install -U wheel
+pip install -U autopep8
+pip install -U googletrans==3.1.0a0
+pip install -U psutil
+pip install -U pyautogui
+pip install -U pyjokes
+pip install -U pyowm
+pip install -U pyttsx3
+pip install -U pywhatkit
+pip install -U requests
+pip install -U speechRecognition
+pip install -U speedtest-cli
+pip install -U wikipedia
+pip install -U winshell
+pip install -U numpy
+pip install -U pyperclip
+pip install -U keyboard
+pip install -U auto-py-to-exe
 
