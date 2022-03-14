@@ -134,35 +134,34 @@ just click on the software icon in the taskbar to open the software (If you don'
 8. You can mute the video by saying "mute", "mute the video", "mute the YouTube" just remember that the query should contain "mute". By the way, the video will get unmute if the video is mute.
 9. You can unmute the video by saying "unmute", "unmute the video", "unmute the YouTube" just remember that the query should contain "unmute". By the way, the video will get mute if the video is unmute.
 10. You can go to the next video by saying "next video", "next", "next video on YouTube" just remember that the query should contain "next video" or "next" or "next video on YouTube".
-11. 
-12. Give description of anything according to Wikipedia just say "what is (the name of the thing) according to Wikipedia".
-13. Give the CPU usage of the computer just say "CPU usage" or "CPU usage of the computer" or "usage of the CPU".
-14. Present with the RAM usage of the computer just say "RAM usage" or "RAM usage of the computer" or "RAM usage of the 0computer".
-15. Give the disk usage of the computer just say "disk usage" or "disk usage of the computer" or "disk usage of the computer".
-16. Give the battery usage of the computer just say "battery usage" or "battery usage of the computer" or "battery usage of 0the computer".
-17. Similarly, Give the current weather of the city just say "current weather" or "current weather of the city".
-18. Search in chrome just say "search in chrome".
-19. Tell you the time by saying "current time" or "what is the current time" or "time current".
-20. Tell you the date by saying "current date" or what is the current date" or date current just ensure that the query contains both "date" and "current".
-21. Generate a random password by saying "generate a password" or "generate a random password".
-22. Generate a random number by saying "generate a number" or "generate a random number".
-23. Change your name by saying "change my name to (your name)" or "call me (your name)".
-24. Send a mail by saying "send a mail to (your mail ID)" or "send a mail to (your mail ID) with (your message)".
-25. Lock the screen by saying "lock the screen" or "lock window" or "lock screen".
-26. Shutdown the computer by saying "shutdown the computer" or "shutdown the computer now" or "shutdown system".
-27. Empty the recycle bin by saying "empty the recycle bin" or "empty recycle bin".
-28. Stop listening by saying "stop listening" or "stop listening now" or "don't listen" or "don't listen now".
-29. Tell you the location of a place by saying "where is (the name of the place)".
-30. Restart the computer by saying "restart the computer" or "restart the computer now" or "restart system" or "reboot the computer" or "reboot the computer now" or "reboot system".
-31. Hibernate the computer system by saying "hibernate the computer" or "hibernate the computer now" or "hibernate system" .
-32. Logout the computer by saying "logout the computer" or "logout the computer now" or "logout system" or "sign out the computer" or "sign out the computer now" or "sign out system".
-33. Write a note by saying "write a note" or "write note" or "write a note now" or "write note now" with further of including the time and date by saying yes or no.
-34. Read a note by saying "read a note" or "read note" or "read a note now" or "read note now".
-35. Delete a note by saying "delete a note" or "delete note" or "delete a note now" or "delete note now".
-36. Show all notes by saying "show all notes" or "show all notes now" or "show all notes now".
-37. Tell location of a place by saying "
-38. Open word by saying "open word" or "open word now" and then type your document by saying "yes" or "no" when asked if "do you want me to type" and stop typing by saying "stop typing".
-39. Launch an application by saying "launch (the name of the application)" or "launch (the name of the application) now" or "launch (the name of the application) now".
+11. Give description of anything according to Wikipedia just say "what is (the name of the thing) according to Wikipedia".
+12. Give the CPU usage of the computer just say "CPU usage" or "CPU usage of the computer" or "usage of the CPU".
+13. Present with the RAM usage of the computer just say "RAM usage" or "RAM usage of the computer" or "RAM usage of the 0computer".
+14. Give the disk usage of the computer just say "disk usage" or "disk usage of the computer" or "disk usage of the computer".
+15. Give the battery usage of the computer just say "battery usage" or "battery usage of the computer" or "battery usage of 0the computer".
+16. Similarly, Give the current weather of the city just say "current weather" or "current weather of the city".
+17. Search in chrome just say "search in chrome".
+18. Tell you the time by saying "current time" or "what is the current time" or "time current".
+19. Tell you the date by saying "current date" or what is the current date" or date current just ensure that the query contains both "date" and "current".
+20. Generate a random password by saying "generate a password" or "generate a random password".
+21. Generate a random number by saying "generate a number" or "generate a random number".
+22. Change your name by saying "change my name to (your name)" or "call me (your name)".
+23. Send a mail by saying "send a mail to (your mail ID)" or "send a mail to (your mail ID) with (your message)".
+24. Lock the screen by saying "lock the screen" or "lock window" or "lock screen".
+25. Shutdown the computer by saying "shutdown the computer" or "shutdown the computer now" or "shutdown system".
+26. Empty the recycle bin by saying "empty the recycle bin" or "empty recycle bin".
+27. Stop listening by saying "stop listening" or "stop listening now" or "don't listen" or "don't listen now".
+28. Tell you the location of a place by saying "where is (the name of the place)".
+29. Restart the computer by saying "restart the computer" or "restart the computer now" or "restart system" or "reboot the computer" or "reboot the computer now" or "reboot system".
+30. Hibernate the computer system by saying "hibernate the computer" or "hibernate the computer now" or "hibernate system" .
+31. Logout the computer by saying "logout the computer" or "logout the computer now" or "logout system" or "sign out the computer" or "sign out the computer now" or "sign out system".
+32. Write a note by saying "write a note" or "write note" or "write a note now" or "write note now" with further of including the time and date by saying yes or no.
+33. Read a note by saying "read a note" or "read note" or "read a note now" or "read note now".
+34. Delete a note by saying "delete a note" or "delete note" or "delete a note now" or "delete note now".
+35. Show all notes by saying "show all notes" or "show all notes now" or "show all notes now".
+36. Tell location of a place by saying "
+37. Open word by saying "open word" or "open word now" and then type your document by saying "yes" or "no" when asked if "do you want me to type" and stop typing by saying "stop typing".
+38. Launch an application by saying "launch (the name of the application)" or "launch (the name of the application) now" or "launch (the name of the application) now".
 
     1. Launch chrome just say "launch chrome" or "launch chrome now".
     2. Likewise, Launch notepad just say "launch notepad" or "launch notepad now".
@@ -175,7 +174,7 @@ just click on the software icon in the taskbar to open the software (If you don'
     9. Open task manager just say "launch task manager" or "launch task manager now".
     10. Launch paint just say "launch paint" or "launch paint now".
 
-40. Open any website just say "open (the name of the website)" or "open (the name of the website) now" or "open (the name of the website) now" e.g.
+39. Open any website just say "open (the name of the website)" or "open (the name of the website) now" or "open (the name of the website) now" e.g.
 
     1. Open the Amazon website by saying "open Amazon" or "open Amazon website".
     2. Furthermore, Open the Bing website by saying "open Bing" or "open Bing website".
@@ -184,7 +183,7 @@ just click on the software icon in the taskbar to open the software (If you don'
     5. Open the DuckDuckGo website by saying "open DuckDuckGo" or "open DuckDuckGo website".
     6. Open the Facebook website by saying "open Facebook" or "open Facebook website".
 
-41. Search many websites like YouTube, Google (with Google Images, Google News etc.), Bing, Yahoo, DuckDuckGo, Wikipedia, Wiktionary, and many more just by saying "search (the name of the website) on (the thing you want to search on the website.). For example,
+40. Search many websites like YouTube, Google (with Google Images, Google News etc.), Bing, Yahoo, DuckDuckGo, Wikipedia, Wiktionary, and many more just by saying "search (the name of the website) on (the thing you want to search on the website.). For example,
 
     1. If you want to search for "Python" on YouTube, you can say "search Python on YouTube".
     2. If you want to search for "Python" on Google, you can say "search Python on Google".
@@ -193,7 +192,7 @@ just click on the software icon in the taskbar to open the software (If you don'
     5. If you want to search for "Python" on Google Maps, you can say "search Python on Google Maps".
     6. If you want to search for "Python" on Google Scholar, you can say "search Python on Google Scholar".
 
-42. Translate the English to many other languages just saying "translate (the sentence you want to translate) to (the language to which you want to translate the sentence)" example "translate hello to Spanish" will translate the English sentence "hello" to Spanish. The supported languages are :
+41. Translate the English to many other languages just saying "translate (the sentence you want to translate) to (the language to which you want to translate the sentence)" example "translate hello to Spanish" will translate the English sentence "hello" to Spanish. The supported languages are :
 
     1. Afrikaans
     2. Albanian
@@ -301,7 +300,7 @@ just click on the software icon in the taskbar to open the software (If you don'
     104. Yoruba
     105. Zulu
 
-43. Answer to many questions like :-
+42. Answer to many questions like :-
 
     1. What is your name?
     2. What is your age?
@@ -321,12 +320,12 @@ just click on the software icon in the taskbar to open the software (If you don'
     16. Who is your favorite actor?
     17. And many more...
 
-44. Type by saying "start typing" and then start typing by the instruction given.
-45. Press many key by saying "press (the key you want to press) key" example "press space key" will press the space key on your keyboard or "press enter key" will press the enter key on your keyboard, "press tab key" will press the tab key on your keyboard and so on.
+43. Type by saying "start typing" and then start typing by the instruction given.
+44. Press many key by saying "press (the key you want to press) key" example "press space key" will press the space key on your keyboard or "press enter key" will press the enter key on your keyboard, "press tab key" will press the tab key on your keyboard and so on.
 
-46. Exit the application just by saying "exit the application" or "exit" or "goodbye" or "bye".
-47. If the Virtual assistant Don't know the answer to any of your questions, Olivia will ask you if he or she wants to search the query in google or YouTube or Wikipedia. If you say yes, then it will ask in which of these websites you want to search the query like if you YouTube it will search the query on YouTube. In last, If you say no, then it will do nothing and just say 'ok. Anything else sir?
-48. Send WhatsApp messages.
+45. Exit the application just by saying "exit the application" or "exit" or "goodbye" or "bye".
+46. If the Virtual assistant Don't know the answer to any of your questions, Olivia will ask you if he or she wants to search the query in google or YouTube or Wikipedia. If you say yes, then it will ask in which of these websites you want to search the query like if you YouTube it will search the query on YouTube. In last, If you say no, then it will do nothing and just say 'ok. Anything else sir?
+47. Send WhatsApp messages.
 
 ## Installation instruction
 
@@ -370,3 +369,4 @@ Directly download the executable file from the link below and run it.
 24. [Winshell library](https://pypi.org/project/winshell/)
 25. [Googletrans library](https://pypi.org/project/googletrans/)
 26. [Pyowm library](https://pypi.org/project/pyowm/)
+

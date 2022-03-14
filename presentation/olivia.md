@@ -14,9 +14,11 @@ By Chirag Singhal
 - [Olivia](#olivia)
   - [Outline](#outline)
   - [Introduction](#introduction)
+  - [Problem statement](#problem-statement)
   - [Aims and objectives](#aims-and-objectives)
-  - [Methodology](#methodology)
-  - [Result expected](#result-expected)
+  - [Methodology/Algorithm](#methodologyalgorithm)
+  - [Problem Solution](#problem-solution)
+  - [Result](#result)
   - [Utilization](#utilization)
   - [Work progress](#work-progress)
   - [References](#references)
@@ -27,40 +29,80 @@ By Chirag Singhal
 
 The Olivia is personal virtual assistant.
 
-The problem statement for this project is to create a personal assistant that can be used by anyone to perform basic tasks on computer and get answer to basic quiries.
+This project is to create a personal assistant that can be used by anyone to perform basic tasks on computer and get answer to basic quires.
+
+---
+
+## Problem statement
+
+The problem statement is that there is need of a virtual assistant that can understand English in Indian accent and work on desktop system.
 
 ---
 
 ## Aims and objectives
 
-1. The main aim of a voice assistant is to minimize the use of input devices.
-2. The Olivia Personal Assistant is a voice assistant that can be used to perform tasks like playing music, playing games, playing videos, taking screenshots, sending emails, sending WhatsApp messages, etc.
-3. The Olivia saves the user time and energy by providing a variety of functions.
+• The main aim of a voice assistant is to minimize the use of input devices.
+• The Olivia Personal Assistant is a voice assistant that can be used to perform tasks like playing music, playing games, • playing videos, taking screenshots, sending emails, sending WhatsApp messages, etc.
 
 ---
 
-4. The software is designed to be very useful for people with visual disabilities,physical disabilities like hand movements, hand-eye coordination, hand loss, etc.
+• The Olivia saves the user time and energy by providing a variety of functions.
+• The software is designed to be very useful for people with visual disabilities,physical disabilities like hand movements, hand-eye coordination, hand loss, etc.
 
 ---
 
-## Methodology
+## Methodology/Algorithm
 
-• First, we will record the voice commands and store them in a database.
-• we will then send the voice command/ query to the server and get the response.
-• The response will contain the text recognized by the server.
-• The response will be match with the keywords in the database.
-
----
-
-• The corresponding response will be sent to the user or the task will be performed.
-• The cycle will repeat until the user quits the application.
+• First of all, user will open the software by double-clicking on the executable file.
+• Then the user will give the command or query to the software.
+• The software will record the query as an audio file.
+• We will use the speech recognition library to recognize the query.
+• We will then check the query is recognized or not.
 
 ---
 
-## Result expected
+• If the query is not recognized then the software will ask the user to say the query again.
+• Then when the query is recognized then the software will check the query using certain keywords.
+• If the query is matched with the keywords, then the software will answer the query or do the required action.
+
+---
+
+## Problem Solution
+
+The software is developed using Python.
+
+The libraries used in the software are Ctypes, DateTime, JSON, Math, OS, Platform, Random, Re, Shutil, Subprocess, Sys, Time, Tkinter, Webbrowser, Numpy, Psutil, PyAutoGui, Pyfiglet, Pyperclip, Pyttsx3, Pywhatkit, SpeechRecognition, Wikipedia, Winshell, Googletrans, and Pyowm.
+
+---
+
+## Result
 
 The result expected from this project is a personal assistant that can be used by anyone. And it is able to perform most common tasks like playing music, playing games, playing videos, taking screenshots, sending emails, sending WhatsApp messages, etc.
 and able to respond to the user's queries in a natural and comfortable way.
+
+---
+
+Play videos and perform tasks like play,pause,next,previous,volume up,volume down,mute,speed up,speed down,etc.
+
+![Play Lonely w:900](play_lonely.png)
+
+---
+
+Open any website
+
+![Open amazon w:1000](https://i.imgur.com/gnmmpQ2.png)
+
+---
+
+Open word and make document
+
+![Open word w:1000](https://i.imgur.com/VsN38s4.png)
+
+---
+
+Translate
+
+![Translate w:1000](https://i.imgur.com/t3zVV9E.png)
 
 ---
 
