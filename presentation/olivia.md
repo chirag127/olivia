@@ -16,7 +16,7 @@ By Chirag Singhal
   - [Introduction](#introduction)
   - [Problem statement](#problem-statement)
   - [Aims and objectives](#aims-and-objectives)
-  - [Methodology/Algorithm](#methodologyalgorithm)
+  - [Methodology](#methodology)
   - [Problem Solution](#problem-solution)
   - [Result](#result)
   - [Utilization](#utilization)
@@ -51,7 +51,7 @@ The problem statement is that there is need of a virtual assistant that can unde
 
 ---
 
-## Methodology/Algorithm
+## Methodology
 
 • First of all, user will open the software by double-clicking on the executable file.
 • Then the user will give the command or query to the software.
@@ -64,6 +64,12 @@ The problem statement is that there is need of a virtual assistant that can unde
 • If the query is not recognized then the software will ask the user to say the query again.
 • Then when the query is recognized then the software will check the query using certain keywords.
 • If the query is matched with the keywords, then the software will answer the query or do the required action.
+
+---
+
+Methodology
+
+![Methodology w:900](https://i.imgur.com/aC15VAl.png)
 
 ---
 
