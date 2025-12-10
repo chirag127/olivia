@@ -1,0 +1,45 @@
+# Configuration for repository badges, adhering to the Apex Technical Standard (flat-square style).
+repository_name: EchoMind-AI-Voice-Assistant-Python-System
+github_user: chirag127
+badge_style: flat-square
+color_palette:
+  python: 306998
+  ai: 00BFFF
+  success: 28A745
+  linting: 3F2070 # Ruff Purple
+
+badges:
+  - name: Build Status
+    shields_url: https://github.com/chirag127/EchoMind-AI-Voice-Assistant-Python-System/actions/workflows/ci.yml/badge.svg
+    target_url: https://github.com/chirag127/EchoMind-AI-Voice-Assistant-Python-System/actions/workflows/ci.yml
+    markdown: "[![Build Status](https://github.com/chirag127/EchoMind-AI-Voice-Assistant-Python-System/actions/workflows/ci.yml/badge.svg)](https://github.com/chirag127/EchoMind-AI-Voice-Assistant-Python-System/actions/workflows/ci.yml)"
+
+  - name: Code Coverage
+    shields_url: https://codecov.io/gh/chirag127/EchoMind-AI-Voice-Assistant-Python-System/branch/main/graph/badge.svg
+    target_url: https://codecov.io/gh/chirag127/EchoMind-AI-Voice-Assistant-Python-System
+    markdown: "[![Code Coverage](https://codecov.io/gh/chirag127/EchoMind-AI-Voice-Assistant-Python-System/branch/main/graph/badge.svg)](https://codecov.io/gh/chirag127/EchoMind-AI-Voice-Assistant-Python-System)"
+
+  - name: Primary Language
+    shields_url: https://img.shields.io/badge/Language-Python%203.10+-306998.svg?style=flat-square&logo=python&logoColor=white
+    target_url: https://www.python.org/
+    markdown: "![Primary Language](https://img.shields.io/badge/Language-Python%203.10+-306998.svg?style=flat-square&logo=python&logoColor=white)"
+
+  - name: Linter (Ruff)
+    shields_url: https://img.shields.io/badge/Linter%2FFormatter-Ruff-3F2070.svg?style=flat-square&logo=ruff&logoColor=white
+    target_url: https://github.com/astral-sh/ruff
+    markdown: "[![Linter/Formatter: Ruff](https://img.shields.io/badge/Linter%2FFormatter-Ruff-3F2070.svg?style=flat-square&logo=ruff&logoColor=white)](https://github.com/astral-sh/ruff)"
+
+  - name: Architecture
+    shields_url: https://img.shields.io/badge/Architecture-Modular%20Monolith-00BFFF.svg?style=flat-square
+    target_url: ""
+    markdown: "![Architecture](https://img.shields.io/badge/Architecture-Modular%20Monolith-00BFFF.svg?style=flat-square)"
+
+  - name: License
+    shields_url: https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg?style=flat-square
+    target_url: https://creativecommons.org/licenses/by-nc/4.0/
+    markdown: "[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc/4.0/)"
+
+  - name: GitHub Stars
+    shields_url: https://img.shields.io/github/stars/chirag127/EchoMind-AI-Voice-Assistant-Python-System.svg?style=flat-square&color=FFC107
+    target_url: https://github.com/chirag127/EchoMind-AI-Voice-Assistant-Python-System/stargazers
+    markdown: "[![GitHub Stars](https://img.shields.io/github/stars/chirag127/EchoMind-AI-Voice-Assistant-Python-System.svg?style=flat-square&color=FFC107)](https://github.com/chirag127/EchoMind-AI-Voice-Assistant-Python-System/stargazers)"
