@@ -1,7 +1,6 @@
-import pyaudio
-from googletrans import Translator
-import speech_recognition as sr
 import pyttsx3
+import speech_recognition as sr
+from googletrans import Translator
 
 # reqiured engine for text to speech
 
@@ -101,7 +100,7 @@ def takeCommand():
         print("Please Check your internet connection")
         return "None"
 
-    except Exception as e:
+    except Exception:
 
         # print the error to the console
 

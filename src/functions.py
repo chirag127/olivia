@@ -1,7 +1,7 @@
+from time import sleep
+
 import keyboard
 import pyautogui
-import webbrowser
-from time import sleep
 
 
 # defining the function to wait for user to press z key

@@ -1,20 +1,20 @@
-from tkinter.constants import W
-import pyautogui
 from time import sleep
+
+import pyautogui
 
 
 def presskey(key):
     pyautogui.press(key)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     sleep(5)
 
     while True:
 
-        presskey('enter')
+        presskey("enter")
 
         sleep(2)
 
-        presskey('tab')
+        presskey("tab")
