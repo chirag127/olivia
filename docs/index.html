@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EchoMind — AI Voice Assistant (Python)</title>
+<meta name="description" content="Olivia — a Windows Python voice assistant. Speak commands, get spoken answers. Speech-to-text, text-to-speech, web and OS automation.">
+<style>
+  :root { --bg:#0a0e14; --card:#131924; --accent:#5eead4; --accent2:#818cf8; --text:#e6edf3; --muted:#8b97a7; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; min-height:100vh; display:flex; flex-direction:column; align-items:center; }
+  .wrap { max-width:820px; padding:5rem 1.5rem; width:100%; }
+  .badge { display:inline-block; font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); border:1px solid rgba(94,234,212,.3); border-radius:999px; padding:.35rem .9rem; margin-bottom:1.5rem; }
+  h1 { font-size:clamp(2.2rem,6vw,3.6rem); line-height:1.1; margin-bottom:1rem; background:linear-gradient(120deg,var(--accent),var(--accent2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .lead { font-size:1.2rem; color:var(--muted); margin-bottom:2.5rem; max-width:60ch; }
+  .btns { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:3.5rem; }
+  a.btn { text-decoration:none; font-weight:600; padding:.8rem 1.6rem; border-radius:10px; transition:transform .15s ease,opacity .15s ease; }
+  a.btn:hover { transform:translateY(-2px); opacity:.9; }
+  .primary { background:linear-gradient(120deg,var(--accent),var(--accent2)); color:#0a0e14; }
+  .ghost { border:1px solid rgba(230,237,243,.2); color:var(--text); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-bottom:3rem; }
+  .card { background:var(--card); border:1px solid rgba(255,255,255,.05); border-radius:14px; padding:1.4rem; }
+  .card h3 { font-size:1rem; color:var(--accent); margin-bottom:.4rem; }
+  .card p { font-size:.92rem; color:var(--muted); }
+  pre { background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:1.2rem; overflow-x:auto; font-size:.9rem; color:#cdd9e5; margin-bottom:2rem; }
+  footer { color:var(--muted); font-size:.85rem; border-top:1px solid rgba(255,255,255,.06); padding-top:1.5rem; }
+  footer a { color:var(--accent); text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="badge">Python · Windows · Voice</span>
+  <h1>EchoMind Voice Assistant</h1>
+  <p class="lead">Olivia — a Windows desktop voice assistant in Python. Speak a command; it listens, acts, and answers out loud using speech-to-text, text-to-speech, and web/OS automation.</p>
+  <div class="btns">
+    <a class="btn primary" href="https://github.com/chirag127/EchoMind-AI-Voice-Assistant-Python-System">View on GitHub</a>
+    <a class="btn ghost" href="https://github.com/chirag127/EchoMind-AI-Voice-Assistant-Python-System#setup">Install</a>
+  </div>
+  <div class="grid">
+    <div class="card"><h3>Speech I/O</h3><p>SpeechRecognition for input, pyttsx3 SAPI5 voice for spoken replies.</p></div>
+    <div class="card"><h3>Web search</h3><p>Google, YouTube, and Wikipedia lookups by voice.</p></div>
+    <div class="card"><h3>Media & messaging</h3><p>Play YouTube songs, send WhatsApp messages and emails via pywhatkit.</p></div>
+    <div class="card"><h3>Desktop automation</h3><p>Screenshots, mouse/keyboard control, app launching with pyautogui.</p></div>
+    <div class="card"><h3>Info at a glance</h3><p>Time, date, weather, jokes, IP address, internet speed test.</p></div>
+    <div class="card"><h3>GUI</h3><p>Simple Tkinter interface alongside voice control.</p></div>
+  </div>
+  <pre>git clone https://github.com/chirag127/EchoMind-AI-Voice-Assistant-Python-System.git
+cd EchoMind-AI-Voice-Assistant-Python-System
+pip install -r requirements.txt
+python src/Olivia.py</pre>
+  <footer>MIT Licensed · Built by <a href="https://github.com/chirag127">chirag127</a> · <a href="https://github.com/chirag127/EchoMind-AI-Voice-Assistant-Python-System">Source</a></footer>
+</div>
+</body>
+</html>
