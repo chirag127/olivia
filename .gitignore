@@ -68,3 +68,10 @@ docs/_build/
 *.o
 *.so
 *.dll
+
+# Bloat / build artifacts (purged from history)
+*.exe
+*.pdf
+*.docx
+notes.txt
+data.txt

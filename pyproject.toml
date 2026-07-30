@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "olivia-voice-assistant"
+version = "1.0.0"
+description = "Olivia — a modular Python voice assistant for Windows."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Chirag Singhal" }]
+keywords = ["voice-assistant", "speech-recognition", "text-to-speech", "automation", "windows"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+]
+dependencies = [
+    "SpeechRecognition",
+    "pyttsx3",
+    "pyautogui",
+    "pyperclip",
+    "pywhatkit",
+    "wikipedia",
+    "requests",
+    "psutil",
+    "googletrans==3.1.0a0",
+    "numpy",
+    "pyjokes",
+    "pyowm",
+    "speedtest-cli",
+]
+
+[project.optional-dependencies]
+windows = ["winshell", "pywin32", "pyaudio"]
+dev = ["pytest", "pytest-cov", "ruff"]
+
+[project.scripts]
+olivia = "olivia.__main__:main"
+
+[project.urls]
+Homepage = "https://olivia.oriz.in"
+Repository = "https://github.com/chirag127/olivia"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+src = ["src"]
