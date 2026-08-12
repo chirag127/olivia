@@ -2,6 +2,7 @@
 
 import webbrowser
 
+from olivia.core import config
 from olivia.core.speech import sp, speak, take_command
 from olivia.games import tic_tac_toe
 from olivia.skills import (
@@ -33,6 +34,15 @@ BANNER = r"""
 """
 
 EXIT_WORDS = {"quit", "bye", "exit", "goodbye", "bye bye"}
+
+
+def _needs_net():
+    """When offline_only is set, announce and block an online skill. Returns True if blocked."""
+    if config.OFFLINE_ONLY:
+        sp("That needs internet and Olivia is in offline-only mode")
+        return True
+    return False
+
 
 # Simple canned answers: (predicate over query) -> spoken reply.
 CANNED = {
@@ -73,20 +83,24 @@ def handle(query):
         helpers.current_time()
         return True
 
-    # Weather / news
+    # Weather / news (online)
     if "current weather" in query:
-        weather.current_weather(query)
+        if not _needs_net():
+            weather.current_weather(query)
         return True
     if "news" in query and "latest" in query:
-        news.news_from_bbc()
+        if not _needs_net():
+            news.news_from_bbc()
         return True
 
-    # Wikipedia
+    # Wikipedia (online)
     if "tell me about" in query:
-        search.tell_me_about(query)
+        if not _needs_net():
+            search.tell_me_about(query)
         return True
     if "who is" in query:
-        search.who_is(query)
+        if not _needs_net():
+            search.who_is(query)
         return True
 
     # Games
@@ -106,7 +120,10 @@ def handle(query):
         fun.roll_dice()
         return True
     if "joke" in query:
-        sp(fun.neutral_joke()) if "neutral" in query else fun.give_joke()
+        if "neutral" in query or config.OFFLINE_ONLY:
+            sp(fun.neutral_joke())  # offline pyjokes
+        else:
+            fun.give_joke()  # online dad joke
         return True
     if "generate" in query:
         if "password" in query:
@@ -132,42 +149,50 @@ def handle(query):
         system.battery_status()
         return True
     if "ip address" in query:
-        system.give_ip()
+        if not _needs_net():
+            system.give_ip()  # online (queries ipify)
         return True
 
-    # Communication
+    # Communication (online)
     if "send" in query and "message" in query:
-        _send_whatsapp_flow()
+        if not _needs_net():
+            _send_whatsapp_flow()
         return True
     if "email" in query:
-        _send_email_flow()
+        if not _needs_net():
+            _send_email_flow()
         return True
 
     # Media
     if "screenshot" in query:
-        media.take_screenshot()
+        media.take_screenshot()  # offline
         return True
     if "play" in query:
-        _play_flow(query)
+        if not _needs_net():
+            _play_flow(query)  # online (YouTube)
         return True
 
-    # Search / open
+    # Search / open (online)
     if "search in chrome" in query:
-        _chrome_search_flow()
+        if not _needs_net():
+            _chrome_search_flow()
         return True
     if query.startswith("search") or "search" in query:
-        search.search(query)
+        if not _needs_net():
+            search.search(query)
         return True
     if "open notepad" in query:
-        automation.launch_app("launch notepad")
+        automation.launch_app("launch notepad")  # offline
         return True
     if query.strip().startswith("open") or " open " in f" {query} ":
-        search.open_site(query)
+        if not _needs_net():
+            search.open_site(query)
         return True
 
-    # Translate
+    # Translate (online)
     if "translate" in query:
-        translate.translate(query)
+        if not _needs_net():
+            translate.translate(query)
         return True
 
     # Launch / close apps
@@ -206,7 +231,9 @@ def handle(query):
         speak(helpers.wish_me())
         return True
 
-    # Fallback: Google it
+    # Fallback: Google it (online)
+    if _needs_net():
+        return True
     webbrowser.open(f"https://www.google.com/search?q={query}&sourceid=olivia")
     return True
 
@@ -258,6 +285,8 @@ def _chrome_search_flow():
 def run():
     """Start Olivia: greet, then listen and dispatch until an exit command."""
     print(BANNER)
+    mode = "offline-only" if config.OFFLINE_ONLY else "offline core + online skills"
+    print(f"Mode: {mode} | STT: local Whisper ({config.WHISPER_MODEL})")
     print(helpers.wish_me())
     running = True
     while running:

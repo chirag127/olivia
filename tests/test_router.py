@@ -84,3 +84,21 @@ def test_lock_screen_dispatch(monkeypatch):
     monkeypatch.setattr(assistant.automation, "lock_screen", lambda: called.setdefault("l", True))
     assert assistant.handle("lock screen") is True
     assert called.get("l")
+
+
+def test_offline_only_blocks_online_skill(monkeypatch):
+    """In offline-only mode an online skill is announced, not run, loop continues."""
+    monkeypatch.setattr(assistant.config, "OFFLINE_ONLY", True)
+    seen = {}
+    monkeypatch.setattr(assistant.weather, "current_weather", lambda q: seen.setdefault("q", q))
+    assert assistant.handle("current weather in london") is True
+    assert "q" not in seen  # skill was NOT called
+
+
+def test_offline_only_allows_offline_skill(monkeypatch):
+    """Offline skills still run in offline-only mode."""
+    monkeypatch.setattr(assistant.config, "OFFLINE_ONLY", True)
+    called = {}
+    monkeypatch.setattr(assistant.system, "cpu", lambda: called.setdefault("cpu", True))
+    assert assistant.handle("what is the cpu usage") is True
+    assert called.get("cpu")

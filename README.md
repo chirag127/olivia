@@ -1,6 +1,6 @@
 # Olivia
 
-> A modular Python voice assistant for Windows. Speak a command, get a spoken answer — search, weather, news, translation, system monitoring, desktop automation, and more.
+> A modular, offline-capable Python voice assistant for Windows. Speech-to-text runs locally with faster-whisper (no cloud STT); text-to-speech is the offline Windows SAPI5 engine. Core commands work with no internet; optional skills (search, weather, news, translate) use the network and degrade gracefully offline.
 
 **Live site:** https://olivia.oriz.in
 
@@ -9,22 +9,31 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/chirag127/olivia/ci.yml?branch=main&style=flat-square)](https://github.com/chirag127/olivia/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.10+-blue.svg?style=flat-square)](https://www.python.org/)
 
-Olivia listens on your microphone, recognizes speech (Google STT), acts on the command, and replies out loud through the Windows SAPI5 voice engine. It automates common desktop and web tasks entirely by voice.
+Olivia records your microphone, transcribes it **locally** with a Whisper model (`faster-whisper`, CTranslate2), routes the command to a skill, and replies out loud through the offline Windows SAPI5 voice. The Whisper model auto-downloads once from Hugging Face on first run; after that, speech recognition works fully offline.
+
+## Offline vs online
+
+Speech recognition (Whisper), text-to-speech (SAPI5), and command routing are **100% offline**. Skills split in two:
+
+- **Offline skills** — system monitoring (CPU/RAM/disk/battery via psutil), desktop automation (launch/close apps, keyboard, screen lock, power control via pyautogui/ctypes), screenshots, clipboard read-aloud, offline jokes (pyjokes), Tic-Tac-Toe, time/date/greeting, notes.
+- **Online skills** — web search + open-site, Wikipedia ("tell me about" / "who is"), weather (OpenWeatherMap), BBC news (NewsAPI), translation (googletrans), YouTube playback, public IP, dad jokes, internet speed test.
+
+Set `OLIVIA_OFFLINE_ONLY=1` to disable every online skill: it announces "needs internet" instead of running, and the assistant keeps working for the offline skills. Without the flag, online skills run normally and only fail if the network is down (they report the error, they do not crash the loop).
 
 ## What it does
 
-Voice-controlled, grouped by skill:
+Voice-controlled, grouped by skill (O = offline, N = needs internet):
 
-- **Search & knowledge** — Google / YouTube / Wikipedia / Bing / DuckDuckGo and 40+ other engines; "tell me about X" and "who is X" read Wikipedia summaries aloud.
-- **Weather** — current conditions for any city (OpenWeatherMap) + an internet speed test.
-- **News** — top BBC headlines (NewsAPI).
-- **Translation** — text to 100+ languages via googletrans ("translate hello to french").
-- **System monitoring** — CPU / RAM / disk / battery usage and public IP (psutil).
-- **Media** — play any song/video on YouTube and control it (pause, volume, speed, tabs); take screenshots.
-- **Communication** — send email (env-var credentials) and WhatsApp messages.
-- **Automation** — launch and close apps, press keys, type dictation, lock the screen, power control (shutdown/restart/logout/hibernate).
-- **Fun** — jokes, card tricks, dice rolls, random-password generation.
-- **Games** — a Tkinter Tic-Tac-Toe.
+- **Search & knowledge** (N) — Google / YouTube / Wikipedia / Bing / DuckDuckGo and 40+ other engines; "tell me about X" and "who is X" read Wikipedia summaries aloud.
+- **Weather** (N) — current conditions for any city (OpenWeatherMap) + an internet speed test.
+- **News** (N) — top BBC headlines (NewsAPI).
+- **Translation** (N) — text to 100+ languages via googletrans ("translate hello to french").
+- **System monitoring** (O) — CPU / RAM / disk / battery usage (psutil); public IP (N).
+- **Media** — play any song/video on YouTube and control it (N); take screenshots (O).
+- **Communication** (N) — send email (env-var credentials) and WhatsApp messages.
+- **Automation** (O) — launch and close apps, press keys, type dictation, lock the screen, power control (shutdown/restart/logout/hibernate).
+- **Fun** — offline jokes / cards / dice / random-password generation (O); online dad jokes (N).
+- **Games** (O) — a Tkinter Tic-Tac-Toe.
 
 ## Architecture
 
@@ -35,9 +44,9 @@ src/olivia/
   __init__.py
   __main__.py          # entry point: python -m olivia
   core/
-    speech.py          # speak() TTS + take_command() STT
-    assistant.py       # main loop + command router
-    config.py          # env-var config (email, API keys, voice)
+    speech.py          # speak() offline SAPI5 TTS + take_command() local Whisper STT
+    assistant.py       # main loop + command router + offline/online gating
+    config.py          # env-var config (Whisper model, offline_only, email, API keys, voice)
   skills/
     search.py          # google/youtube/wikipedia/open-site
     weather.py         # weather + internet speed test
@@ -61,18 +70,20 @@ The command router (`core/assistant.py`) maps spoken phrases to skill functions 
 ```bash
 git clone https://github.com/chirag127/olivia.git
 cd olivia
-pip install -r requirements.txt
-cp .env.example .env      # then fill in the values
+pip install -r requirements.txt   # or: pip install -e .
+cp .env.example .env              # then fill in the values (all optional)
 python -m olivia
 ```
 
-On Windows, if `PyAudio` fails to install from the requirements file:
-
-```bash
-pip install pipwin && pipwin install pyaudio
-```
+**First run downloads the Whisper model** (`base` ≈ 145 MB) from Hugging Face into the local cache — this needs internet once. After that, speech-to-text runs fully offline. Pick a size via `OLIVIA_WHISPER_MODEL` (`tiny` / `base` / `small` / `medium` / `large-v3`); bigger is more accurate and slower.
 
 Then speak a command when Olivia starts listening. Say `bye` / `goodbye` / `exit` to quit.
+
+To run without any network, download the model once, then start with:
+
+```bash
+OLIVIA_OFFLINE_ONLY=1 python -m olivia
+```
 
 ## Environment variables
 
@@ -80,6 +91,11 @@ Copy `.env.example` to `.env` and set:
 
 | Variable | Purpose |
 | --- | --- |
+| `OLIVIA_WHISPER_MODEL` | Local STT model size: `tiny`/`base`/`small`/`medium`/`large-v3` (default `base`) |
+| `OLIVIA_WHISPER_DEVICE` | `cpu` (offline default) or `cuda` |
+| `OLIVIA_WHISPER_COMPUTE_TYPE` | CTranslate2 compute type (default `int8`) |
+| `OLIVIA_WHISPER_LANGUAGE` | Spoken-language hint, e.g. `en`; empty = auto-detect |
+| `OLIVIA_OFFLINE_ONLY` | `1` disables all online skills (default `0`) |
 | `OLIVIA_EMAIL` | Gmail address for the email / WhatsApp skills |
 | `OLIVIA_EMAIL_PASSWORD` | Gmail app password (never a real login password) |
 | `OPENWEATHER_API_KEY` | OpenWeatherMap key for weather |
@@ -108,9 +124,10 @@ No credentials are hardcoded in source. Load `.env` into your shell before launc
 
 ## Requirements
 
-- Windows (SAPI5, `winshell`, `pywin32`, `pyautogui`)
+- Windows (SAPI5 TTS, `winshell`, `pywin32`, `pyautogui`)
 - Python 3.10+
 - A working microphone
+- ~150 MB disk + one-time internet for the Whisper model download (`base`)
 
 ## Testing
 
@@ -119,7 +136,7 @@ pip install pytest pytest-cov numpy
 pytest -q
 ```
 
-Tests cover the pure logic — Tic-Tac-Toe win/tie detection, command routing (mocked speech I/O), translation language detection, search routing, config env reading, and password/greeting helpers.
+Tests cover the pure logic — Tic-Tac-Toe win/tie detection, command routing (mocked speech I/O), offline-only gating, local-Whisper STT (mocked mic + model, no network), translation language detection, search routing, config env reading, and password/greeting helpers.
 
 ## Contributing
 

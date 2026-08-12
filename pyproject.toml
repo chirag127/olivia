@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "Chirag Singhal" }]
-keywords = ["voice-assistant", "speech-recognition", "text-to-speech", "automation", "windows"]
+keywords = ["voice-assistant", "offline", "whisper", "faster-whisper", "speech-to-text", "text-to-speech", "automation", "windows"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -18,23 +18,24 @@ classifiers = [
     "Topic :: Multimedia :: Sound/Audio :: Speech",
 ]
 dependencies = [
-    "SpeechRecognition",
+    "faster-whisper",
+    "sounddevice",
+    "numpy",
     "pyttsx3",
     "pyautogui",
     "pyperclip",
+    "psutil",
+    "pyjokes",
     "pywhatkit",
     "wikipedia",
     "requests",
-    "psutil",
     "googletrans==3.1.0a0",
-    "numpy",
-    "pyjokes",
     "pyowm",
     "speedtest-cli",
 ]
 
 [project.optional-dependencies]
-windows = ["winshell", "pywin32", "pyaudio"]
+windows = ["winshell", "pywin32"]
 dev = ["pytest", "pytest-cov", "ruff"]
 
 [project.scripts]
