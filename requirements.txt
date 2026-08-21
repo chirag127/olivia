@@ -17,7 +17,7 @@ pyjokes==0.6.0          # offline jokes
 # Disabled when OLIVIA_OFFLINE_ONLY=1.
 pywhatkit==5.4          # play on YouTube
 wikipedia==1.4.0        # "tell me about" / "who is"
-requests==2.32.3        # news, public IP, dad jokes
+requests==2.33.0        # news, public IP, dad jokes
 googletrans==3.1.0a0    # translation
 pyowm==3.3.0            # weather (OpenWeatherMap)
 speedtest-cli==2.1.3    # internet speed test
