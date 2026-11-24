@@ -1,5 +1,7 @@
 """Translation via googletrans. Collapses the old per-language blocks."""
 
+import asyncio
+
 from olivia.core.speech import sp
 
 # googletrans language code -> spoken name.
@@ -138,6 +140,11 @@ def translate(query):
     from googletrans import Translator
 
     text = text.replace(f"to {name}", "")
-    result = Translator().translate(text, dest=code)
+
+    async def run_translation():
+        async with Translator() as translator:
+            return await translator.translate(text, dest=code)
+
+    result = asyncio.run(run_translation())
     sp(result.text)
     return result.text
