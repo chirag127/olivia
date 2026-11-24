@@ -1,6 +1,36 @@
 """Translate language detection and target-code mapping."""
 
+import sys
+import unittest
+from types import SimpleNamespace
+from unittest.mock import AsyncMock, patch
+
 from olivia.skills import translate
+
+
+class TestAsyncTranslation(unittest.TestCase):
+    def test_awaits_translation_and_closes_client(self):
+        client = AsyncMock()
+        client.__aenter__.return_value = client
+        client.translate.return_value = SimpleNamespace(text="bonjour")
+        with patch.dict(sys.modules, {"googletrans": SimpleNamespace(Translator=lambda: client)}):
+            with patch.object(translate, "sp") as speak:
+                self.assertEqual(translate.translate("translate hello to french"), "bonjour")
+        client.translate.assert_awaited_once_with(" hello ", dest="fr")
+        client.__aexit__.assert_awaited_once()
+        speak.assert_called_once_with("bonjour")
+
+    def test_closes_client_when_translation_fails(self):
+        client = AsyncMock()
+        client.__aenter__.return_value = client
+        client.__aexit__.return_value = False
+        client.translate.side_effect = RuntimeError("translation unavailable")
+        with patch.dict(sys.modules, {"googletrans": SimpleNamespace(Translator=lambda: client)}):
+            with patch.object(translate, "sp") as speak:
+                with self.assertRaisesRegex(RuntimeError, "translation unavailable"):
+                    translate.translate("translate hello to french")
+        client.__aexit__.assert_awaited_once()
+        speak.assert_not_called()
 
 
 def test_detect_simple_language():
